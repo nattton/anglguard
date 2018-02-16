@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD60F20374E5200422E27 /* Step4ViewController.swift */; };
+		3B0AD6122037528100422E27 /* AllergyOfDrugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD6112037528100422E27 /* AllergyOfDrugViewController.swift */; };
+		3B0AD6142037549900422E27 /* AllergyOfDrugCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD6132037549900422E27 /* AllergyOfDrugCell.swift */; };
+		3B0AD616203754A600422E27 /* OtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD615203754A600422E27 /* OtherCell.swift */; };
+		3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462DA2036A47400A39901 /* AppDelegate.swift */; };
+		3B6462E02036A47400A39901 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462DE2036A47400A39901 /* Main.storyboard */; };
+		3B6462E22036A47400A39901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462E12036A47400A39901 /* Assets.xcassets */; };
+		3B6462E52036A47400A39901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462E32036A47400A39901 /* LaunchScreen.storyboard */; };
+		3B6462F12036A4EA00A39901 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6462F02036A4EA00A39901 /* MapKit.framework */; };
+		3B6462F32036A92D00A39901 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462F22036A92D00A39901 /* GoogleService-Info.plist */; };
+		3B6463142036AA4200A39901 /* AngllifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462F42036AA4000A39901 /* AngllifeViewController.swift */; };
+		3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462F52036AA4000A39901 /* Step2ViewController.swift */; };
+		3B6463162036AA4200A39901 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462F62036AA4000A39901 /* LanguageViewController.swift */; };
+		3B6463172036AA4200A39901 /* LearnFirstAidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462F72036AA4000A39901 /* LearnFirstAidViewController.swift */; };
+		3B6463182036AA4200A39901 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462F82036AA4000A39901 /* SignUpViewController.swift */; };
+		3B6463192036AA4200A39901 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462F92036AA4000A39901 /* MenuCell.swift */; };
+		3B64631A2036AA4200A39901 /* AttractionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FA2036AA4000A39901 /* AttractionAnnotationView.swift */; };
+		3B64631B2036AA4200A39901 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FB2036AA4000A39901 /* WebViewController.swift */; };
+		3B64631C2036AA4200A39901 /* AttractionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FC2036AA4000A39901 /* AttractionAnnotation.swift */; };
+		3B64631D2036AA4200A39901 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FD2036AA4000A39901 /* VerifyPhoneViewController.swift */; };
+		3B64631E2036AA4200A39901 /* InitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FE2036AA4000A39901 /* InitalViewController.swift */; };
+		3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */; };
+		3B6463202036AA4200A39901 /* TermAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */; };
+		3B6463212036AA4200A39901 /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */; };
+		3B6463222036AA4200A39901 /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463022036AA4100A39901 /* AddFriendsViewController.swift */; };
+		3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */; };
+		3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */; };
+		3B6463262036AA4200A39901 /* NAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463062036AA4100A39901 /* NAlertCell.swift */; };
+		3B6463272036AA4200A39901 /* GroupAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463072036AA4100A39901 /* GroupAlertCell.swift */; };
+		3B6463282036AA4200A39901 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463082036AA4100A39901 /* LoginViewController.swift */; };
+		3B6463292036AA4200A39901 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463092036AA4100A39901 /* MenuViewController.swift */; };
+		3B64632A2036AA4200A39901 /* GroupAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64630A2036AA4100A39901 /* GroupAlertViewController.swift */; };
+		3B64632B2036AA4200A39901 /* Step3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64630B2036AA4100A39901 /* Step3ViewController.swift */; };
+		3B64632C2036AA4200A39901 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64630C2036AA4200A39901 /* FriendCell.swift */; };
+		3B64632D2036AA4200A39901 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64630D2036AA4200A39901 /* ProfileViewController.swift */; };
+		3B64632E2036AA4200A39901 /* HospitalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64630E2036AA4200A39901 /* HospitalCell.swift */; };
+		3B64632F2036AA4200A39901 /* NMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64630F2036AA4200A39901 /* NMessageCell.swift */; };
+		3B6463302036AA4200A39901 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463102036AA4200A39901 /* NotificationViewController.swift */; };
+		3B6463312036AA4200A39901 /* AngllifeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463112036AA4200A39901 /* AngllifeCell.swift */; };
+		3B6463322036AA4200A39901 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463122036AA4200A39901 /* FriendsViewController.swift */; };
+		3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463132036AA4200A39901 /* Step1ViewController.swift */; };
+		3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463342036BE9500A39901 /* HelpViewController.swift */; };
+		59334130CFD032867069BF69 /* Pods_ANGLGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B0AD60F20374E5200422E27 /* Step4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4ViewController.swift; sourceTree = "<group>"; };
+		3B0AD6112037528100422E27 /* AllergyOfDrugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyOfDrugViewController.swift; sourceTree = "<group>"; };
+		3B0AD6132037549900422E27 /* AllergyOfDrugCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyOfDrugCell.swift; sourceTree = "<group>"; };
+		3B0AD615203754A600422E27 /* OtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCell.swift; sourceTree = "<group>"; };
+		3B6462D72036A47400A39901 /* ANGLGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANGLGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B6462DA2036A47400A39901 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B6462DF2036A47400A39901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B6462E12036A47400A39901 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B6462E42036A47400A39901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B6462E62036A47400A39901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B6462EC2036A4D100A39901 /* ANGLGuard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ANGLGuard.entitlements; sourceTree = "<group>"; };
+		3B6462F02036A4EA00A39901 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3B6462F22036A92D00A39901 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3B6462F42036AA4000A39901 /* AngllifeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngllifeViewController.swift; sourceTree = "<group>"; };
+		3B6462F52036AA4000A39901 /* Step2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step2ViewController.swift; sourceTree = "<group>"; };
+		3B6462F62036AA4000A39901 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		3B6462F72036AA4000A39901 /* LearnFirstAidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnFirstAidViewController.swift; sourceTree = "<group>"; };
+		3B6462F82036AA4000A39901 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3B6462F92036AA4000A39901 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		3B6462FA2036AA4000A39901 /* AttractionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionAnnotationView.swift; sourceTree = "<group>"; };
+		3B6462FB2036AA4000A39901 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3B6462FC2036AA4000A39901 /* AttractionAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionAnnotation.swift; sourceTree = "<group>"; };
+		3B6462FD2036AA4000A39901 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
+		3B6462FE2036AA4000A39901 /* InitalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitalViewController.swift; sourceTree = "<group>"; };
+		3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
+		3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermAndConditionViewController.swift; sourceTree = "<group>"; };
+		3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
+		3B6463022036AA4100A39901 /* AddFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsViewController.swift; sourceTree = "<group>"; };
+		3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnFirstAidDetailViewController.swift; sourceTree = "<group>"; };
+		3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
+		3B6463062036AA4100A39901 /* NAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NAlertCell.swift; sourceTree = "<group>"; };
+		3B6463072036AA4100A39901 /* GroupAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAlertCell.swift; sourceTree = "<group>"; };
+		3B6463082036AA4100A39901 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3B6463092036AA4100A39901 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3B64630A2036AA4100A39901 /* GroupAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAlertViewController.swift; sourceTree = "<group>"; };
+		3B64630B2036AA4100A39901 /* Step3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step3ViewController.swift; sourceTree = "<group>"; };
+		3B64630C2036AA4200A39901 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		3B64630D2036AA4200A39901 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3B64630E2036AA4200A39901 /* HospitalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalCell.swift; sourceTree = "<group>"; };
+		3B64630F2036AA4200A39901 /* NMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMessageCell.swift; sourceTree = "<group>"; };
+		3B6463102036AA4200A39901 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		3B6463112036AA4200A39901 /* AngllifeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngllifeCell.swift; sourceTree = "<group>"; };
+		3B6463122036AA4200A39901 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		3B6463132036AA4200A39901 /* Step1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step1ViewController.swift; sourceTree = "<group>"; };
+		3B6463342036BE9500A39901 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.debug.xcconfig"; sourceTree = "<group>"; };
+		D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.release.xcconfig"; sourceTree = "<group>"; };
+		E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ANGLGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B6462D42036A47400A39901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6462F12036A4EA00A39901 /* MapKit.framework in Frameworks */,
+				59334130CFD032867069BF69 /* Pods_ANGLGuard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B6462CE2036A47400A39901 = {
+			isa = PBXGroup;
+			children = (
+				3B6462D92036A47400A39901 /* ANGLGuard */,
+				3B6462D82036A47400A39901 /* Products */,
+				3B6462ED2036A4E400A39901 /* Frameworks */,
+				6B0CAA284B87D107D4D5E621 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		3B6462D82036A47400A39901 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B6462D72036A47400A39901 /* ANGLGuard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B6462D92036A47400A39901 /* ANGLGuard */ = {
+			isa = PBXGroup;
+			children = (
+				3B6462EC2036A4D100A39901 /* ANGLGuard.entitlements */,
+				3B6462DA2036A47400A39901 /* AppDelegate.swift */,
+				3B6462FE2036AA4000A39901 /* InitalViewController.swift */,
+				3B6463082036AA4100A39901 /* LoginViewController.swift */,
+				3B6462F82036AA4000A39901 /* SignUpViewController.swift */,
+				3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */,
+				3B6463132036AA4200A39901 /* Step1ViewController.swift */,
+				3B6462F52036AA4000A39901 /* Step2ViewController.swift */,
+				3B6462FD2036AA4000A39901 /* VerifyPhoneViewController.swift */,
+				3B64630B2036AA4100A39901 /* Step3ViewController.swift */,
+				3B0AD60F20374E5200422E27 /* Step4ViewController.swift */,
+				3B0AD6132037549900422E27 /* AllergyOfDrugCell.swift */,
+				3B0AD615203754A600422E27 /* OtherCell.swift */,
+				3B0AD6112037528100422E27 /* AllergyOfDrugViewController.swift */,
+				3B6462FB2036AA4000A39901 /* WebViewController.swift */,
+				3B6463112036AA4200A39901 /* AngllifeCell.swift */,
+				3B6462F92036AA4000A39901 /* MenuCell.swift */,
+				3B6463092036AA4100A39901 /* MenuViewController.swift */,
+				3B64630E2036AA4200A39901 /* HospitalCell.swift */,
+				3B6462FC2036AA4000A39901 /* AttractionAnnotation.swift */,
+				3B6462FA2036AA4000A39901 /* AttractionAnnotationView.swift */,
+				3B6462F42036AA4000A39901 /* AngllifeViewController.swift */,
+				3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */,
+				3B6462F72036AA4000A39901 /* LearnFirstAidViewController.swift */,
+				3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */,
+				3B6463342036BE9500A39901 /* HelpViewController.swift */,
+				3B6463072036AA4100A39901 /* GroupAlertCell.swift */,
+				3B64630A2036AA4100A39901 /* GroupAlertViewController.swift */,
+				3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */,
+				3B64630D2036AA4200A39901 /* ProfileViewController.swift */,
+				3B64630C2036AA4200A39901 /* FriendCell.swift */,
+				3B6463122036AA4200A39901 /* FriendsViewController.swift */,
+				3B6463022036AA4100A39901 /* AddFriendsViewController.swift */,
+				3B6463062036AA4100A39901 /* NAlertCell.swift */,
+				3B64630F2036AA4200A39901 /* NMessageCell.swift */,
+				3B6463102036AA4200A39901 /* NotificationViewController.swift */,
+				3B6462F62036AA4000A39901 /* LanguageViewController.swift */,
+				3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */,
+				3B6462DE2036A47400A39901 /* Main.storyboard */,
+				3B6462E12036A47400A39901 /* Assets.xcassets */,
+				3B6462E32036A47400A39901 /* LaunchScreen.storyboard */,
+				3B6462E62036A47400A39901 /* Info.plist */,
+				3B6462F22036A92D00A39901 /* GoogleService-Info.plist */,
+			);
+			path = ANGLGuard;
+			sourceTree = "<group>";
+		};
+		3B6462ED2036A4E400A39901 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B6462F02036A4EA00A39901 /* MapKit.framework */,
+				E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B0CAA284B87D107D4D5E621 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */,
+				D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B6462D62036A47400A39901 /* ANGLGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B6462E92036A47400A39901 /* Build configuration list for PBXNativeTarget "ANGLGuard" */;
+			buildPhases = (
+				11865EF6014E699DF307547F /* [CP] Check Pods Manifest.lock */,
+				3B6462D32036A47400A39901 /* Sources */,
+				3B6462D42036A47400A39901 /* Frameworks */,
+				3B6462D52036A47400A39901 /* Resources */,
+				E5AB9269D00F8336E07BFA5B /* [CP] Embed Pods Frameworks */,
+				309CEC3B9F14984C87356D0F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ANGLGuard;
+			productName = ANGLGuard;
+			productReference = 3B6462D72036A47400A39901 /* ANGLGuard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B6462CF2036A47400A39901 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Komkrit Kawichai";
+				TargetAttributes = {
+					3B6462D62036A47400A39901 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3B6462D22036A47400A39901 /* Build configuration list for PBXProject "ANGLGuard" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B6462CE2036A47400A39901;
+			productRefGroup = 3B6462D82036A47400A39901 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B6462D62036A47400A39901 /* ANGLGuard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B6462D52036A47400A39901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6462E52036A47400A39901 /* LaunchScreen.storyboard in Resources */,
+				3B6462F32036A92D00A39901 /* GoogleService-Info.plist in Resources */,
+				3B6462E22036A47400A39901 /* Assets.xcassets in Resources */,
+				3B6462E02036A47400A39901 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11865EF6014E699DF307547F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ANGLGuard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		309CEC3B9F14984C87356D0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5AB9269D00F8336E07BFA5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ISHPullUp/ISHPullUp.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SidebarOverlay/SidebarOverlay.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISHPullUp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SidebarOverlay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B6462D32036A47400A39901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */,
+				3B64631C2036AA4200A39901 /* AttractionAnnotation.swift in Sources */,
+				3B6463202036AA4200A39901 /* TermAndConditionViewController.swift in Sources */,
+				3B6463282036AA4200A39901 /* LoginViewController.swift in Sources */,
+				3B6463212036AA4200A39901 /* PersonalProfileViewController.swift in Sources */,
+				3B6463162036AA4200A39901 /* LanguageViewController.swift in Sources */,
+				3B64632F2036AA4200A39901 /* NMessageCell.swift in Sources */,
+				3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */,
+				3B64631E2036AA4200A39901 /* InitalViewController.swift in Sources */,
+				3B6463292036AA4200A39901 /* MenuViewController.swift in Sources */,
+				3B6463182036AA4200A39901 /* SignUpViewController.swift in Sources */,
+				3B64632B2036AA4200A39901 /* Step3ViewController.swift in Sources */,
+				3B6463272036AA4200A39901 /* GroupAlertCell.swift in Sources */,
+				3B64631D2036AA4200A39901 /* VerifyPhoneViewController.swift in Sources */,
+				3B64632C2036AA4200A39901 /* FriendCell.swift in Sources */,
+				3B6463312036AA4200A39901 /* AngllifeCell.swift in Sources */,
+				3B64631B2036AA4200A39901 /* WebViewController.swift in Sources */,
+				3B6463302036AA4200A39901 /* NotificationViewController.swift in Sources */,
+				3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */,
+				3B6463222036AA4200A39901 /* AddFriendsViewController.swift in Sources */,
+				3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */,
+				3B0AD6142037549900422E27 /* AllergyOfDrugCell.swift in Sources */,
+				3B0AD6122037528100422E27 /* AllergyOfDrugViewController.swift in Sources */,
+				3B64632D2036AA4200A39901 /* ProfileViewController.swift in Sources */,
+				3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */,
+				3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */,
+				3B64632A2036AA4200A39901 /* GroupAlertViewController.swift in Sources */,
+				3B6463172036AA4200A39901 /* LearnFirstAidViewController.swift in Sources */,
+				3B0AD616203754A600422E27 /* OtherCell.swift in Sources */,
+				3B64632E2036AA4200A39901 /* HospitalCell.swift in Sources */,
+				3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */,
+				3B64631A2036AA4200A39901 /* AttractionAnnotationView.swift in Sources */,
+				3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */,
+				3B6463322036AA4200A39901 /* FriendsViewController.swift in Sources */,
+				3B6463192036AA4200A39901 /* MenuCell.swift in Sources */,
+				3B6463142036AA4200A39901 /* AngllifeViewController.swift in Sources */,
+				3B6463262036AA4200A39901 /* NAlertCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B6462DE2036A47400A39901 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B6462DF2036A47400A39901 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B6462E32036A47400A39901 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B6462E42036A47400A39901 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B6462E72036A47400A39901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3B6462E82036A47400A39901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B6462EA2036A47400A39901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ANGLGuard/ANGLGuard.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = JYW3WQ7A4T;
+				INFOPLIST_FILE = ANGLGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
+				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B6462EB2036A47400A39901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ANGLGuard/ANGLGuard.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = JYW3WQ7A4T;
+				INFOPLIST_FILE = ANGLGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
+				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B6462D22036A47400A39901 /* Build configuration list for PBXProject "ANGLGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B6462E72036A47400A39901 /* Debug */,
+				3B6462E82036A47400A39901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B6462E92036A47400A39901 /* Build configuration list for PBXNativeTarget "ANGLGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B6462EA2036A47400A39901 /* Debug */,
+				3B6462EB2036A47400A39901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B6462CF2036A47400A39901 /* Project object */;
+}
