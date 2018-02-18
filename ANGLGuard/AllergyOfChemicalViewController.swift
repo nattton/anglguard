@@ -1,6 +1,6 @@
 import UIKit
 
-class AllergyOfDrugViewController: UITableViewController {
+class AllergyOfChemicalViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +15,7 @@ class AllergyOfDrugViewController: UITableViewController {
     @IBAction func okAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     /*
     // MARK: - Navigation
 

@@ -84,8 +84,15 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
     @IBAction func nextAction(_ sender: Any) {
         let firstname: String = tf_firstname.text!
         let lastname: String = tf_lastname.text!
+        let middlename: String = tf_middlename.text!
         
         if firstname.count > 0 && lastname.count > 0 && isImage == true {
+            //data
+            Personal.sharedInstance.firstname = firstname
+            Personal.sharedInstance.lastname = lastname
+            Personal.sharedInstance.middlename = middlename
+            Personal.sharedInstance.personal_img_bin = bt_avatar.image(for: .normal)
+            
             self.performSegue(withIdentifier: "showStep2", sender: nil)
         }
     }

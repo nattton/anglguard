@@ -1,4 +1,5 @@
 PODS:
+  - ADCountryPicker (2.0.0)
   - Alamofire (4.5.1)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
@@ -38,6 +39,7 @@ PODS:
   - SidebarOverlay (4.1)
 
 DEPENDENCIES:
+  - ADCountryPicker (= 2.0.0)
   - Alamofire (= 4.5.1)
   - AlamofireImage (= 3.3.0)
   - Firebase/Core
@@ -46,6 +48,7 @@ DEPENDENCIES:
   - SidebarOverlay (= 4.1)
 
 SPEC CHECKSUMS:
+  ADCountryPicker: afe39f43a1606e82d66fad809374602a6cc74088
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
@@ -59,6 +62,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SidebarOverlay: b65f0a1d9331ce4bf81f82eea202b21cc8655c5a
 
-PODFILE CHECKSUM: 88f2d7a8fe8daf4a71fe6c2121c75cf1753296e1
+PODFILE CHECKSUM: 76140e3d9bd145825536a392e992c955aae3365d
 
 COCOAPODS: 1.3.1

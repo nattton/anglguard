@@ -1,6 +1,6 @@
 import UIKit
 
-class AllergyOfDrugViewController: UITableViewController {
+class UnderlyingViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

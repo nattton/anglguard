@@ -141,10 +141,10 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
             let parameters: Parameters = [
                 "token": token,
                 "message": message!,
-                "image1": photo1!,
-                "image2": photo2!,
-                "image3": photo3!,
-                "image4": photo4!,
+                "image1": photo1 as Any,
+                "image2": photo2 as Any,
+                "image3": photo3 as Any,
+                "image4": photo4 as Any,
                 "latitude": String(lat),
                 "longitude": String(long)
             ]

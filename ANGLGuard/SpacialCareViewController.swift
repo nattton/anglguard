@@ -1,10 +1,10 @@
 import UIKit
 
-class AllergyOfDrugViewController: UITableViewController {
+class SpacialCareViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -15,7 +15,7 @@ class AllergyOfDrugViewController: UITableViewController {
     @IBAction func okAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     /*
     // MARK: - Navigation
 

@@ -1,7 +1,8 @@
 import UIKit
 import Alamofire
+import ADCountryPicker
 
-class VerifyPhoneViewController: UITableViewController {
+class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
@@ -26,6 +27,27 @@ class VerifyPhoneViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == tf_country_code {
+            showCountryPicker()
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func showCountryPicker() {
+        let picker = ADCountryPicker()
+        let pickerNavigationController = UINavigationController(rootViewController: picker)
+        self.present(pickerNavigationController, animated: true, completion: nil)
+        
+        picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
+            picker.dismiss(animated: true, completion: {
+                self.tf_country_code.text = dialCode
+            })
+        }
     }
     
     @IBAction func laterAction(_ sender: Any) {
@@ -72,26 +94,31 @@ class VerifyPhoneViewController: UITableViewController {
             let phone: String = tf_phone.text!
             let code: String = tf_code.text!
             
-            let parameters: Parameters = [
-                "tel_code": country_code,
-                "tel_num": phone,
-                "code": code,
-                "token": token
-            ]
-            
-            Alamofire.request(SMS_VERIFY_CODE, method: .get, parameters: parameters).responseJSON { response in
-                if let json = response.result.value {
-                    let result = json as! Dictionary<String, Any>
-                    let code: String = result["code"] as! String
-                    let message: String = result["message"] as! String
-                    NSLog("result = \(result)")
-                    if code == "200" {
-                        self.performSegue(withIdentifier: "showStep3", sender: nil)
-                    } else {
-                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alert.addAction(defaultAction)
-                        self.present(alert, animated: true, completion: nil)
+            if country_code.count > 0 && phone.count > 0 && code.count > 0 {
+                let parameters: Parameters = [
+                    "tel_code": country_code,
+                    "tel_num": phone,
+                    "code": code,
+                    "token": token
+                ]
+                
+                Alamofire.request(SMS_VERIFY_CODE, method: .get, parameters: parameters).responseJSON { response in
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        NSLog("result = \(result)")
+                        if code == "200" {
+                            //data
+                            Personal.sharedInstance.thai_mobile_num = phone
+                            
+                            self.performSegue(withIdentifier: "showStep3", sender: nil)
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
                     }
                 }
             }

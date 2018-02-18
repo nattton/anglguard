@@ -25,6 +25,7 @@ let EMAIL_EXISTS = HOST + "/chk-email-exists"
 let EMAIL_VERIFY = HOST + "/verify-email-code"
 let SMS_SEND_CODE = HOST + "/send-sms-code"
 let SMS_VERIFY_CODE = HOST + "/verify-sms-code"
+let SIGN_UP_REGISTER = HOST + "/registration"
 
 let TOURIST_AUTHENTICATION = HOST_TOURIST + "/vendor/authentication/secret_key"
 let TOURIST_EVENT_TRACKING = HOST_TOURIST + "/vendor/event/event_tracking/@"

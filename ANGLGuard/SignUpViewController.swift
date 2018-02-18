@@ -63,6 +63,11 @@ class SignUpViewController: UITableViewController {
                     NSLog("result = \(result)")
                     if code == "200" {
                         self.defaults.set(token, forKey: "token")
+                        
+                        //data
+                        Personal.sharedInstance.email = self.email
+                        Personal.sharedInstance.password = self.password
+                        
                         self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)

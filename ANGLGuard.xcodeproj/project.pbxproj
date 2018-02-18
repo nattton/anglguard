@@ -8,9 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD60F20374E5200422E27 /* Step4ViewController.swift */; };
-		3B0AD6122037528100422E27 /* AllergyOfDrugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD6112037528100422E27 /* AllergyOfDrugViewController.swift */; };
-		3B0AD6142037549900422E27 /* AllergyOfDrugCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD6132037549900422E27 /* AllergyOfDrugCell.swift */; };
-		3B0AD616203754A600422E27 /* OtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD615203754A600422E27 /* OtherCell.swift */; };
+		3B0C5CA2203961910086C086 /* Step6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA1203961910086C086 /* Step6ViewController.swift */; };
+		3B0C5CA420396E240086C086 /* Step7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA320396E240086C086 /* Step7ViewController.swift */; };
+		3B0C5CA7203973170086C086 /* Personal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA6203973170086C086 /* Personal.swift */; };
+		3B0C5CA92039756A0086C086 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA82039756A0086C086 /* Contact.swift */; };
+		3B0C5CAB20397DA60086C086 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CAA20397DA60086C086 /* Trip.swift */; };
+		3B0C5CAD20397E4B0086C086 /* Medical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CAC20397E4B0086C086 /* Medical.swift */; };
+		3B0C5CAF2039CF400086C086 /* AllergyOfDrugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CAE2039CF400086C086 /* AllergyOfDrugViewController.swift */; };
+		3B0C5CB12039D0EA0086C086 /* AllergyOfFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB02039D0EA0086C086 /* AllergyOfFoodViewController.swift */; };
+		3B0C5CB32039D11A0086C086 /* AllergyOfChemicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB22039D11A0086C086 /* AllergyOfChemicalViewController.swift */; };
+		3B0C5CB52039D1BB0086C086 /* UnderlyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB42039D1BB0086C086 /* UnderlyingViewController.swift */; };
+		3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB62039D22A0086C086 /* CurrentMedicationViewController.swift */; };
+		3B0C5CB92039D2780086C086 /* SpacialCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */; };
+		3B0C5CBB2039D4280086C086 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CBA2039D4280086C086 /* CouponViewController.swift */; };
 		3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462DA2036A47400A39901 /* AppDelegate.swift */; };
 		3B6462E02036A47400A39901 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462DE2036A47400A39901 /* Main.storyboard */; };
 		3B6462E22036A47400A39901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462E12036A47400A39901 /* Assets.xcassets */; };
@@ -54,9 +64,19 @@
 
 /* Begin PBXFileReference section */
 		3B0AD60F20374E5200422E27 /* Step4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4ViewController.swift; sourceTree = "<group>"; };
-		3B0AD6112037528100422E27 /* AllergyOfDrugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyOfDrugViewController.swift; sourceTree = "<group>"; };
-		3B0AD6132037549900422E27 /* AllergyOfDrugCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyOfDrugCell.swift; sourceTree = "<group>"; };
-		3B0AD615203754A600422E27 /* OtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCell.swift; sourceTree = "<group>"; };
+		3B0C5CA1203961910086C086 /* Step6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step6ViewController.swift; sourceTree = "<group>"; };
+		3B0C5CA320396E240086C086 /* Step7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step7ViewController.swift; sourceTree = "<group>"; };
+		3B0C5CA6203973170086C086 /* Personal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personal.swift; sourceTree = "<group>"; };
+		3B0C5CA82039756A0086C086 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		3B0C5CAA20397DA60086C086 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		3B0C5CAC20397E4B0086C086 /* Medical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medical.swift; sourceTree = "<group>"; };
+		3B0C5CAE2039CF400086C086 /* AllergyOfDrugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyOfDrugViewController.swift; sourceTree = "<group>"; };
+		3B0C5CB02039D0EA0086C086 /* AllergyOfFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyOfFoodViewController.swift; sourceTree = "<group>"; };
+		3B0C5CB22039D11A0086C086 /* AllergyOfChemicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyOfChemicalViewController.swift; sourceTree = "<group>"; };
+		3B0C5CB42039D1BB0086C086 /* UnderlyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlyingViewController.swift; sourceTree = "<group>"; };
+		3B0C5CB62039D22A0086C086 /* CurrentMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMedicationViewController.swift; sourceTree = "<group>"; };
+		3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialCareViewController.swift; sourceTree = "<group>"; };
+		3B0C5CBA2039D4280086C086 /* CouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
 		3B6462D72036A47400A39901 /* ANGLGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANGLGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6462DA2036A47400A39901 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6462DF2036A47400A39901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +136,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0C5CA5203972860086C086 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B0C5CA6203973170086C086 /* Personal.swift */,
+				3B0C5CA82039756A0086C086 /* Contact.swift */,
+				3B0C5CAA20397DA60086C086 /* Trip.swift */,
+				3B0C5CAC20397E4B0086C086 /* Medical.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3B6462CE2036A47400A39901 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +168,7 @@
 		3B6462D92036A47400A39901 /* ANGLGuard */ = {
 			isa = PBXGroup;
 			children = (
+				3B0C5CA5203972860086C086 /* Model */,
 				3B6462EC2036A4D100A39901 /* ANGLGuard.entitlements */,
 				3B6462DA2036A47400A39901 /* AppDelegate.swift */,
 				3B6462FE2036AA4000A39901 /* InitalViewController.swift */,
@@ -148,9 +180,15 @@
 				3B6462FD2036AA4000A39901 /* VerifyPhoneViewController.swift */,
 				3B64630B2036AA4100A39901 /* Step3ViewController.swift */,
 				3B0AD60F20374E5200422E27 /* Step4ViewController.swift */,
-				3B0AD6132037549900422E27 /* AllergyOfDrugCell.swift */,
-				3B0AD615203754A600422E27 /* OtherCell.swift */,
-				3B0AD6112037528100422E27 /* AllergyOfDrugViewController.swift */,
+				3B0C5CA1203961910086C086 /* Step6ViewController.swift */,
+				3B0C5CA320396E240086C086 /* Step7ViewController.swift */,
+				3B0C5CBA2039D4280086C086 /* CouponViewController.swift */,
+				3B0C5CAE2039CF400086C086 /* AllergyOfDrugViewController.swift */,
+				3B0C5CB02039D0EA0086C086 /* AllergyOfFoodViewController.swift */,
+				3B0C5CB22039D11A0086C086 /* AllergyOfChemicalViewController.swift */,
+				3B0C5CB42039D1BB0086C086 /* UnderlyingViewController.swift */,
+				3B0C5CB62039D22A0086C086 /* CurrentMedicationViewController.swift */,
+				3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */,
 				3B6462FB2036AA4000A39901 /* WebViewController.swift */,
 				3B6463112036AA4200A39901 /* AngllifeCell.swift */,
 				3B6462F92036AA4000A39901 /* MenuCell.swift */,
@@ -322,6 +360,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADCountryPicker/ADCountryPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -332,6 +371,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADCountryPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -359,32 +399,42 @@
 				3B6463212036AA4200A39901 /* PersonalProfileViewController.swift in Sources */,
 				3B6463162036AA4200A39901 /* LanguageViewController.swift in Sources */,
 				3B64632F2036AA4200A39901 /* NMessageCell.swift in Sources */,
+				3B0C5CB92039D2780086C086 /* SpacialCareViewController.swift in Sources */,
 				3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */,
+				3B0C5CB32039D11A0086C086 /* AllergyOfChemicalViewController.swift in Sources */,
 				3B64631E2036AA4200A39901 /* InitalViewController.swift in Sources */,
 				3B6463292036AA4200A39901 /* MenuViewController.swift in Sources */,
 				3B6463182036AA4200A39901 /* SignUpViewController.swift in Sources */,
+				3B0C5CA92039756A0086C086 /* Contact.swift in Sources */,
+				3B0C5CAB20397DA60086C086 /* Trip.swift in Sources */,
 				3B64632B2036AA4200A39901 /* Step3ViewController.swift in Sources */,
 				3B6463272036AA4200A39901 /* GroupAlertCell.swift in Sources */,
+				3B0C5CA7203973170086C086 /* Personal.swift in Sources */,
 				3B64631D2036AA4200A39901 /* VerifyPhoneViewController.swift in Sources */,
 				3B64632C2036AA4200A39901 /* FriendCell.swift in Sources */,
 				3B6463312036AA4200A39901 /* AngllifeCell.swift in Sources */,
+				3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */,
+				3B0C5CAD20397E4B0086C086 /* Medical.swift in Sources */,
+				3B0C5CB52039D1BB0086C086 /* UnderlyingViewController.swift in Sources */,
+				3B0C5CB12039D0EA0086C086 /* AllergyOfFoodViewController.swift in Sources */,
 				3B64631B2036AA4200A39901 /* WebViewController.swift in Sources */,
 				3B6463302036AA4200A39901 /* NotificationViewController.swift in Sources */,
 				3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */,
 				3B6463222036AA4200A39901 /* AddFriendsViewController.swift in Sources */,
 				3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */,
-				3B0AD6142037549900422E27 /* AllergyOfDrugCell.swift in Sources */,
-				3B0AD6122037528100422E27 /* AllergyOfDrugViewController.swift in Sources */,
 				3B64632D2036AA4200A39901 /* ProfileViewController.swift in Sources */,
 				3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */,
 				3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */,
 				3B64632A2036AA4200A39901 /* GroupAlertViewController.swift in Sources */,
 				3B6463172036AA4200A39901 /* LearnFirstAidViewController.swift in Sources */,
-				3B0AD616203754A600422E27 /* OtherCell.swift in Sources */,
+				3B0C5CA2203961910086C086 /* Step6ViewController.swift in Sources */,
 				3B64632E2036AA4200A39901 /* HospitalCell.swift in Sources */,
+				3B0C5CBB2039D4280086C086 /* CouponViewController.swift in Sources */,
+				3B0C5CA420396E240086C086 /* Step7ViewController.swift in Sources */,
 				3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */,
 				3B64631A2036AA4200A39901 /* AttractionAnnotationView.swift in Sources */,
 				3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */,
+				3B0C5CAF2039CF400086C086 /* AllergyOfDrugViewController.swift in Sources */,
 				3B6463322036AA4200A39901 /* FriendsViewController.swift in Sources */,
 				3B6463192036AA4200A39901 /* MenuCell.swift in Sources */,
 				3B6463142036AA4200A39901 /* AngllifeViewController.swift in Sources */,
@@ -536,7 +586,7 @@
 				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
 				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -555,7 +605,7 @@
 				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
 				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

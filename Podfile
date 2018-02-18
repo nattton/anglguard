@@ -14,5 +14,6 @@ target 'ANGLGuard' do
   pod 'ISHPullUp', '1.0.6'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'ADCountryPicker', '2.0.0'
 
 end
