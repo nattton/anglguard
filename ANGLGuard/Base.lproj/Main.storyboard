@@ -353,7 +353,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AngllifeCell" rowHeight="100" id="DjB-Sn-LWs" customClass="AngllifeCell" customModule="ANGLGuard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AngllifeCell" rowHeight="100" id="DjB-Sn-LWs" customClass="AngllifeCell" customModule="ANGLGuard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DjB-Sn-LWs" id="xYD-h4-UnX">
@@ -400,7 +400,7 @@
                                             <outlet property="name" destination="YSK-1M-K2f" id="r1s-ac-uKD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="56" id="TNH-YU-xze" customClass="MenuCell" customModule="ANGLGuard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="56" id="TNH-YU-xze" customClass="MenuCell" customModule="ANGLGuard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TNH-YU-xze" id="AFZ-EL-XWi">
@@ -532,7 +532,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObA-Ms-7ft">
-                                                            <rect key="frame" x="15" y="18" width="192" height="24"/>
+                                                            <rect key="frame" x="15" y="18" width="247" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="F3x-ML-jPJ"/>
                                                             </constraints>
@@ -541,7 +541,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-8Y-Zie">
-                                                            <rect key="frame" x="15" y="46" width="192" height="21"/>
+                                                            <rect key="frame" x="15" y="46" width="247" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="dzP-R8-h9f"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="pYZ-11-9YG"/>
@@ -551,13 +551,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-pR-glA">
-                                                            <rect key="frame" x="15" y="71" width="192" height="42"/>
+                                                            <rect key="frame" x="15" y="71" width="247" height="42"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="feh-bY-Oud">
-                                                            <rect key="frame" x="214.5" y="15" width="92" height="92"/>
+                                                            <rect key="frame" x="269.5" y="15" width="92" height="92"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="92" id="RzG-g0-lAq"/>
                                                                 <constraint firstAttribute="width" constant="92" id="d4n-Sa-Fhv"/>
@@ -906,7 +906,7 @@
                                 <rect key="frame" x="0.0" y="126" width="375" height="541"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LearnFirstAidCell" textLabel="iEn-yh-KrQ" detailTextLabel="QCv-nI-sec" imageView="G1y-DN-Z10" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="esB-hD-BrJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LearnFirstAidCell" textLabel="iEn-yh-KrQ" detailTextLabel="QCv-nI-sec" imageView="G1y-DN-Z10" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="esB-hD-BrJ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="esB-hD-BrJ" id="pgw-Tl-6yT">
@@ -1029,7 +1029,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="557"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatLCell" id="tQG-xO-MN3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatLCell" id="tQG-xO-MN3">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tQG-xO-MN3" id="0FP-61-kDL">
@@ -1061,7 +1061,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRCell" id="7en-dF-4Zx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRCell" id="7en-dF-4Zx">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7en-dF-4Zx" id="wvH-9L-5XF">
@@ -1242,30 +1242,30 @@
                                                     <rect key="frame" x="0.0" y="34" width="375" height="105"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-qF-o4p">
-                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-dF-5Te">
-                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="VoN-yW-nmY"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-Di-pqb">
-                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-dh-10w">
-                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="O2X-mL-6os"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-C3-NHM">
-                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8L-yf-LDc">
-                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="f2m-qf-Itw"/>
@@ -1721,7 +1721,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnd-iA-0Aj">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnd-iA-0Aj">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="QLs-20-a2Z"/>
@@ -1730,6 +1730,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="drugAction:" destination="PKh-tu-5rl" eventType="touchUpInside" id="lyM-Q2-EZm"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anti-Seizures" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzm-fA-vEB">
                                                     <rect key="frame" x="74" y="8" width="255" height="20.5"/>
@@ -1773,7 +1776,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbW-OS-nck">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbW-OS-nck">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="9yd-qr-P7g"/>
@@ -1782,6 +1785,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="drugAction:" destination="PKh-tu-5rl" eventType="touchUpInside" id="2Cr-VR-6aD"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insulin" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whj-3b-The">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -1817,7 +1823,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vee-fq-GcP">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vee-fq-GcP">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="Tfv-0m-5K6"/>
@@ -1826,6 +1832,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="drugAction:" destination="PKh-tu-5rl" eventType="touchUpInside" id="twM-YV-sgA"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(eg., seafood)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opp-4p-uTj">
                                                     <rect key="frame" x="74" y="29" width="255" height="18"/>
@@ -1869,7 +1878,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Er-xi-Heo">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Er-xi-Heo">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="NbG-TS-Grc"/>
@@ -1878,6 +1887,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="drugAction:" destination="PKh-tu-5rl" eventType="touchUpInside" id="wdS-fM-80k"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(eg., PenV, Cephalosporin)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-Jm-LEk">
                                                     <rect key="frame" x="74" y="29" width="255" height="18"/>
@@ -1921,7 +1933,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-lg-zZp">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-lg-zZp">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="YH8-Nl-Oae"/>
@@ -1930,6 +1942,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="drugAction:" destination="PKh-tu-5rl" eventType="touchUpInside" id="MpS-hB-gRm"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(eg., Bactrin Co-Trimoxazole)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eU-Ty-g5M">
                                                     <rect key="frame" x="74" y="29" width="255" height="18"/>
@@ -2026,6 +2041,14 @@
                             <outlet property="delegate" destination="PKh-tu-5rl" id="UjI-sA-spJ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bt_insuline" destination="RbW-OS-nck" id="JZD-p8-JPC"/>
+                        <outlet property="bt_iodine" destination="vee-fq-GcP" id="fU9-Je-9D9"/>
+                        <outlet property="bt_penicillin" destination="0Er-xi-Heo" id="xeN-lH-BCe"/>
+                        <outlet property="bt_seizures" destination="pnd-iA-0Aj" id="P3L-hT-Qlk"/>
+                        <outlet property="bt_sulfa" destination="Tap-lg-zZp" id="HvJ-kD-56R"/>
+                        <outlet property="tv_other" destination="Gml-6U-s6t" id="75W-GP-3OA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMo-HW-Ap3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2061,7 +2084,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="70" id="hwv-Oz-Py6" customClass="FriendCell" customModule="ANGLGuard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="70" id="hwv-Oz-Py6" customClass="FriendCell" customModule="ANGLGuard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwv-Oz-Py6" id="uR0-Bc-b5S">
@@ -2319,7 +2342,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NAlertCell" rowHeight="145" id="b8u-rc-dlo" customClass="NAlertCell" customModule="ANGLGuard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NAlertCell" rowHeight="145" id="b8u-rc-dlo" customClass="NAlertCell" customModule="ANGLGuard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b8u-rc-dlo" id="5cl-wl-9Gn">
@@ -2360,13 +2383,13 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="58" height="53.5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="id9-gy-6Do">
-                                                            <rect key="frame" x="74" y="0.0" width="57" height="53.5"/>
+                                                            <rect key="frame" x="74" y="0.0" width="57.5" height="53.5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="spa-cM-wkw">
-                                                            <rect key="frame" x="147" y="0.0" width="58" height="53.5"/>
+                                                            <rect key="frame" x="147.5" y="0.0" width="58" height="53.5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OhI-Io-qGd">
-                                                            <rect key="frame" x="221" y="0.0" width="57.5" height="53.5"/>
+                                                            <rect key="frame" x="221.5" y="0.0" width="57" height="53.5"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2415,7 +2438,7 @@
                                             <outlet property="photo4" destination="OhI-Io-qGd" id="hLC-rQ-wwz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NMessageCell" rowHeight="84" id="fW5-1f-Lao" customClass="NMessageCell" customModule="ANGLGuard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NMessageCell" rowHeight="84" id="fW5-1f-Lao" customClass="NMessageCell" customModule="ANGLGuard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="173" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fW5-1f-Lao" id="2db-bZ-6hO">
@@ -4073,7 +4096,7 @@
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
                                                     <connections>
-                                                        <segue destination="4Qf-cx-unI" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="8JO-9D-Buk"/>
+                                                        <segue destination="4Qf-cx-unI" kind="presentation" identifier="showFood" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="8JO-9D-Buk"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -4110,7 +4133,7 @@
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
                                                     <connections>
-                                                        <segue destination="LwS-rT-ZUN" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="b1b-tV-Lyh"/>
+                                                        <segue destination="LwS-rT-ZUN" kind="presentation" identifier="showChemical" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="b1b-tV-Lyh"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -4147,7 +4170,7 @@
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
                                                     <connections>
-                                                        <segue destination="BKu-5m-AMT" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="sN7-fo-QfR"/>
+                                                        <segue destination="BKu-5m-AMT" kind="presentation" identifier="showUnderlying" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="sN7-fo-QfR"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -4184,7 +4207,7 @@
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
                                                     <connections>
-                                                        <segue destination="09Q-Sw-CCp" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="69B-6J-S6Y"/>
+                                                        <segue destination="09Q-Sw-CCp" kind="presentation" identifier="showCurrentMedicationandHerb" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="69B-6J-S6Y"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -4221,7 +4244,7 @@
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
                                                     <connections>
-                                                        <segue destination="0b6-06-9lp" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="ok4-qI-3HV"/>
+                                                        <segue destination="0b6-06-9lp" kind="presentation" identifier="showSpacialCare" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="ok4-qI-3HV"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -5426,7 +5449,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fab-4L-uIr">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fab-4L-uIr">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="2WF-n7-Y5K"/>
@@ -5435,6 +5458,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="Riq-18-rhS"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milk" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWk-8V-zyE">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -5470,7 +5496,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-ww-zfF">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-ww-zfF">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="5wj-5X-ygh"/>
@@ -5479,6 +5505,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="cYL-pV-BMj"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eggs" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAP-Ez-ugf">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -5514,7 +5543,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djh-f7-xcu">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djh-f7-xcu">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="BKq-IM-yyG"/>
@@ -5523,6 +5552,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="yut-fo-Axz"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fish" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-5J-bUe">
                                                     <rect key="frame" x="74" y="8" width="255" height="21"/>
@@ -5566,7 +5598,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-xX-pkg">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-xX-pkg">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="3TP-7e-DBS"/>
@@ -5575,6 +5607,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="O82-b0-7c9"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(eg., crab, lobster, shirmp)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o37-C4-lBR">
                                                     <rect key="frame" x="74" y="29" width="255" height="18"/>
@@ -5618,7 +5653,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cza-OO-7Uq">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cza-OO-7Uq">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="daw-h0-oLo"/>
@@ -5627,6 +5662,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="cX7-rg-c6f"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(eg., almonds, walnuts, pecans)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW6-YT-auf">
                                                     <rect key="frame" x="74" y="29" width="255" height="18"/>
@@ -5670,7 +5708,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3s-1N-Q6c">
+                                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3s-1N-Q6c">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="Flp-CA-vqT"/>
@@ -5679,6 +5717,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="XIq-CO-A55"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peanuts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-RV-ZM9">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -5714,7 +5755,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4If-Lg-sLw">
+                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4If-Lg-sLw">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="LeP-RQ-3jW"/>
@@ -5723,6 +5764,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="a3U-Ye-Dy4"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wheat" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxG-Aj-PtB">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -5758,7 +5802,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuJ-hH-AZ7">
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuJ-hH-AZ7">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="TmY-JW-tbD"/>
@@ -5767,6 +5811,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="foodAction:" destination="4Qf-cx-unI" eventType="touchUpInside" id="gvm-ad-jh6"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soybeans" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDw-xA-ahC">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -5855,6 +5902,17 @@
                             <outlet property="delegate" destination="4Qf-cx-unI" id="5wp-0K-kg2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bt_crustacean" destination="XYf-xX-pkg" id="Fu2-gt-Rcu"/>
+                        <outlet property="bt_eggs" destination="Lug-ww-zfF" id="JBV-kV-ZbN"/>
+                        <outlet property="bt_fish" destination="djh-f7-xcu" id="OC1-yA-ZuH"/>
+                        <outlet property="bt_milk" destination="fab-4L-uIr" id="lyk-OA-QkG"/>
+                        <outlet property="bt_peanuts" destination="T3s-1N-Q6c" id="lD5-05-i8x"/>
+                        <outlet property="bt_soybeans" destination="WuJ-hH-AZ7" id="Na7-3s-Dgv"/>
+                        <outlet property="bt_tree_nut" destination="Cza-OO-7Uq" id="fWB-GQ-nPU"/>
+                        <outlet property="bt_wheat" destination="4If-Lg-sLw" id="pWc-af-j34"/>
+                        <outlet property="tv_other" destination="vHH-rI-9y6" id="dGv-C7-XCL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Th-0n-OCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5922,7 +5980,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="75"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgO-zG-d2f">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgO-zG-d2f">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="E2U-XP-UPn"/>
@@ -5931,6 +5989,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="chemicalAction:" destination="LwS-rT-ZUN" eventType="touchUpInside" id="ysy-3S-lXB"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shampoos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41k-MX-0mJ">
                                                     <rect key="frame" x="74" y="8" width="255" height="21"/>
@@ -5975,7 +6036,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="75"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYH-P5-avp">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYH-P5-avp">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="liN-2G-HCl"/>
@@ -5984,6 +6045,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="chemicalAction:" destination="LwS-rT-ZUN" eventType="touchUpInside" id="aT1-ig-jP1"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fragrances" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPE-Wu-e07">
                                                     <rect key="frame" x="74" y="8" width="255" height="21"/>
@@ -6028,7 +6092,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="75"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbZ-ID-ykI">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbZ-ID-ykI">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="YCo-Nl-cIK"/>
@@ -6037,6 +6101,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="chemicalAction:" destination="LwS-rT-ZUN" eventType="touchUpInside" id="hbL-VK-52I"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cleaners" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ac-nZ-F84">
                                                     <rect key="frame" x="74" y="8" width="255" height="21"/>
@@ -6081,7 +6148,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="75"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iB-UR-PvS">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iB-UR-PvS">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="1uC-rG-mHK"/>
@@ -6090,6 +6157,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="chemicalAction:" destination="LwS-rT-ZUN" eventType="touchUpInside" id="VbW-GS-t08"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detergents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqK-wn-Qzt">
                                                     <rect key="frame" x="74" y="8" width="255" height="21"/>
@@ -6134,7 +6204,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="75"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMb-HD-HPZ">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMb-HD-HPZ">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="PZE-rI-qH9"/>
@@ -6143,6 +6213,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="chemicalAction:" destination="LwS-rT-ZUN" eventType="touchUpInside" id="4t8-fW-WLQ"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cosmetic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlE-EA-hwi">
                                                     <rect key="frame" x="74" y="8" width="255" height="21"/>
@@ -6240,6 +6313,19 @@
                             <outlet property="delegate" destination="LwS-rT-ZUN" id="dW4-mW-EiS"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bt_cleaners" destination="dbZ-ID-ykI" id="9sx-HK-BKI"/>
+                        <outlet property="bt_cosmetic" destination="aMb-HD-HPZ" id="08R-bn-wTa"/>
+                        <outlet property="bt_detergents" destination="1iB-UR-PvS" id="jLd-8b-zv4"/>
+                        <outlet property="bt_fragrances" destination="VYH-P5-avp" id="XaL-L3-lp2"/>
+                        <outlet property="bt_shampoos" destination="xgO-zG-d2f" id="Ee7-5b-Sia"/>
+                        <outlet property="tf_cleaners" destination="1T9-EQ-BN2" id="J7S-2I-HDb"/>
+                        <outlet property="tf_cosmetic" destination="VWW-F1-Q2L" id="n2n-ve-OWr"/>
+                        <outlet property="tf_detergents" destination="Dad-me-grj" id="Mdd-Fj-6kC"/>
+                        <outlet property="tf_fragrances" destination="orI-8b-0eu" id="10F-s4-6yd"/>
+                        <outlet property="tf_shampoos" destination="QW0-Jn-zv2" id="S6q-cd-8st"/>
+                        <outlet property="tv_other" destination="eDU-uf-YC9" id="s5Z-EY-rrK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhU-AO-4Iw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6307,7 +6393,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-zY-p40">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-zY-p40">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="eEq-WQ-tbG"/>
@@ -6316,6 +6402,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="underlyingAction:" destination="BKu-5m-AMT" eventType="touchUpInside" id="CHy-Hy-xA6"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diabetes mellitus" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoM-ag-TrG">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -6351,7 +6440,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMA-Kn-pWq">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMA-Kn-pWq">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="RwX-1K-iGG"/>
@@ -6360,6 +6449,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="underlyingAction:" destination="BKu-5m-AMT" eventType="touchUpInside" id="jgh-q8-kfW"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hypertension" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN3-bP-pWr">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -6395,7 +6487,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djg-lX-gN4">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djg-lX-gN4">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="37V-d4-643"/>
@@ -6404,6 +6496,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="underlyingAction:" destination="BKu-5m-AMT" eventType="touchUpInside" id="ujZ-Yu-FcO"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chronic kidney disease" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1B-yg-3lX">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -6439,7 +6534,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyK-8o-jiF">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyK-8o-jiF">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="CbR-dh-lvU"/>
@@ -6448,6 +6543,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="underlyingAction:" destination="BKu-5m-AMT" eventType="touchUpInside" id="HDi-iz-hDR"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart disease" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSU-M8-8Sk">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -6483,7 +6581,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNQ-ap-O93">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNQ-ap-O93">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="Bza-ZF-HCZ"/>
@@ -6492,6 +6590,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="underlyingAction:" destination="BKu-5m-AMT" eventType="touchUpInside" id="bds-Q5-VhK"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old stroke" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHY-7Z-gWB">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -6580,6 +6681,14 @@
                             <outlet property="delegate" destination="BKu-5m-AMT" id="oR9-1Z-YLE"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bt_chronic" destination="Djg-lX-gN4" id="D0k-eA-4aq"/>
+                        <outlet property="bt_diabetes" destination="Doc-zY-p40" id="g75-0f-IZT"/>
+                        <outlet property="bt_heart" destination="EyK-8o-jiF" id="YET-ku-iJc"/>
+                        <outlet property="bt_hypertension" destination="DMA-Kn-pWq" id="SEy-8X-HR0"/>
+                        <outlet property="bt_old_stroke" destination="xNQ-ap-O93" id="5BI-W7-GCD"/>
+                        <outlet property="tv_other" destination="ekb-yQ-rEf" id="hvd-hs-TyE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUQ-5y-UTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6691,6 +6800,9 @@
                             <outlet property="delegate" destination="09Q-Sw-CCp" id="FNI-CY-24W"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tv_other" destination="AWw-jO-gU0" id="RAv-yi-nJu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfl-Jr-47F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6758,7 +6870,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4C-ge-THY">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4C-ge-THY">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="VrM-o6-3TI"/>
@@ -6767,6 +6879,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="noNeedAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="3zr-Cm-PPs"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Need" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0V-m7-rrL">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -6802,7 +6917,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yq-wa-b38">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yq-wa-b38">
                                                     <rect key="frame" x="46" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="19E-PF-0Zj"/>
@@ -6811,6 +6926,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="needAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="eLH-EE-5wj"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i44-Yn-AtM">
                                                     <rect key="frame" x="74" y="8" width="255" height="22"/>
@@ -6846,7 +6964,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8r-Tg-G4J">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8r-Tg-G4J">
                                                     <rect key="frame" x="66" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="FkZ-KG-M1H"/>
@@ -6855,6 +6973,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="deviceAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="m2K-5i-IDQ"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f50-aS-o91">
                                                     <rect key="frame" x="94" y="8" width="235" height="22"/>
@@ -6890,7 +7011,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="57"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGg-oq-dx4">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGg-oq-dx4">
                                                     <rect key="frame" x="86" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="4tJ-Er-m21"/>
@@ -6899,6 +7020,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="universalAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="T4T-lG-GYj"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universal design environment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxh-1E-GSs">
                                                     <rect key="frame" x="114" y="8" width="215" height="41"/>
@@ -6934,7 +7058,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDE-Yo-2J8">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDE-Yo-2J8">
                                                     <rect key="frame" x="86" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="kJF-UV-oNH"/>
@@ -6943,6 +7067,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="gaitAidAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="TcE-gH-r5s"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gait aid" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBG-y6-QKW">
                                                     <rect key="frame" x="114" y="8" width="215" height="22"/>
@@ -6978,7 +7105,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xih-4j-8Gp">
+                                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xih-4j-8Gp">
                                                     <rect key="frame" x="86" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="Ksw-Kc-au1"/>
@@ -6987,6 +7114,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="wheelChairAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="5Rt-Fd-AuC"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wheel chair" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYL-j6-ehS">
                                                     <rect key="frame" x="114" y="8" width="215" height="22"/>
@@ -7022,7 +7152,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-J9-Qp7">
+                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-J9-Qp7">
                                                     <rect key="frame" x="66" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="cKJ-XT-DVH"/>
@@ -7031,6 +7161,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="careGiverAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="7nh-hx-v6A"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Care giver" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzR-dZ-Mgn">
                                                     <rect key="frame" x="94" y="8" width="235" height="22"/>
@@ -7066,7 +7199,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-Cv-XMz">
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-Cv-XMz">
                                                     <rect key="frame" x="86" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="Ujl-b5-gN3"/>
@@ -7075,6 +7208,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="oneAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="3Ad-6C-qtr"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klT-qB-Ih1">
                                                     <rect key="frame" x="114" y="8" width="215" height="22"/>
@@ -7110,7 +7246,7 @@
                                                     <rect key="frame" x="26" y="0.0" width="323" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpS-cA-qUL">
+                                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpS-cA-qUL">
                                                     <rect key="frame" x="86" y="8" width="20" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="NSg-UM-Mdz"/>
@@ -7119,6 +7255,9 @@
                                                     <state key="normal" image="bt_uncheck"/>
                                                     <state key="selected" image="bt_check"/>
                                                     <state key="highlighted" image="bt_check"/>
+                                                    <connections>
+                                                        <action selector="twoAction:" destination="0b6-06-9lp" eventType="touchUpInside" id="oSQ-bJ-VhU"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqF-Ab-TkL">
                                                     <rect key="frame" x="114" y="8" width="215" height="22"/>
@@ -7188,6 +7327,17 @@
                             <outlet property="delegate" destination="0b6-06-9lp" id="SF8-Y3-iDU"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bt_care_giver" destination="Sc2-J9-Qp7" id="yQI-Jy-qXx"/>
+                        <outlet property="bt_device" destination="p8r-Tg-G4J" id="dwy-6z-91h"/>
+                        <outlet property="bt_gait_aid" destination="DDE-Yo-2J8" id="wsf-Fq-YYR"/>
+                        <outlet property="bt_need" destination="2yq-wa-b38" id="zXY-HN-TfM"/>
+                        <outlet property="bt_no_need" destination="U4C-ge-THY" id="YXu-uk-EJ0"/>
+                        <outlet property="bt_one" destination="YvX-Cv-XMz" id="nUu-06-T9I"/>
+                        <outlet property="bt_two" destination="gpS-cA-qUL" id="l5M-DF-O5q"/>
+                        <outlet property="bt_universal_design" destination="CGg-oq-dx4" id="uYv-ac-K4F"/>
+                        <outlet property="bt_wheel_chair" destination="xih-4j-8Gp" id="3dj-B9-ASp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hho-nw-mmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

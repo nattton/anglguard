@@ -1,10 +1,46 @@
 import UIKit
 
-class AllergyOfChemicalViewController: UITableViewController {
+protocol AllergyOfChemicalDelegate {
+    func onAllergyOfChemicalResult(result: String)
+}
 
+class AllergyOfChemicalViewController: UITableViewController {
+    
+    var result: String = ""
+    var delegate: AllergyOfChemicalDelegate?
+    let chemicals = ["Shampoos", "Fragrances", "Cleaners", "Detergents", "Cosmetic"]
+    var selecteds: NSMutableArray = NSMutableArray()
+    
+    @IBOutlet var bt_shampoos: UIButton!
+    @IBOutlet var bt_fragrances: UIButton!
+    @IBOutlet var bt_cleaners: UIButton!
+    @IBOutlet var bt_detergents: UIButton!
+    @IBOutlet var bt_cosmetic: UIButton!
+    
+    @IBOutlet var tf_shampoos: UITextField!
+    @IBOutlet var tf_fragrances: UITextField!
+    @IBOutlet var tf_cleaners: UITextField!
+    @IBOutlet var tf_detergents: UITextField!
+    @IBOutlet var tf_cosmetic: UITextField!
+    
+    @IBOutlet var tv_other: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bt_shampoos.isSelected = Medical.sharedInstance.shampoos == "1" ? true : false
+        bt_fragrances.isSelected = Medical.sharedInstance.fragrances == "1" ? true : false
+        bt_cleaners.isSelected = Medical.sharedInstance.cleaners == "1" ? true : false
+        bt_detergents.isSelected = Medical.sharedInstance.detergents == "1" ? true : false
+        bt_cosmetic.isSelected = Medical.sharedInstance.cosmetics == "1" ? true : false
+        
+        tf_shampoos.text = Medical.sharedInstance.shampoos_brand
+        tf_fragrances.text = Medical.sharedInstance.shampoos_brand
+        tf_cleaners.text = Medical.sharedInstance.shampoos_brand
+        tf_detergents.text = Medical.sharedInstance.shampoos_brand
+        tf_cosmetic.text = Medical.sharedInstance.shampoos_brand
+        
+        tv_other.text = Medical.sharedInstance.allergy_chemical_others
     }
 
     override func didReceiveMemoryWarning() {
@@ -12,8 +48,59 @@ class AllergyOfChemicalViewController: UITableViewController {
         
     }
     
+    @IBAction func chemicalAction(_ sender: Any) {
+        let button: UIButton = sender as! UIButton
+        button.isSelected = !button.isSelected
+        let index = button.tag - 1
+        
+        if button.tag == 1 {
+            Medical.sharedInstance.shampoos = button.isSelected ? "1" : "0"
+        }
+        
+        if button.tag == 2 {
+            Medical.sharedInstance.fragrances = button.isSelected ? "1" : "0"
+        }
+        
+        if button.tag == 3 {
+            Medical.sharedInstance.cleaners = button.isSelected ? "1" : "0"
+        }
+        
+        if button.tag == 4 {
+            Medical.sharedInstance.detergents = button.isSelected ? "1" : "0"
+        }
+        
+        if button.tag == 5 {
+            Medical.sharedInstance.cosmetics = button.isSelected ? "1" : "0"
+        }
+        
+        if button.isSelected {
+            selecteds.add(chemicals[index])
+        } else {
+            selecteds.remove(chemicals[index])
+        }
+    }
+    
     @IBAction func okAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let shampoos: String = tf_shampoos.text!
+        let fragrances: String = tf_fragrances.text!
+        let cleaners: String = tf_cleaners.text!
+        let detergents: String = tf_detergents.text!
+        let cosmetic: String = tf_cosmetic.text!
+        let other: String = tv_other.text!
+        
+        Medical.sharedInstance.shampoos_brand = shampoos
+        Medical.sharedInstance.fragrances_brand = fragrances
+        Medical.sharedInstance.cleaners_brand = cleaners
+        Medical.sharedInstance.detergents_brand = detergents
+        Medical.sharedInstance.cosmetics_brand = cosmetic
+        Medical.sharedInstance.allergy_chemical_others = other
+        
+        let result: String = selecteds.getStringResultSelect()
+        self.dismiss(animated: true) {
+            if (self.delegate != nil) {
+                self.delegate?.onAllergyOfChemicalResult(result: result)
+            }
+        }
     }
 
     /*

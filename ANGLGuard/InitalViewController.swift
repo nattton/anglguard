@@ -108,3 +108,20 @@ extension UIImage {
         return newImage
     }
 }
+
+extension NSMutableArray {
+    
+    func getStringResultSelect() -> String {
+        var results = ""
+        for (index, value) in self.enumerated() {
+            if index == self.count - 1 {
+                results = results + (value as! String)
+            } else {
+                results = results + (value as! String) + ", "
+            }
+        }
+        
+        return results
+    }
+    
+}

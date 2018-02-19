@@ -1,6 +1,6 @@
 import UIKit
 
-class Step4ViewController: UITableViewController {
+class Step4ViewController: UITableViewController, AllergyOfDrugDelegate, AllergyOfFoodDelegate, AllergyOfChemicalDelegate, UnderlyingDelegate, CurrentMedicationDelegate, SpacialCareDelegate {
 
     @IBOutlet var tf_blood_type: UITextField!
     @IBOutlet var tf_drug: UITextField!
@@ -28,6 +28,30 @@ class Step4ViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         
     }
+    
+    func onAllergyOfDrugResult(result: String) {
+        tf_drug.text = result
+    }
+    
+    func onAllergyOfFoodResult(result: String) {
+        tf_food.text = result
+    }
+    
+    func onAllergyOfChemicalResult(result: String) {
+        tf_chemical.text = result
+    }
+    
+    func onUnderlyingResult(result: String) {
+        tf_underlying.text = result
+    }
+    
+    func onCurrentMedicationResult(result: String) {
+        tf_medication.text = result
+    }
+    
+    func onSpacialCareResult(result: String) {
+        tf_special_care.text = result
+    }
 
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -41,14 +65,40 @@ class Step4ViewController: UITableViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showDrug" {
+            let allergyOfDrugView: AllergyOfDrugViewController = segue.destination as! AllergyOfDrugViewController
+            allergyOfDrugView.delegate = self
+        }
+        
+        if segue.identifier == "showFood" {
+            let allergyOfFoodView: AllergyOfFoodViewController = segue.destination as! AllergyOfFoodViewController
+            allergyOfFoodView.delegate = self
+        }
+        
+        if segue.identifier == "showChemical" {
+            let allergyOfChemicalView: AllergyOfChemicalViewController = segue.destination as! AllergyOfChemicalViewController
+            allergyOfChemicalView.delegate = self
+        }
+        
+        if segue.identifier == "showUnderlying" {
+            let underlyingView: UnderlyingViewController = segue.destination as! UnderlyingViewController
+            underlyingView.delegate = self
+        }
+        
+        if segue.identifier == "showCurrentMedicationandHerb" {
+            let currentMedicationView: CurrentMedicationViewController = segue.destination as! CurrentMedicationViewController
+            currentMedicationView.delegate = self
+        }
+        
+        if segue.identifier == "showSpacialCare" {
+            let spacialCareView: SpacialCareViewController = segue.destination as! SpacialCareViewController
+            spacialCareView.delegate = self
+        }
+        
     }
-    */
 
 }

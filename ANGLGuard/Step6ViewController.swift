@@ -94,7 +94,7 @@ class Step6ViewController: UITableViewController {
             //data
             Trip.sharedInstance.purpose = purpose
             Trip.sharedInstance.start_date = start_date
-            Trip.sharedInstance.duration = ""
+            Trip.sharedInstance.duration = lenght_of_day
             Trip.sharedInstance.average_expen = average_expen
             Trip.sharedInstance.trip_arrang = trip_arrang
             Trip.sharedInstance.domestic_tran_arrang = domestic_tran_arrang
