@@ -1,0 +1,157 @@
+import UIKit
+import Alamofire
+import ADCountryPicker
+
+class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate {
+    
+    @IBOutlet var tf_policy_number: UITextField!
+    @IBOutlet var tf_expire_date: UITextField!
+    @IBOutlet var tf_insurance_company: UITextField!
+    @IBOutlet var tf_contact_name: UITextField!
+    @IBOutlet var tf_country_code: UITextField!
+    @IBOutlet var tf_phone: UITextField!
+    
+    var datePicker: UIDatePicker?
+    
+    let defaults = UserDefaults.standard
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "bg_login.png")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tf_expire_date.inputView = createDatePicker()
+        tf_expire_date.inputAccessoryView = createDateToolBar()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == tf_country_code {
+            showCountryPicker()
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func createDatePicker() -> UIDatePicker {
+        if datePicker == nil {
+            datePicker = UIDatePicker()
+            datePicker!.datePickerMode = .date
+            datePicker!.addTarget(self, action: #selector(updateDate), for: .valueChanged)
+        }
+        
+        return datePicker!
+    }
+    
+    func createDateToolBar() -> UIToolbar {
+        let toolbar = UIToolbar()
+        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeDate))
+        closeButton.accessibilityLabel = "Close"
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDate))
+        doneButton.accessibilityLabel = "Done"
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.isTranslucent = false
+        toolbar.sizeToFit()
+        toolbar.setItems([closeButton,spaceButton, doneButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+        
+        return toolbar
+    }
+    
+    @objc func closeDate() {
+        tf_expire_date.resignFirstResponder()
+        datePicker?.removeFromSuperview()
+    }
+    
+    @objc func doneDate() {
+        tf_expire_date.resignFirstResponder()
+        datePicker?.removeFromSuperview()
+        updateDate()
+    }
+    
+    @objc func updateDate() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        let date_result = formatter.string(from: (datePicker?.date)!)
+        tf_expire_date.text = date_result
+    }
+    
+    func showCountryPicker() {
+        let picker = ADCountryPicker()
+        let pickerNavigationController = UINavigationController(rootViewController: picker)
+        self.present(pickerNavigationController, animated: true, completion: nil)
+        
+        picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
+            picker.dismiss(animated: true, completion: {
+                self.tf_country_code.text = name
+            })
+        }
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func nextAction(_ sender: Any) {
+        if let token = defaults.string(forKey: "token") {
+            let policy_number: String = tf_policy_number.text!
+            let expiration_date: String = tf_expire_date.text!
+            let insurance_company: String = tf_insurance_company.text!
+            let contact_name: String = tf_contact_name.text!
+            let contact_number_cc: String = tf_country_code.text!
+            let contact_number: String = tf_phone.text!
+            
+            if policy_number.count > 0 && expiration_date.count > 0 && insurance_company.count > 0 && contact_name.count > 0 && contact_number_cc.count > 0 && contact_number.count > 0 {
+                let parameters: Parameters = [
+                    "policy_number": policy_number,
+                    "expiration_date": expiration_date,
+                    "insurance_company": insurance_company,
+                    "contact_name": contact_name,
+                    "contact_number_cc": contact_number_cc,
+                    "contact_number": contact_number,
+                    "token": token
+                ]
+                
+                Alamofire.request(SAVE_INSURANCE_POLICY, method: .get, parameters: parameters).responseJSON { response in
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        NSLog("result = \(result)")
+                        if code == "200" {
+                            self.performSegue(withIdentifier: "showAsiaPay", sender: nil)
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

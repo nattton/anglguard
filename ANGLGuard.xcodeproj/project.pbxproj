@@ -59,6 +59,13 @@
 		3B6463322036AA4200A39901 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463122036AA4200A39901 /* FriendsViewController.swift */; };
 		3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463132036AA4200A39901 /* Step1ViewController.swift */; };
 		3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463342036BE9500A39901 /* HelpViewController.swift */; };
+		3BA12278203C7E270085984D /* AccidentInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */; };
+		3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */; };
+		3BA1227C203C861A0085984D /* InsurancePolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227B203C861A0085984D /* InsurancePolicyViewController.swift */; };
+		3BA1227E203C90A10085984D /* AsiaPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227D203C90A10085984D /* AsiaPayViewController.swift */; };
+		3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227F203C92690085984D /* ViriyahViewController.swift */; };
+		3BA12284203C981A0085984D /* VerifyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12283203C981A0085984D /* VerifyCouponViewController.swift */; };
+		3BA12286203C998E0085984D /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12285203C998E0085984D /* ThankYouViewController.swift */; };
 		59334130CFD032867069BF69 /* Pods_ANGLGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +125,13 @@
 		3B6463122036AA4200A39901 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		3B6463132036AA4200A39901 /* Step1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step1ViewController.swift; sourceTree = "<group>"; };
 		3B6463342036BE9500A39901 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentInsuranceViewController.swift; sourceTree = "<group>"; };
+		3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsurancePlanViewController.swift; sourceTree = "<group>"; };
+		3BA1227B203C861A0085984D /* InsurancePolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsurancePolicyViewController.swift; sourceTree = "<group>"; };
+		3BA1227D203C90A10085984D /* AsiaPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaPayViewController.swift; sourceTree = "<group>"; };
+		3BA1227F203C92690085984D /* ViriyahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViriyahViewController.swift; sourceTree = "<group>"; };
+		3BA12283203C981A0085984D /* VerifyCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCouponViewController.swift; sourceTree = "<group>"; };
+		3BA12285203C998E0085984D /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.debug.xcconfig"; sourceTree = "<group>"; };
 		D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.release.xcconfig"; sourceTree = "<group>"; };
 		E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ANGLGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +197,13 @@
 				3B0C5CA1203961910086C086 /* Step6ViewController.swift */,
 				3B0C5CA320396E240086C086 /* Step7ViewController.swift */,
 				3B0C5CBA2039D4280086C086 /* CouponViewController.swift */,
+				3BA12283203C981A0085984D /* VerifyCouponViewController.swift */,
+				3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */,
+				3BA1227B203C861A0085984D /* InsurancePolicyViewController.swift */,
+				3BA1227D203C90A10085984D /* AsiaPayViewController.swift */,
+				3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */,
+				3BA1227F203C92690085984D /* ViriyahViewController.swift */,
+				3BA12285203C998E0085984D /* ThankYouViewController.swift */,
 				3B0C5CAE2039CF400086C086 /* AllergyOfDrugViewController.swift */,
 				3B0C5CB02039D0EA0086C086 /* AllergyOfFoodViewController.swift */,
 				3B0C5CB22039D11A0086C086 /* AllergyOfChemicalViewController.swift */,
@@ -393,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */,
+				3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */,
 				3B64631C2036AA4200A39901 /* AttractionAnnotation.swift in Sources */,
 				3B6463202036AA4200A39901 /* TermAndConditionViewController.swift in Sources */,
 				3B6463282036AA4200A39901 /* LoginViewController.swift in Sources */,
@@ -403,6 +425,7 @@
 				3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */,
 				3B0C5CB32039D11A0086C086 /* AllergyOfChemicalViewController.swift in Sources */,
 				3B64631E2036AA4200A39901 /* InitalViewController.swift in Sources */,
+				3BA1227C203C861A0085984D /* InsurancePolicyViewController.swift in Sources */,
 				3B6463292036AA4200A39901 /* MenuViewController.swift in Sources */,
 				3B6463182036AA4200A39901 /* SignUpViewController.swift in Sources */,
 				3B0C5CA92039756A0086C086 /* Contact.swift in Sources */,
@@ -415,17 +438,22 @@
 				3B6463312036AA4200A39901 /* AngllifeCell.swift in Sources */,
 				3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */,
 				3B0C5CAD20397E4B0086C086 /* Medical.swift in Sources */,
+				3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */,
 				3B0C5CB52039D1BB0086C086 /* UnderlyingViewController.swift in Sources */,
+				3BA12286203C998E0085984D /* ThankYouViewController.swift in Sources */,
+				3BA1227E203C90A10085984D /* AsiaPayViewController.swift in Sources */,
 				3B0C5CB12039D0EA0086C086 /* AllergyOfFoodViewController.swift in Sources */,
 				3B64631B2036AA4200A39901 /* WebViewController.swift in Sources */,
 				3B6463302036AA4200A39901 /* NotificationViewController.swift in Sources */,
 				3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */,
+				3BA12284203C981A0085984D /* VerifyCouponViewController.swift in Sources */,
 				3B6463222036AA4200A39901 /* AddFriendsViewController.swift in Sources */,
 				3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */,
 				3B64632D2036AA4200A39901 /* ProfileViewController.swift in Sources */,
 				3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */,
 				3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */,
 				3B64632A2036AA4200A39901 /* GroupAlertViewController.swift in Sources */,
+				3BA12278203C7E270085984D /* AccidentInsuranceViewController.swift in Sources */,
 				3B6463172036AA4200A39901 /* LearnFirstAidViewController.swift in Sources */,
 				3B0C5CA2203961910086C086 /* Step6ViewController.swift in Sources */,
 				3B64632E2036AA4200A39901 /* HospitalCell.swift in Sources */,

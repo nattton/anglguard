@@ -26,9 +26,17 @@ let EMAIL_VERIFY = HOST + "/verify-email-code"
 let SMS_SEND_CODE = HOST + "/send-sms-code"
 let SMS_VERIFY_CODE = HOST + "/verify-sms-code"
 let SIGN_UP_REGISTER = HOST + "/registration"
+let SAVE_INSURANCE_POLICY = HOST + "/save-insurance-policy-other"
 
 let TOURIST_AUTHENTICATION = HOST_TOURIST + "/vendor/authentication/secret_key"
 let TOURIST_EVENT_TRACKING = HOST_TOURIST + "/vendor/event/event_tracking/@"
+
+let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
+let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
+let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
+let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
+
+let DELEY_TIME = 3.0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
