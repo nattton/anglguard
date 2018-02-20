@@ -11,6 +11,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var tf_relationship: UITextField!
     @IBOutlet var tf_email: UITextField!
     
+    let defaults = UserDefaults.standard
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -182,6 +184,11 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     NSLog("result = \(result)")
                     if code == "200" {
                         self.performSegue(withIdentifier: "showCoupon", sender: nil)
+                    } else if code == "104" {
+                        self.defaults.set("N", forKey: "login")
+                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)

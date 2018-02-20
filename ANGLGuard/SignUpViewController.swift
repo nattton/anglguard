@@ -69,6 +69,11 @@ class SignUpViewController: UITableViewController {
                         Personal.sharedInstance.password = self.password
                         
                         self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
+                    } else if code == "104" {
+                        self.defaults.set("N", forKey: "login")
+                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
