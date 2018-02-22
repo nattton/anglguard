@@ -4,10 +4,16 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet var webView: UIWebView!
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView.loadRequest(URLRequest(url: URL(string: VIRIYAH_URL)!))
+        if let token = defaults.string(forKey: "token") {
+            let url = URL(string: VIRIYAH_URL.replacingOccurrences(of: "@", with: token))
+            let request = URLRequest(url: url!)
+            webView.loadRequest(request)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -18,7 +24,7 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         if VIRIYAH_SUCCESS_URL == webView.request?.url?.absoluteString {
             DispatchQueue.main.asyncAfter(deadline: .now() + DELEY_TIME, execute: {
-                
+                self.performSegue(withIdentifier: "showThankYou", sender: nil)
             })
         }
     }

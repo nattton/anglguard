@@ -6,7 +6,6 @@ class VerifyCouponViewController: UITableViewController {
     @IBOutlet var tf_email: UITextField!
     @IBOutlet var tf_verify_code: UITextField!
     
-    var email: String = ""
     let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
@@ -21,7 +20,7 @@ class VerifyCouponViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tf_email.text = email
+        tf_email.text = Personal.sharedInstance.email
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +49,7 @@ class VerifyCouponViewController: UITableViewController {
 //                        let message: String = result["message"] as! String
 //                        NSLog("result = \(result)")
 //                        if code == "200" {
-//                            self.performSegue(withIdentifier: "showStep1", sender: nil)
+//                            self.performSegue(withIdentifier: "showThankYou", sender: nil)
 //                        } else if code == "104" {
 //                            self.defaults.set("N", forKey: "login")
 //                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
