@@ -183,7 +183,7 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     let message: String = result["message"] as! String
                     NSLog("result = \(result)")
                     if code == "200" {
-                        self.performSegue(withIdentifier: "showCoupon", sender: nil)
+                        self.performSegue(withIdentifier: "showAccidentInsurance", sender: nil)
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)

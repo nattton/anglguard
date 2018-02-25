@@ -268,7 +268,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             let latitude: Double = pin["latitude"] as! Double
             let longitude: Double = pin["longitude"] as! Double
             let title: String = pin["name"] as! String
-            let annotation = AttractionAnnotation(latitude: latitude, longitude: longitude, title: title, type: type, icon: "")
+            let annotation = AttractionAnnotation(latitude: latitude, longitude: longitude, title: title, type: type, icon: "", status: "")
             map.addAnnotation(annotation)
         }
     }
@@ -284,7 +284,8 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             let lastname: String = pin["lastname"] as! String
             let title: String = firstname + " " + lastname
             let icon: String = pin["personal_image_path"] as! String
-            let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon)
+            let status: String = pin["status"] as! String
+            let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon, status: status)
             map.addAnnotation(annotation)
         }
     }

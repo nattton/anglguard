@@ -2,6 +2,7 @@ import UIKit
 import Alamofire
 import UserNotifications
 import Firebase
+import SVProgressHUD
 
 let HOST = "https://anglguard-service.angl.life/public"
 let HOST_TOURIST = "http://203.107.236.229/api-tourist"
@@ -47,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         
         if let login = defaults.string(forKey: "login") {
             if login == "Y" {

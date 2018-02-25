@@ -87,14 +87,12 @@ class AddFriendsViewController: UIViewController {
                 "friend_id": friend_id
             ]
             
-            Alamofire.request(FAMILY_ADD_URL, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            Alamofire.request(FAMILY_ADD_URL, method: .post, parameters: parameters).responseJSON { response in
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
                     if code == "200" {
-//                        if let data: [String: Any] = result["data"] as? [String: Any] {
-//
-//                        }
+                        self.navigationController?.popViewController(animated: true)
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)

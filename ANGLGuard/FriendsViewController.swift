@@ -10,37 +10,19 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var tb_friend: UITableView!
     @IBOutlet var bt_add_friend: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         bt_add_friend.layer.masksToBounds = false
         bt_add_friend.layer.cornerRadius = bt_add_friend.frame.size.height / 2
         bt_add_friend.clipsToBounds = true
         
-        if let token = defaults.string(forKey: "token") {
-            let parameters: Parameters = [
-                "token": token
-            ]
-            
-            Alamofire.request(FAMILY_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
-                if let json = response.result.value {
-                    let result = json as! Dictionary<String, Any>
-                    let code: String = result["code"] as! String
-                    if code == "200" {
-                        if let data: [String: Any] = result["data"] as? [String: Any] {
-                            let member: Array = data["member"] as! [Any]
-                            self.friends = member
-                            self.tb_friend.reloadData()
-                        }
-                    } else if code == "104" {
-                        self.defaults.set("N", forKey: "login")
-                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
-                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
-                    }
-                }
-            }
-        }
+        list()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,11 +73,48 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            delete(friend_id: "")
+            let alert = UIAlertController(title: "Are you sure to delete this friend?", message: nil, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                let friend = self.friends[indexPath.row] as! [String: Any]
+                let id: String! = friend["id"] as! String
+                self.delete(friend_id: id, index: indexPath.row)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         }
     }
     
-    func delete(friend_id: String) {
+    func list() {
+        if let token = defaults.string(forKey: "token") {
+            let parameters: Parameters = [
+                "token": token
+            ]
+            
+            Alamofire.request(FAMILY_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                if let json = response.result.value {
+                    let result = json as! Dictionary<String, Any>
+                    let code: String = result["code"] as! String
+                    if code == "200" {
+                        if let data: [String: Any] = result["data"] as? [String: Any] {
+                            let member: Array = data["member"] as! [Any]
+                            self.friends = member
+                            self.tb_friend.reloadData()
+                        }
+                    } else if code == "104" {
+                        self.defaults.set("N", forKey: "login")
+                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                    }
+                }
+            }
+        }
+    }
+    
+    func delete(friend_id: String, index: Int) {
         if let token = defaults.string(forKey: "token"), let id = defaults.string(forKey: "id") {
             let parameters: Parameters = [
                 "token": token,
@@ -103,14 +122,13 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 "friend_id": friend_id
             ]
             
-            Alamofire.request(FAMILY_DELETE_URL, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            Alamofire.request(FAMILY_DELETE_URL, method: .post, parameters: parameters).responseJSON { response in
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
                     if code == "200" {
-//                        if let data: [String: Any] = result["data"] as? [String: Any] {
-//
-//                        }
+                        self.friends.remove(at: index)
+                        self.tb_friend.reloadData()
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)

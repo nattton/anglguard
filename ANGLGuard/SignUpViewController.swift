@@ -84,6 +84,9 @@ class SignUpViewController: UITableViewController {
             }
         }
     }
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Navigation
 
@@ -105,7 +108,7 @@ extension String {
     }
     
     func isValidPassword() -> Bool {
-        let regex = "^(?=.*\\d)(?=.*[a-z])[0-9a-z]{8,12}$"
+        let regex = "^(?=.*\\d)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%^&*()-_=+{}|?>.<,:;~`’]{8,12}$"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
     }
     

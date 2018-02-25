@@ -98,7 +98,11 @@ class LoginViewController: UITableViewController {
             }
         }
     }
-
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

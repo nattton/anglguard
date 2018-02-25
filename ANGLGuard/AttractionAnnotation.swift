@@ -24,12 +24,14 @@ class AttractionAnnotation: NSObject, MKAnnotation {
     var title: String?
     var type: AttractionType
     var icon: String?
+    var status: String?
     
-    init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, title: String, type: AttractionType, icon: String) {
+    init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, title: String, type: AttractionType, icon: String, status: String) {
         self.coordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
         self.title = title
         self.type = type
         self.icon = icon
+        self.status = status
     }
     
 }
