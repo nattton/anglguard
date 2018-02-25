@@ -119,6 +119,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
+                    let message: String = result["message"] as! String
                     if code == "200" {
                         if let data: [String: Any] = result["data"] as? [String: Any] {
                             let member: Array = data["member"] as! [Any]
@@ -130,6 +131,11 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                    } else {
+                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert.addAction(defaultAction)
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
             }
@@ -165,6 +171,11 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                    } else {
+                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert.addAction(defaultAction)
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
             }

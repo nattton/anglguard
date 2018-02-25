@@ -81,7 +81,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         let img: String = hospital["image"] as! String
         
         hCell.name.text = name
-        hCell.distance.text = "\(distance)"
+        hCell.distance.text = "\(distance)" + " km"
         hCell.address.text = address
         
         let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

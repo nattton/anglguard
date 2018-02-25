@@ -57,11 +57,11 @@ class SignUpViewController: UITableViewController {
             Alamofire.request(EMAIL_EXISTS, method: .get, parameters: parameters).responseJSON { response in
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
+                    NSLog("result = \(result)")
                     let code: String = result["code"] as! String
                     let message: String = result["message"] as! String
-                    let token: String = result["token"] as! String
-                    NSLog("result = \(result)")
                     if code == "200" {
+                        let token: String = result["token"] as! String
                         self.defaults.set(token, forKey: "token")
                         
                         //data
