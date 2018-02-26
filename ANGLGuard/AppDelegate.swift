@@ -39,6 +39,7 @@ let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
 let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
 
 let DELEY_TIME = 3.0
+let LOADING_TEXT = "Loading..."
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {

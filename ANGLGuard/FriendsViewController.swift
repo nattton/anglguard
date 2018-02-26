@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
 class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -93,7 +94,9 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 "token": token
             ]
             
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(FAMILY_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
@@ -127,8 +130,9 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 "id": id,
                 "friend_id": friend_id
             ]
-            
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(FAMILY_DELETE_URL, method: .post, parameters: parameters).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String

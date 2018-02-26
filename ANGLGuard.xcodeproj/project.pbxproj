@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36CC6D9E20439999002B777C /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CC6D9D20439999002B777C /* AddFriendViewController.swift */; };
 		3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD60F20374E5200422E27 /* Step4ViewController.swift */; };
 		3B0C5CA2203961910086C086 /* Step6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA1203961910086C086 /* Step6ViewController.swift */; };
 		3B0C5CA420396E240086C086 /* Step7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA320396E240086C086 /* Step7ViewController.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36CC6D9D20439999002B777C /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		3B0AD60F20374E5200422E27 /* Step4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4ViewController.swift; sourceTree = "<group>"; };
 		3B0C5CA1203961910086C086 /* Step6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step6ViewController.swift; sourceTree = "<group>"; };
 		3B0C5CA320396E240086C086 /* Step7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step7ViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				3B64630C2036AA4200A39901 /* FriendCell.swift */,
 				3B6463122036AA4200A39901 /* FriendsViewController.swift */,
 				3B6463022036AA4100A39901 /* AddFriendsViewController.swift */,
+				36CC6D9D20439999002B777C /* AddFriendViewController.swift */,
 				3B6463062036AA4100A39901 /* NAlertCell.swift */,
 				3B64630F2036AA4200A39901 /* NMessageCell.swift */,
 				3B6463102036AA4200A39901 /* NotificationViewController.swift */,
@@ -290,7 +293,7 @@
 				TargetAttributes = {
 					3B6462D62036A47400A39901 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -432,6 +435,7 @@
 				3B64631D2036AA4200A39901 /* VerifyPhoneViewController.swift in Sources */,
 				3B64632C2036AA4200A39901 /* FriendCell.swift in Sources */,
 				3B6463312036AA4200A39901 /* AngllifeCell.swift in Sources */,
+				36CC6D9E20439999002B777C /* AddFriendViewController.swift in Sources */,
 				3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */,
 				3B0C5CAD20397E4B0086C086 /* Medical.swift in Sources */,
 				3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */,
@@ -599,14 +603,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ANGLGuard/ANGLGuard.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JYW3WQ7A4T;
 				INFOPLIST_FILE = ANGLGuard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
-				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -618,14 +623,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ANGLGuard/ANGLGuard.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JYW3WQ7A4T;
 				INFOPLIST_FILE = ANGLGuard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
-				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
