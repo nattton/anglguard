@@ -1,7 +1,7 @@
 import UIKit
 import Alamofire
 
-class InsurancePlanViewController: UITableViewController, UITextFieldDelegate {
+class InsurancePlanViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
     
