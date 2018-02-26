@@ -70,6 +70,7 @@ class AddFriendsViewController: UIViewController {
                         self.v_result.isHidden = false
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -101,6 +102,7 @@ class AddFriendsViewController: UIViewController {
                         self.navigationController?.popViewController(animated: true)
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController

@@ -5,9 +5,9 @@ class InitalViewController: SOContainerViewController {
 
     override var isSideViewControllerPresented: Bool {
         didSet {
-            let action = isSideViewControllerPresented ? "opened" : "closed"
-            let side = self.menuSide == .left ? "left" : "right"
-            NSLog("You've \(action) the \(side) view controller.")
+//            let action = isSideViewControllerPresented ? "opened" : "closed"
+//            let side = self.menuSide == .left ? "left" : "right"
+//            NSLog("You've \(action) the \(side) view controller.")
         }
     }
     

@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,7 +19,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                 "token": token
             ]
             
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(NOTIFICATION_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
@@ -31,6 +34,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                         }
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -120,7 +124,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             let nMCell: NMessageCell = tableView.dequeueReusableCell(withIdentifier: "NMessageCell") as! NMessageCell
             
             let date: String! = notification["create_date"]
-            nMCell.date.text = convertDate(date: date)
+            nMCell.date.text = date
             
             let message: String! = notification["message"]
             nMCell.message.text = message + " ... admin"

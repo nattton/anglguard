@@ -39,7 +39,7 @@ let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
 let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
 
 let DELEY_TIME = 3.0
-let LOADING_TEXT = "Loading..."
+let LOADING_TEXT = "  Loading...  "
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
@@ -205,6 +205,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                             let code: String = result["code"] as! String
                             if code == "104" {
                                 self.defaults.set("N", forKey: "login")
+                                self.defaults.set("N", forKey: "timer")
                                 let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                                 let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                                 UIApplication.shared.keyWindow?.rootViewController = loginViewController

@@ -134,6 +134,7 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
                             self.performSegue(withIdentifier: "showAsiaPay", sender: nil)
                         } else if code == "104" {
                             self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
                             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                             let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController

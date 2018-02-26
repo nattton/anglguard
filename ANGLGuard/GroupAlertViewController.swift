@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
 class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -128,6 +129,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                         }
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -154,8 +156,9 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                 "latitude": String(lat),
                 "longitude": String(long)
             ]
-            
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(SEND_ALERT_URL, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
@@ -168,6 +171,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                         self.present(alert, animated: true, completion: nil)
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController

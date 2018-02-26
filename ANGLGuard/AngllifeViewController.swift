@@ -4,6 +4,7 @@ import ISHPullUp
 import CoreLocation
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
 let time = TimeInterval(15)
 
@@ -40,10 +41,15 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         let panGesture: UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(handlePanGesture(gesture:)))
         v_list.addGestureRecognizer(panGesture)
         
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
         getCurrentLocation()
         getHospitals()
         getFriends()
         startTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        stopTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,14 +59,30 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     
     //timer
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(getUpdate), userInfo: nil, repeats: true)
+        defaults.set("Y", forKey: "timer")
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(getUpdate), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopTimer() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
     }
     
     //get list
     @objc func getUpdate() {
-        getCurrentLocation()
-        getHospitals()
-        getFriends()
+        if let timer = defaults.string(forKey: "timer") {
+            if timer == "Y" {
+                getCurrentLocation()
+                getHospitals()
+                getFriends()
+            } else {
+                stopTimer()
+            }
+        }
     }
     
     //list hospital
@@ -165,6 +187,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                         print("send location succes")
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -182,6 +205,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             ]
             
             Alamofire.request(HOSPITAL_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
@@ -195,6 +219,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                         }
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -222,6 +247,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                         }
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -245,6 +271,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                     
                 } else if code == "104" {
                     self.defaults.set("N", forKey: "login")
+                    self.defaults.set("N", forKey: "timer")
                     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                     let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                     UIApplication.shared.keyWindow?.rootViewController = loginViewController

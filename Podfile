@@ -15,6 +15,6 @@ target 'ANGLGuard' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'ADCountryPicker', '2.0.0'
-  pod 'SVProgressHUD', '2.2'
+  pod 'SVProgressHUD', '2.2.5'
 
 end

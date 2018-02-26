@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
 let phone_number = 1724
 
@@ -102,7 +103,6 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
             let parameters: Parameters = [
                 "token": token
             ]
-            
             Alamofire.request(FAMILY_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
@@ -116,6 +116,7 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
                         }
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -136,15 +137,16 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
                 "token": token,
                 "request_user_id": friendId,
                 "message": message!,
-                "image1": photo1!,
-                "image2": photo2!,
-                "image3": photo3!,
-                "image4": photo4!,
+                "image1": photo1 as Any,
+                "image2": photo2 as Any,
+                "image3": photo3 as Any,
+                "image4": photo4 as Any,
                 "latitude": String(lat),
                 "longitude": String(long)
             ]
-            
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(BES_ALERT_URL, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
@@ -157,6 +159,7 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
                         self.present(alert, animated: true, completion: nil)
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController

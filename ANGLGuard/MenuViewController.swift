@@ -4,7 +4,7 @@ import Alamofire
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let menus = [
-        ["ic_profile", "ic_profile", "ic_device", "ic_notification", "ic_language", "ic_condition", "ic_signout"],
+        ["ic_home", "ic_profile", "ic_device", "ic_notification", "ic_language", "ic_condition", "ic_signout"],
         ["Home", "Profile", "Group", "Notification", "Language", "Term & Conditions", "Sign Out"]
     ]
     let identifiers = ["angllife", "angllife", "profile", "group", "notification", "language", "term", "login"]
@@ -88,8 +88,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DispatchQueue.main.async {
             self.so_containerViewController?.isSideViewControllerPresented = false
             if index == 7 {
+                self.so_containerViewController?.topViewController = nil
                 let defaults = UserDefaults.standard
                 defaults.set("N", forKey: "login")
+                defaults.set("N", forKey: "timer")
                 UIApplication.shared.keyWindow?.rootViewController = viewController
             } else if index == 0 {
                 
