@@ -50,11 +50,13 @@ class AddFriendViewController: UITableViewController {
                                 let img: String = member["image"] as! String
                                 
                                 let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                                if let url = URL(string: HOST + eImg){
+                                if let url = URL(string: eImg){
                                     self.avatar.af_setImage(withURL: url)
                                 } else {
                                     self.avatar.image = UIImage(named: "ic_avatar")
                                 }
+                                
+                                self.avatar.rounded()
                                 
                                 self.friend_id = id
                                 

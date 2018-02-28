@@ -41,7 +41,6 @@
 		3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */; };
 		3B6463202036AA4200A39901 /* TermAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */; };
 		3B6463212036AA4200A39901 /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */; };
-		3B6463222036AA4200A39901 /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463022036AA4100A39901 /* AddFriendsViewController.swift */; };
 		3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */; };
 		3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */; };
 		3B6463262036AA4200A39901 /* NAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463062036AA4100A39901 /* NAlertCell.swift */; };
@@ -106,7 +105,6 @@
 		3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
 		3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermAndConditionViewController.swift; sourceTree = "<group>"; };
 		3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
-		3B6463022036AA4100A39901 /* AddFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsViewController.swift; sourceTree = "<group>"; };
 		3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnFirstAidDetailViewController.swift; sourceTree = "<group>"; };
 		3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
 		3B6463062036AA4100A39901 /* NAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NAlertCell.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 				3B64630D2036AA4200A39901 /* ProfileViewController.swift */,
 				3B64630C2036AA4200A39901 /* FriendCell.swift */,
 				3B6463122036AA4200A39901 /* FriendsViewController.swift */,
-				3B6463022036AA4100A39901 /* AddFriendsViewController.swift */,
 				36CC6D9D20439999002B777C /* AddFriendViewController.swift */,
 				3B6463062036AA4100A39901 /* NAlertCell.swift */,
 				3B64630F2036AA4200A39901 /* NMessageCell.swift */,
@@ -446,7 +443,6 @@
 				3B64631B2036AA4200A39901 /* WebViewController.swift in Sources */,
 				3B6463302036AA4200A39901 /* NotificationViewController.swift in Sources */,
 				3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */,
-				3B6463222036AA4200A39901 /* AddFriendsViewController.swift in Sources */,
 				3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */,
 				3B64632D2036AA4200A39901 /* ProfileViewController.swift in Sources */,
 				3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */,

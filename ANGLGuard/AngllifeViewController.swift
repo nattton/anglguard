@@ -17,8 +17,11 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     var hName: String = ""
     var lat: Double = 0
     var long: Double = 0
+    var isZoom: Bool = true
     
     var timer: Timer?
+    
+    var annotations: [MKAnnotation] = []
     
     @IBOutlet var map: MKMapView!
     @IBOutlet var bt_help: UIButton!
@@ -77,7 +80,6 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         if let timer = defaults.string(forKey: "timer") {
             if timer == "Y" {
                 getCurrentLocation()
-                getHospitals()
                 getFriends()
             } else {
                 stopTimer()
@@ -143,7 +145,11 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         lat = latitude
         long = longitude
         
-        showLocationWith(latitude: latitude, longitude: longitude)
+        if isZoom == true {
+            isZoom = false
+            showLocationWith(latitude: latitude, longitude: longitude)
+        }
+        
         sendLocation(latitude: latitude, longitude: longitude)
     }
     
@@ -301,6 +307,16 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func addFriendAnnotations(items: [Any]) {
+        for annotation in map.annotations {
+            for friendAnn in annotations {
+                if annotation === friendAnn {
+                    map.removeAnnotation(annotation)
+                }
+            }
+        }
+        
+        annotations.removeAll()
+        
         for item in items {
             let pin =  item as! [String: Any]
             let latitude: String = pin["latitude"] as! String
@@ -314,6 +330,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             let status: String = pin["status"] as! String
             let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon, status: status)
             map.addAnnotation(annotation)
+            annotations.append(annotation)
         }
     }
     
@@ -347,6 +364,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBAction func showCurrentLocation(_ sender: Any) {
+        isZoom = true
         getCurrentLocation()
     }
     

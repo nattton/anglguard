@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import ADCountryPicker
+import SVProgressHUD
 
 class Step7ViewController: UITableViewController, UITextFieldDelegate {
     
@@ -48,7 +49,7 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
         
         picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
             picker.dismiss(animated: true, completion: {
-                self.tf_country_code.text = name
+                self.tf_country_code.text = dialCode
             })
         }
     }
@@ -175,8 +176,9 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     ]
                 ]
             ]
-            
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(SIGN_UP_REGISTER, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String

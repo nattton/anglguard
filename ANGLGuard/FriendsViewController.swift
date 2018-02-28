@@ -53,6 +53,8 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
             fCell.avatar.image = UIImage(named: "ic_avatar")
         }
         
+        fCell.avatar.rounded()
+        
         fCell.name.text = firstname + " " + lastname
         
         if indexPath.row % 2 == 0 {
@@ -174,4 +176,13 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
 
+}
+
+extension UIImageView {
+    
+    func rounded() {
+        let radius = self.frame.size.width / 2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
 }

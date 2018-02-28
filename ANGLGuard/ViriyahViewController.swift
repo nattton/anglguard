@@ -22,7 +22,7 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        if VIRIYAH_SUCCESS_URL == webView.request?.url?.absoluteString {
+        if webView.request?.url?.absoluteString.range(of: VIRIYAH_SUCCESS_URL) != nil {
             DispatchQueue.main.asyncAfter(deadline: .now() + DELEY_TIME, execute: {
                 self.performSegue(withIdentifier: "showThankYou", sender: nil)
             })

@@ -95,7 +95,7 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
         
         picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
             picker.dismiss(animated: true, completion: {
-                self.tf_country_code.text = name
+                self.tf_country_code.text = dialCode
             })
         }
     }
