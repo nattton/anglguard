@@ -21,7 +21,8 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     
     var timer: Timer?
     
-    var annotations: [MKAnnotation] = []
+    var friendsAnn: [MKAnnotation] = []
+    var ambulanceAnn: MKAnnotation?
     
     @IBOutlet var map: MKMapView!
     @IBOutlet var bt_help: UIButton!
@@ -247,9 +248,12 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                     let code: String = result["code"] as! String
                     if code == "200" {
                         if let data: [String: Any] = result["data"] as? [String: Any] {
+                            NSLog("data = \(data)")
                             let friends: Array = data["member"] as! [Any]
                             self.addFriendAnnotations(items: friends)
-                            self.getAmbulances()
+                            if let job_id: String = data["job_id"] as? String, !(job_id.isEmpty) {
+                                self.getAmbulances(id: job_id)
+                            }
                         }
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
@@ -263,18 +267,30 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func getAmbulances() {
+    func getAmbulances(id: String) {
         let headers = [
             "Content-Type": "application/json",
             "secret_key": SECRET_KEY
         ]
-        let url = TOURIST_EVENT_TRACKING.replacingOccurrences(of: "@", with: "201801150003")
+        let url = TOURIST_EVENT_TRACKING.replacingOccurrences(of: "@", with: id)
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             if let json = response.result.value {
                 let result = json as! Dictionary<String, Any>
                 let code: String = result["status_code"] as! String
                 if code == "200" {
-                    
+                    if let data: [String: Any] = result["result"] as? [String: Any] {
+                        if let job_process: String = data["job_process"] as? String, job_process != "CLOSED" {
+                            if let ambulance: [String: Any] = data["ambulance"] as? [String: Any] {
+                                NSLog("ambulance = \(ambulance)")
+                                let title: String! = ambulance["ambulance_name"] as? String
+                                if let location: [String: Any] = ambulance["current_location"] as? [String: Any] {
+                                    if let lat: Double = location["latitude"] as? Double, let long: Double = location["longitude"] as? Double {
+                                        self.addAmbulanceAnnotation(latitude: lat, longitude: long, title: title)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if code == "104" {
                     self.defaults.set("N", forKey: "login")
                     self.defaults.set("N", forKey: "timer")
@@ -284,6 +300,17 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
+    }
+    
+    func addAmbulanceAnnotation(latitude: Double, longitude: Double, title: String) {
+        for annotation in map.annotations {
+            if annotation === ambulanceAnn {
+                map.removeAnnotation(annotation)
+            }
+        }
+        let annotation = AttractionAnnotation(latitude: latitude, longitude: longitude, title: title, type: .ambulance, icon: "", status: "")
+        map.addAnnotation(annotation)
+        ambulanceAnn = annotation
     }
     
     func showLocationWith(latitude: CLLocationDegrees, longitude: CLLocationDegrees)  {
@@ -308,14 +335,14 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     
     func addFriendAnnotations(items: [Any]) {
         for annotation in map.annotations {
-            for friendAnn in annotations {
+            for friendAnn in friendsAnn {
                 if annotation === friendAnn {
                     map.removeAnnotation(annotation)
                 }
             }
         }
         
-        annotations.removeAll()
+        friendsAnn.removeAll()
         
         for item in items {
             let pin =  item as! [String: Any]
@@ -330,7 +357,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             let status: String = pin["status"] as! String
             let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon, status: status)
             map.addAnnotation(annotation)
-            annotations.append(annotation)
+            friendsAnn.append(annotation)
         }
     }
     

@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import ADCountryPicker
+import SVProgressHUD
 
 class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate {
     
@@ -49,6 +50,8 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
         if datePicker == nil {
             datePicker = UIDatePicker()
             datePicker!.datePickerMode = .date
+            datePicker!.calendar = Calendar(identifier: .gregorian)
+            datePicker!.locale = Locale(identifier: "en")
             datePicker!.addTarget(self, action: #selector(updateDate), for: .valueChanged)
         }
         
@@ -83,7 +86,8 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
     
     @objc func updateDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.locale = Locale(identifier: "en")
+        formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_expire_date.text = date_result
     }
@@ -123,8 +127,9 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
                     "contact_number": contact_number,
                     "token": token
                 ]
-                
-                Alamofire.request(SAVE_INSURANCE_POLICY, method: .get, parameters: parameters).responseJSON { response in
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
+                Alamofire.request(SAVE_INSURANCE_POLICY, method: .post, parameters: parameters).responseJSON { response in
+                    SVProgressHUD.dismiss()
                     if let json = response.result.value {
                         let result = json as! Dictionary<String, Any>
                         let code: String = result["code"] as! String

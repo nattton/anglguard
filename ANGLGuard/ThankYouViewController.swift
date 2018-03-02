@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import SVProgressHUD
 
 class ThankYouViewController: UITableViewController {
 
@@ -26,7 +27,9 @@ class ThankYouViewController: UITableViewController {
         let username: String! = Personal.sharedInstance.email
         let password: String! = Personal.sharedInstance.password
         let parameters: Parameters = ["username": username, "password": password]
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
         Alamofire.request(LOGIN_URL, method: .get, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
             if let json = response.result.value {
                 let result = json as! Dictionary<String, Any>
                 let code: String = result["code"] as! String

@@ -1,8 +1,9 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
-class LearnFirstAidDetailViewController: UIViewController {
+class LearnFirstAidDetailViewController: UIViewController, UIWebViewDelegate {
     
     var first_aid_id: Int = 0
     let defaults = UserDefaults.standard
@@ -16,6 +17,7 @@ class LearnFirstAidDetailViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
         wv.reload()
     }
     
@@ -28,6 +30,10 @@ class LearnFirstAidDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
     }
     
     func getFirstAid() {

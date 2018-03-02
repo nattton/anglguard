@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 
 class AsiaPayViewController: UIViewController, UIWebViewDelegate {
     
@@ -39,8 +40,8 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
                             "&o_charge=0"
         
         let postData: NSData = post.data(using: String.Encoding.ascii, allowLossyConversion: true)! as NSData
-        
         request.httpBody = postData as Data
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
         webView.loadRequest(request as URLRequest)
     }
     
@@ -50,6 +51,7 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
         if ASIA_PAY_SUCCESS_URL == webView.request?.url?.absoluteString {
             DispatchQueue.main.asyncAfter(deadline: .now() + DELEY_TIME, execute: {
                 self.performSegue(withIdentifier: "showThankYou", sender: nil)
@@ -81,7 +83,10 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
         return randomString
     }
     
-
+    @IBAction func closeAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

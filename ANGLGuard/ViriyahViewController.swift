@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 
 class ViriyahViewController: UIViewController, UIWebViewDelegate {
     
@@ -12,6 +13,7 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
         if let token = defaults.string(forKey: "token") {
             let url = URL(string: VIRIYAH_URL.replacingOccurrences(of: "@", with: token))
             let request = URLRequest(url: url!)
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             webView.loadRequest(request)
         }
     }
@@ -22,6 +24,7 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
         if webView.request?.url?.absoluteString.range(of: VIRIYAH_SUCCESS_URL) != nil {
             DispatchQueue.main.asyncAfter(deadline: .now() + DELEY_TIME, execute: {
                 self.performSegue(withIdentifier: "showThankYou", sender: nil)
@@ -29,6 +32,10 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
         }
     }
 
+    @IBAction func closeAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -38,6 +38,8 @@ class Step6ViewController: UITableViewController {
         if datePicker == nil {
             datePicker = UIDatePicker()
             datePicker!.datePickerMode = .date
+            datePicker!.calendar = Calendar(identifier: .gregorian)
+            datePicker!.locale = Locale(identifier: "en")
             datePicker!.addTarget(self, action: #selector(updateDate), for: .valueChanged)
         }
         
@@ -72,7 +74,8 @@ class Step6ViewController: UITableViewController {
     
     @objc func updateDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.locale = Locale(identifier: "en")
+        formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_start_date.text = date_result
     }

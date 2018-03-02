@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import SVProgressHUD
 
 class VerifyCodeViewController: UITableViewController {
     
@@ -42,8 +43,9 @@ class VerifyCodeViewController: UITableViewController {
                     "code": code,
                     "token": token
                 ]
-                
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
                 Alamofire.request(EMAIL_VERIFY, method: .get, parameters: parameters).responseJSON { response in
+                    SVProgressHUD.dismiss()
                     if let json = response.result.value {
                         let result = json as! Dictionary<String, Any>
                         let code: String = result["code"] as! String

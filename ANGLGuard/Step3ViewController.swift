@@ -53,6 +53,8 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         if datePicker == nil {
             datePicker = UIDatePicker()
             datePicker!.datePickerMode = .date
+            datePicker!.calendar = Calendar(identifier: .gregorian)
+            datePicker!.locale = Locale(identifier: "en")
             datePicker!.addTarget(self, action: #selector(updateDate), for: .valueChanged)
         }
         
@@ -87,7 +89,8 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     
     @objc func updateDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.locale = Locale(identifier: "en")
+        formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_expire_date.text = date_result
     }

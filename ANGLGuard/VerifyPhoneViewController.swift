@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import ADCountryPicker
+import SVProgressHUD
 
 class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     
@@ -64,8 +65,9 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
                 "tel_num": phone,
                 "token": token
             ]
-            
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(SMS_SEND_CODE, method: .get, parameters: parameters).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
@@ -107,8 +109,9 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
                     "code": code,
                     "token": token
                 ]
-                
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
                 Alamofire.request(SMS_VERIFY_CODE, method: .get, parameters: parameters).responseJSON { response in
+                    SVProgressHUD.dismiss()
                     if let json = response.result.value {
                         let result = json as! Dictionary<String, Any>
                         let code: String = result["code"] as! String

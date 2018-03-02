@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import SVProgressHUD
 
 class InsurancePlanViewController: UITableViewController {
     
@@ -54,8 +55,9 @@ class InsurancePlanViewController: UITableViewController {
                 "plan": plan,
                 "token": token
             ]
-            
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(BOOK_INSURANCE_VIRIYAH, method: .post, parameters: parameters).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String

@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
 class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -63,8 +64,9 @@ class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITabl
                 "token": token,
                 "lang": "EN"
             ]
-            
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(FIRSTAID_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                SVProgressHUD.dismiss()
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String

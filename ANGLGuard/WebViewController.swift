@@ -1,8 +1,9 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet var wv: UIWebView!
     
@@ -20,6 +21,7 @@ class WebViewController: UIViewController {
         if let url = URL(string: link){
             let request: URLRequest = URLRequest(url: url)
             DispatchQueue.main.async {
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
                 self.wv.loadRequest(request)
             }
         }
@@ -28,6 +30,10 @@ class WebViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
     }
     
 
