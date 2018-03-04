@@ -68,6 +68,8 @@
 		3B6463322036AA4200A39901 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463122036AA4200A39901 /* FriendsViewController.swift */; };
 		3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463132036AA4200A39901 /* Step1ViewController.swift */; };
 		3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463342036BE9500A39901 /* HelpViewController.swift */; };
+		3B6BD1DA204C230000E2FD54 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BD1D9204C230000E2FD54 /* MenuData.swift */; };
+		3B6BD1DC204C255600E2FD54 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BD1DB204C255600E2FD54 /* MenuHeader.swift */; };
 		3BA12278203C7E270085984D /* AccidentInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */; };
 		3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */; };
 		3BA1227C203C861A0085984D /* InsurancePolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227B203C861A0085984D /* InsurancePolicyViewController.swift */; };
@@ -143,6 +145,8 @@
 		3B6463122036AA4200A39901 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		3B6463132036AA4200A39901 /* Step1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step1ViewController.swift; sourceTree = "<group>"; };
 		3B6463342036BE9500A39901 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		3B6BD1D9204C230000E2FD54 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
+		3B6BD1DB204C255600E2FD54 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentInsuranceViewController.swift; sourceTree = "<group>"; };
 		3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsurancePlanViewController.swift; sourceTree = "<group>"; };
 		3BA1227B203C861A0085984D /* InsurancePolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsurancePolicyViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,9 @@
 				3B6462EC2036A4D100A39901 /* ANGLGuard.entitlements */,
 				3B6462DA2036A47400A39901 /* AppDelegate.swift */,
 				3B6462FE2036AA4000A39901 /* InitalViewController.swift */,
+				3B6BD1D9204C230000E2FD54 /* MenuData.swift */,
+				3B6462F92036AA4000A39901 /* MenuCell.swift */,
+				3B6BD1DB204C255600E2FD54 /* MenuHeader.swift */,
 				3B6463092036AA4100A39901 /* MenuViewController.swift */,
 				3B6463082036AA4100A39901 /* LoginViewController.swift */,
 				3B6462F82036AA4000A39901 /* SignUpViewController.swift */,
@@ -231,7 +238,6 @@
 				3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */,
 				3B6462FB2036AA4000A39901 /* WebViewController.swift */,
 				3B6463112036AA4200A39901 /* AngllifeCell.swift */,
-				3B6462F92036AA4000A39901 /* MenuCell.swift */,
 				3B64630E2036AA4200A39901 /* HospitalCell.swift */,
 				3B6462FC2036AA4000A39901 /* AttractionAnnotation.swift */,
 				3B6462FA2036AA4000A39901 /* AttractionAnnotationView.swift */,
@@ -460,6 +466,7 @@
 				3B6463292036AA4200A39901 /* MenuViewController.swift in Sources */,
 				3B6463182036AA4200A39901 /* SignUpViewController.swift in Sources */,
 				3B0C5CA92039756A0086C086 /* Contact.swift in Sources */,
+				3B6BD1DC204C255600E2FD54 /* MenuHeader.swift in Sources */,
 				3B4FD58C204B7BE800AB045D /* PersonalProfileViewController.swift in Sources */,
 				3B0C5CAB20397DA60086C086 /* Trip.swift in Sources */,
 				3B64632B2036AA4200A39901 /* Step3ViewController.swift in Sources */,
@@ -498,6 +505,7 @@
 				3B64631A2036AA4200A39901 /* AttractionAnnotationView.swift in Sources */,
 				3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */,
 				3B4FD596204BA41400AB045D /* TripPlanViewController.swift in Sources */,
+				3B6BD1DA204C230000E2FD54 /* MenuData.swift in Sources */,
 				3B0C5CAF2039CF400086C086 /* AllergyOfDrugViewController.swift in Sources */,
 				3B6463322036AA4200A39901 /* FriendsViewController.swift in Sources */,
 				3B6463192036AA4200A39901 /* MenuCell.swift in Sources */,

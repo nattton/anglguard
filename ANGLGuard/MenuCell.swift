@@ -2,7 +2,6 @@ import UIKit
 
 class MenuCell: UITableViewCell {
 
-    @IBOutlet var icon: UIImageView!
     @IBOutlet var title: UILabel!
     
     override func awakeFromNib() {

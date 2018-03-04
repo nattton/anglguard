@@ -1,4 +1,6 @@
 import UIKit
+import Alamofire
+import SVProgressHUD
 
 class TripPlanViewController: UITableViewController {
     
@@ -11,6 +13,7 @@ class TripPlanViewController: UITableViewController {
     @IBOutlet var tf_destination: UITextField!
     
     var datePicker: UIDatePicker?
+    let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -89,8 +92,6 @@ class TripPlanViewController: UITableViewController {
     
     @IBAction func updateAction(_ sender: Any) {
         let purpose: String = tf_purpose.text!
-        let start_date: String = tf_start_date.text!
-        let lenght_of_day: String = tf_lenght_of_day.text!
         let average_expen: String = tf_average.text!
         let trip_arrang: String = tf_trip.text!
         let domestic_tran_arrang: String = tf_domestic.text!
@@ -98,19 +99,55 @@ class TripPlanViewController: UITableViewController {
         
         if purpose.count == 0 {
             showAlert(message: PURPOSE_ALERT)
-        } else if start_date.count == 0 {
-            showAlert(message: START_DATE_ALERT)
-        } else if lenght_of_day.count == 0 {
-            showAlert(message: LENGTH_OF_STAY_ALERT)
         } else {
-            //data
-            Trip.sharedInstance.purpose = purpose
-            Trip.sharedInstance.start_date = start_date
-            Trip.sharedInstance.duration = lenght_of_day
-            Trip.sharedInstance.average_expen = average_expen
-            Trip.sharedInstance.trip_arrang = trip_arrang
-            Trip.sharedInstance.domestic_tran_arrang = domestic_tran_arrang
-            Trip.sharedInstance.destination = destination
+            if let token = defaults.string(forKey: "token") {
+                let parameters: Parameters = [
+                    "token": token,
+                    "trip_plan": [
+                       "purpose": purpose,
+                       "average_expen": average_expen,
+                       "trip_arrang": trip_arrang,
+                       "domestic_tran_arrang": domestic_tran_arrang,
+                       "destination": destination
+                    ]
+                ]
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
+                Alamofire.request(SAVE_TRIP_PLAN, method: .post, parameters: parameters).responseJSON { response in
+                    SVProgressHUD.dismiss()
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        NSLog("result = \(result)")
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        if code == "200" {
+                            //data
+                            Trip.sharedInstance.purpose = purpose
+                            Trip.sharedInstance.average_expen = average_expen
+                            Trip.sharedInstance.trip_arrang = trip_arrang
+                            Trip.sharedInstance.domestic_tran_arrang = domestic_tran_arrang
+                            Trip.sharedInstance.destination = destination
+                            
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        } else if code == "104" {
+                            self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
+                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
         }
     }
     

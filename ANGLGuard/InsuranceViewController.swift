@@ -37,6 +37,12 @@ class InsuranceViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         
     }
+    
+    @IBAction func showMenu(_ sender: Any) {
+        if let container = self.so_containerViewController {
+            container.isSideViewControllerPresented = true
+        }
+    }
 
     /*
     // MARK: - Navigation

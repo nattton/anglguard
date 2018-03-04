@@ -79,15 +79,66 @@ class EmergencyContactProfileViewController: UITableViewController, UITextFieldD
         } else if relationship.count == 0 {
             showAlert(message: RELATION_SHIP_ALERT)
         } else {
-            //data
-            Contact.sharedInstance.firstname = firstname
-            Contact.sharedInstance.lastname = lastname
-            Contact.sharedInstance.contact_number_cc = country_code
-            Contact.sharedInstance.contact_number = phone
-            Contact.sharedInstance.relation = relationship
-            Contact.sharedInstance.email = email
+            if let token = defaults.string(forKey: "token") {
+                let parameters: Parameters = [
+                    "token": token,
+                    "contact_person": [
+                        "firstname": firstname,
+                        "middlename": "",
+                        "lastname": lastname,
+                        "contact_number": phone,
+                        "contact_number_cc": country_code,
+                        "relation": relationship,
+                        "email": email
+                    ]
+                ]
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
+                Alamofire.request(SAVE_PROFILE_CONTACT, method: .post, parameters: parameters).responseJSON { response in
+                    SVProgressHUD.dismiss()
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        NSLog("result = \(result)")
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        if code == "200" {
+                            //data
+                            Contact.sharedInstance.firstname = firstname
+                            Contact.sharedInstance.lastname = lastname
+                            Contact.sharedInstance.contact_number_cc = country_code
+                            Contact.sharedInstance.contact_number = phone
+                            Contact.sharedInstance.relation = relationship
+                            Contact.sharedInstance.email = email
+                            
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        } else if code == "104" {
+                            self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
+                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
         }
         
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func showMenu(_ sender: Any) {

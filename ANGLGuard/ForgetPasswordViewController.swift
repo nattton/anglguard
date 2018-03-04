@@ -4,6 +4,15 @@ class ForgetPasswordViewController: UITableViewController {
     
     @IBOutlet var tf_email: UITextField!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "bg_login.png")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -30,6 +30,10 @@ let SIGN_UP_REGISTER = HOST + "/registration"
 let GET_INSURANCE_POLICY = HOST + "/get-profile-insurance"
 let SAVE_INSURANCE_POLICY = HOST + "/save-insurance-policy-other"
 let BOOK_INSURANCE_VIRIYAH = HOST + "/book-insurance-viriyah"
+let SAVE_NEW_PASSWORD = HOST + "/save-new-password"
+let SAVE_TRIP_PLAN = HOST + "/save-profile-trip-plan"
+let SAVE_PROFILE_CONTACT = HOST + "/save-profile-contact"
+let SAVE_PROFILE_MEDICAL = HOST + "/save-profile-medical"
 
 let TOURIST_AUTHENTICATION = HOST_TOURIST + "/vendor/authentication/secret_key"
 let TOURIST_EVENT_TRACKING = HOST_TOURIST + "/vendor/event/event_tracking/@"
@@ -346,14 +350,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         defaults.set(care_giver["one"] as? String, forKey: "care_giver_one")
         defaults.set(care_giver["two"] as? String, forKey: "care_giver_two")
         
-        let insurance = data["insurance"]  as! Dictionary<String, Any>
-        defaults.set(insurance["policy_number"] as? String, forKey: "insurance_policy_number")
-        defaults.set(insurance["start_date"] as? String, forKey: "insurance_start_date")
-        defaults.set(insurance["expiration_date"] as? String, forKey: "insurance_expiration_date")
-        defaults.set(insurance["insurance_company"] as? String, forKey: "insurance_insurance_company")
-        defaults.set(insurance["contact_name"] as? String, forKey: "insurance_contact_name")
-        defaults.set(insurance["contact_number_cc"] as? String, forKey: "insurance_contact_number_cc")
-        defaults.set(insurance["contact_number"] as? String, forKey: "insurance_contact_number")
+        if let insurance: Dictionary<String, Any> = data["insurance"] as? Dictionary<String, Any> {
+            defaults.set(insurance["policy_number"] as? String, forKey: "insurance_policy_number")
+            defaults.set(insurance["start_date"] as? String, forKey: "insurance_start_date")
+            defaults.set(insurance["expiration_date"] as? String, forKey: "insurance_expiration_date")
+            defaults.set(insurance["insurance_company"] as? String, forKey: "insurance_insurance_company")
+            defaults.set(insurance["contact_name"] as? String, forKey: "insurance_contact_name")
+            defaults.set(insurance["contact_number_cc"] as? String, forKey: "insurance_contact_number_cc")
+            defaults.set(insurance["contact_number"] as? String, forKey: "insurance_contact_number")
+        }
         
         mapProfile()
     }

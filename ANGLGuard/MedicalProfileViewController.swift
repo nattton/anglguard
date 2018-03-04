@@ -1,4 +1,6 @@
 import UIKit
+import Alamofire
+import SVProgressHUD
 
 class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -12,6 +14,7 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
     
     var bloods = ["O", "A", "B", "AB"]
     var bloodPicker: UIPickerView?
+    let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -96,7 +99,107 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
     @IBAction func updateAction(_ sender: Any) {
         let blood_type: String = tf_blood_type.text!
         
-        
+        if blood_type.count == 0 {
+            let alert = UIAlertController(title: BLOOD_TYPE_ALERT, message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            if let token = defaults.string(forKey: "token") {
+                let parameters: Parameters = [
+                    "token": token,
+                    "medical_profile": [
+                        "blood_type": blood_type,
+                        "allergy_drug": [
+                            "seizures": Medical.sharedInstance.seizures,
+                            "insuline": Medical.sharedInstance.insuline,
+                            "iodine": Medical.sharedInstance.iodine,
+                            "penicillin": Medical.sharedInstance.penicillin,
+                            "sulfa": Medical.sharedInstance.sulfa,
+                            "others": Medical.sharedInstance.allergy_drug_others
+                        ],
+                        "allergy_food": [
+                            "milk": Medical.sharedInstance.milk,
+                            "eggs": Medical.sharedInstance.eggs,
+                            "fish": Medical.sharedInstance.fish,
+                            "crustacean_shellfish": Medical.sharedInstance.crustacean_shellfish,
+                            "tree_nuts": Medical.sharedInstance.tree_nuts,
+                            "peanuts": Medical.sharedInstance.peanuts,
+                            "wheat": Medical.sharedInstance.wheat,
+                            "soybeans": Medical.sharedInstance.soybeans,
+                            "others": Medical.sharedInstance.allergy_food_others
+                        ],
+                        "allergy_chemical": [
+                            "shampoos": Medical.sharedInstance.shampoos,
+                            "shampoos_brand": Medical.sharedInstance.shampoos_brand,
+                            "fragrances": Medical.sharedInstance.fragrances,
+                            "fragrances_brand": Medical.sharedInstance.fragrances_brand,
+                            "cleaners": Medical.sharedInstance.cleaners,
+                            "cleaners_brand": Medical.sharedInstance.cleaners_brand,
+                            "detergents": Medical.sharedInstance.detergents,
+                            "detergents_brand": Medical.sharedInstance.detergents_brand,
+                            "cosmetics": Medical.sharedInstance.cosmetics,
+                            "cosmetics_brand": Medical.sharedInstance.cosmetics_brand,
+                            "others": Medical.sharedInstance.allergy_chemical_others
+                        ],
+                        "underlying": [
+                            "diabetes_mellitus": Medical.sharedInstance.diabetes_mellitus,
+                            "hypertension": Medical.sharedInstance.hypertension,
+                            "chronic_kidney_disease": Medical.sharedInstance.chronic_kidney_disease,
+                            "heart_disease": Medical.sharedInstance.heart_disease,
+                            "old_stroke": Medical.sharedInstance.old_stroke,
+                            "others": Medical.sharedInstance.underlying_others
+                        ],
+                        "current_medication": [
+                            "description": Medical.sharedInstance.current_medication_description
+                        ],
+                        "special_care": [
+                            "no_need": Medical.sharedInstance.no_need,
+                            "need": [
+                                "device": [
+                                    "assistive_environmental_devices": Medical.sharedInstance.assistive_environmental_devices,
+                                    "gait_aid": Medical.sharedInstance.gait_aid,
+                                    "wheelchair": Medical.sharedInstance.wheelchair
+                            ],
+                                "care_giver": [
+                                    "one": Medical.sharedInstance.care_giver_one,
+                                    "two": Medical.sharedInstance.care_giver_two
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
+                Alamofire.request(SAVE_PROFILE_MEDICAL, method: .post, parameters: parameters).responseJSON { response in
+                    SVProgressHUD.dismiss()
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        NSLog("result = \(result)")
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        if code == "200" {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        } else if code == "104" {
+                            self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
+                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func showMenu(_ sender: Any) {
