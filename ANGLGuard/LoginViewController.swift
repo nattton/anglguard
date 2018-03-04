@@ -7,6 +7,8 @@ class LoginViewController: UITableViewController {
     @IBOutlet var tf_username: UITextField!
     @IBOutlet var tf_password: UITextField!
     
+    let defaults = UserDefaults.standard
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -42,40 +44,11 @@ class LoginViewController: UITableViewController {
         }
     }
     
-    func setProfile(data: Dictionary<String, Any>) {
-        let defaults = UserDefaults.standard
-        let id: String? = data["id"] as? String
-        let image: String? = data["personal_img_bin"] as? String
-        let link: String? = data["personal_link"] as? String
-        let title: String? = data["title"] as? String
-        let firstname: String? = data["first_name"] as? String
-        let lastname: String? = data["last_name"] as? String
-        let email: String? = data["email"] as? String
-        let gender: String? = data["gender"] as? String
-        let birthday: String? = data["date_of_birth"] as? String
-        let height: String? = data["height"] as? String
-        let weight: String? = data["weight"] as? String
-        let token: String? = data["token"] as? String
-        
-        defaults.set(id, forKey: "id")
-        defaults.set(image, forKey: "image")
-        defaults.set(link, forKey: "link")
-        defaults.set(title, forKey: "title")
-        defaults.set(firstname, forKey: "firstname")
-        defaults.set(lastname, forKey: "lastname")
-        defaults.set(email, forKey: "email")
-        defaults.set(gender, forKey: "gender")
-        defaults.set(birthday, forKey: "birthday")
-        defaults.set(height, forKey: "height")
-        defaults.set(weight, forKey: "weight")
-        defaults.set(token, forKey: "token")
-        defaults.set("Y", forKey: "login")
-    }
-    
     @IBAction func signinAction(_ sender: Any) {
         let username: String! = tf_username.text
         let password: String! = tf_password.text
-        let parameters: Parameters = ["username": username, "password": password]
+        let parameters: Parameters = ["username": username, "password": password, "type": "normal"]
+        
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         Alamofire.request(LOGIN_URL, method: .get, parameters: parameters).responseJSON { response in
             SVProgressHUD.dismiss()
@@ -86,9 +59,8 @@ class LoginViewController: UITableViewController {
                 NSLog("result = \(result)")
                 if code == "200" {
                     if let data: Dictionary<String, Any> = result["data"]  as? Dictionary<String, Any> {
-                        let personal = data["personal"]  as! Dictionary<String, Any>
-                        self.setProfile(data: personal)
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.setProfile(data: data)
                         appDelegate.registerForPushNotifications()
                         self.performSegue(withIdentifier: "showMain", sender: nil)
                     }

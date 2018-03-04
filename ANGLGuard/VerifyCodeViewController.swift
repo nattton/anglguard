@@ -36,7 +36,12 @@ class VerifyCodeViewController: UITableViewController {
     
     @IBAction func nextAction(_ sender: Any) {
         let code: String = tf_verify_code.text!
-        if code.count == 6 {
+        if code.count != 6 {
+            let alert = UIAlertController(title: CODE_NOT_VALID, message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
             if let token = defaults.string(forKey: "token") {
                 let parameters: Parameters = [
                     "email": email,
@@ -52,10 +57,17 @@ class VerifyCodeViewController: UITableViewController {
                         let message: String = result["message"] as! String
                         NSLog("result = \(result)")
                         if code == "200" {
+                            if let data: Dictionary<String, Any> = result["data"]  as? Dictionary<String, Any> {
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.setProfile(data: data)
+                            }
+                            
                             self.performSegue(withIdentifier: "showStep1", sender: nil)
                         } else if code == "104" {
                             self.defaults.set("N", forKey: "login")
                             self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
                             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                             let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController

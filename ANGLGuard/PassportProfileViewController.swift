@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 import ADCountryPicker
 
-class Step3ViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class PassportProfileViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet var bt_avatar: UIButton!
     @IBOutlet var tf_passport: UITextField!
@@ -160,11 +160,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         self.present(optionMenu, animated: true, completion: nil)
     }
     
-    @IBAction func backAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func nextAction(_ sender: Any) {
+    @IBAction func updateAction(_ sender: Any) {
         let passport: String = tf_passport.text!
         let country: String = tf_country.text!
         let expire_date: String = tf_expire_date.text!
@@ -183,8 +179,6 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
             Personal.sharedInstance.country_code = country
             Personal.sharedInstance.passport_expire_date = expire_date
             Personal.sharedInstance.passport_img = bt_avatar.image(for: .normal)
-            
-            self.performSegue(withIdentifier: "showStep4", sender: nil)
         }
     }
     
@@ -193,6 +187,12 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func showMenu(_ sender: Any) {
+        if let container = self.so_containerViewController {
+            container.isSideViewControllerPresented = true
+        }
     }
 
     /*

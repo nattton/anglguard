@@ -26,6 +26,12 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tf_firstname.text = Contact.sharedInstance.firstname
+        tf_lastname.text = Contact.sharedInstance.lastname
+        tf_country_code.text = Contact.sharedInstance.contact_number_cc
+        tf_phone.text = Contact.sharedInstance.contact_number
+        tf_relationship.text = Contact.sharedInstance.relation
+        tf_email.text = Contact.sharedInstance.email
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,16 +72,29 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
         let relationship: String = tf_relationship.text!
         let email: String = tf_email.text!
         
-        if firstname.count > 0 && lastname.count > 0 && country_code.count > 0 && phone.count > 0 && relationship.count > 0 {
-            
+        if firstname.count == 0 {
+            showAlert(message: FIRSTNAME_ALERT)
+        } else if lastname.count == 0 {
+            showAlert(message: LASTNAME_ALERT)
+        } else if country_code.count == 0 {
+            showAlert(message: CC_ALERT)
+        } else if phone.count == 0 {
+            showAlert(message: MOBILE_NUMBER_ALERT)
+        } else if relationship.count == 0 {
+            showAlert(message: RELATION_SHIP_ALERT)
+        } else {
             //data
             Contact.sharedInstance.firstname = firstname
             Contact.sharedInstance.lastname = lastname
+            Contact.sharedInstance.contact_number_cc = country_code
             Contact.sharedInstance.contact_number = phone
             Contact.sharedInstance.relation = relationship
             Contact.sharedInstance.email = email
             
             let parameters: Parameters = [
+                "token" : Authen.sharedInstance.token,
+                "type" : Authen.sharedInstance.type,
+                "key" : Authen.sharedInstance.key,
                 "personal": [
                     "email" : Personal.sharedInstance.email,
                     "password" : Personal.sharedInstance.password,
@@ -189,6 +208,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         self.defaults.set("N", forKey: "timer")
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.clearProfile()
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -201,6 +222,13 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     /*

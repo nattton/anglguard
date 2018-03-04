@@ -42,7 +42,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
         bt_confirm.layer.cornerRadius = bt_confirm.frame.size.height / 2
         bt_confirm.clipsToBounds = true
         
-        if let image = defaults.string(forKey: "image") {
+        if let image = defaults.string(forKey: "personal_img_bin") {
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
                 let fileURL = documentsURL.appendingPathComponent("avatar.jpg")
@@ -130,6 +130,8 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         self.defaults.set("N", forKey: "timer")
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.clearProfile()
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -172,6 +174,8 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         self.defaults.set("N", forKey: "timer")
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.clearProfile()
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController

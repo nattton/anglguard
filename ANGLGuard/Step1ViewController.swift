@@ -21,6 +21,9 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tf_firstname.text = Personal.sharedInstance.firstname
+        tf_middlename.text = Personal.sharedInstance.middlename
+        tf_lastname.text = Personal.sharedInstance.lastname
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +67,12 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
             }
         })
         
+        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.isImage = false
+            self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+        })
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
             (alert: UIAlertAction!) -> Void in
         })
@@ -72,6 +81,7 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
 
         optionMenu.addAction(cameraAction)
         optionMenu.addAction(photoAction)
+        optionMenu.addAction(deleteAction)
         optionMenu.addAction(cancelAction)
         
         self.present(optionMenu, animated: true, completion: nil)
@@ -86,7 +96,13 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
         let lastname: String = tf_lastname.text!
         let middlename: String = tf_middlename.text!
         
-        if firstname.count > 0 && lastname.count > 0 && isImage == true {
+        if firstname.count == 0 {
+            showAlert(message: FIRSTNAME_ALERT)
+        } else if lastname.count == 0 {
+            showAlert(message: LASTNAME_ALERT)
+        } else if isImage == false {
+            showAlert(message: PROFILE_IMAGE_ALERT)
+        } else {
             //data
             Personal.sharedInstance.firstname = firstname
             Personal.sharedInstance.lastname = lastname
@@ -95,6 +111,13 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
             
             self.performSegue(withIdentifier: "showStep2", sender: nil)
         }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*

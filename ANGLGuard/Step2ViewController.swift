@@ -27,6 +27,13 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tf_gender.text = Personal.sharedInstance.gender
+        tf_date_of_birth.text = Personal.sharedInstance.birthdate
+        tf_height.text = Personal.sharedInstance.height
+        tf_weight.text = Personal.sharedInstance.weight
+        tf_country_code.text = Personal.sharedInstance.mobile_cc
+        tf_phone.text = Personal.sharedInstance.mobile_num
+        
         tf_gender.inputView = createGenderPicker()
         tf_gender.inputAccessoryView = createGenderToolBar()
         
@@ -173,19 +180,39 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
         let date_of_birth: String = tf_date_of_birth.text!
         let height: String = tf_height.text!
         let weight: String = tf_weight.text!
+        let cc: String = tf_country_code.text!
         let phone: String = tf_phone.text!
         
-        if gender.count > 0 && date_of_birth.count > 0 && height.count > 0 && weight.count > 0 && country_code.count > 0 && phone.count > 0 {
+        if gender.count == 0 {
+            showAlert(message: GENDER_ALERT)
+        } else if date_of_birth.count == 0 {
+            showAlert(message: DATE_OF_BITH_ALERT)
+        } else if height.count == 0 {
+            showAlert(message: HEIGHT_ALERT)
+        } else if weight.count == 0 {
+            showAlert(message: WEIGHT_ALERT)
+        } else if cc.count == 0 {
+            showAlert(message: CC_ALERT)
+        } else if phone.count == 0 {
+            showAlert(message: MOBILE_NUMBER_ALERT)
+        } else {
             //data
             Personal.sharedInstance.gender = gender
             Personal.sharedInstance.birthdate = date_of_birth
             Personal.sharedInstance.height = height
             Personal.sharedInstance.weight = weight
-            Personal.sharedInstance.country_code = country_code
+            Personal.sharedInstance.mobile_cc = cc
             Personal.sharedInstance.mobile_num = phone
             
             self.performSegue(withIdentifier: "showVerifyPhone", sender: nil)
         }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     /*

@@ -731,10 +731,10 @@
             </objects>
             <point key="canvasLocation" x="2838" y="143"/>
         </scene>
-        <!--Personal Profile View Controller-->
+        <!--ProfileQR Code View Controller-->
         <scene sceneID="Mxe-Rb-VZr">
             <objects>
-                <viewController id="ux2-9L-MVB" customClass="PersonalProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ux2-9L-MVB" customClass="ProfileQRCodeViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="cuB-PL-CbJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2073,7 +2073,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMo-HW-Ap3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="391.19999999999999" y="2309.5952023988007"/>
+            <point key="canvasLocation" x="54" y="2310"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="im5-f0-csH">
@@ -4107,7 +4107,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of drug" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Tz-FT-L4l">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of drug" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Tz-FT-L4l">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4144,7 +4144,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of food" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-Py-dyI">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of food" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-Py-dyI">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4181,7 +4181,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of chemical" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hF1-Vb-RvJ">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of chemical" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hF1-Vb-RvJ">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4218,7 +4218,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Underlying diseases &amp; conditions" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-Su-nCG">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Underlying diseases &amp; conditions" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-Su-nCG">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4255,7 +4255,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current medication &amp; herbs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOK-ta-DLx">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current medication &amp; herbs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOK-ta-DLx">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4292,7 +4292,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Special care requirement" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1vn-Y6-Rtg">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Special care requirement" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1vn-Y6-Rtg">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -6039,7 +6039,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Th-0n-OCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="391.19999999999999" y="3062.5187406296855"/>
+            <point key="canvasLocation" x="54" y="3063"/>
         </scene>
         <!--Allergy Of Chemical View Controller-->
         <scene sceneID="WNH-TS-8Nd">
@@ -6815,7 +6815,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUQ-5y-UTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="4574"/>
+            <point key="canvasLocation" x="52" y="4621"/>
         </scene>
         <!--Current Medication View Controller-->
         <scene sceneID="VCY-b1-lTS">
@@ -6929,7 +6929,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfl-Jr-47F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="5305"/>
+            <point key="canvasLocation" x="52" y="5355"/>
         </scene>
         <!--Spacial Care View Controller-->
         <scene sceneID="wpe-2Q-zFQ">
@@ -7464,7 +7464,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hho-nw-mmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="6062"/>
+            <point key="canvasLocation" x="54" y="6086"/>
         </scene>
         <!--Accident Insurance View Controller-->
         <scene sceneID="JHN-Vj-Uif">
@@ -7921,7 +7921,7 @@
         <!--Personal Profile-->
         <scene sceneID="Z5H-3A-DSg">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="aPA-Wg-A2S" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="aPA-Wg-A2S" customClass="PersonalProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A45-hh-uK6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7950,6 +7950,9 @@
                                                         <constraint firstAttribute="height" constant="72" id="x9o-Pw-5Ld"/>
                                                     </constraints>
                                                     <state key="normal" image="emergency_img_defult"/>
+                                                    <connections>
+                                                        <action selector="avatarAction:" destination="aPA-Wg-A2S" eventType="touchUpInside" id="zTv-Q4-whG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -8115,6 +8118,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="aPA-Wg-A2S" id="HAs-CL-IJA"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Telephone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7jS-3u-8JZ">
                                                     <rect key="frame" x="108" y="9" width="251" height="30"/>
@@ -8151,6 +8157,9 @@
                                                     <state key="normal" title="UPDATE" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAction:" destination="aPA-Wg-A2S" eventType="touchUpInside" id="LFD-o4-BAE"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptm-sm-o12">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
@@ -8185,9 +8194,24 @@
                                 <rect key="frame" x="16" y="11" width="76" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="aPA-Wg-A2S" eventType="touchUpInside" id="uIh-Kw-Apz"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bt_avatar" destination="LD3-Ht-gI7" id="ybZ-e6-XXd"/>
+                        <outlet property="tf_country_code" destination="jXX-vB-4ZV" id="cuY-g1-cgU"/>
+                        <outlet property="tf_date_of_birth" destination="KWy-fb-TFZ" id="0Uh-oX-EZZ"/>
+                        <outlet property="tf_firstname" destination="Tzz-WX-Xz1" id="pgU-17-mt3"/>
+                        <outlet property="tf_gender" destination="cVC-eP-rsA" id="ffX-d6-fgK"/>
+                        <outlet property="tf_height" destination="Y3O-z6-QvO" id="Jp5-ls-sPM"/>
+                        <outlet property="tf_lastname" destination="Ear-x6-HYK" id="iJl-vs-hHR"/>
+                        <outlet property="tf_middlename" destination="B8H-2E-601" id="cyq-n0-e93"/>
+                        <outlet property="tf_phone" destination="7jS-3u-8JZ" id="9Ts-gb-WUO"/>
+                        <outlet property="tf_weight" destination="bEU-0i-VEf" id="i7K-qO-xNh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srF-y8-rwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -8214,7 +8238,7 @@
         <!--Current Thai Telephone Number-->
         <scene sceneID="Hcf-Y0-0Dq">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="raH-dL-yW5" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="raH-dL-yW5" customClass="CurrentThaiPhoneViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="529-3I-dBI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -8243,6 +8267,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="raH-dL-yW5" id="RFf-BB-cR7"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Telephone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFX-Gk-NfU">
                                                     <rect key="frame" x="108" y="14" width="251" height="30"/>
@@ -8302,6 +8329,9 @@
                                                             <state key="normal" title="SEND CODE" backgroundImage="bg_button2">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="sendAction:" destination="raH-dL-yW5" eventType="touchUpInside" id="JMo-Fi-YuV"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -8337,6 +8367,9 @@
                                                     <state key="normal" title="UPDATE" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAction:" destination="raH-dL-yW5" eventType="touchUpInside" id="chD-lI-vWN"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-JZ-III">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
@@ -8371,9 +8404,17 @@
                                 <rect key="frame" x="16" y="11" width="52" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="raH-dL-yW5" eventType="touchUpInside" id="qab-ca-czz"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tf_code" destination="c1U-lp-Eln" id="bUP-Kc-2xJ"/>
+                        <outlet property="tf_country_code" destination="oah-6b-d7Z" id="Yab-qD-jKh"/>
+                        <outlet property="tf_phone" destination="NFX-Gk-NfU" id="aqJ-O4-ZQC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb7-lD-RgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -8400,7 +8441,7 @@
         <!--Passport Profile-->
         <scene sceneID="30r-v3-h8X">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="U48-wd-Kwf" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="U48-wd-Kwf" customClass="PassportProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aEr-0R-UGx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -8429,6 +8470,9 @@
                                                         <constraint firstAttribute="width" constant="72" id="y8J-tH-bb4"/>
                                                     </constraints>
                                                     <state key="normal" image="emergency_img_defult"/>
+                                                    <connections>
+                                                        <action selector="avatarAction:" destination="U48-wd-Kwf" eventType="touchUpInside" id="DJR-Je-lFD"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -8475,6 +8519,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="U48-wd-Kwf" id="iWw-m9-nB8"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -8524,6 +8571,9 @@
                                                     <state key="normal" title="UPDATE" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAction:" destination="U48-wd-Kwf" eventType="touchUpInside" id="Jpb-gF-c4h"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6um-8S-Sj2">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
@@ -8558,9 +8608,18 @@
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="U48-wd-Kwf" eventType="touchUpInside" id="JUH-Em-vA4"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bt_avatar" destination="xar-OL-uRq" id="kpk-3U-GwY"/>
+                        <outlet property="tf_country" destination="3q4-Jl-i0Y" id="WhF-zm-gdb"/>
+                        <outlet property="tf_expire_date" destination="e2L-HL-734" id="Vzb-Fc-N6G"/>
+                        <outlet property="tf_passport" destination="NZu-Nl-TGu" id="knZ-Z2-KWL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wA0-WB-YrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -8587,7 +8646,7 @@
         <!--Medical Profile-->
         <scene sceneID="TLB-iP-jwq">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="F0v-Mx-o9I" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="F0v-Mx-o9I" customClass="MedicalProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PGj-xc-lX7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -8630,6 +8689,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="F0v-Mx-o9I" id="DYV-yc-tCt"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -8640,48 +8702,14 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="qiv-7A-XRH">
-                                        <rect key="frame" x="0.0" y="148" width="375" height="48"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qiv-7A-XRH" id="GpS-yR-uT4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current medication &amp; herbs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84h-lJ-fU8">
-                                                    <rect key="frame" x="54" y="9" width="305" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-Kw-HwQ">
-                                                    <rect key="frame" x="16" y="9.5" width="30" height="30"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="F53-6f-hcH"/>
-                                                        <constraint firstAttribute="width" constant="30" id="xk3-uv-8EX"/>
-                                                    </constraints>
-                                                    <state key="normal" image="bt_plus_normal"/>
-                                                    <state key="highlighted" image="bt_plus_active"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="84h-lJ-fU8" firstAttribute="centerY" secondItem="GpS-yR-uT4" secondAttribute="centerY" id="7K9-iC-Pex"/>
-                                                <constraint firstItem="Pb4-Kw-HwQ" firstAttribute="leading" secondItem="GpS-yR-uT4" secondAttribute="leading" constant="16" id="PpD-Tl-ymg"/>
-                                                <constraint firstItem="84h-lJ-fU8" firstAttribute="leading" secondItem="Pb4-Kw-HwQ" secondAttribute="trailing" constant="8" id="Z78-dF-G2m"/>
-                                                <constraint firstItem="Pb4-Kw-HwQ" firstAttribute="centerY" secondItem="GpS-yR-uT4" secondAttribute="centerY" id="jRX-Z8-ogk"/>
-                                                <constraint firstAttribute="trailing" secondItem="84h-lJ-fU8" secondAttribute="trailing" constant="16" id="vf9-0x-Fny"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="An4-2b-9Zq">
-                                        <rect key="frame" x="0.0" y="196" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="148" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="An4-2b-9Zq" id="MXr-P7-row">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of drug" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5K2-ad-ZhF">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of drug" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5K2-ad-ZhF">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -8696,6 +8724,9 @@
                                                     </constraints>
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
+                                                    <connections>
+                                                        <segue destination="PKh-tu-5rl" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="h31-c6-UMY"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -8709,13 +8740,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="uM7-WN-NOG">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="196" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uM7-WN-NOG" id="ppj-He-AZl">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of food" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O09-F6-3NR">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of food" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O09-F6-3NR">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -8730,6 +8761,9 @@
                                                     </constraints>
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
+                                                    <connections>
+                                                        <segue destination="4Qf-cx-unI" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="WKk-6j-Np9"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -8742,48 +8776,14 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="gaK-lV-vR4">
-                                        <rect key="frame" x="0.0" y="292" width="375" height="48"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gaK-lV-vR4" id="Aiq-QR-HLB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Special care requirement" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLZ-o4-gio">
-                                                    <rect key="frame" x="54" y="9" width="305" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLt-dQ-CZO">
-                                                    <rect key="frame" x="16" y="9.5" width="30" height="30"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="XBZ-H5-7mQ"/>
-                                                        <constraint firstAttribute="height" constant="30" id="qGi-ez-qnh"/>
-                                                    </constraints>
-                                                    <state key="normal" image="bt_plus_normal"/>
-                                                    <state key="highlighted" image="bt_plus_active"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="GLZ-o4-gio" secondAttribute="trailing" constant="16" id="Hbe-Gk-zna"/>
-                                                <constraint firstItem="GLZ-o4-gio" firstAttribute="leading" secondItem="JLt-dQ-CZO" secondAttribute="trailing" constant="8" id="b03-6u-KU1"/>
-                                                <constraint firstItem="JLt-dQ-CZO" firstAttribute="centerY" secondItem="Aiq-QR-HLB" secondAttribute="centerY" id="khy-w0-dCA"/>
-                                                <constraint firstItem="JLt-dQ-CZO" firstAttribute="leading" secondItem="Aiq-QR-HLB" secondAttribute="leading" constant="16" id="ti9-UZ-fGN"/>
-                                                <constraint firstItem="GLZ-o4-gio" firstAttribute="centerY" secondItem="Aiq-QR-HLB" secondAttribute="centerY" id="u27-QX-o5I"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="mla-FZ-mgi">
-                                        <rect key="frame" x="0.0" y="340" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="244" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mla-FZ-mgi" id="2db-I2-N75">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of chemical" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-ce-NrA">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allergy of chemical" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-ce-NrA">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -8798,6 +8798,9 @@
                                                     </constraints>
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
+                                                    <connections>
+                                                        <segue destination="LwS-rT-ZUN" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="cub-pU-bAr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -8811,13 +8814,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="jVD-NI-TiR">
-                                        <rect key="frame" x="0.0" y="388" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="292" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jVD-NI-TiR" id="yDe-bu-WlI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Underlying diseases &amp; conditions" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hB-O0-wq7">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Underlying diseases &amp; conditions" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hB-O0-wq7">
                                                     <rect key="frame" x="54" y="9" width="305" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -8832,6 +8835,9 @@
                                                     </constraints>
                                                     <state key="normal" image="bt_plus_normal"/>
                                                     <state key="highlighted" image="bt_plus_active"/>
+                                                    <connections>
+                                                        <segue destination="BKu-5m-AMT" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Mt3-F6-5eG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -8840,6 +8846,80 @@
                                                 <constraint firstItem="9hB-O0-wq7" firstAttribute="centerY" secondItem="yDe-bu-WlI" secondAttribute="centerY" id="foo-WO-xHp"/>
                                                 <constraint firstItem="Yj6-en-OMa" firstAttribute="centerY" secondItem="yDe-bu-WlI" secondAttribute="centerY" id="opK-N5-Dd4"/>
                                                 <constraint firstAttribute="trailing" secondItem="9hB-O0-wq7" secondAttribute="trailing" constant="16" id="zL0-tl-6pg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="qiv-7A-XRH">
+                                        <rect key="frame" x="0.0" y="340" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qiv-7A-XRH" id="GpS-yR-uT4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current medication &amp; herbs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84h-lJ-fU8">
+                                                    <rect key="frame" x="54" y="9" width="305" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-Kw-HwQ">
+                                                    <rect key="frame" x="16" y="9.5" width="30" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="F53-6f-hcH"/>
+                                                        <constraint firstAttribute="width" constant="30" id="xk3-uv-8EX"/>
+                                                    </constraints>
+                                                    <state key="normal" image="bt_plus_normal"/>
+                                                    <state key="highlighted" image="bt_plus_active"/>
+                                                    <connections>
+                                                        <segue destination="09Q-Sw-CCp" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="WNK-aW-ALk"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="84h-lJ-fU8" firstAttribute="centerY" secondItem="GpS-yR-uT4" secondAttribute="centerY" id="7K9-iC-Pex"/>
+                                                <constraint firstItem="Pb4-Kw-HwQ" firstAttribute="leading" secondItem="GpS-yR-uT4" secondAttribute="leading" constant="16" id="PpD-Tl-ymg"/>
+                                                <constraint firstItem="84h-lJ-fU8" firstAttribute="leading" secondItem="Pb4-Kw-HwQ" secondAttribute="trailing" constant="8" id="Z78-dF-G2m"/>
+                                                <constraint firstItem="Pb4-Kw-HwQ" firstAttribute="centerY" secondItem="GpS-yR-uT4" secondAttribute="centerY" id="jRX-Z8-ogk"/>
+                                                <constraint firstAttribute="trailing" secondItem="84h-lJ-fU8" secondAttribute="trailing" constant="16" id="vf9-0x-Fny"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="gaK-lV-vR4">
+                                        <rect key="frame" x="0.0" y="388" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gaK-lV-vR4" id="Aiq-QR-HLB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Special care requirement" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLZ-o4-gio">
+                                                    <rect key="frame" x="54" y="9" width="305" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLt-dQ-CZO">
+                                                    <rect key="frame" x="16" y="9.5" width="30" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="XBZ-H5-7mQ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="qGi-ez-qnh"/>
+                                                    </constraints>
+                                                    <state key="normal" image="bt_plus_normal"/>
+                                                    <state key="highlighted" image="bt_plus_active"/>
+                                                    <connections>
+                                                        <segue destination="0b6-06-9lp" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="H5X-I5-z3w"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="GLZ-o4-gio" secondAttribute="trailing" constant="16" id="Hbe-Gk-zna"/>
+                                                <constraint firstItem="GLZ-o4-gio" firstAttribute="leading" secondItem="JLt-dQ-CZO" secondAttribute="trailing" constant="8" id="b03-6u-KU1"/>
+                                                <constraint firstItem="JLt-dQ-CZO" firstAttribute="centerY" secondItem="Aiq-QR-HLB" secondAttribute="centerY" id="khy-w0-dCA"/>
+                                                <constraint firstItem="JLt-dQ-CZO" firstAttribute="leading" secondItem="Aiq-QR-HLB" secondAttribute="leading" constant="16" id="ti9-UZ-fGN"/>
+                                                <constraint firstItem="GLZ-o4-gio" firstAttribute="centerY" secondItem="Aiq-QR-HLB" secondAttribute="centerY" id="u27-QX-o5I"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -8861,6 +8941,9 @@
                                                     <state key="normal" title="UPDATE" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAction:" destination="F0v-Mx-o9I" eventType="touchUpInside" id="qw6-Rd-ABI"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYu-li-yWi">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
@@ -8895,9 +8978,21 @@
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="F0v-Mx-o9I" eventType="touchUpInside" id="s9Q-DT-TGo"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tf_blood_type" destination="gsx-Yj-16i" id="LYZ-x1-EC5"/>
+                        <outlet property="tf_chemical" destination="d7t-ce-NrA" id="XoS-Ib-ufC"/>
+                        <outlet property="tf_drug" destination="5K2-ad-ZhF" id="gNR-XA-Q8J"/>
+                        <outlet property="tf_food" destination="O09-F6-3NR" id="ckN-2g-R4d"/>
+                        <outlet property="tf_medication" destination="84h-lJ-fU8" id="Ysq-eM-ADX"/>
+                        <outlet property="tf_special_care" destination="GLZ-o4-gio" id="U6O-6t-oap"/>
+                        <outlet property="tf_underlying" destination="9hB-O0-wq7" id="Nav-HP-8fR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqT-qd-opR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -8924,7 +9019,7 @@
         <!--Emergency Contact Profile-->
         <scene sceneID="8ug-yY-O9d">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="22C-sc-s6m" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="22C-sc-s6m" customClass="EmergencyContactProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="go9-1c-zq3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9011,6 +9106,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="22C-sc-s6m" id="far-5k-Hn6"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4tp-XY-v0W">
                                                     <rect key="frame" x="108" y="9" width="251" height="30"/>
@@ -9091,6 +9189,9 @@
                                                     <state key="normal" title="UPDATE" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAction:" destination="22C-sc-s6m" eventType="touchUpInside" id="eNh-dc-eQZ"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJa-RW-e2b">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
@@ -9125,9 +9226,20 @@
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="22C-sc-s6m" eventType="touchUpInside" id="Qyg-Nz-NqJ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tf_country_code" destination="DhQ-nR-90X" id="yBL-bM-ool"/>
+                        <outlet property="tf_email" destination="h5d-jZ-7vJ" id="fIv-f6-8kx"/>
+                        <outlet property="tf_firstname" destination="t8j-Nf-DeB" id="aty-W2-Wd5"/>
+                        <outlet property="tf_lastname" destination="O3T-b5-nYn" id="Ep1-qP-J7K"/>
+                        <outlet property="tf_phone" destination="4tp-XY-v0W" id="Or7-Kl-T0L"/>
+                        <outlet property="tf_relationship" destination="9fn-82-miw" id="6mY-tU-qEA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wb1-Mz-feb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -9154,7 +9266,7 @@
         <!--Trip Plan-->
         <scene sceneID="7ZQ-In-eEj">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="xcH-x2-Qdd" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="xcH-x2-Qdd" customClass="TripPlanViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="igG-l7-tBC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9356,6 +9468,9 @@
                                                     <state key="normal" title="UPDATE" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAction:" destination="xcH-x2-Qdd" eventType="touchUpInside" id="THQ-Hp-4Et"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WR-gx-N8y">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
@@ -9390,9 +9505,21 @@
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="xcH-x2-Qdd" eventType="touchUpInside" id="ZPo-hP-LC4"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tf_average" destination="ZBU-7F-EDm" id="pgT-oU-VnD"/>
+                        <outlet property="tf_destination" destination="HFw-a0-1eD" id="84h-Ta-P2q"/>
+                        <outlet property="tf_domestic" destination="7Nx-P3-Cb5" id="eXZ-vT-z7Z"/>
+                        <outlet property="tf_lenght_of_day" destination="aQ3-YP-Dln" id="Hu6-Vx-SHa"/>
+                        <outlet property="tf_purpose" destination="Duw-sw-LQv" id="Xbv-P0-0ol"/>
+                        <outlet property="tf_start_date" destination="Zdw-TO-pTg" id="5xT-AC-GGp"/>
+                        <outlet property="tf_trip" destination="0lP-4z-ylq" id="YmP-TJ-dNO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ine-3I-ndt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -9419,7 +9546,7 @@
         <!--Insurance-->
         <scene sceneID="Hcx-rq-8Ld">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHW-v6-IFc" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHW-v6-IFc" customClass="InsuranceViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="luv-JM-ex9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9457,7 +9584,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Policy Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwo-la-52N">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Policy Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwo-la-52N">
                                                     <rect key="frame" x="16" y="9" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -9479,7 +9606,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiration Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CP1-HN-egA">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiration Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CP1-HN-egA">
                                                     <rect key="frame" x="16" y="9" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -9501,7 +9628,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurance company" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-9L-YIB">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurance company" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-9L-YIB">
                                                     <rect key="frame" x="16" y="9" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -9523,7 +9650,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d49-cT-0C5">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d49-cT-0C5">
                                                     <rect key="frame" x="16" y="9" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -9545,13 +9672,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+66" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-uj-qbN">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+66" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-uj-qbN">
                                                     <rect key="frame" x="16" y="9" width="84" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cxa-qt-ooZ">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cxa-qt-ooZ">
                                                     <rect key="frame" x="108" y="9" width="251" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -9576,17 +9703,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="262"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-vB-iCr">
-                                                    <rect key="frame" x="113" y="212" width="150" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="Pn1-gC-rlV"/>
-                                                        <constraint firstAttribute="width" constant="150" id="WdW-qC-IgZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="UPDATE" backgroundImage="bg_button1">
-                                                        <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcz-jO-lLA">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -9598,9 +9714,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bcz-jO-lLA" firstAttribute="top" secondItem="0BU-jl-6Z6" secondAttribute="top" constant="8" id="QLx-CL-4wK"/>
-                                                <constraint firstItem="HXf-vB-iCr" firstAttribute="centerX" secondItem="0BU-jl-6Z6" secondAttribute="centerX" id="eny-Wq-tk7"/>
                                                 <constraint firstItem="bcz-jO-lLA" firstAttribute="leading" secondItem="0BU-jl-6Z6" secondAttribute="leading" constant="16" id="ihd-0o-eHq"/>
-                                                <constraint firstAttribute="bottom" secondItem="HXf-vB-iCr" secondAttribute="bottom" constant="16" id="mid-tq-RcV"/>
                                                 <constraint firstAttribute="trailing" secondItem="bcz-jO-lLA" secondAttribute="trailing" constant="16" id="wVL-2V-kAb"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -9623,6 +9737,14 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tf_contact_name" destination="d49-cT-0C5" id="ycq-SJ-bH0"/>
+                        <outlet property="tf_country_code" destination="gUu-uj-qbN" id="Uqc-hD-6v3"/>
+                        <outlet property="tf_expire_date" destination="CP1-HN-egA" id="Tas-1b-0eB"/>
+                        <outlet property="tf_insurance_company" destination="Ihu-9L-YIB" id="vyC-PM-sDo"/>
+                        <outlet property="tf_phone" destination="Cxa-qt-ooZ" id="9yV-Yt-usR"/>
+                        <outlet property="tf_policy_number" destination="fwo-la-52N" id="6WQ-bb-KN9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waK-sL-hb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -9649,7 +9771,7 @@
         <!--Change Password-->
         <scene sceneID="2xf-Px-Uqz">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="doU-9D-4bR" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="doU-9D-4bR" customClass="ChangePasswordViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IV5-M2-Dep">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9763,6 +9885,9 @@
                                                     <state key="normal" title="UPDATE" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateAction:" destination="doU-9D-4bR" eventType="touchUpInside" id="avl-SO-nof"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwu-9D-JlA">
                                                     <rect key="frame" x="16" y="8" width="343" height="2"/>
@@ -9797,9 +9922,17 @@
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="doU-9D-4bR" eventType="touchUpInside" id="zZm-ig-gL4"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tf_current_password" destination="pfz-YJ-ETJ" id="cWE-D2-eg9"/>
+                        <outlet property="tf_new_password" destination="9y8-CH-JjU" id="VCH-jZ-9pZ"/>
+                        <outlet property="tf_re_new_password" destination="VfK-HC-m0S" id="URj-v9-4K3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0n-b1-8Uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -9826,7 +9959,7 @@
         <!--Forgot Password-->
         <scene sceneID="LxV-ub-Gr5">
             <objects>
-                <tableViewController id="vfy-YE-8KC" sceneMemberID="viewController">
+                <tableViewController id="vfy-YE-8KC" customClass="ForgetPasswordViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UAJ-Xu-L9q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9923,6 +10056,9 @@
                                                     <state key="normal" title="SEND" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="sendAction:" destination="vfy-YE-8KC" eventType="touchUpInside" id="dfb-j4-5hJ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -9946,9 +10082,15 @@
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_menu"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="vfy-YE-8KC" eventType="touchUpInside" id="CNc-Wf-COm"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tf_email" destination="VAH-BI-FiV" id="ZPu-XJ-fpN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcc-7c-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -10046,6 +10188,12 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QVB-hu-sxA"/>
+        <segue reference="ok4-qI-3HV"/>
+        <segue reference="WNK-aW-ALk"/>
+        <segue reference="Mt3-F6-5eG"/>
+        <segue reference="cub-pU-bAr"/>
+        <segue reference="WKk-6j-Np9"/>
+        <segue reference="h31-c6-UMY"/>
         <segue reference="Nfx-nM-YZc"/>
     </inferredMetricsTieBreakers>
 </document>

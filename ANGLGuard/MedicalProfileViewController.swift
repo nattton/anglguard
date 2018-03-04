@@ -1,7 +1,7 @@
 import UIKit
 
-class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, AllergyOfDrugDelegate, AllergyOfFoodDelegate, AllergyOfChemicalDelegate, UnderlyingDelegate, CurrentMedicationDelegate, SpacialCareDelegate {
-
+class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet var tf_blood_type: UITextField!
     @IBOutlet var tf_drug: UITextField!
     @IBOutlet var tf_food: UITextField!
@@ -93,84 +93,26 @@ class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPicker
         tf_blood_type.text = "\(bloods[row])"
     }
     
-    func onAllergyOfDrugResult(result: String) {
-//        tf_drug.text = result
-    }
-    
-    func onAllergyOfFoodResult(result: String) {
-//        tf_food.text = result
-    }
-    
-    func onAllergyOfChemicalResult(result: String) {
-//        tf_chemical.text = result
-    }
-    
-    func onUnderlyingResult(result: String) {
-//        tf_underlying.text = result
-    }
-    
-    func onCurrentMedicationResult(result: String) {
-//        tf_medication.text = result
-    }
-    
-    func onSpacialCareResult(result: String) {
-//        tf_special_care.text = result
-    }
-
-    @IBAction func backAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func nextAction(_ sender: Any) {
+    @IBAction func updateAction(_ sender: Any) {
         let blood_type: String = tf_blood_type.text!
         
-        if blood_type.count == 0 {
-            let alert = UIAlertController(title: BLOOD_TYPE_ALERT, message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(defaultAction)
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            //data
-            Medical.sharedInstance.blood_type = blood_type
-            
-            self.performSegue(withIdentifier: "showStep6", sender: nil)
-        }
+        
     }
     
+    @IBAction func showMenu(_ sender: Any) {
+        if let container = self.so_containerViewController {
+            container.isSideViewControllerPresented = true
+        }
+    }
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDrug" {
-            let allergyOfDrugView: AllergyOfDrugViewController = segue.destination as! AllergyOfDrugViewController
-            allergyOfDrugView.delegate = self
-        }
-        
-        if segue.identifier == "showFood" {
-            let allergyOfFoodView: AllergyOfFoodViewController = segue.destination as! AllergyOfFoodViewController
-            allergyOfFoodView.delegate = self
-        }
-        
-        if segue.identifier == "showChemical" {
-            let allergyOfChemicalView: AllergyOfChemicalViewController = segue.destination as! AllergyOfChemicalViewController
-            allergyOfChemicalView.delegate = self
-        }
-        
-        if segue.identifier == "showUnderlying" {
-            let underlyingView: UnderlyingViewController = segue.destination as! UnderlyingViewController
-            underlyingView.delegate = self
-        }
-        
-        if segue.identifier == "showCurrentMedicationandHerb" {
-            let currentMedicationView: CurrentMedicationViewController = segue.destination as! CurrentMedicationViewController
-            currentMedicationView.delegate = self
-        }
-        
-        if segue.identifier == "showSpacialCare" {
-            let spacialCareView: SpacialCareViewController = segue.destination as! SpacialCareViewController
-            spacialCareView.delegate = self
-        }
-        
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }

@@ -39,20 +39,11 @@ class SignUpViewController: UITableViewController {
         confirm = tf_confirm.text!
         
         if email.isValidEmail() == false {
-            let alert = UIAlertController(title: "Invalid Email", message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(defaultAction)
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: "Invalid Email")
         } else if password.isValidPassword() == false {
-            let alert = UIAlertController(title: "Invalid Password", message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(defaultAction)
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: "Invalid Password")
         } else if password != confirm {
-            let alert = UIAlertController(title: "Password not match", message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(defaultAction)
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: "Password not match")
         } else {
             let parameters: Parameters = ["email": email]
             SVProgressHUD.show(withStatus: LOADING_TEXT)
@@ -75,6 +66,8 @@ class SignUpViewController: UITableViewController {
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         self.defaults.set("N", forKey: "timer")
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.clearProfile()
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
@@ -88,8 +81,16 @@ class SignUpViewController: UITableViewController {
             }
         }
     }
+    
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

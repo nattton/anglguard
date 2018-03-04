@@ -21,6 +21,17 @@
 		3B0C5CB52039D1BB0086C086 /* UnderlyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB42039D1BB0086C086 /* UnderlyingViewController.swift */; };
 		3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB62039D22A0086C086 /* CurrentMedicationViewController.swift */; };
 		3B0C5CB92039D2780086C086 /* SpacialCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */; };
+		3B4FD58A204B7B3500AB045D /* ProfileQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */; };
+		3B4FD58C204B7BE800AB045D /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */; };
+		3B4FD58E204B894100AB045D /* CurrentThaiPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */; };
+		3B4FD590204B931C00AB045D /* PassportProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD58F204B931C00AB045D /* PassportProfileViewController.swift */; };
+		3B4FD592204BA2D200AB045D /* MedicalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD591204BA2D200AB045D /* MedicalProfileViewController.swift */; };
+		3B4FD594204BA30500AB045D /* EmergencyContactProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD593204BA30500AB045D /* EmergencyContactProfileViewController.swift */; };
+		3B4FD596204BA41400AB045D /* TripPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD595204BA41400AB045D /* TripPlanViewController.swift */; };
+		3B4FD598204BA44700AB045D /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD597204BA44700AB045D /* InsuranceViewController.swift */; };
+		3B4FD59A204BA46B00AB045D /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD599204BA46B00AB045D /* ChangePasswordViewController.swift */; };
+		3B4FD59C204BA49000AB045D /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD59B204BA49000AB045D /* ForgetPasswordViewController.swift */; };
+		3B4FD59E204BB5E200AB045D /* Insurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD59D204BB5E200AB045D /* Insurance.swift */; };
 		3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462DA2036A47400A39901 /* AppDelegate.swift */; };
 		3B6462E02036A47400A39901 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462DE2036A47400A39901 /* Main.storyboard */; };
 		3B6462E22036A47400A39901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6462E12036A47400A39901 /* Assets.xcassets */; };
@@ -40,7 +51,6 @@
 		3B64631E2036AA4200A39901 /* InitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FE2036AA4000A39901 /* InitalViewController.swift */; };
 		3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */; };
 		3B6463202036AA4200A39901 /* TermAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */; };
-		3B6463212036AA4200A39901 /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */; };
 		3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */; };
 		3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */; };
 		3B6463262036AA4200A39901 /* NAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463062036AA4100A39901 /* NAlertCell.swift */; };
@@ -64,6 +74,7 @@
 		3BA1227E203C90A10085984D /* AsiaPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227D203C90A10085984D /* AsiaPayViewController.swift */; };
 		3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227F203C92690085984D /* ViriyahViewController.swift */; };
 		3BA12286203C998E0085984D /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12285203C998E0085984D /* ThankYouViewController.swift */; };
+		3BFA06ED2049DCAD00C47C0E /* Authen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA06EC2049DCAD00C47C0E /* Authen.swift */; };
 		59334130CFD032867069BF69 /* Pods_ANGLGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +93,17 @@
 		3B0C5CB42039D1BB0086C086 /* UnderlyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlyingViewController.swift; sourceTree = "<group>"; };
 		3B0C5CB62039D22A0086C086 /* CurrentMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMedicationViewController.swift; sourceTree = "<group>"; };
 		3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialCareViewController.swift; sourceTree = "<group>"; };
+		3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileQRCodeViewController.swift; sourceTree = "<group>"; };
+		3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
+		3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThaiPhoneViewController.swift; sourceTree = "<group>"; };
+		3B4FD58F204B931C00AB045D /* PassportProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportProfileViewController.swift; sourceTree = "<group>"; };
+		3B4FD591204BA2D200AB045D /* MedicalProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalProfileViewController.swift; sourceTree = "<group>"; };
+		3B4FD593204BA30500AB045D /* EmergencyContactProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactProfileViewController.swift; sourceTree = "<group>"; };
+		3B4FD595204BA41400AB045D /* TripPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanViewController.swift; sourceTree = "<group>"; };
+		3B4FD597204BA44700AB045D /* InsuranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
+		3B4FD599204BA46B00AB045D /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		3B4FD59B204BA49000AB045D /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		3B4FD59D204BB5E200AB045D /* Insurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insurance.swift; sourceTree = "<group>"; };
 		3B6462D72036A47400A39901 /* ANGLGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANGLGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6462DA2036A47400A39901 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6462DF2036A47400A39901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +126,6 @@
 		3B6462FE2036AA4000A39901 /* InitalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitalViewController.swift; sourceTree = "<group>"; };
 		3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
 		3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermAndConditionViewController.swift; sourceTree = "<group>"; };
-		3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
 		3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnFirstAidDetailViewController.swift; sourceTree = "<group>"; };
 		3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
 		3B6463062036AA4100A39901 /* NAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NAlertCell.swift; sourceTree = "<group>"; };
@@ -128,6 +149,7 @@
 		3BA1227D203C90A10085984D /* AsiaPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaPayViewController.swift; sourceTree = "<group>"; };
 		3BA1227F203C92690085984D /* ViriyahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViriyahViewController.swift; sourceTree = "<group>"; };
 		3BA12285203C998E0085984D /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
+		3BFA06EC2049DCAD00C47C0E /* Authen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authen.swift; sourceTree = "<group>"; };
 		998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.debug.xcconfig"; sourceTree = "<group>"; };
 		D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.release.xcconfig"; sourceTree = "<group>"; };
 		E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ANGLGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,10 +171,12 @@
 		3B0C5CA5203972860086C086 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BFA06EC2049DCAD00C47C0E /* Authen.swift */,
 				3B0C5CA6203973170086C086 /* Personal.swift */,
 				3B0C5CA82039756A0086C086 /* Contact.swift */,
 				3B0C5CAA20397DA60086C086 /* Trip.swift */,
 				3B0C5CAC20397E4B0086C086 /* Medical.swift */,
+				3B4FD59D204BB5E200AB045D /* Insurance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +206,7 @@
 				3B6462EC2036A4D100A39901 /* ANGLGuard.entitlements */,
 				3B6462DA2036A47400A39901 /* AppDelegate.swift */,
 				3B6462FE2036AA4000A39901 /* InitalViewController.swift */,
+				3B6463092036AA4100A39901 /* MenuViewController.swift */,
 				3B6463082036AA4100A39901 /* LoginViewController.swift */,
 				3B6462F82036AA4000A39901 /* SignUpViewController.swift */,
 				3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */,
@@ -207,12 +232,11 @@
 				3B6462FB2036AA4000A39901 /* WebViewController.swift */,
 				3B6463112036AA4200A39901 /* AngllifeCell.swift */,
 				3B6462F92036AA4000A39901 /* MenuCell.swift */,
-				3B6463092036AA4100A39901 /* MenuViewController.swift */,
 				3B64630E2036AA4200A39901 /* HospitalCell.swift */,
 				3B6462FC2036AA4000A39901 /* AttractionAnnotation.swift */,
 				3B6462FA2036AA4000A39901 /* AttractionAnnotationView.swift */,
 				3B6462F42036AA4000A39901 /* AngllifeViewController.swift */,
-				3B6463012036AA4100A39901 /* PersonalProfileViewController.swift */,
+				3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */,
 				3B6462F72036AA4000A39901 /* LearnFirstAidViewController.swift */,
 				3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */,
 				3B6463342036BE9500A39901 /* HelpViewController.swift */,
@@ -220,6 +244,15 @@
 				3B64630A2036AA4100A39901 /* GroupAlertViewController.swift */,
 				3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */,
 				3B64630D2036AA4200A39901 /* ProfileViewController.swift */,
+				3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */,
+				3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */,
+				3B4FD58F204B931C00AB045D /* PassportProfileViewController.swift */,
+				3B4FD591204BA2D200AB045D /* MedicalProfileViewController.swift */,
+				3B4FD593204BA30500AB045D /* EmergencyContactProfileViewController.swift */,
+				3B4FD595204BA41400AB045D /* TripPlanViewController.swift */,
+				3B4FD597204BA44700AB045D /* InsuranceViewController.swift */,
+				3B4FD599204BA46B00AB045D /* ChangePasswordViewController.swift */,
+				3B4FD59B204BA49000AB045D /* ForgetPasswordViewController.swift */,
 				3B64630C2036AA4200A39901 /* FriendCell.swift */,
 				3B6463122036AA4200A39901 /* FriendsViewController.swift */,
 				36CC6D9D20439999002B777C /* AddFriendViewController.swift */,
@@ -410,12 +443,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */,
+				3B4FD594204BA30500AB045D /* EmergencyContactProfileViewController.swift in Sources */,
 				3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */,
+				3B4FD592204BA2D200AB045D /* MedicalProfileViewController.swift in Sources */,
 				3B64631C2036AA4200A39901 /* AttractionAnnotation.swift in Sources */,
 				3B6463202036AA4200A39901 /* TermAndConditionViewController.swift in Sources */,
 				3B6463282036AA4200A39901 /* LoginViewController.swift in Sources */,
-				3B6463212036AA4200A39901 /* PersonalProfileViewController.swift in Sources */,
 				3B6463162036AA4200A39901 /* LanguageViewController.swift in Sources */,
+				3BFA06ED2049DCAD00C47C0E /* Authen.swift in Sources */,
 				3B64632F2036AA4200A39901 /* NMessageCell.swift in Sources */,
 				3B0C5CB92039D2780086C086 /* SpacialCareViewController.swift in Sources */,
 				3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */,
@@ -425,6 +460,7 @@
 				3B6463292036AA4200A39901 /* MenuViewController.swift in Sources */,
 				3B6463182036AA4200A39901 /* SignUpViewController.swift in Sources */,
 				3B0C5CA92039756A0086C086 /* Contact.swift in Sources */,
+				3B4FD58C204B7BE800AB045D /* PersonalProfileViewController.swift in Sources */,
 				3B0C5CAB20397DA60086C086 /* Trip.swift in Sources */,
 				3B64632B2036AA4200A39901 /* Step3ViewController.swift in Sources */,
 				3B6463272036AA4200A39901 /* GroupAlertCell.swift in Sources */,
@@ -433,8 +469,10 @@
 				3B64632C2036AA4200A39901 /* FriendCell.swift in Sources */,
 				3B6463312036AA4200A39901 /* AngllifeCell.swift in Sources */,
 				36CC6D9E20439999002B777C /* AddFriendViewController.swift in Sources */,
+				3B4FD598204BA44700AB045D /* InsuranceViewController.swift in Sources */,
 				3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */,
 				3B0C5CAD20397E4B0086C086 /* Medical.swift in Sources */,
+				3B4FD59A204BA46B00AB045D /* ChangePasswordViewController.swift in Sources */,
 				3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */,
 				3B0C5CB52039D1BB0086C086 /* UnderlyingViewController.swift in Sources */,
 				3BA12286203C998E0085984D /* ThankYouViewController.swift in Sources */,
@@ -442,6 +480,7 @@
 				3B0C5CB12039D0EA0086C086 /* AllergyOfFoodViewController.swift in Sources */,
 				3B64631B2036AA4200A39901 /* WebViewController.swift in Sources */,
 				3B6463302036AA4200A39901 /* NotificationViewController.swift in Sources */,
+				3B4FD590204B931C00AB045D /* PassportProfileViewController.swift in Sources */,
 				3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */,
 				3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */,
 				3B64632D2036AA4200A39901 /* ProfileViewController.swift in Sources */,
@@ -454,12 +493,17 @@
 				3B64632E2036AA4200A39901 /* HospitalCell.swift in Sources */,
 				3B0C5CA420396E240086C086 /* Step7ViewController.swift in Sources */,
 				3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */,
+				3B4FD58A204B7B3500AB045D /* ProfileQRCodeViewController.swift in Sources */,
+				3B4FD58E204B894100AB045D /* CurrentThaiPhoneViewController.swift in Sources */,
 				3B64631A2036AA4200A39901 /* AttractionAnnotationView.swift in Sources */,
 				3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */,
+				3B4FD596204BA41400AB045D /* TripPlanViewController.swift in Sources */,
 				3B0C5CAF2039CF400086C086 /* AllergyOfDrugViewController.swift in Sources */,
 				3B6463322036AA4200A39901 /* FriendsViewController.swift in Sources */,
 				3B6463192036AA4200A39901 /* MenuCell.swift in Sources */,
+				3B4FD59E204BB5E200AB045D /* Insurance.swift in Sources */,
 				3B6463142036AA4200A39901 /* AngllifeViewController.swift in Sources */,
+				3B4FD59C204BA49000AB045D /* ForgetPasswordViewController.swift in Sources */,
 				3B6463262036AA4200A39901 /* NAlertCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

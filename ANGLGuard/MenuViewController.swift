@@ -7,7 +7,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         ["ic_home", "ic_profile", "ic_device", "ic_notification", "ic_language", "ic_condition", "ic_signout"],
         ["Home", "Profile", "Group", "Notification", "Language", "Term & Conditions", "Sign Out"]
     ]
-    let identifiers = ["angllife", "angllife", "profile", "group", "notification", "language", "term", "login"]
+    let identifiers = ["angllife", "angllife", "passportProfile", "group", "notification", "language", "term", "login"]
     
     var indexSelected = 0
     
@@ -43,7 +43,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let defaults = UserDefaults.standard
             
-            if let image = defaults.string(forKey: "image") {
+            if let image = defaults.string(forKey: "personal_img_bin") {
                 let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                     let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
                     let fileURL = documentsURL.appendingPathComponent("avatar.jpg")

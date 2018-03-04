@@ -1,6 +1,6 @@
 import UIKit
 
-class Step6ViewController: UITableViewController {
+class TripPlanViewController: UITableViewController {
     
     @IBOutlet var tf_purpose: UITextField!
     @IBOutlet var tf_start_date: UITextField!
@@ -35,7 +35,7 @@ class Step6ViewController: UITableViewController {
         tf_start_date.inputView = createDatePicker()
         tf_start_date.inputAccessoryView = createDateToolBar()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -87,11 +87,7 @@ class Step6ViewController: UITableViewController {
         tf_start_date.text = date_result
     }
     
-    @IBAction func backAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func nextAction(_ sender: Any) {
+    @IBAction func updateAction(_ sender: Any) {
         let purpose: String = tf_purpose.text!
         let start_date: String = tf_start_date.text!
         let lenght_of_day: String = tf_lenght_of_day.text!
@@ -115,8 +111,6 @@ class Step6ViewController: UITableViewController {
             Trip.sharedInstance.trip_arrang = trip_arrang
             Trip.sharedInstance.domestic_tran_arrang = domestic_tran_arrang
             Trip.sharedInstance.destination = destination
-            
-            self.performSegue(withIdentifier: "showStep7", sender: nil)
         }
     }
     
@@ -127,6 +121,12 @@ class Step6ViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func showMenu(_ sender: Any) {
+        if let container = self.so_containerViewController {
+            container.isSideViewControllerPresented = true
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

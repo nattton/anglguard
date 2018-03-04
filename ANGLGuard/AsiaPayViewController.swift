@@ -34,7 +34,7 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
                             "&remark=" +
                             "&failRetry=" +
                             "&print=" +
-                            "&appId=Normal Merchant" +
+                            "&appId=" +
                             "&appRef=" +
                             "&redirect=30" +
                             "&o_charge=0"
