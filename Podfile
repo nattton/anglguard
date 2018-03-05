@@ -16,5 +16,8 @@ target 'ANGLGuard' do
   pod 'Firebase/Messaging'
   pod 'ADCountryPicker', '2.0.0'
   pod 'SVProgressHUD', '2.2.5'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 
 end

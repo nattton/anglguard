@@ -50,7 +50,6 @@ class InsurancePlanViewController: UITableViewController {
         }
         
         if let token = defaults.string(forKey: "token") {
-            
             let parameters: Parameters = [
                 "plan": plan,
                 "token": token

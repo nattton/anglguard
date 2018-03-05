@@ -4,6 +4,8 @@ import UserNotifications
 import Firebase
 import SVProgressHUD
 
+import FBSDKLoginKit
+
 let HOST = "https://anglguard-service.angl.life/public"
 let HOST_TOURIST = "http://203.107.236.229/api-tourist"
 let SECRET_KEY = "aWuxjr5RQhDRItGII616"
@@ -34,6 +36,7 @@ let SAVE_NEW_PASSWORD = HOST + "/save-new-password"
 let SAVE_TRIP_PLAN = HOST + "/save-profile-trip-plan"
 let SAVE_PROFILE_CONTACT = HOST + "/save-profile-contact"
 let SAVE_PROFILE_MEDICAL = HOST + "/save-profile-medical"
+let SAVE_PROFILE_PERSONAL = HOST + "/save-profile-personal"
 
 let TOURIST_AUTHENTICATION = HOST_TOURIST + "/vendor/authentication/secret_key"
 let TOURIST_EVENT_TRACKING = HOST_TOURIST + "/vendor/event/event_tracking/@"
@@ -74,7 +77,6 @@ let CONTACT_NAME_ALERT = "Please insert contact name."
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
     var window: UIWindow?
-    var appIsStarting: Bool = false
     let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -117,27 +119,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             }
         }
         
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        appIsStarting = false
+
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        appIsStarting = false
+
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        appIsStarting = true
+
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        appIsStarting = false
+        FBSDKAppEvents.activateApp()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -160,7 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         registerToMobilePush(deviceToken: fcmToken!)
     }
     
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
 //        if var topController = window?.rootViewController {
 //            while let presentedViewController = topController.presentedViewController {
 //                topController = presentedViewController
@@ -173,27 +179,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 //                topController.present(alert, animated: true, completion: nil)
 //            }
 //        }
-//    }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        if application.applicationState == .background || application.applicationState == .inactive && !appIsStarting {
-            if var topController = window?.rootViewController {
-                while let presentedViewController = topController.presentedViewController {
-                    topController = presentedViewController
-                }
-                
-                if let latitude: String = userInfo["latitude"] as? String, let longitude: String = userInfo["longitude"] as? String {
-                    let alert = UIAlertController(title: latitude + " " + longitude, message: "", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alert.addAction(defaultAction)
-                    topController.present(alert, animated: true, completion: nil)
-                }
-            }
-        } else if application.applicationState == .inactive && appIsStarting {
-            completionHandler(.newData)
-        } else {
-            completionHandler(.noData)
-        }
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {

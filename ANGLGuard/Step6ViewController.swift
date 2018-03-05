@@ -83,6 +83,7 @@ class Step6ViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en")
         formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
+        formatter.dateFormat = "dd/MM/yyyy"
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_start_date.text = date_result
     }

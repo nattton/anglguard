@@ -23,6 +23,8 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
     
     var isImage: Bool = false
     
+    let defaults = UserDefaults.standard
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -165,6 +167,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en")
         formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
+        formatter.dateFormat = "dd/MM/yyyy"
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_date_of_birth.text = date_result
     }
@@ -248,6 +251,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         let weight: String = tf_weight.text!
         let cc: String = tf_country_code.text!
         let phone: String = tf_phone.text!
+        let image = bt_avatar.image(for: .normal)
         
         if firstname.count == 0 {
             showAlert(message: FIRSTNAME_ALERT)
@@ -268,17 +272,69 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         } else if phone.count == 0 {
             showAlert(message: MOBILE_NUMBER_ALERT)
         } else {
-            //data
-//            Personal.sharedInstance.firstname = firstname
-//            Personal.sharedInstance.lastname = lastname
-//            Personal.sharedInstance.middlename = middlename
-//            Personal.sharedInstance.personal_img_bin = bt_avatar.image(for: .normal)
-//            Personal.sharedInstance.gender = gender
-//            Personal.sharedInstance.birthdate = date_of_birth
-//            Personal.sharedInstance.height = height
-//            Personal.sharedInstance.weight = weight
-//            Personal.sharedInstance.mobile_cc = cc
-//            Personal.sharedInstance.mobile_num = phone
+            if let token = defaults.string(forKey: "token") {
+                let parameters: Parameters = [
+                    "token": token,
+                    "personal": [
+                        "firstname": firstname,
+                        "middlename": middlename,
+                        "lastname": lastname,
+                        "gender": gender,
+                        "birthdate": date_of_birth,
+                        "height": height,
+                        "weight": weight,
+                        "country_code": Personal.sharedInstance.country_code,
+                        "passport_num": Personal.sharedInstance.passport_num,
+                        "passport_expire_date": Personal.sharedInstance.passport_expire_date,
+                        "mobile_num": phone,
+                        "mobile_cc": cc,
+                        "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
+                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc
+//                        "personal_img_bin": "binary encode base 64"
+                    ]
+                ]
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
+                Alamofire.request(SAVE_PROFILE_PERSONAL, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
+                    SVProgressHUD.dismiss()
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        NSLog("result = \(result)")
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        if code == "200" {
+                            //data
+                            Personal.sharedInstance.firstname = firstname
+                            Personal.sharedInstance.lastname = lastname
+                            Personal.sharedInstance.middlename = middlename
+                            Personal.sharedInstance.personal_img_bin = image
+                            Personal.sharedInstance.gender = gender
+                            Personal.sharedInstance.birthdate = date_of_birth
+                            Personal.sharedInstance.height = height
+                            Personal.sharedInstance.weight = weight
+                            Personal.sharedInstance.mobile_cc = cc
+                            Personal.sharedInstance.mobile_num = phone
+                            
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        } else if code == "104" {
+                            self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
+                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
         }
     }
     

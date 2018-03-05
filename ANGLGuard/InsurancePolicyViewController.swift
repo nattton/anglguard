@@ -88,6 +88,7 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en")
         formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
+        formatter.dateFormat = "dd/MM/yyyy"
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_expire_date.text = date_result
     }

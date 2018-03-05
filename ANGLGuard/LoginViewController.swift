@@ -2,6 +2,9 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
+import FacebookLogin
+import FBSDKLoginKit
+
 class LoginViewController: UITableViewController {
     
     @IBOutlet var tf_username: UITextField!
@@ -76,6 +79,27 @@ class LoginViewController: UITableViewController {
     
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func facebookAction(_ sender: Any) {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { (loginResult) in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success( _, _, let accessToken):
+                Authen.sharedInstance.key = accessToken.authenticationToken
+                let parameters = ["fields": "id, name, email"]
+                FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, error) -> Void in
+                    if (error == nil){
+                        let dict = result as! [String : AnyObject]
+                        print(dict)
+                    }
+                })
+            }
+        }
     }
     
     /*

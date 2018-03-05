@@ -93,7 +93,7 @@ class EmergencyContactProfileViewController: UITableViewController, UITextFieldD
                     ]
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)
-                Alamofire.request(SAVE_PROFILE_CONTACT, method: .post, parameters: parameters).responseJSON { response in
+                Alamofire.request(SAVE_PROFILE_CONTACT, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
                     SVProgressHUD.dismiss()
                     if let json = response.result.value {
                         let result = json as! Dictionary<String, Any>

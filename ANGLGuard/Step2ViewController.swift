@@ -154,6 +154,7 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en")
         formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
+        formatter.dateFormat = "dd/MM/yyyy"
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_date_of_birth.text = date_result
     }

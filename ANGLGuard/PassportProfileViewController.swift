@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import ADCountryPicker
+import SVProgressHUD
 
 class PassportProfileViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
@@ -11,6 +12,8 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
     
     var datePicker: UIDatePicker?
     var isImage: Bool = false
+    
+    let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -95,6 +98,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en")
         formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
+        formatter.dateFormat = "dd/MM/yyyy"
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_expire_date.text = date_result
     }
@@ -164,6 +168,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         let passport: String = tf_passport.text!
         let country: String = tf_country.text!
         let expire_date: String = tf_expire_date.text!
+        let image = bt_avatar.image(for: .normal)
         
         if passport.count == 0 {
             showAlert(message: PASSPORT_NUMBER_ALERT)
@@ -174,11 +179,63 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         } else if isImage == false {
             showAlert(message: PASSPORT_IMAGE_ALERT)
         } else {
-            //data
-            Personal.sharedInstance.passport_num = passport
-            Personal.sharedInstance.country_code = country
-            Personal.sharedInstance.passport_expire_date = expire_date
-            Personal.sharedInstance.passport_img = bt_avatar.image(for: .normal)
+            if let token = defaults.string(forKey: "token") {
+                let parameters: Parameters = [
+                    "token": token,
+                    "personal": [
+                        "firstname": Personal.sharedInstance.firstname,
+                        "middlename": Personal.sharedInstance.middlename,
+                        "lastname": Personal.sharedInstance.lastname,
+                        "gender": Personal.sharedInstance.gender,
+                        "birthdate": Personal.sharedInstance.birthdate,
+                        "height": Personal.sharedInstance.height,
+                        "weight": Personal.sharedInstance.weight,
+                        "country_code": country,
+                        "passport_num": passport,
+                        "passport_expire_date": expire_date,
+                        "mobile_num": Personal.sharedInstance.mobile_num,
+                        "mobile_cc": Personal.sharedInstance.mobile_cc,
+                        "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
+                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc
+//                        "passport_img": "binary encode base 64"
+                    ]
+                ]
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
+                Alamofire.request(SAVE_PROFILE_PERSONAL, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
+                    SVProgressHUD.dismiss()
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        NSLog("result = \(result)")
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        if code == "200" {
+                            //data
+                            Personal.sharedInstance.passport_num = passport
+                            Personal.sharedInstance.country_code = country
+                            Personal.sharedInstance.passport_expire_date = expire_date
+                            Personal.sharedInstance.passport_img = image
+                            
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        } else if code == "104" {
+                            self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
+                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
         }
     }
     

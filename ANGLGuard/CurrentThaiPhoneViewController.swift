@@ -102,7 +102,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
         }
     }
     
-    @IBAction func updateAction(_ sender: Any) {
+    @IBAction func verifyAction(_ sender: Any) {
         if let token = defaults.string(forKey: "token") {
             let country_code: String = tf_country_code.text!
             let phone: String = tf_phone.text!
@@ -121,10 +121,91 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                     "code": code,
                     "token": token
                 ]
-                
-                //data
-                Personal.sharedInstance.thai_mobile_cc = country_code
-                Personal.sharedInstance.thai_mobile_num = phone
+                SVProgressHUD.show(withStatus: LOADING_TEXT)
+                Alamofire.request(SMS_VERIFY_CODE, method: .get, parameters: parameters).responseJSON { response in
+                    SVProgressHUD.dismiss()
+                    if let json = response.result.value {
+                        let result = json as! Dictionary<String, Any>
+                        let code: String = result["code"] as! String
+                        let message: String = result["message"] as! String
+                        NSLog("result = \(result)")
+                        if code == "200" {
+                            //data
+                            Personal.sharedInstance.thai_mobile_cc = country_code
+                            Personal.sharedInstance.thai_mobile_num = phone
+                            
+                            self.saveThaiMobileNumber()
+                            
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        } else if code == "104" {
+                            self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
+                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        } else {
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func saveThaiMobileNumber() {
+        if let token = defaults.string(forKey: "token") {
+            let parameters: Parameters = [
+                "token": token,
+                "personal": [
+                    "firstname": Personal.sharedInstance.firstname,
+                    "middlename": Personal.sharedInstance.middlename,
+                    "lastname": Personal.sharedInstance.lastname,
+                    "gender": Personal.sharedInstance.gender,
+                    "birthdate": Personal.sharedInstance.birthdate,
+                    "height": Personal.sharedInstance.height,
+                    "weight": Personal.sharedInstance.weight,
+                    "country_code": Personal.sharedInstance.country_code,
+                    "passport_num": Personal.sharedInstance.passport_num,
+                    "passport_expire_date": Personal.sharedInstance.passport_expire_date,
+                    "mobile_num": Personal.sharedInstance.mobile_num,
+                    "mobile_cc": Personal.sharedInstance.mobile_cc,
+                    "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
+                    "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc
+                ]
+            ]
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
+            Alamofire.request(SAVE_PROFILE_PERSONAL, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
+                SVProgressHUD.dismiss()
+                if let json = response.result.value {
+                    let result = json as! Dictionary<String, Any>
+                    NSLog("result = \(result)")
+                    let code: String = result["code"] as! String
+                    let message: String = result["message"] as! String
+                    if code == "200" {
+                        
+                    } else if code == "104" {
+                        self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.clearProfile()
+                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                    } else {
+                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert.addAction(defaultAction)
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
             }
         }
     }

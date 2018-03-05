@@ -29,17 +29,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        if let firstname = defaults.string(forKey: "firstname"), let lastname = defaults.string(forKey: "lastname") {
-            lb_name.text = firstname + " " + lastname
-        } else {
-            lb_name.text = "-"
-        }
-        
-        if let email = defaults.string(forKey: "email") {
-            lb_email.text = email
-        } else {
-            lb_email.text = "-"
-        }
+        lb_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+        lb_email.text = Personal.sharedInstance.email
     }
 
     override func didReceiveMemoryWarning() {

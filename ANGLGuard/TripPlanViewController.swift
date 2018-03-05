@@ -86,6 +86,7 @@ class TripPlanViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en")
         formatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
+        formatter.dateFormat = "dd/MM/yyyy"
         let date_result = formatter.string(from: (datePicker?.date)!)
         tf_start_date.text = date_result
     }
@@ -112,7 +113,7 @@ class TripPlanViewController: UITableViewController {
                     ]
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)
-                Alamofire.request(SAVE_TRIP_PLAN, method: .post, parameters: parameters).responseJSON { response in
+                Alamofire.request(SAVE_TRIP_PLAN, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
                     SVProgressHUD.dismiss()
                     if let json = response.result.value {
                         let result = json as! Dictionary<String, Any>
