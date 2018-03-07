@@ -25,54 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ANGLGuard/LoginViewController.swift"
-            timestampString = "541964786.306861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "facebookAction(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (FacebookLogin.LoginResult) -&gt; () in ANGLGuard.LoginViewController.facebookAction(Any) -&gt; ()"
-                  moduleName = "ANGLGuard"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/komkrit/Documents/Project/iOS/ANGLGuard2/ANGLGuard/LoginViewController.swift"
-                  timestampString = "541964786.378634"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "1572">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.FBSDKGraphRequestConnection&gt;, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (FacebookLogin.LoginResult) -&gt; () in ANGLGuard.LoginViewController.facebookAction(Any) -&gt; ()"
-                  moduleName = "ANGLGuard"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/komkrit/Documents/Project/iOS/ANGLGuard2/ANGLGuard/LoginViewController.swift"
-                  timestampString = "541964786.3803459"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ANGLGuard/InsurancePlanViewController.swift"
             timestampString = "541964786.306921"
             startingColumnNumber = "9223372036854775807"
@@ -89,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ANGLGuard/Step7ViewController.swift"
-            timestampString = "541965025.718522"
+            filePath = "ANGLGuard/LoginViewController.swift"
+            timestampString = "542127532.087376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
-            landmarkName = "nextAction(_:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "facebookAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ANGLGuard/LoginViewController.swift"
+            timestampString = "542127532.0874341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "login(parameters:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

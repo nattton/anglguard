@@ -36,15 +36,11 @@ class ProfileQRCodeViewController: UIViewController {
             }
         }
         
-        if let firstname = defaults.string(forKey: "firstname"), let lastname = defaults.string(forKey: "lastname") {
-            name.text = firstname + " " + lastname
-        } else {
-            name.text = "-"
-        }
+        name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
         
         if qrcodeImage == nil {
-            if let link = defaults.string(forKey: "link") {
-                let data = link.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
+            if Personal.sharedInstance.personal_link.count > 0 {
+                let data = Personal.sharedInstance.personal_link.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
                 let filter = CIFilter(name: "CIQRCodeGenerator")
                 filter?.setValue(data, forKey: "inputMessage")
                 filter?.setValue("Q", forKey: "inputCorrectionLevel")

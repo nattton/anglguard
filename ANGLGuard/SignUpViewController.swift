@@ -2,6 +2,9 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 
+import FacebookLogin
+import FBSDKLoginKit
+
 class SignUpViewController: UITableViewController {
 
     @IBOutlet var tf_email: UITextField!
@@ -45,45 +48,75 @@ class SignUpViewController: UITableViewController {
         } else if password != confirm {
             showAlert(message: "Password not match")
         } else {
-            let parameters: Parameters = ["email": email]
-            SVProgressHUD.show(withStatus: LOADING_TEXT)
-            Alamofire.request(EMAIL_EXISTS, method: .get, parameters: parameters).responseJSON { response in
-                SVProgressHUD.dismiss()
-                if let json = response.result.value {
-                    let result = json as! Dictionary<String, Any>
-                    NSLog("result = \(result)")
-                    let code: String = result["code"] as! String
-                    let message: String = result["message"] as! String
-                    if code == "200" {
-                        let token: String = result["token"] as! String
-                        self.defaults.set(token, forKey: "token")
-                        
-                        //data
-                        Personal.sharedInstance.email = self.email
-                        Personal.sharedInstance.password = self.password
-                        
-                        self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
-                    } else if code == "104" {
-                        self.defaults.set("N", forKey: "login")
-                        self.defaults.set("N", forKey: "timer")
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDelegate.clearProfile()
-                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
-                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
-                    } else {
-                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alert.addAction(defaultAction)
-                        self.present(alert, animated: true, completion: nil)
+            Personal.sharedInstance.password = self.password
+            verify(email: email)
+        }
+    }
+    
+    @IBAction func facebookAction(_ sender: Any) {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { (loginResult) in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success( _, _, let accessToken):
+                Authen.sharedInstance.key = accessToken.authenticationToken
+                Authen.sharedInstance.type = "facebook"
+                let parameters = ["fields": "id, name, email"]
+                FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, error) -> Void in
+                    if (error == nil){
+                        if let data = result as? [String : AnyObject] {
+                            if let email = data["email"] as? String {
+                                self.verify(email: email)
+                            }
+                        }
                     }
-                }
+                })
             }
         }
     }
     
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func verify(email: String) {
+        let parameters: Parameters = ["email": email]
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
+        Alamofire.request(EMAIL_EXISTS, method: .get, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
+            if let json = response.result.value {
+                let result = json as! Dictionary<String, Any>
+                NSLog("result = \(result)")
+                let code: String = result["code"] as! String
+                let message: String = result["message"] as! String
+                if code == "200" {
+                    let token: String = result["token"] as! String
+                    self.defaults.set(token, forKey: "token")
+                    
+                    //data
+                    Personal.sharedInstance.email = email
+                    
+                    
+                    self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
+                } else if code == "104" {
+                    self.defaults.set("N", forKey: "login")
+                    self.defaults.set("N", forKey: "timer")
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.clearProfile()
+                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                    let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                    UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                } else {
+                    let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     func showAlert(message: String) {
@@ -99,7 +132,7 @@ class SignUpViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showVerifyCode" {
             let verifyCodeView: VerifyCodeViewController = segue.destination as! VerifyCodeViewController
-            verifyCodeView.email = email
+            verifyCodeView.email = Personal.sharedInstance.email
         }
     }
 

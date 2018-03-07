@@ -19,6 +19,7 @@ class Personal: NSObject {
     var thai_mobile_cc: String = ""
     var personal_img_bin: UIImage?
     var passport_img: UIImage?
+    var personal_link: String = ""
     
     static let sharedInstance : Personal = {
         let instance = Personal()

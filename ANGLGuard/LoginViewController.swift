@@ -50,8 +50,51 @@ class LoginViewController: UITableViewController {
     @IBAction func signinAction(_ sender: Any) {
         let username: String! = tf_username.text
         let password: String! = tf_password.text
-        let parameters: Parameters = ["username": username, "password": password, "type": "normal"]
+        let parameters: Parameters = [
+            "username": username,
+            "password": password,
+            "type": "normal"
+        ]
+        login(parameters: parameters)
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func facebookAction(_ sender: Any) {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { (loginResult) in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success( _, _, let accessToken):
+                let parameters = ["fields": "id, name, email"]
+                FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, error) -> Void in
+                    if (error == nil){
+                        if let data = result as? [String : AnyObject] {
+                            if let email = data["email"] as? String {
+                                let parameters: Parameters = [
+                                    "email": email,
+                                    "key": accessToken.authenticationToken,
+                                    "type": "facebook"
+                                ]
+                                self.login(parameters: parameters)
+                            }
+                        }
+                    }
+                })
+            }
+        }
+    }
+    
+    @IBAction func googleAction(_ sender: Any) {
         
+    }
+    
+    func login(parameters: Parameters) {
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         Alamofire.request(LOGIN_URL, method: .get, parameters: parameters).responseJSON { response in
             SVProgressHUD.dismiss()
@@ -73,31 +116,6 @@ class LoginViewController: UITableViewController {
                     alert.addAction(defaultAction)
                     self.present(alert, animated: true, completion: nil)
                 }
-            }
-        }
-    }
-    
-    @IBAction func backAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func facebookAction(_ sender: Any) {
-        let loginManager = LoginManager()
-        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { (loginResult) in
-            switch loginResult {
-            case .failed(let error):
-                print(error)
-            case .cancelled:
-                print("User cancelled login.")
-            case .success( _, _, let accessToken):
-                Authen.sharedInstance.key = accessToken.authenticationToken
-                let parameters = ["fields": "id, name, email"]
-                FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, error) -> Void in
-                    if (error == nil){
-                        let dict = result as! [String : AnyObject]
-                        print(dict)
-                    }
-                })
             }
         }
     }

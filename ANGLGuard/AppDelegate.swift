@@ -364,6 +364,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         Personal.sharedInstance.mobile_cc = defaults.string(forKey: "mobile_cc")!
         Personal.sharedInstance.thai_mobile_num = defaults.string(forKey: "thai_mobile_num")!
         Personal.sharedInstance.thai_mobile_cc = defaults.string(forKey: "thai_mobile_cc")!
+        Personal.sharedInstance.personal_link = defaults.string(forKey: "personal_link")!
         
         Contact.sharedInstance.firstname = defaults.string(forKey: "contact_first_name")!
         Contact.sharedInstance.middlename = defaults.string(forKey: "contact_middle_name")!
@@ -427,14 +428,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         Medical.sharedInstance.wheelchair = defaults.string(forKey: "device_wheelchair")!
         Medical.sharedInstance.care_giver_one = defaults.string(forKey: "care_giver_one")!
         Medical.sharedInstance.care_giver_two = defaults.string(forKey: "care_giver_two")!
-        
-        Insurance.sharedInstance.policy_number = defaults.string(forKey: "insurance_policy_number")!
-        Insurance.sharedInstance.start_date = defaults.string(forKey: "insurance_start_date")!
-        Insurance.sharedInstance.expiration_date = defaults.string(forKey: "insurance_expiration_date")!
-        Insurance.sharedInstance.insurance_company = defaults.string(forKey: "insurance_insurance_company")!
-        Insurance.sharedInstance.contact_name = defaults.string(forKey: "insurance_contact_name")!
-        Insurance.sharedInstance.contact_number_cc = defaults.string(forKey: "insurance_contact_number_cc")!
-        Insurance.sharedInstance.contact_number = defaults.string(forKey: "insurance_contact_number")!
+
+        if defaults.string(forKey: "insurance_policy_number") != nil {
+            Insurance.sharedInstance.policy_number = defaults.string(forKey: "insurance_policy_number")!
+            Insurance.sharedInstance.start_date = defaults.string(forKey: "insurance_start_date")!
+            Insurance.sharedInstance.expiration_date = defaults.string(forKey: "insurance_expiration_date")!
+            Insurance.sharedInstance.insurance_company = defaults.string(forKey: "insurance_insurance_company")!
+            Insurance.sharedInstance.contact_name = defaults.string(forKey: "insurance_contact_name")!
+            Insurance.sharedInstance.contact_number_cc = defaults.string(forKey: "insurance_contact_number_cc")!
+            Insurance.sharedInstance.contact_number = defaults.string(forKey: "insurance_contact_number")!
+        }
     }
     
     func clearProfile() {
