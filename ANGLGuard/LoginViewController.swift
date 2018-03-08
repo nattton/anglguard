@@ -4,8 +4,9 @@ import SVProgressHUD
 
 import FacebookLogin
 import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginViewController: UITableViewController {
+class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBOutlet var tf_username: UITextField!
     @IBOutlet var tf_password: UITextField!
@@ -24,6 +25,8 @@ class LoginViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +47,38 @@ class LoginViewController: UITableViewController {
             return 48
         } else {
             return 190
+        }
+    }
+    
+    // Stop the UIActivityIndicatorView animation that was started when the user
+    // pressed the Sign In button
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let parameters: Parameters = [
+                "email": user.profile.email,
+                "key": user.authentication.idToken,
+                "type": "google"
+            ]
+            login(parameters: parameters)
         }
     }
     
@@ -91,7 +126,7 @@ class LoginViewController: UITableViewController {
     }
     
     @IBAction func googleAction(_ sender: Any) {
-        
+        GIDSignIn.sharedInstance().signIn()
     }
     
     func login(parameters: Parameters) {

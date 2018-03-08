@@ -5,6 +5,7 @@ import Firebase
 import SVProgressHUD
 
 import FBSDKLoginKit
+import GoogleSignIn
 
 let HOST = "https://anglguard-service.angl.life/public"
 let HOST_TOURIST = "http://203.107.236.229/api-tourist"
@@ -75,7 +76,7 @@ let CONTACT_NAME_ALERT = "Please insert contact name."
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
-
+    
     var window: UIWindow?
     let defaults = UserDefaults.standard
 
@@ -119,6 +120,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             }
         }
         
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = "405428121980-34ck2gf8b1cp4b3dlkttnnbdd1ck99rn.apps.googleusercontent.com"
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -143,8 +147,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        if FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation) {
+            return true
+        } else if GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation) {
+            return true
+        }
+        
+        return false
     }
+    
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+//    }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to register: \(error)")

@@ -4,8 +4,9 @@ import SVProgressHUD
 
 import FacebookLogin
 import FBSDKLoginKit
+import GoogleSignIn
 
-class SignUpViewController: UITableViewController {
+class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate {
 
     @IBOutlet var tf_email: UITextField!
     @IBOutlet var tf_password: UITextField!
@@ -29,11 +30,42 @@ class SignUpViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    // Stop the UIActivityIndicatorView animation that was started when the user
+    // pressed the Sign In button
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            Authen.sharedInstance.key = user.authentication.idToken
+            Authen.sharedInstance.type = "google"
+            verify(email: user.profile.email)
+        }
     }
     
     @IBAction func continueAction(_ sender: Any) {
@@ -78,6 +110,10 @@ class SignUpViewController: UITableViewController {
         }
     }
     
+    @IBAction func googleAction(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -98,7 +134,6 @@ class SignUpViewController: UITableViewController {
                     
                     //data
                     Personal.sharedInstance.email = email
-                    
                     
                     self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
                 } else if code == "104" {

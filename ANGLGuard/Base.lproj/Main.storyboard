@@ -308,6 +308,9 @@
                                                             <rect key="frame" x="103" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_gmail"/>
+                                                            <connections>
+                                                                <action selector="googleAction:" destination="W4D-Fp-Luv" eventType="touchUpInside" id="kQm-1P-eCo"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YF-Qm-huQ">
                                                             <rect key="frame" x="155" y="8" width="36" height="36"/>
@@ -2979,6 +2982,9 @@
                                                             <rect key="frame" x="103" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_gmail"/>
+                                                            <connections>
+                                                                <action selector="googleAction:" destination="rGE-Lh-ynH" eventType="touchUpInside" id="ymS-P0-eZC"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riF-LP-s5J">
                                                             <rect key="frame" x="155" y="8" width="36" height="36"/>
@@ -3125,7 +3131,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
