@@ -32,9 +32,17 @@
 				<string>com.googleusercontent.apps.405428121980-34ck2gf8b1cp4b3dlkttnnbdd1ck99rn</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>anglguard</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>15</string>
+	<string>19</string>
 	<key>FacebookAppID</key>
 	<string>961419300676538</string>
 	<key>FacebookDisplayName</key>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C436027F84061A612A99F171F8562E9"
+               BlueprintIdentifier = "F436A982D34D53C4842FCD1037671DEF"
                BuildableName = "Pods_ANGLGuard.framework"
                BlueprintName = "Pods-ANGLGuard"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C436027F84061A612A99F171F8562E9"
+            BlueprintIdentifier = "F436A982D34D53C4842FCD1037671DEF"
             BuildableName = "Pods_ANGLGuard.framework"
             BlueprintName = "Pods-ANGLGuard"
             ReferencedContainer = "container:Pods.xcodeproj">

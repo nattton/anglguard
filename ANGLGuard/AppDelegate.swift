@@ -7,8 +7,37 @@ import SVProgressHUD
 import FBSDKLoginKit
 import GoogleSignIn
 
-let HOST = "https://anglguard-service.angl.life/public"
+//Production
+//let HOST = "https://anglguard-service.angl.life/public"
+//let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
+//
+//let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
+//let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
+//
+//let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
+//let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
+//let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
+//let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl.life/public/siampay-fail"
+//
+//let MERCHANT_CODE = "76101221"
+//Production
+
+// dev
+let HOST = "https://anglguard-service-test.angl.life/public"
 let HOST_TOURIST = "http://203.107.236.229/api-tourist"
+
+let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
+let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
+
+let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
+let ASIA_PAY_CANCEL_URL = "https://anglguard-service-test.angl.life/public/siampay-cancel"
+let ASIA_PAY_SUCCESS_URL = "https://anglguard-service-test.angl.life/public/siampay-success"
+let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay-fail"
+
+let MERCHANT_CODE = "76065111"
+// dev
+
+
 let SECRET_KEY = "aWuxjr5RQhDRItGII616"
 
 let LOGIN_URL = HOST + "/authen"
@@ -24,6 +53,8 @@ let FAMILY_SEARCH_URL = HOST + "/search-member-family"
 let FAMILY_ADD_URL = HOST + "/add-member-family"
 let FAMILY_DELETE_URL = HOST + "/delete-member-family"
 let NOTIFICATION_LIST_URL = HOST + "/list-notification-history"
+let PRIVILEGE_LIST_URL = HOST + "/list-privilege"
+let FAQ_URL = HOST + "/get-faq"
 
 let EMAIL_EXISTS = HOST + "/chk-email-exists"
 let EMAIL_VERIFY = HOST + "/verify-email-code"
@@ -42,12 +73,7 @@ let SAVE_PROFILE_PERSONAL = HOST + "/save-profile-personal"
 let TOURIST_AUTHENTICATION = HOST_TOURIST + "/vendor/authentication/secret_key"
 let TOURIST_EVENT_TRACKING = HOST_TOURIST + "/vendor/event/event_tracking/@"
 
-let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
-let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
-let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
-let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
-
-let DELEY_TIME = 3.0
+let DELEY_TIME = 5.0
 let LOADING_TEXT = "  Loading...  "
 
 let CODE_NOT_VALID = "Code is not valid."
@@ -147,18 +173,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation) {
+        if url.scheme == "anglguard" {
+            let service = OutlookService.shared()
+            service.handleOAuthCallback(url: url)
             return true
-        } else if GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation) {
-            return true
+        } else {
+            if FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation) {
+                return true
+            } else if GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation) {
+                return true
+            }
         }
         
         return false
     }
-    
-//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-//        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-//    }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to register: \(error)")
@@ -248,8 +276,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
     
     func setProfile(data: Dictionary<String, Any>) {
-        defaults.set("Y", forKey: "login")
-        
         let personal = data["personal"]  as! Dictionary<String, Any>
         defaults.set(personal["id"] as? String, forKey: "id")
         defaults.set(personal["token"] as? String, forKey: "token")

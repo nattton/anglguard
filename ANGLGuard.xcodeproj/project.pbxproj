@@ -21,6 +21,10 @@
 		3B0C5CB52039D1BB0086C086 /* UnderlyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB42039D1BB0086C086 /* UnderlyingViewController.swift */; };
 		3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB62039D22A0086C086 /* CurrentMedicationViewController.swift */; };
 		3B0C5CB92039D2780086C086 /* SpacialCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */; };
+		3B284ADE2054C585006225D2 /* PrivilegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B284ADD2054C585006225D2 /* PrivilegeViewController.swift */; };
+		3B284AE02054C5A9006225D2 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B284ADF2054C5A9006225D2 /* FAQViewController.swift */; };
+		3B284AE22054CAF3006225D2 /* PrivilegeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B284AE12054CAF3006225D2 /* PrivilegeCell.swift */; };
+		3B284AE62054F607006225D2 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B284AE52054F607006225D2 /* OutlookService.swift */; };
 		3B4FD58A204B7B3500AB045D /* ProfileQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */; };
 		3B4FD58C204B7BE800AB045D /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */; };
 		3B4FD58E204B894100AB045D /* CurrentThaiPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */; };
@@ -95,6 +99,10 @@
 		3B0C5CB42039D1BB0086C086 /* UnderlyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlyingViewController.swift; sourceTree = "<group>"; };
 		3B0C5CB62039D22A0086C086 /* CurrentMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMedicationViewController.swift; sourceTree = "<group>"; };
 		3B0C5CB82039D2780086C086 /* SpacialCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacialCareViewController.swift; sourceTree = "<group>"; };
+		3B284ADD2054C585006225D2 /* PrivilegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegeViewController.swift; sourceTree = "<group>"; };
+		3B284ADF2054C5A9006225D2 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		3B284AE12054CAF3006225D2 /* PrivilegeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegeCell.swift; sourceTree = "<group>"; };
+		3B284AE52054F607006225D2 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
 		3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileQRCodeViewController.swift; sourceTree = "<group>"; };
 		3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
 		3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThaiPhoneViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +193,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3B284AE32054F5E5006225D2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3B284AE52054F607006225D2 /* OutlookService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3B6462CE2036A47400A39901 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +222,7 @@
 		3B6462D92036A47400A39901 /* ANGLGuard */ = {
 			isa = PBXGroup;
 			children = (
+				3B284AE32054F5E5006225D2 /* Service */,
 				3B0C5CA5203972860086C086 /* Model */,
 				3B6462EC2036A4D100A39901 /* ANGLGuard.entitlements */,
 				3B6462DA2036A47400A39901 /* AppDelegate.swift */,
@@ -265,6 +282,9 @@
 				3B6463062036AA4100A39901 /* NAlertCell.swift */,
 				3B64630F2036AA4200A39901 /* NMessageCell.swift */,
 				3B6463102036AA4200A39901 /* NotificationViewController.swift */,
+				3B284AE12054CAF3006225D2 /* PrivilegeCell.swift */,
+				3B284ADD2054C585006225D2 /* PrivilegeViewController.swift */,
+				3B284ADF2054C5A9006225D2 /* FAQViewController.swift */,
 				3B6462F62036AA4000A39901 /* LanguageViewController.swift */,
 				3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */,
 				3B6462DE2036A47400A39901 /* Main.storyboard */,
@@ -435,7 +455,9 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SidebarOverlay/SidebarOverlay.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/p2.OAuth2/p2_OAuth2.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -456,7 +478,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SidebarOverlay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/p2_OAuth2.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -471,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */,
+				3B284AE22054CAF3006225D2 /* PrivilegeCell.swift in Sources */,
 				3B4FD594204BA30500AB045D /* EmergencyContactProfileViewController.swift in Sources */,
 				3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */,
 				3B4FD592204BA2D200AB045D /* MedicalProfileViewController.swift in Sources */,
@@ -482,6 +507,7 @@
 				3B64632F2036AA4200A39901 /* NMessageCell.swift in Sources */,
 				3B0C5CB92039D2780086C086 /* SpacialCareViewController.swift in Sources */,
 				3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */,
+				3B284AE02054C5A9006225D2 /* FAQViewController.swift in Sources */,
 				3B0C5CB32039D11A0086C086 /* AllergyOfChemicalViewController.swift in Sources */,
 				3B64631E2036AA4200A39901 /* InitalViewController.swift in Sources */,
 				3BA1227C203C861A0085984D /* InsurancePolicyViewController.swift in Sources */,
@@ -500,6 +526,7 @@
 				36CC6D9E20439999002B777C /* AddFriendViewController.swift in Sources */,
 				3B4FD598204BA44700AB045D /* InsuranceViewController.swift in Sources */,
 				3B0C5CB72039D22A0086C086 /* CurrentMedicationViewController.swift in Sources */,
+				3B284AE62054F607006225D2 /* OutlookService.swift in Sources */,
 				3B0C5CAD20397E4B0086C086 /* Medical.swift in Sources */,
 				3B4FD59A204BA46B00AB045D /* ChangePasswordViewController.swift in Sources */,
 				3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */,
@@ -520,6 +547,7 @@
 				3B6463172036AA4200A39901 /* LearnFirstAidViewController.swift in Sources */,
 				3B0C5CA2203961910086C086 /* Step6ViewController.swift in Sources */,
 				3B64632E2036AA4200A39901 /* HospitalCell.swift in Sources */,
+				3B284ADE2054C585006225D2 /* PrivilegeViewController.swift in Sources */,
 				3B0C5CA420396E240086C086 /* Step7ViewController.swift in Sources */,
 				3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */,
 				3B4FD58A204B7B3500AB045D /* ProfileQRCodeViewController.swift in Sources */,

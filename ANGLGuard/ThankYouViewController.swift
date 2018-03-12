@@ -3,7 +3,9 @@ import Alamofire
 import SVProgressHUD
 
 class ThankYouViewController: UITableViewController {
-
+    
+    let defaults = UserDefaults.standard
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -27,28 +29,29 @@ class ThankYouViewController: UITableViewController {
         if Authen.sharedInstance.type == "normal" {
             let username: String! = Personal.sharedInstance.email
             let password: String! = Personal.sharedInstance.password
-            let parameters: Parameters = ["username": username, "password": password]
+            let parameters: Parameters = ["username": username, "password": password, "type": "normal"]
             login(parameters: parameters)
         } else {
             let email: String! = Personal.sharedInstance.email
             let key: String! = Authen.sharedInstance.key
             let type: String! = Authen.sharedInstance.type
-            let parameters: Parameters = ["email": email, "key": key, "type": type]
+            let parameters: Parameters = ["username": email, "password": key, "type": type]
             login(parameters: parameters)
         }
     }
     
     func login(parameters: Parameters) {
         SVProgressHUD.show(withStatus: LOADING_TEXT)
-        Alamofire.request(EMAIL_EXISTS, method: .get, parameters: parameters).responseJSON { response in
+        Alamofire.request(LOGIN_URL, method: .get, parameters: parameters).responseJSON { response in
             SVProgressHUD.dismiss()
             if let json = response.result.value {
                 let result = json as! Dictionary<String, Any>
-                NSLog("result = \(result)")
                 let code: String = result["code"] as! String
                 let message: String = result["message"] as! String
+                NSLog("result = \(result)")
                 if code == "200" {
                     if let data: Dictionary<String, Any> = result["data"]  as? Dictionary<String, Any> {
+                        self.defaults.set("Y", forKey: "login")
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.setProfile(data: data)
                         appDelegate.registerForPushNotifications()

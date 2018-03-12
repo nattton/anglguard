@@ -13,6 +13,8 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
     
     let defaults = UserDefaults.standard
     
+    let outlookService = OutlookService.shared()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -74,8 +76,8 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             self.present(alert, animated: true, completion: nil)
         } else {
             let parameters: Parameters = [
-                "email": user.profile.email,
-                "key": user.authentication.idToken,
+                "username": user.profile.email,
+                "password": user.authentication.idToken,
                 "type": "google"
             ]
             login(parameters: parameters)
@@ -112,8 +114,8 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                         if let data = result as? [String : AnyObject] {
                             if let email = data["email"] as? String {
                                 let parameters: Parameters = [
-                                    "email": email,
-                                    "key": accessToken.authenticationToken,
+                                    "username": email,
+                                    "password": accessToken.authenticationToken,
                                     "type": "facebook"
                                 ]
                                 self.login(parameters: parameters)
@@ -129,6 +131,40 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         GIDSignIn.sharedInstance().signIn()
     }
     
+    @IBAction func outlookAction(_ sender: Any) {
+        if self.outlookService.isLoggedIn {
+            outlookService.getUserEmail() { result in
+                if let email = result {
+                    let parameters: Parameters = [
+                        "username": email,
+                        "password": self.outlookService.token()!,
+                        "type": "outlook"
+                    ]
+                    self.login(parameters: parameters)
+                }
+                self.outlookService.logout()
+            }
+        } else {
+            outlookService.login(from: self) { (result) in
+                if let token = result {
+                    self.outlookService.getUserEmail() { result in
+                        if let email = result {
+                            let parameters: Parameters = [
+                                "username": email,
+                                "password": token,
+                                "type": "outlook"
+                            ]
+                            self.login(parameters: parameters)
+                        }
+                        self.outlookService.logout()
+                    }
+                } else {
+                    NSLog("Error logging")
+                }
+            }
+        }
+    }
+    
     func login(parameters: Parameters) {
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         Alamofire.request(LOGIN_URL, method: .get, parameters: parameters).responseJSON { response in
@@ -140,6 +176,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                 NSLog("result = \(result)")
                 if code == "200" {
                     if let data: Dictionary<String, Any> = result["data"]  as? Dictionary<String, Any> {
+                        self.defaults.set("Y", forKey: "login")
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.setProfile(data: data)
                         appDelegate.registerForPushNotifications()

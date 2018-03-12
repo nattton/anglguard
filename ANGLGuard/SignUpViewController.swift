@@ -18,6 +18,8 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     var confirm: String = ""
     let defaults = UserDefaults.standard
     
+    let outlookService = OutlookService.shared()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -80,6 +82,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
         } else if password != confirm {
             showAlert(message: "Password not match")
         } else {
+            Authen.sharedInstance.type = "normal"
             Personal.sharedInstance.password = self.password
             verify(email: email)
         }
@@ -112,6 +115,28 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     
     @IBAction func googleAction(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
+    }
+    
+    @IBAction func outlookAction(_ sender: Any) {
+        if self.outlookService.isLoggedIn {
+            outlookService.getUserEmail() { result in
+                if let email = result {
+                    self.verify(email: email)
+                }
+                self.outlookService.logout()
+            }
+        } else {
+            outlookService.login(from: self) { (result) in
+                if result != nil {
+                    self.outlookService.getUserEmail() { result in
+                        if let email = result {
+                            self.verify(email: email)
+                        }
+                        self.outlookService.logout()
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {

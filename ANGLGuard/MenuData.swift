@@ -41,6 +41,8 @@ public var menuData: [Section] = [
         ], collapsed: true),
     Section(name: "Group", icon: "ic_device", identifier: "group", items: [], collapsed: true),
     Section(name: "Notification", icon: "ic_notification", identifier: "notification", items: [], collapsed: true),
+    Section(name: "Privilege", icon: "ic_privilege", identifier: "privilege", items: [], collapsed: true),
+    Section(name: "FAQ", icon: "ic_faq", identifier: "faq", items: [], collapsed: true),
     Section(name: "Language", icon: "ic_language", identifier: "language", items: [], collapsed: true),
     Section(name: "Term & Conditions", icon: "ic_condition", identifier: "term", items: [], collapsed: true),
     Section(name: "Sign Out", icon: "ic_signout", identifier: "login", items: [], collapsed: true)

@@ -9,21 +9,20 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+    
         let url = NSURL (string: ASIA_PAY_URL)
         let request = NSMutableURLRequest(url: url! as URL)
         request.httpMethod = "POST"
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
-        let post: String =  "merchantId=76065111" +
+        let post: String =  "merchantId=\(MERCHANT_CODE)" +
                             "&amount=250" +
                             "&orderRef=\(getOrderRef())" +
                             "&currCode=764" +
                             "&mpsMode=NIL" +
-                            "&successUrl=https://anglguard-service.angl.life/public/siampay-success" +
-                            "&failUrl=https://anglguard-service.angl.life/public/siampay-fail" +
-                            "&cancelUrl=https://anglguard-service.angl.life/public/siampay-cancel" +
+                            "&successUrl=\(ASIA_PAY_SUCCESS_URL)" +
+                            "&failUrl=\(ASIA_PAY_FAIL_URL)" +
+                            "&cancelUrl=\(ASIA_PAY_CANCEL_URL)" +
                             "&payType=N" +
                             "&lang=E" +
                             "&payMethod=" +
@@ -52,7 +51,7 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         SVProgressHUD.dismiss()
-        if ASIA_PAY_SUCCESS_URL == webView.request?.url?.absoluteString {
+        if webView.request?.url?.absoluteString.range(of: ASIA_PAY_SUCCESS_URL) != nil {
             DispatchQueue.main.asyncAfter(deadline: .now() + DELEY_TIME, execute: {
                 self.performSegue(withIdentifier: "showThankYou", sender: nil)
             })
