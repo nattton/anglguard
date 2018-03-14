@@ -47,8 +47,8 @@ class ChangePasswordViewController: UITableViewController {
             if let token = defaults.string(forKey: "token") {
                 let parameters: Parameters = [
                     "token": token,
-                    "current_password": current_password,
-                    "new_password": new_password
+                    "current_password": current_password.encrypt(),
+                    "new_password": new_password.encrypt()
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)
                 Alamofire.request(SAVE_NEW_PASSWORD, method: .post, parameters: parameters).responseJSON { response in

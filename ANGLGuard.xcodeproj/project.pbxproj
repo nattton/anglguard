@@ -161,6 +161,7 @@
 		3BA1227D203C90A10085984D /* AsiaPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaPayViewController.swift; sourceTree = "<group>"; };
 		3BA1227F203C92690085984D /* ViriyahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViriyahViewController.swift; sourceTree = "<group>"; };
 		3BA12285203C998E0085984D /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
+		3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ANGLGuard-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BFA06EC2049DCAD00C47C0E /* Authen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authen.swift; sourceTree = "<group>"; };
 		998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.debug.xcconfig"; sourceTree = "<group>"; };
 		D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,6 +293,7 @@
 				3B6462E32036A47400A39901 /* LaunchScreen.storyboard */,
 				3B6462E62036A47400A39901 /* Info.plist */,
 				3B6462F22036A92D00A39901 /* GoogleService-Info.plist */,
+				3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */,
 			);
 			path = ANGLGuard;
 			sourceTree = "<group>";
@@ -715,7 +717,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
 				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ANGLGuard/ANGLGuard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -742,7 +744,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "96cad186-6e11-4332-ac30-6c0d68447b97";
 				PROVISIONING_PROFILE_SPECIFIER = anglguard_dev;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ANGLGuard/ANGLGuard-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

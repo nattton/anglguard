@@ -11,6 +11,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     
     var datePicker: UIDatePicker?
     var isImage: Bool = false
+    var country_code: String = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,8 +25,10 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        country_code = Personal.sharedInstance.country_code
+        
         tf_passport.text = Personal.sharedInstance.passport_num
-        tf_country.text = Personal.sharedInstance.country_code
+        tf_country.text = countryName(countryCode: Personal.sharedInstance.country_code)
         tf_expire_date.text = Personal.sharedInstance.passport_expire_date
         
         tf_expire_date.inputView = createDatePicker()
@@ -107,9 +110,15 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         
         picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
             picker.dismiss(animated: true, completion: {
-                self.tf_country.text = code
+                self.country_code = code
+                self.tf_country.text = name
             })
         }
+    }
+    
+    func countryName(countryCode: String) -> String? {
+        let current = Locale(identifier: "en_US")
+        return current.localizedString(forRegionCode: countryCode) ?? nil
     }
     
     @IBAction func avatarAction(_ sender: Any) {
@@ -167,12 +176,11 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     
     @IBAction func nextAction(_ sender: Any) {
         let passport: String = tf_passport.text!
-        let country: String = tf_country.text!
         let expire_date: String = tf_expire_date.text!
         
         if passport.count == 0 {
             showAlert(message: PASSPORT_NUMBER_ALERT)
-        } else if country.count == 0 {
+        } else if country_code.count == 0 {
             showAlert(message: CC_ALERT)
         } else if expire_date.count == 0 {
             showAlert(message: PASSPORT_EXPIRE_ALERT)
@@ -181,7 +189,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         } else {
             //data
             Personal.sharedInstance.passport_num = passport
-            Personal.sharedInstance.country_code = country
+            Personal.sharedInstance.country_code = country_code
             Personal.sharedInstance.passport_expire_date = expire_date
             Personal.sharedInstance.passport_img = bt_avatar.image(for: .normal)
             

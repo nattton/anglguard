@@ -94,10 +94,10 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
             let parameters: Parameters = [
                 "token" : Authen.sharedInstance.token,
                 "type" : Authen.sharedInstance.type,
-                "key" : Authen.sharedInstance.key,
+                "key" : Authen.sharedInstance.key.encrypt(),
                 "personal": [
                     "email" : Personal.sharedInstance.email,
-                    "password" : Personal.sharedInstance.password,
+                    "password" : Personal.sharedInstance.password.encrypt(),
                     "firstname" : Personal.sharedInstance.firstname,
                     "middlename" : Personal.sharedInstance.middlename,
                     "lastname" : Personal.sharedInstance.lastname,

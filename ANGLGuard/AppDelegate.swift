@@ -12,7 +12,7 @@ import GoogleSignIn
 //let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
 //
 //let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
-//let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
+//let VIRIYAH_SUCCESS_URL = "https://affiliate.viriyah.co.th/ANGL/successpage.php"
 //
 //let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
 //let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
@@ -37,7 +37,9 @@ let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay
 let MERCHANT_CODE = "76065111"
 // dev
 
+let CHECK_VERSION_URL = HOST + "/check-version"
 
+let MD5_KEY = "76065111"
 let SECRET_KEY = "aWuxjr5RQhDRItGII616"
 
 let LOGIN_URL = HOST + "/authen"
@@ -107,6 +109,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        checkVersion()
         
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         
@@ -267,6 +271,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                                 let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                                 let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
                                 UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func checkVersion()  {
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            let parameters: Parameters = [
+                "platform": "ios",
+                "version": version
+            ]
+            
+            Alamofire.request(CHECK_VERSION_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                let result = String(data: response.data!, encoding: String.Encoding.utf8)!
+                NSLog("version = \(result)")
+                if let json = response.result.value {
+                    let result = json as! Dictionary<String, Any>
+                    let force_update: Bool = result["force_update"] as! Bool
+                    if force_update == true {
+                        if let link: String = result["link"] as? String {
+                            if let url = URL(string : link) {
+                                let alert = UIAlertController(title: "force update", message: "", preferredStyle: .alert)
+                                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                    if #available(iOS 10.0, *) {
+                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                    } else {
+                                        UIApplication.shared.openURL(url)
+                                    }
+                                })
+                                
+                                alert.addAction(defaultAction)
+                                
+                                if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                                    while let presentedViewController = topController.presentedViewController {
+                                        topController = presentedViewController
+                                    }
+                                    DispatchQueue.main.async {
+                                        topController.present(alert, animated: true, completion: nil)
+                                    }
+                                }
                             }
                         }
                     }

@@ -76,8 +76,8 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             self.present(alert, animated: true, completion: nil)
         } else {
             let parameters: Parameters = [
-                "username": user.profile.email,
-                "password": user.authentication.idToken,
+                "email": user.profile.email,
+                "key": user.authentication.idToken.encrypt(),
                 "type": "google"
             ]
             login(parameters: parameters)
@@ -89,14 +89,10 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         let password: String! = tf_password.text
         let parameters: Parameters = [
             "username": username,
-            "password": password,
+            "password": password.encrypt(),
             "type": "normal"
         ]
         login(parameters: parameters)
-    }
-    
-    @IBAction func backAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func facebookAction(_ sender: Any) {
@@ -114,8 +110,8 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                         if let data = result as? [String : AnyObject] {
                             if let email = data["email"] as? String {
                                 let parameters: Parameters = [
-                                    "username": email,
-                                    "password": accessToken.authenticationToken,
+                                    "email": email,
+                                    "key": accessToken.authenticationToken.encrypt(),
                                     "type": "facebook"
                                 ]
                                 self.login(parameters: parameters)
@@ -135,9 +131,10 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         if self.outlookService.isLoggedIn {
             outlookService.getUserEmail() { result in
                 if let email = result {
+                    let token = self.outlookService.token()
                     let parameters: Parameters = [
-                        "username": email,
-                        "password": self.outlookService.token()!,
+                        "email": email,
+                        "key": token!.encrypt(),
                         "type": "outlook"
                     ]
                     self.login(parameters: parameters)
@@ -150,8 +147,8 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                     self.outlookService.getUserEmail() { result in
                         if let email = result {
                             let parameters: Parameters = [
-                                "username": email,
-                                "password": token,
+                                "email": email,
+                                "key": token.encrypt(),
                                 "type": "outlook"
                             ]
                             self.login(parameters: parameters)
@@ -190,6 +187,10 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                 }
             }
         }
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

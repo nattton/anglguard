@@ -35,7 +35,7 @@ class ThankYouViewController: UITableViewController {
             let email: String! = Personal.sharedInstance.email
             let key: String! = Authen.sharedInstance.key
             let type: String! = Authen.sharedInstance.type
-            let parameters: Parameters = ["username": email, "password": key, "type": type]
+            let parameters: Parameters = ["email": email, "key": key, "type": type]
             login(parameters: parameters)
         }
     }
