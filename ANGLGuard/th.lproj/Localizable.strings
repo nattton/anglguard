@@ -1,0 +1,147 @@
+/* 
+  Localizable.strings
+  ANGLGuard
+
+  Created by Komkrit Kawichai on 15/3/18.
+  Copyright © 2018 Komkrit Kawichai. All rights reserved.
+*/
+
+"bnt_next" = "หน้าถัดไป";
+"bnt_back" = "กลับไปก่อนหน้านี้";
+"bnt_skip" = "ผ่าน";
+"bnt_done" = "สิ้นสุด";
+"bnt_confirm" = "ยืนยัน";
+"bnt_cancel" = "ยกเลิก";
+"bnt_send" = "ส่ง";
+"bnt_ok" = "ตกลง";
+"bnt_update" = "แก้ไข";
+"bnt_later" = "ถัดไป";
+"bnt_yes" = "มี";
+"bnt_no" = "ไม่มี";
+
+"can_i_help" = "มีอะไรที่ฉันสามารถช่วยคุณได้ไหม?";
+
+"emergency_photo" = "รูปภาพ";
+"emergency_message" = "ข้อความ";
+"emergency_call_1724" = "โทร 1724";
+"emergency_emergency" = "ศูนย์บริการทางการแพทย์ฉุกเฉิน เบอร์โทรติดต่อในยามเกิดเหตุฉุกเฉิน";
+"emergency_send_emergency" = "ส่งแจ้งเหตุฉุกเฉิน";
+"emergency_term" = "ข้อกำหนดแและเงื่อนไข";
+"emergency_please_make" = "โปรดตรวจสอบให้แน่ใจว่าเกิดเหตุฉุกเฉินขึ้นกับคุณ";
+"emergency_member_colon" = "เพื่อน:";
+
+"login_username" = "ผู้ใช้";
+"login_email" = "อีเมล";
+"login_password" = "รหัสผ่าน";
+"login_confirm_password" = "ยืนยันรหัสผ่าน";
+"login_forgot_password" = "ลืมรหัสผ่าน";
+"login_login" = "เข้าสู่ระบบ";
+"login_or" = "หรือ";
+"login_continue" = "ต่อไป";
+"login_signup" = "ลงทะเบียน";
+"login_sigin" = "เข้าสู่ระบบ";
+
+"signup_email" = "อีเมล";
+"signup_send_code" = "ส่งรหัสยืนยันตัวตน";
+"signup_please_enter" = "Please enter verify code";
+
+"signup_code" = "รหัสยืนยันตัวตน";
+"signup_clik_to" = "กรุณา กด เพื่อส่งรหัสยืนยันตัวตนไปให้ยังเบอร์ที่คุณระบุไว้";
+
+"signup_nice_to_meet_you" = "ยินดีที่ได้รู้จัก\nต้องการให้คุณสร้างบัญชีผู้ใช้ส่วนตัว (ข้อมูลส่วนตัว) เราจะเก็บข้อมูลของคุณอย่างปลอดภัย";
+"signup_first_name" = "ชื่อจริง";
+"signup_mid_name" = "ชื่อกลาง";
+"signup_last_name" = "นามสกุล";
+"signup_so_iam" = "ฉันขอถามคุณเพียงไม่กี่คำถาม\nเพื่อเป็นข้อมุลให้เราช่วยคุณได้";
+"signup_gender" = "เพศ";
+"signup_date_of_birth" = "วัน เดือน ปีเกิด";
+"signup_height" = "ความสูง(เซนติเมตร)";
+"signup_weight" = "น้ำหนัก(กิโลกรัม)";
+"signup_current_phone_number" = "เบอร์ที่ใช้ปัจจุบัน";
+
+"signup_passport_number" = "เลขหนังสือเดินทาง";
+"signup_country" = "ประเทศ";
+"signup_expire_date" = "วันที่หมดอายุ";
+
+"signup_just_start" = "ต่อไปคุณใส่่ข้อมูลทางด้านสุขภาพ";
+"signup_blood_type" = "กรุ๊ปเลือด";
+"signup_allergy_drug" = "แพ้ยา";
+"signup_allergy_food" = "แพ้อาหาร";
+"signup_allergy_chemical" = "แพ้สารเคมี";
+"signup_current_medication" = "ยาและสมุนไพรที่ใช้ในปัจจุบัน";
+"signup_Underlying_diseases" = "โรคประจำตัว";
+"signup_special_care" = "ความต้องการการช่วยเหลือดูแลพิเศษ";
+
+"signup_please_fulfill" = "Please fulfill your details";
+"signup_policy_number" = "เลขที่กรมธรรม์";
+"signup_expiration_date" = "วันที่กรมธรรม์สิ้นสุดการคุ้มครอง";
+"signup_insurance_company" = "ชื่อบริษัทประกัน";
+"signup_conntact_name" = "ชื่อของบุคคลที่ติดต่อได้ในยามฉุกเฉิน";
+
+"signup_how_do" = "คุณมีแผนการท่องเที่ยวอย่างไรบ้าง?\nขอให้เป็นทริปที่ดีของคุณ";
+"signup_purpost_trip" = "วัตถุประสงค์";
+"signup_start_date" = "วันเริ่ม";
+"signup_lenglh_of_stay" = "ระยะเวลาที่พักอยู่ในประเทศไทย(วัน)";
+"signup_average_expense" = "ค่าใช้จ่ายโดยประมาณการ(บาท)";
+"signup_trip_arrangement" = "รูปแบบการจัดการการเดินทาง(โดยตนเอง บริษัท ตัวแทนท่องเที่ยว)";
+"signup_domestic" = "มีการใช้บริการการเดินทางในประเทศ(ใช้ ไม่ใช้)";
+"signup_destinations" = "จุดหมาย";
+
+"signup_great" = "เยี่ยมเลย!!\nข้อมูลจะครบถ้วนแล้ว\nรบกวนให้ข้อมูลของบุคคลที่เราสามารถติดต่อได้เมื่อเกิดเหตุฉุกเฉินขึ้นกับคุณ";
+"signup_contact_number" = "เบอร์โทรศัพท์ที่สามารถติตต่อได้";
+"signup_relationship" = "ความสัมพันธ์";
+
+"signup_caution" = "CAUTION\nPlease enter the mobile number used in Thailand to contact in times of the emergency.\nAnd the OTP code will sent to your mobile device.";
+"signup_current_thai_number" = "เบอร์ที่ใช้ใน่ประเทศไทย";
+"signup_verify_code" = "VERIFY CODE";
+"signup_please_enter_your_otp" = "Please enter your OTP code";
+
+"signup_have_insurance" = "แล้วคุณมีประกันหรือยัง?";
+"thank_you" = "ขอบคุณค่ะ ครับ\nตอนนี้ข้อมูลเพียงพอแล้ว ที่เราจะสามารถช่วยเหลือคุณในยามฉุกเฉิน\nมาเริ่มใช้งานกัน";
+
+"aid_header" = "เรียนรู้วิธีปฐมพยาบาล";
+"aid_search" = "ค้นหา";
+"aid_content" = "เนื้อหา";
+"aid_vdo" = "วิดีโอ";
+
+"group_title" = "ครอบครัว";
+"group_search" = "ค้นหาเพื่อน";
+"group_del_confirm" = "ยืนยันการลบ";
+"group_del_desc" = "ต้องการที่จะลบสมาชิกในกลุ่มนี้\nแน่ใจที่จะดำเนินการต่อ";
+
+"picture_title" = "เลือกรูป";
+"picture_take_pic" = "ถ่ายรูป";
+"picture_pick_pic" = "อัพโหลดจากกอัลบั้ม";
+"picture_cancel" = "ยกเลิก";
+
+"pass_current" = "รหัสผ่านปัจจุบัน";
+"pass_new" = "รหัสผ่านใหม่";
+"pass_re" = "รหัสผ่านใหม่อีกครั้ง";
+
+"nav_home" = "หน้าหลัก";
+"nav_profile" = "บัญชีผู้ใช้";
+"nav_device_setting" = "กลุ่ม";
+"nav_notification" = "การแจ้งเตือน";
+"nav_language" = "ภาษา";
+"nav_term" = "ข้อกำหนดและเงื่อนไข";
+"nav_sign_out" = "ออกจากระบบ";
+
+"sub_personal" = "ส่วนตัว";
+"sub_mobile" = "โทรศัพท์";
+"sub_passport" = "พาสสปอร์ต";
+"sub_medical" = "Medical";
+"sub_contact" = "คนติดต่อ";
+"sub_trip_plan" = "Trip plan";
+"sub_insurance" = "ประกันภัย";
+"sub_change_password" = "เปลี่ยน พาวเวิร์ด";
+
+"hello_blank_fragment" = "Hello blank fragment";
+"title_activity_chat" = "ChatActivity";
+
+"term" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
+"title_activity_forgot_password" = "ForgotPasswordActivity";
+
+"text_back" = "กลับ";
+"text_next" = "ต่อไป";
+"text_update" = "ปรับปรุง";
+"text_sign_out" = "คุณต้องการที่จะออกจากระบบ?";

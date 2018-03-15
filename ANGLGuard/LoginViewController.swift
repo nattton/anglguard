@@ -89,7 +89,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         let password: String! = tf_password.text
         let parameters: Parameters = [
             "username": username,
-            "password": password.encrypt(),
+            "password": password,
             "type": "normal"
         ]
         login(parameters: parameters)

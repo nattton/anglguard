@@ -1,0 +1,147 @@
+/* 
+  Localizable.strings
+  ANGLGuard
+
+  Created by Komkrit Kawichai on 15/3/18.
+  Copyright © 2018 Komkrit Kawichai. All rights reserved.
+*/
+
+"bnt_next" = "下一页";
+"bnt_back" = "回到上一页";
+"bnt_skip" = "SKIP";
+"bnt_done" = "DONE";
+"bnt_confirm" = "确认";
+"bnt_cancel" = "取消";
+"bnt_send" = "SEND";
+"bnt_ok" = "OK";
+"bnt_update" = "UPDATE";
+"bnt_later" = "LATER";
+"bnt_yes" = "YES";
+"bnt_no" = "NO";
+
+"can_i_help" = "Can I help you";
+
+"emergency_photo" = "Photo";
+"emergency_message" = "Message";
+"emergency_call_1724" = "Call 1724";
+"emergency_emergency" = "An emergency call contact to the emergency medical center (BDMS Alarm Center)";
+"emergency_send_emergency" = "Send Emergency Alert";
+"emergency_term" = "规定和条件";
+"emergency_please_make" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
+"emergency_member_colon" = "Member:";
+
+"login_username" = "用户帐户";
+"login_email" = "电子邮件";
+"login_password" = "密码";
+"login_confirm_password" = "确认密码";
+"login_forgot_password" = "忘记密码";
+"login_login" = "LOGIN";
+"login_or" = "OR";
+"login_continue" = "CONTINUE";
+"login_signup" = "SIGN UP";
+"login_sigin" = "登录";
+
+"signup_email" = "电子邮件";
+"signup_send_code" = "SEND CODE";
+"signup_please_enter" = "Please enter verify code";
+
+"signup_code" = "Code";
+"signup_clik_to" = "请按，发送验证码转到您指定的号码。";
+
+"signup_nice_to_meet_you" = "Nice to meet you.\nFor create a personal account.\nPlease enter your english name as specified in your passport.";
+"signup_first_name" = "名字";
+"signup_mid_name" = "小名";
+"signup_last_name" = "姓";
+"signup_so_iam" = "我需要问您几个问题，为了让我们能够帮助您。";
+"signup_gender" = "性别";
+"signup_date_of_birth" = "出生日期";
+"signup_height" = "身高";
+"signup_weight" = "重量";
+"signup_current_phone_number" = "现在使用的电话号码。";
+
+"signup_passport_number" = "护照号码";
+"signup_country" = "国家";
+"signup_expire_date" = "到期日期";
+
+"signup_just_start" = "接下来，让您输入健康方面的信息。";
+"signup_blood_type" = "血型";
+"signup_allergy_drug" = "药物过敏";
+"signup_allergy_food" = "食物过敏";
+"signup_allergy_chemical" = "化学过敏";
+"signup_current_medication" = "现今使用的药物和草药";
+"signup_Underlying_diseases" = "先天性疾病";
+"signup_special_care" = "需要特别帮助。";
+
+"signup_please_fulfill" = "请详细完整的填信息。";
+"signup_policy_number" = "保单号码";
+"signup_expiration_date" = "保单终止日期。";
+"signup_insurance_company" = "保险公司的名称。";
+"signup_conntact_name" = "保险公司能联系人的姓名。";
+
+"signup_how_do" = "您如何计划旅行？希望 这是您的一个很好的旅行";
+"signup_purpost_trip" = "目的";
+"signup_start_date" = "Start Date";
+"signup_lenglh_of_stay" = "在泰国停留的时间)";
+"signup_average_expense" = "预计成本";
+"signup_trip_arrangement" = "旅行管理格式（本身） 旅行社）";
+"signup_domestic" = "国内旅行服务（使用/不使用）";
+"signup_destinations" = "目标";
+
+"signup_great" = "太好了！信息快完整了，请留下当您在紧急情况下我们可以联系人的信息。";
+"signup_contact_number" = "可以联系电话号码。";
+"signup_relationship" = "关系";
+
+"signup_caution" = "CAUTION\nPlease enter the mobile number used in Thailand to contact in times of the emergency.\nAnd the OTP code will sent to your mobile device.";
+"signup_current_thai_number" = "在泰国使用的电话号码。";
+"signup_verify_code" = "发送验证码。";
+"signup_please_enter_your_otp" = "Please enter your OTP code";
+
+"signup_have_insurance" = "你有保险吗？";
+"thank_you" = "非常感谢！现在您的信息已经完整了，将能够在紧急情况下为您提供帮助。我们开始吧。";
+
+"aid_header" = "学习如何急救";
+"aid_search" = "Search";
+"aid_content" = "内容";
+"aid_vdo" = "视频";
+
+"group_title" = "家庭";
+"group_search" = "搜索朋友h";
+"group_del_confirm" = "Deleteion confirmation";
+"group_del_desc" = "确认删除, 想删除群组的成员,确定要继续。";
+
+"picture_title" = "Choice Picture";
+"picture_take_pic" = "拍照";
+"picture_pick_pic" = "从相册上传";
+"picture_cancel" = "取消";
+
+"pass_current" = "Current Password";
+"pass_new" = "New Password";
+"pass_re" = "Re - New Password";
+
+"nav_home" = "主页";
+"nav_profile" = "健康信息";
+"nav_device_setting" = "组";
+"nav_notification" = "Notification";
+"nav_language" = "语言";
+"nav_term" = "规定和条件";
+"nav_sign_out" = "退出";
+
+"sub_personal" = "Personal";
+"sub_mobile" = "Mobile";
+"sub_passport" = "Passport";
+"sub_medical" = "Medical";
+"sub_contact" = "Contact";
+"sub_trip_plan" = "Trip plan";
+"sub_insurance" = "Insurance";
+"sub_change_password" = "Change password";
+
+"hello_blank_fragment" = "Hello blank fragment";
+"title_activity_chat" = "ChatActivity";
+
+"term" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
+"title_activity_forgot_password" = "忘记密码";
+
+"text_back" = "回到上一页";
+"text_next" = "下一页";
+"text_update" = "Update";
+"text_sign_out" = "Log out now?";

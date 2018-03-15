@@ -1,7 +1,11 @@
 import UIKit
 
-class LanguageViewController: UIViewController {
-
+class LanguageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var tb_language: UITableView!
+    
+    let languages = Language.getAllLanguages()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -12,12 +16,31 @@ class LanguageViewController: UIViewController {
 
     }
     
+    func setText() {
+        self.title = "nav_language".localized()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return languages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = Language.displayNameForLanguage(languages[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Language.setCurrentLanguage(languages[indexPath.row])
+        setText()
+    }
+    
     @IBAction func showMenu(_ sender: Any) {
         if let container = self.so_containerViewController {
             container.isSideViewControllerPresented = true
         }
     }
-
+    
     /*
     // MARK: - Navigation
 
