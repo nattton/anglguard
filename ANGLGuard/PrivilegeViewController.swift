@@ -31,6 +31,7 @@ class PrivilegeViewController: UIViewController, UITableViewDelegate, UITableVie
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
                     let message: String = result["message"] as! String
+                    NSLog("result = \(result)")
                     if code == "200" {
                         if let data: [String: Any] = result["data"] as? [String: Any] {
                             let privilege: Array = data["privilege"] as! [Any]

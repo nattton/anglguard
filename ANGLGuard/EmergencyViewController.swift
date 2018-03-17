@@ -3,9 +3,15 @@ import Alamofire
 import AlamofireImage
 import SVProgressHUD
 
+protocol EmergencyDelegate {
+    func onEmergencyDismiss()
+}
+
 let phone_number = 1724
 
 class EmergencyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var delegate: EmergencyDelegate?
     
     var photo1: UIImage?
     var photo2: UIImage?
@@ -29,8 +35,16 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var bt_call: UIButton!
     @IBOutlet var bt_confirm: UIButton!
     
+    @IBOutlet var lb_call: UILabel!
+    @IBOutlet var lb_call_description: UILabel!
+    @IBOutlet var lb_emergency_alert: UILabel!
+    @IBOutlet var lb_emergency_term: UILabel!
+    @IBOutlet var lb_emergency_term_description: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setText()
         
         v_call.layer.masksToBounds = false
         v_call.layer.cornerRadius = 8
@@ -52,6 +66,15 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func setText() {
+        lb_call.text = "emergency_call_1724".localized()
+        lb_call_description.text = "emergency_emergency".localized()
+        lb_emergency_alert.text = "emergency_send_emergency".localized()
+        lb_emergency_term.text = "emergency_term".localized()
+        lb_emergency_term_description.text = "emergency_please_make".localized()
+        bt_confirm.setTitle("bnt_confirm".localized(), for: .normal)
     }
     
     //list friend
@@ -156,7 +179,11 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
                     if code == "200" {
                         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                            self.dismiss(animated: true, completion: nil)
+                            self.dismiss(animated: false) {
+                                if self.delegate != nil {
+                                    self.delegate?.onEmergencyDismiss()
+                                }
+                            }
                         }))
                         self.present(alert, animated: true, completion: nil)
                     } else if code == "104" {

@@ -4,12 +4,18 @@ class TermAndConditionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setText()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func setText() {
+        self.title = "nav_term".localized()
     }
     
     @IBAction func showMenu(_ sender: Any) {

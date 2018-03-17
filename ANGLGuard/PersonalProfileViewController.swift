@@ -15,6 +15,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
     @IBOutlet var tf_weight: UITextField!
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
+    @IBOutlet var bt_update: UIButton!
     
     var genders = ["Male", "Female"]
     var genderPicker: UIPickerView?
@@ -36,6 +37,8 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setText()
         
         tf_firstname.text = Personal.sharedInstance.firstname
         tf_middlename.text = Personal.sharedInstance.middlename
@@ -59,6 +62,19 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    func setText() {
+        tf_firstname.placeholder = "signup_first_name".localized()
+        tf_middlename.placeholder = "signup_mid_name".localized()
+        tf_lastname.placeholder = "signup_last_name".localized()
+        tf_gender.placeholder = "signup_gender".localized()
+        tf_date_of_birth.placeholder = "signup_date_of_birth".localized()
+        tf_height.placeholder = "signup_height".localized()
+        tf_weight.placeholder = "signup_weight".localized()
+        tf_phone.placeholder = "signup_current_phone_number".localized()
+        bt_update.setTitle("bnt_update".localized(), for: .normal)
+        self.title = "sub_personal".localized()
+    }
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == tf_country_code {
             showCountryPicker()
@@ -79,10 +95,10 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
     
     func createGenderToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeGender))
-        closeButton.accessibilityLabel = "Close"
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneGender))
-        doneButton.accessibilityLabel = "Done"
+        let closeButton = UIBarButtonItem(title: "bnt_close".localized(), style: .done, target: self, action: #selector(closeGender))
+        closeButton.accessibilityLabel = "bnt_close".localized()
+        let doneButton = UIBarButtonItem(title: "bnt_done".localized(), style: .done, target: self, action: #selector(doneGender))
+        doneButton.accessibilityLabel = "bnt_done".localized()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.isTranslucent = false
         toolbar.sizeToFit()
@@ -139,10 +155,10 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
     
     func createDateToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeDate))
-        closeButton.accessibilityLabel = "Close"
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDate))
-        doneButton.accessibilityLabel = "Done"
+        let closeButton = UIBarButtonItem(title: "bnt_close".localized(), style: .done, target: self, action: #selector(closeDate))
+        closeButton.accessibilityLabel = "bnt_close".localized()
+        let doneButton = UIBarButtonItem(title: "bnt_done".localized(), style: .done, target: self, action: #selector(doneDate))
+        doneButton.accessibilityLabel = "bnt_done".localized()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.isTranslucent = false
         toolbar.sizeToFit()
@@ -193,7 +209,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
     }
     
     @IBAction func avatarAction(_ sender: Any) {
-        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {
+        let cameraAction = UIAlertAction(title: "picture_take_pic".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let imagePicker = UIImagePickerController()
@@ -207,7 +223,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
             }
         })
         
-        let photoAction = UIAlertAction(title: "Photo", style: .default, handler: {
+        let photoAction = UIAlertAction(title: "picture_pick_pic".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
@@ -221,13 +237,13 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
             }
         })
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: {
+        let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
             self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+        let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
             (alert: UIAlertAction!) -> Void in
         })
         

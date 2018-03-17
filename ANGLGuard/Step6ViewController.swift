@@ -55,10 +55,10 @@ class Step6ViewController: UITableViewController {
     
     func createDateToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeDate))
-        closeButton.accessibilityLabel = "Close"
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDate))
-        doneButton.accessibilityLabel = "Done"
+        let closeButton = UIBarButtonItem(title: "bnt_close".localized(), style: .done, target: self, action: #selector(closeDate))
+        closeButton.accessibilityLabel = "bnt_close".localized()
+        let doneButton = UIBarButtonItem(title: "bnt_done".localized(), style: .done, target: self, action: #selector(doneDate))
+        doneButton.accessibilityLabel = "bnt_done".localized()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.isTranslucent = false
         toolbar.sizeToFit()

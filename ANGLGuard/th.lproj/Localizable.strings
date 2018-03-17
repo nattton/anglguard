@@ -9,6 +9,7 @@
 "bnt_next" = "หน้าถัดไป";
 "bnt_back" = "กลับไปก่อนหน้านี้";
 "bnt_skip" = "ผ่าน";
+"bnt_close" = "ปิด";
 "bnt_done" = "สิ้นสุด";
 "bnt_confirm" = "ยืนยัน";
 "bnt_cancel" = "ยกเลิก";
@@ -18,6 +19,7 @@
 "bnt_later" = "ถัดไป";
 "bnt_yes" = "มี";
 "bnt_no" = "ไม่มี";
+"bnt_delete" = "ลบ";
 
 "can_i_help" = "มีอะไรที่ฉันสามารถช่วยคุณได้ไหม?";
 

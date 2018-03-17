@@ -25,12 +25,24 @@ class InsuranceViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_policy_number.text = Insurance.sharedInstance.policy_number
         tf_expire_date.text = Insurance.sharedInstance.expiration_date
         tf_insurance_company.text = Insurance.sharedInstance.insurance_company
         tf_contact_name.text = Insurance.sharedInstance.contact_name
         tf_country_code.text = Insurance.sharedInstance.contact_number_cc
         tf_phone.text = Insurance.sharedInstance.contact_number
+    }
+    
+    func setText() {
+        tf_policy_number.placeholder = "signup_policy_number".localized()
+        tf_expire_date.placeholder = "signup_expiration_date".localized()
+        tf_insurance_company.placeholder = "signup_insurance_company".localized()
+        tf_contact_name.placeholder = "signup_conntact_name".localized()
+        tf_country_code.placeholder = "signup_country".localized()
+        tf_phone.placeholder = "signup_contact_number".localized()
+        self.title = "sub_insurance".localized()
     }
 
     override func didReceiveMemoryWarning() {

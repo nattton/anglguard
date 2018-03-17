@@ -70,10 +70,10 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     
     func createDateToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeDate))
-        closeButton.accessibilityLabel = "Close"
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDate))
-        doneButton.accessibilityLabel = "Done"
+        let closeButton = UIBarButtonItem(title: "bnt_close".localized(), style: .done, target: self, action: #selector(closeDate))
+        closeButton.accessibilityLabel = "bnt_close".localized()
+        let doneButton = UIBarButtonItem(title: "bnt_done".localized(), style: .done, target: self, action: #selector(doneDate))
+        doneButton.accessibilityLabel = "bnt_done".localized()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.isTranslucent = false
         toolbar.sizeToFit()
@@ -122,7 +122,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func avatarAction(_ sender: Any) {
-        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {
+        let cameraAction = UIAlertAction(title: "picture_take_pic".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let imagePicker = UIImagePickerController()
@@ -136,7 +136,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
             }
         })
         
-        let photoAction = UIAlertAction(title: "Photo", style: .default, handler: {
+        let photoAction = UIAlertAction(title: "picture_pick_pic".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
@@ -150,13 +150,13 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
             }
         })
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: {
+        let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
             self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+        let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
             (alert: UIAlertAction!) -> Void in
         })
         

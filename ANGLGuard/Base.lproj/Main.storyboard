@@ -242,6 +242,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9Q-sS-YfI">
+                                                    <rect key="frame" x="40" y="19" width="295" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="GS6-gF-tHc"/>
+                                                        <constraint firstAttribute="width" constant="295" id="H9D-mO-YXh"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Forgot Password">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEf-zp-A86">
                                                     <rect key="frame" x="60" y="55" width="255" height="34"/>
                                                     <constraints>
@@ -255,16 +265,6 @@
                                                     <connections>
                                                         <action selector="signinAction:" destination="W4D-Fp-Luv" eventType="touchUpInside" id="gnB-dd-CSV"/>
                                                     </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9Q-sS-YfI">
-                                                    <rect key="frame" x="40" y="19" width="295" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="GS6-gF-tHc"/>
-                                                        <constraint firstAttribute="width" constant="295" id="H9D-mO-YXh"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Forgot Password">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxj-a4-wrr">
                                                     <rect key="frame" x="40" y="97" width="295" height="29"/>
@@ -355,6 +355,10 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="bt_forget_password" destination="v9Q-sS-YfI" id="VSV-tg-4E0"/>
+                        <outlet property="bt_login" destination="QEf-zp-A86" id="qU2-cL-dn3"/>
+                        <outlet property="lb_or" destination="UfC-42-5Xv" id="QFA-Fy-hGd"/>
+                        <outlet property="lb_sigm_in" destination="Z6g-hU-jpP" id="nNv-Qg-47e"/>
                         <outlet property="tf_password" destination="74q-1i-Lwg" id="m19-o6-T7Z"/>
                         <outlet property="tf_username" destination="yDp-Nq-Vf7" id="OWj-dn-utD"/>
                         <segue destination="n1j-2g-OJR" kind="presentation" identifier="showMain" modalTransitionStyle="crossDissolve" id="Nfx-nM-YZc"/>
@@ -764,6 +768,7 @@
                         <outlet property="bt_help" destination="dCy-Ym-Mn1" id="nJj-uL-cuM"/>
                         <outlet property="map" destination="IGV-yz-qfT" id="SQf-Jq-pda"/>
                         <outlet property="tb_hospital" destination="yyV-sA-JAX" id="qxv-Kt-SQn"/>
+                        <outlet property="tf_can_i_help_you" destination="qTE-W7-w38" id="KoO-8u-pOE"/>
                         <outlet property="v_list" destination="MAs-nr-8vL" id="ODP-Oc-VDC"/>
                         <outlet property="v_list_height" destination="ZUF-AF-3lE" id="pDn-54-EAk"/>
                         <segue destination="efS-hi-KVR" kind="show" identifier="showWebView" id="QYa-NC-TLg">
@@ -867,6 +872,7 @@
                     </view>
                     <connections>
                         <outlet property="avatar" destination="fUM-Hz-ile" id="xLY-Gp-FBg"/>
+                        <outlet property="lb_iHealt" destination="DQp-ZH-pdP" id="Vnz-82-Wg3"/>
                         <outlet property="name" destination="sFa-qO-LiZ" id="Bwd-KL-j5i"/>
                         <outlet property="qrcode" destination="dwd-GZ-5ox" id="jb3-M2-bke"/>
                         <outlet property="v_profile" destination="6g9-ZM-Mtk" id="qAN-KM-LLO"/>
@@ -1021,6 +1027,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tb_first_aid" destination="eJ5-ai-03r" id="f9D-Fy-VEO"/>
+                        <outlet property="tf_search" destination="u2n-ZG-uaN" id="rDR-4q-6Ho"/>
                         <segue destination="xtR-GE-jjw" kind="show" identifier="showLearnFirstAidDetail" id="0HT-RG-yZx">
                             <nil key="action"/>
                         </segue>
@@ -1493,6 +1500,7 @@
                         <outlet property="bt_photo2" destination="mv2-dh-10w" id="8oy-2h-iGb"/>
                         <outlet property="bt_photo3" destination="W8L-yf-LDc" id="FIZ-aE-t92"/>
                         <outlet property="bt_photo4" destination="X1B-w3-ldN" id="7On-af-Y0w"/>
+                        <outlet property="lb_photo" destination="mri-zx-QL4" id="OsM-8D-5Rx"/>
                         <outlet property="tv_message" destination="wkl-IZ-T6u" id="8NZ-lI-lMT"/>
                         <segue destination="dfT-c9-MkW" kind="presentation" identifier="showEmergency" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="2s5-wm-7cr"/>
                         <segue destination="li1-VI-3f0" kind="presentation" identifier="showGroupAlert" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="U6F-1g-qkk"/>
@@ -1616,7 +1624,7 @@
                                                 <rect key="frame" x="50" y="377" width="180" height="32"/>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.5450980392" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="Confirm"/>
+                                                <state key="normal" title="CONFIRM"/>
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -2137,7 +2145,7 @@
             </objects>
             <point key="canvasLocation" x="1919" y="3842"/>
         </scene>
-        <!--Friends-->
+        <!--Family-->
         <scene sceneID="88m-dw-HNs">
             <objects>
                 <viewController id="8cT-rj-Rkj" customClass="FriendsViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -2203,13 +2211,12 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eME-Es-HTA">
-                                <rect key="frame" x="60" y="587" width="255" height="50"/>
-                                <color key="backgroundColor" red="0.96470588239999999" green="0.5450980392" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="162.5" y="587" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="2Jy-Rh-mnb"/>
+                                    <constraint firstAttribute="width" constant="50" id="2Jy-Rh-mnb"/>
                                     <constraint firstAttribute="height" constant="50" id="7AL-DN-EMH"/>
                                 </constraints>
-                                <state key="normal" title="Add Friends">
+                                <state key="normal" backgroundImage="ic_plus">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -2228,7 +2235,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kNS-tF-2vZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Friends" id="fs4-qB-wtt">
+                    <navigationItem key="navigationItem" title="Family" id="fs4-qB-wtt">
                         <barButtonItem key="backBarButtonItem" title=" " id="9at-FS-Dm4"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="4p0-60-pLb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rEN-DP-Jof">
@@ -2465,7 +2472,7 @@
             </objects>
             <point key="canvasLocation" x="2844" y="5355"/>
         </scene>
-        <!--Add Friend-->
+        <!--Family-->
         <scene sceneID="aez-0e-nNi">
             <objects>
                 <tableViewController id="pBP-K3-Ozw" customClass="AddFriendViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -2493,7 +2500,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="296" height="41"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-a0-mQU">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Member search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-a0-mQU">
                                                                     <rect key="frame" x="10" y="8.5" width="235" height="24"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2608,7 +2615,7 @@
                             <outlet property="delegate" destination="pBP-K3-Ozw" id="MJk-RC-N6h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Friend" id="tc4-a6-cOg"/>
+                    <navigationItem key="navigationItem" title="Family" id="tc4-a6-cOg"/>
                     <connections>
                         <outlet property="avatar" destination="kXV-EQ-P0s" id="dBS-Rj-QuI"/>
                         <outlet property="bt_add" destination="vY6-jK-jhm" id="eFQ-qg-BMt"/>
@@ -5482,7 +5489,7 @@
                                                             <constraint firstAttribute="height" constant="32" id="INk-f4-LCZ"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Confirm"/>
+                                                        <state key="normal" title="CONFIRM"/>
                                                         <connections>
                                                             <action selector="confirmAction:" destination="Tgj-F5-cxn" eventType="touchUpInside" id="L4O-B7-PN9"/>
                                                         </connections>
@@ -5549,6 +5556,11 @@
                     <connections>
                         <outlet property="bt_call" destination="O7w-zk-ssB" id="5ez-nk-x4B"/>
                         <outlet property="bt_confirm" destination="7QA-9X-GQd" id="nzl-g3-ooN"/>
+                        <outlet property="lb_call" destination="0C7-gm-Wj9" id="Q59-GM-WUl"/>
+                        <outlet property="lb_call_description" destination="mPD-3B-neh" id="DLs-fT-Jmp"/>
+                        <outlet property="lb_emergency_alert" destination="RGF-Ge-Mm3" id="6yn-gL-H1K"/>
+                        <outlet property="lb_emergency_term" destination="yFG-Gb-YUS" id="Xzf-oK-6ag"/>
+                        <outlet property="lb_emergency_term_description" destination="lwe-xm-CEp" id="FIj-f6-qIV"/>
                         <outlet property="tb_friend" destination="PvB-du-9Ab" id="Zla-X8-u8m"/>
                         <outlet property="v_call" destination="EBJ-rU-0Ph" id="nY1-ES-zBz"/>
                         <outlet property="v_friend" destination="upV-85-IWx" id="IJv-Sr-ueN"/>
@@ -8293,6 +8305,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bt_avatar" destination="LD3-Ht-gI7" id="ybZ-e6-XXd"/>
+                        <outlet property="bt_update" destination="xwk-NG-PWM" id="RzI-pe-kM9"/>
                         <outlet property="tf_country_code" destination="jXX-vB-4ZV" id="cuY-g1-cgU"/>
                         <outlet property="tf_date_of_birth" destination="KWy-fb-TFZ" id="0Uh-oX-EZZ"/>
                         <outlet property="tf_firstname" destination="Tzz-WX-Xz1" id="pgU-17-mt3"/>
@@ -8349,27 +8362,15 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="Q0C-0f-huW"/>
                                                     </constraints>
-                                                    <string key="text">Please enter the mobile number used in Thailand to contact in times of the emergency. And the OTP code will sent to your mobile device.</string>
+                                                    <string key="text">CAUTION  Please enter the mobile number used in Thailand to contact in times of the emergency. And the OTP code will sent to your mobile device.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAUTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuc-GZ-u1d">
-                                                    <rect key="frame" x="16" y="101.5" width="343" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Jap-Iu-Cch"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kd2-da-oOT" firstAttribute="top" secondItem="Uuc-GZ-u1d" secondAttribute="bottom" constant="8" id="2aj-yE-EG1"/>
                                                 <constraint firstAttribute="bottom" secondItem="kd2-da-oOT" secondAttribute="bottom" constant="8" id="AXJ-Lp-PjQ"/>
                                                 <constraint firstItem="kd2-da-oOT" firstAttribute="leading" secondItem="xiO-Tn-Bpl" secondAttribute="leading" constant="16" id="LfN-mG-0Mm"/>
-                                                <constraint firstItem="Uuc-GZ-u1d" firstAttribute="leading" secondItem="xiO-Tn-Bpl" secondAttribute="leading" constant="16" id="Pyf-wb-ZBf"/>
-                                                <constraint firstAttribute="trailing" secondItem="Uuc-GZ-u1d" secondAttribute="trailing" constant="16" id="lEI-Sj-skA"/>
                                                 <constraint firstAttribute="trailing" secondItem="kd2-da-oOT" secondAttribute="trailing" constant="16" id="sU6-Y5-qbH"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -8531,6 +8532,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bt_send" destination="iGd-1N-to6" id="c8r-73-VeZ"/>
+                        <outlet property="bt_verify" destination="1P1-ck-h7k" id="rJy-IY-Ee4"/>
+                        <outlet property="lb_caution" destination="kd2-da-oOT" id="VbX-Uh-1ff"/>
+                        <outlet property="lb_otp" destination="zrZ-aq-pKZ" id="8Uh-yA-Kme"/>
                         <outlet property="tf_code" destination="c1U-lp-Eln" id="2NA-eI-AFM"/>
                         <outlet property="tf_country_code" destination="oah-6b-d7Z" id="Yab-qD-jKh"/>
                         <outlet property="tf_phone" destination="NFX-Gk-NfU" id="aqJ-O4-ZQC"/>
@@ -8736,6 +8741,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bt_avatar" destination="xar-OL-uRq" id="kpk-3U-GwY"/>
+                        <outlet property="bt_update" destination="DeO-bV-dDR" id="Ezz-Mm-89J"/>
                         <outlet property="tf_country" destination="3q4-Jl-i0Y" id="WhF-zm-gdb"/>
                         <outlet property="tf_expire_date" destination="e2L-HL-734" id="Vzb-Fc-N6G"/>
                         <outlet property="tf_passport" destination="NZu-Nl-TGu" id="knZ-Z2-KWL"/>
@@ -9105,6 +9111,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bt_update" destination="59p-bw-cVI" id="CsL-Jb-x1F"/>
                         <outlet property="tf_blood_type" destination="gsx-Yj-16i" id="LYZ-x1-EC5"/>
                         <outlet property="tf_chemical" destination="d7t-ce-NrA" id="XoS-Ib-ufC"/>
                         <outlet property="tf_drug" destination="5K2-ad-ZhF" id="gNR-XA-Q8J"/>
@@ -9353,6 +9360,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bt_update" destination="pYy-WV-UK3" id="VAj-SZ-VDN"/>
                         <outlet property="tf_country_code" destination="DhQ-nR-90X" id="yBL-bM-ool"/>
                         <outlet property="tf_email" destination="h5d-jZ-7vJ" id="fIv-f6-8kx"/>
                         <outlet property="tf_firstname" destination="t8j-Nf-DeB" id="aty-W2-Wd5"/>
@@ -9632,6 +9640,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bt_update" destination="loc-nX-2BB" id="gol-f1-SDi"/>
                         <outlet property="tf_average" destination="ZBU-7F-EDm" id="pgT-oU-VnD"/>
                         <outlet property="tf_destination" destination="HFw-a0-1eD" id="84h-Ta-P2q"/>
                         <outlet property="tf_domestic" destination="7Nx-P3-Cb5" id="eXZ-vT-z7Z"/>
@@ -10052,6 +10061,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bt_update" destination="cIf-V7-eP7" id="MEj-kB-CQU"/>
                         <outlet property="tf_current_password" destination="pfz-YJ-ETJ" id="cWE-D2-eg9"/>
                         <outlet property="tf_new_password" destination="9y8-CH-JjU" id="VCH-jZ-9pZ"/>
                         <outlet property="tf_re_new_password" destination="VfK-HC-m0S" id="URj-v9-4K3"/>
@@ -10212,6 +10222,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bt_send" destination="cFL-CK-mdo" id="DwO-N6-hhi"/>
+                        <outlet property="lb_forget_password" destination="Tnt-iV-36V" id="xJU-ZD-8rG"/>
                         <outlet property="tf_email" destination="VAH-BI-FiV" id="ZPu-XJ-fpN"/>
                     </connections>
                 </tableViewController>
@@ -10489,6 +10501,7 @@
         <image name="ic_facebook" width="36" height="36"/>
         <image name="ic_gmail" width="36" height="36"/>
         <image name="ic_menu" width="22" height="18"/>
+        <image name="ic_plus" width="40" height="40"/>
         <image name="ic_qrcode" width="26" height="26"/>
         <image name="ic_search" width="22" height="24"/>
         <image name="ic_wechat" width="36" height="36"/>
@@ -10500,13 +10513,13 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QVB-hu-sxA"/>
-        <segue reference="ok4-qI-3HV"/>
+        <segue reference="H5X-I5-z3w"/>
         <segue reference="WNK-aW-ALk"/>
         <segue reference="Mt3-F6-5eG"/>
         <segue reference="cub-pU-bAr"/>
         <segue reference="WKk-6j-Np9"/>
         <segue reference="h31-c6-UMY"/>
-        <segue reference="lWp-hO-vcf"/>
+        <segue reference="QYa-NC-TLg"/>
         <segue reference="Nfx-nM-YZc"/>
     </inferredMetricsTieBreakers>
 </document>

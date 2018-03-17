@@ -11,6 +11,7 @@ class EmergencyContactProfileViewController: UITableViewController, UITextFieldD
     @IBOutlet var tf_phone: UITextField!
     @IBOutlet var tf_relationship: UITextField!
     @IBOutlet var tf_email: UITextField!
+    @IBOutlet var bt_update: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -26,6 +27,8 @@ class EmergencyContactProfileViewController: UITableViewController, UITextFieldD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_firstname.text = Contact.sharedInstance.firstname
         tf_lastname.text = Contact.sharedInstance.lastname
         tf_country_code.text = Contact.sharedInstance.contact_number_cc
@@ -37,6 +40,17 @@ class EmergencyContactProfileViewController: UITableViewController, UITextFieldD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_firstname.placeholder = "signup_first_name".localized()
+        tf_lastname.placeholder = "signup_last_name".localized()
+        tf_country_code.placeholder = "signup_country".localized()
+        tf_phone.placeholder = "signup_contact_number".localized()
+        tf_relationship.placeholder = "signup_relationship".localized()
+        tf_email.placeholder = "signup_email".localized()
+        bt_update.setTitle("bnt_update".localized(), for: .normal)
+        self.title = "sub_contact".localized()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

@@ -17,11 +17,17 @@ class AddFriendViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_search.placeholder = "group_search".localized()
+        self.title = "group_title".localized()
     }
     
     @IBAction func searchAction(_ sender: Any) {

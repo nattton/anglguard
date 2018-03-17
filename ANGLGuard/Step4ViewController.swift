@@ -47,10 +47,10 @@ class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPicker
     
     func createBloodToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeBlood))
-        closeButton.accessibilityLabel = "Close"
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneBlood))
-        doneButton.accessibilityLabel = "Done"
+        let closeButton = UIBarButtonItem(title: "bnt_close".localized(), style: .done, target: self, action: #selector(closeBlood))
+        closeButton.accessibilityLabel = "bnt_close".localized()
+        let doneButton = UIBarButtonItem(title: "bnt_done".localized(), style: .done, target: self, action: #selector(doneBlood))
+        doneButton.accessibilityLabel = "bnt_done".localized()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.isTranslucent = false
         toolbar.sizeToFit()

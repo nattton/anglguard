@@ -8,8 +8,12 @@ import GoogleSignIn
 
 class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
+    @IBOutlet var lb_sigm_in: UILabel!
     @IBOutlet var tf_username: UITextField!
     @IBOutlet var tf_password: UITextField!
+    @IBOutlet var bt_forget_password: UIButton!
+    @IBOutlet var bt_login: UIButton!
+    @IBOutlet var lb_or: UILabel!
     
     let defaults = UserDefaults.standard
     
@@ -27,6 +31,8 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
     }
@@ -34,6 +40,15 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_sigm_in.text = "login_sigin".localized()
+        tf_username.placeholder = "login_username".localized()
+        tf_password.placeholder = "login_password".localized()
+        bt_forget_password.setTitle("login_forgot_password".localized(), for: .normal)
+        bt_login.setTitle("login_login".localized(), for: .normal)
+        lb_or.text = "login_or".localized()
     }
     
     // MARK: - Table view data source
@@ -89,7 +104,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         let password: String! = tf_password.text
         let parameters: Parameters = [
             "username": username,
-            "password": password,
+            "password": password.encrypt(),
             "type": "normal"
         ]
         login(parameters: parameters)

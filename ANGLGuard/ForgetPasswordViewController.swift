@@ -2,7 +2,9 @@ import UIKit
 
 class ForgetPasswordViewController: UITableViewController {
     
+    @IBOutlet var lb_forget_password: UILabel!
     @IBOutlet var tf_email: UITextField!
+    @IBOutlet var bt_send: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -16,11 +18,20 @@ class ForgetPasswordViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_forget_password.text = "login_forgot_password".localized()
+        tf_email.placeholder = "login_email".localized()
+        bt_send.setTitle("bnt_send".localized(), for: .normal)
+        self.title = "login_forgot_password".localized()
     }
     
     @IBAction func sendAction(_ sender: Any) {

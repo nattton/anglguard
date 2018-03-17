@@ -8,6 +8,10 @@ class InitalViewController: SOContainerViewController {
 //            let action = isSideViewControllerPresented ? "opened" : "closed"
 //            let side = self.menuSide == .left ? "left" : "right"
 //            NSLog("You've \(action) the \(side) view controller.")
+            if isSideViewControllerPresented {
+                let menuView = self.sideViewController as! MenuViewController
+                menuView.tb_menu.reloadData()
+            }
         }
     }
     
@@ -107,6 +111,12 @@ extension UIImage {
         
         return newImage
     }
+    
+    func toBase64() -> String {
+        let imageData = UIImagePNGRepresentation(self)
+        let base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
+        return base64String!
+    }
 }
 
 extension NSMutableArray {
@@ -145,6 +155,12 @@ extension String {
         let encrypted: String = self + MD5_KEY
         return encrypted.MD5()
         
+    }
+    
+    func fromBase64To() -> UIImage {
+        let decodedData = Data(base64Encoded: self, options: .ignoreUnknownCharacters)
+        let decodedimage = UIImage(data: decodedData!)
+        return decodedimage!
     }
     
 }

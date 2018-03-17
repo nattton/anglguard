@@ -5,10 +5,12 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var tb_language: UITableView!
     
     let languages = Language.getAllLanguages()
+    var selecteds: NSMutableArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setText()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,13 +28,26 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = Language.displayNameForLanguage(languages[indexPath.row])
+        let language = languages[indexPath.row]
+        cell.textLabel?.text = Language.displayNameForLanguage(language)
+        
+        if language == Language.getCurrentLanguage() {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+        }
+        
         Language.setCurrentLanguage(languages[indexPath.row])
         setText()
+        tableView.reloadData()
     }
     
     @IBAction func showMenu(_ sender: Any) {

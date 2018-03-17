@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GroupAlertDelegate, EmergencyDelegate {
     
     var bt_help_center: CGFloat?
     var type: String = ""
@@ -10,6 +10,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
     var lat: Double = 0
     var long: Double = 0
     
+    @IBOutlet var lb_photo: UILabel!
     @IBOutlet var bt_photo1: UIButton!
     @IBOutlet var bt_photo2: UIButton!
     @IBOutlet var bt_photo3: UIButton!
@@ -20,11 +21,18 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_photo.text = "emergency_photo".localized()
+        tv_message.text = "emergency_message".localized()
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -57,11 +65,19 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func onGroupAlertDismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func onEmergencyDismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func imageAction(_ sender: Any) {
         let button =  sender as! UIButton
         photo = button.tag
         
-        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {
+        let cameraAction = UIAlertAction(title: "picture_take_pic".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let imagePicker = UIImagePickerController()
@@ -75,7 +91,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             }
         })
         
-        let photoAction = UIAlertAction(title: "Photo", style: .default, handler: {
+        let photoAction = UIAlertAction(title: "picture_pick_pic".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
@@ -89,7 +105,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             }
         })
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: {
+        let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             if self.photo == 1 {
                 self.bt_photo1.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
@@ -102,7 +118,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             }
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+        let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
             (alert: UIAlertAction!) -> Void in
         })
         
@@ -166,6 +182,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             groupAlert.photo3 = bt_photo3.backgroundImage(for: .normal)
             groupAlert.photo4 = bt_photo4.backgroundImage(for: .normal)
             groupAlert.message = tv_message.text
+            groupAlert.delegate = self
         }
         
         if segue.identifier == "showEmergency" {
@@ -178,6 +195,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             emergency.photo3 = bt_photo3.backgroundImage(for: .normal)
             emergency.photo4 = bt_photo4.backgroundImage(for: .normal)
             emergency.message = tv_message.text
+            emergency.delegate = self
         }
     }
 

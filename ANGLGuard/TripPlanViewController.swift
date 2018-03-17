@@ -11,6 +11,7 @@ class TripPlanViewController: UITableViewController {
     @IBOutlet var tf_trip: UITextField!
     @IBOutlet var tf_domestic: UITextField!
     @IBOutlet var tf_destination: UITextField!
+    @IBOutlet var bt_update: UIButton!
     
     var datePicker: UIDatePicker?
     let defaults = UserDefaults.standard
@@ -26,6 +27,8 @@ class TripPlanViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setText()
         
         tf_purpose.text = Trip.sharedInstance.purpose
         tf_start_date.text = Trip.sharedInstance.start_date
@@ -44,6 +47,18 @@ class TripPlanViewController: UITableViewController {
         
     }
     
+    func setText() {
+        tf_purpose.placeholder = "signup_purpost_trip".localized()
+        tf_start_date.placeholder = "signup_start_date".localized()
+        tf_lenght_of_day.placeholder = "signup_lenglh_of_stay".localized()
+        tf_average.placeholder = "signup_average_expense".localized()
+        tf_trip.placeholder = "signup_trip_arrangement".localized()
+        tf_domestic.placeholder = "signup_domestic".localized()
+        tf_destination.placeholder = "signup_destinations".localized()
+        bt_update.setTitle("bnt_update".localized(), for: .normal)
+        self.title = "sub_trip_plan".localized()
+    }
+    
     func createDatePicker() -> UIDatePicker {
         if datePicker == nil {
             datePicker = UIDatePicker()
@@ -58,10 +73,10 @@ class TripPlanViewController: UITableViewController {
     
     func createDateToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeDate))
-        closeButton.accessibilityLabel = "Close"
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDate))
-        doneButton.accessibilityLabel = "Done"
+        let closeButton = UIBarButtonItem(title: "bnt_close".localized(), style: .done, target: self, action: #selector(closeDate))
+        closeButton.accessibilityLabel = "bnt_close".localized()
+        let doneButton = UIBarButtonItem(title: "bnt_done".localized(), style: .done, target: self, action: #selector(doneDate))
+        doneButton.accessibilityLabel = "bnt_done".localized()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.isTranslucent = false
         toolbar.sizeToFit()

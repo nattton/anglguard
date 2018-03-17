@@ -11,6 +11,7 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
     @IBOutlet var tf_underlying: UITextField!
     @IBOutlet var tf_medication: UITextField!
     @IBOutlet var tf_special_care: UITextField!
+    @IBOutlet var bt_update: UIButton!
     
     var bloods = ["O", "A", "B", "AB"]
     var bloodPicker: UIPickerView?
@@ -28,6 +29,8 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_blood_type.text = Medical.sharedInstance.blood_type
         
         tf_blood_type.inputView = createBloodPicker()
@@ -37,6 +40,18 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_blood_type.placeholder = "signup_blood_type".localized()
+        tf_drug.placeholder = "signup_allergy_drug".localized()
+        tf_food.placeholder = "signup_allergy_food".localized()
+        tf_chemical.placeholder = "signup_allergy_chemical".localized()
+        tf_underlying.placeholder = "signup_Underlying_diseases".localized()
+        tf_medication.placeholder = "signup_current_medication".localized()
+        tf_special_care.placeholder = "signup_special_care".localized()
+        bt_update.setTitle("bnt_update".localized(), for: .normal)
+        self.title = "sub_medical".localized()
     }
     
     func createBloodPicker() -> UIPickerView {
@@ -50,10 +65,10 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
     
     func createBloodToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeBlood))
-        closeButton.accessibilityLabel = "Close"
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneBlood))
-        doneButton.accessibilityLabel = "Done"
+        let closeButton = UIBarButtonItem(title: "bnt_close".localized(), style: .done, target: self, action: #selector(closeBlood))
+        closeButton.accessibilityLabel = "bnt_close".localized()
+        let doneButton = UIBarButtonItem(title: "bnt_done".localized(), style: .done, target: self, action: #selector(doneBlood))
+        doneButton.accessibilityLabel = "bnt_done".localized()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.isTranslucent = false
         toolbar.sizeToFit()

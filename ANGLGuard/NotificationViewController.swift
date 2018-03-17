@@ -14,6 +14,8 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         if let token = defaults.string(forKey: "token") {
             let parameters: Parameters = [
                 "token": token
@@ -54,6 +56,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func setText() {
+        self.title = "nav_notification".localized()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

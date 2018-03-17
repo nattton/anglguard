@@ -23,6 +23,8 @@ class LearnFirstAidDetailViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         getFirstAid()
     }
@@ -30,6 +32,12 @@ class LearnFirstAidDetailViewController: UIViewController, UIWebViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tab_content.setTitle("aid_content".localized(), forSegmentAt: 0)
+        tab_content.setTitle("aid_vdo".localized(), forSegmentAt: 1)
+        self.title = "aid_header".localized()
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

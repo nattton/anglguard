@@ -54,7 +54,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell: MenuCell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as! MenuCell
         let item: Item = sections[indexPath.section].items[indexPath.row]
         
-        cell.title.text = item.name
+        cell.title.text = getTitle(key: item.name)
         
         return cell
     }
@@ -76,7 +76,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? MenuHeader ?? MenuHeader(reuseIdentifier: "header")
         
         header.iconImage.image = UIImage(named: sections[section].icon)
-        header.titleLabel.text = sections[section].name
+        header.titleLabel.text = getTitle(key: sections[section].name)
         header.arrowLabel.text = sections[section].items.count > 0 ? ">" : ""
         header.setCollapsed(sections[section].collapsed)
         header.section = section
@@ -112,6 +112,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.so_containerViewController?.topViewController = viewController
             }
         }
+    }
+    
+    func getTitle(key: String) -> String {
+        return key.localized()
     }
 
     /*

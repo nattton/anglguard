@@ -24,11 +24,16 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func setText() {
+        self.title = "group_title".localized()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,7 +81,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            let alert = UIAlertController(title: "Are you sure to delete this friend?", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "group_del_desc".localized(), message: nil, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                 let friend = self.friends[indexPath.row] as! [String: Any]

@@ -10,9 +10,12 @@ class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITabl
     let defaults = UserDefaults.standard
     
     @IBOutlet var tb_first_aid: UITableView!
+    @IBOutlet var tf_search: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setText()
         
         getFirstAids()
     }
@@ -20,6 +23,11 @@ class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITabl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func setText() {
+        tf_search.text = "aid_search".localized()
+        self.title = "aid_header".localized()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

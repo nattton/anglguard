@@ -8,33 +8,33 @@ import FBSDKLoginKit
 import GoogleSignIn
 
 //Production
-let HOST = "https://anglguard-service.angl.life/public"
-let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
-
-let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
-let VIRIYAH_SUCCESS_URL = "https://affiliate.viriyah.co.th/ANGL/successpage.php"
-
-let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
-let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
-let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
-let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl.life/public/siampay-fail"
-
-let MERCHANT_CODE = "76101221"
+//let HOST = "https://anglguard-service.angl.life/public"
+//let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
+//
+//let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
+//let VIRIYAH_SUCCESS_URL = "https://affiliate.viriyah.co.th/ANGL/successpage.php"
+//
+//let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
+//let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
+//let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
+//let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl.life/public/siampay-fail"
+//
+//let MERCHANT_CODE = "76101221"
 //Production
 
 // dev
-//let HOST = "https://anglguard-service-test.angl.life/public"
-//let HOST_TOURIST = "http://203.107.236.229/api-tourist"
-//
-//let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
-//let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
-//
-//let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
-//let ASIA_PAY_CANCEL_URL = "https://anglguard-service-test.angl.life/public/siampay-cancel"
-//let ASIA_PAY_SUCCESS_URL = "https://anglguard-service-test.angl.life/public/siampay-success"
-//let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay-fail"
-//
-//let MERCHANT_CODE = "76065111"
+let HOST = "https://anglguard-service-test.angl.life/public"
+let HOST_TOURIST = "http://203.107.236.229/api-tourist"
+
+let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
+let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
+
+let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
+let ASIA_PAY_CANCEL_URL = "https://anglguard-service-test.angl.life/public/siampay-cancel"
+let ASIA_PAY_SUCCESS_URL = "https://anglguard-service-test.angl.life/public/siampay-success"
+let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay-fail"
+
+let MERCHANT_CODE = "76065111"
 // dev
 
 let CHECK_VERSION_URL = HOST + "/check-version"

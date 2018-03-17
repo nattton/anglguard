@@ -9,6 +9,7 @@
 "bnt_next" = "NEXT";
 "bnt_back" = "BACK";
 "bnt_skip" = "SKIP";
+"bnt_close" = "CLOSE";
 "bnt_done" = "DONE";
 "bnt_confirm" = "CONFIRM";
 "bnt_cancel" = "CANCEL";
@@ -18,6 +19,7 @@
 "bnt_later" = "LATER";
 "bnt_yes" = "YES";
 "bnt_no" = "NO";
+"bnt_delete" = "Delete";
 
 "can_i_help" = "Can I help you";
 

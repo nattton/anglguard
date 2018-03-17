@@ -7,6 +7,7 @@ class ChangePasswordViewController: UITableViewController {
     @IBOutlet var tf_current_password: UITextField!
     @IBOutlet var tf_new_password: UITextField!
     @IBOutlet var tf_re_new_password: UITextField!
+    @IBOutlet var bt_update: UIButton!
     
     var current_password: String = ""
     var new_password: String = ""
@@ -25,11 +26,21 @@ class ChangePasswordViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_current_password.placeholder = "pass_current".localized()
+        tf_new_password.placeholder = "pass_new".localized()
+        tf_re_new_password.placeholder = "pass_re".localized()
+        bt_update.setTitle("bnt_update".localized(), for: .normal)
+        self.title = "sub_change_password".localized()
     }
     
     @IBAction func updateAction(_ sender: Any) {

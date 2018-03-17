@@ -29,13 +29,13 @@ class ThankYouViewController: UITableViewController {
         if Authen.sharedInstance.type == "normal" {
             let username: String! = Personal.sharedInstance.email
             let password: String! = Personal.sharedInstance.password
-            let parameters: Parameters = ["username": username, "password": password, "type": "normal"]
+            let parameters: Parameters = ["username": username, "password": password.encrypt(), "type": "normal"]
             login(parameters: parameters)
         } else {
             let email: String! = Personal.sharedInstance.email
             let key: String! = Authen.sharedInstance.key
             let type: String! = Authen.sharedInstance.type
-            let parameters: Parameters = ["email": email, "key": key, "type": type]
+            let parameters: Parameters = ["email": email, "key": key.encrypt(), "type": type]
             login(parameters: parameters)
         }
     }

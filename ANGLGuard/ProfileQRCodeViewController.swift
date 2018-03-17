@@ -9,6 +9,7 @@ class ProfileQRCodeViewController: UIViewController {
     @IBOutlet var name: UILabel!
     @IBOutlet var qrcode: UIImageView!
     @IBOutlet var v_profile: UIView!
+    @IBOutlet var lb_iHealt: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

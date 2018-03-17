@@ -5,9 +5,13 @@ import SVProgressHUD
 
 class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet var lb_caution: UILabel!
+    @IBOutlet var lb_otp: UILabel!
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
     @IBOutlet var tf_code: UITextField!
+    @IBOutlet var bt_send: UIButton!
+    @IBOutlet var bt_verify: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -23,6 +27,8 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_country_code.text = Personal.sharedInstance.thai_mobile_cc
         tf_phone.text = Personal.sharedInstance.thai_mobile_num
     }
@@ -30,6 +36,15 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_caution.text = "signup_caution".localized()
+        lb_otp.text = "signup_please_enter_your_otp".localized()
+        tf_phone.placeholder = "signup_current_phone_number".localized()
+        bt_send.setTitle("signup_send_code".localized(), for: .normal)
+        bt_verify.setTitle("signup_verify_code".localized(), for: .normal)
+        self.title = "signup_current_thai_number".localized()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

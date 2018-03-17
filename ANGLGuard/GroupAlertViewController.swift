@@ -3,7 +3,13 @@ import Alamofire
 import AlamofireImage
 import SVProgressHUD
 
+protocol GroupAlertDelegate {
+    func onGroupAlertDismiss()
+}
+
 class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var delegate: GroupAlertDelegate?
     
     var photo1: UIImage?
     var photo2: UIImage?
@@ -25,6 +31,8 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setText()
         
         v_profile.layer.masksToBounds = false
         v_profile.layer.cornerRadius = 8
@@ -56,11 +64,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
         
-        if let firstname = defaults.string(forKey: "firstname"), let lastname = defaults.string(forKey: "lastname") {
-            lb_profile_name.text = firstname + " " + lastname
-        } else {
-            lb_profile_name.text = "-"
-        }
+        lb_profile_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
         
         getFriends()
     }
@@ -68,6 +72,10 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func setText() {
+        bt_confirm.setTitle("bnt_confirm".localized(), for: .normal)
     }
     
     //list friend
@@ -168,7 +176,13 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                     if code == "200" {
                         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                            self.dismiss(animated: true, completion: nil)
+                            self.dismiss(animated: true) {
+                                self.dismiss(animated: false) {
+                                    if self.delegate != nil {
+                                        self.delegate?.onGroupAlertDismiss()
+                                    }
+                                }
+                            }
                         }))
                         self.present(alert, animated: true, completion: nil)
                     } else if code == "104" {

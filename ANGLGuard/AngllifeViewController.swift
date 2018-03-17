@@ -25,6 +25,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     var ambulanceAnn: MKAnnotation?
     
     @IBOutlet var map: MKMapView!
+    @IBOutlet var tf_can_i_help_you: UIButton!
     @IBOutlet var bt_help: UIButton!
     @IBOutlet var tb_hospital: UITableView!
     @IBOutlet var v_list: UIView!
@@ -33,6 +34,8 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setText()
         
         bt_current_location.layer.cornerRadius = 0.5 * bt_current_location.bounds.size.width
         bt_current_location.layer.shadowOpacity = 0.7
@@ -59,6 +62,10 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_can_i_help_you.setTitle("can_i_help".localized(), for: .normal)
     }
     
     //timer
