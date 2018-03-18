@@ -10,6 +10,8 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        setText()
+        
         let url = NSURL (string: ASIA_PAY_URL)
         let request = NSMutableURLRequest(url: url! as URL)
         request.httpMethod = "POST"
@@ -47,6 +49,10 @@ class AsiaPayViewController: UIViewController, UIWebViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        self.title = "sub_insurance".localized()
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

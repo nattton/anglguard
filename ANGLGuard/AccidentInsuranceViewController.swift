@@ -2,6 +2,10 @@ import UIKit
 
 class AccidentInsuranceViewController: UITableViewController {
     
+    @IBOutlet var lb_description: UILabel!
+    @IBOutlet var bt_yes: UIButton!
+    @IBOutlet var bt_no: UIButton!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -14,11 +18,18 @@ class AccidentInsuranceViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "signup_have_insurance".localized()
+        bt_yes.setTitle("bnt_yes".localized(), for: .normal)
+        bt_no.setTitle("bnt_no".localized(), for: .normal)
     }
 
     /*

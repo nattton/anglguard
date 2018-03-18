@@ -12,6 +12,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     @IBOutlet var tf_password: UITextField!
     @IBOutlet var tf_confirm: UITextField!
     @IBOutlet var bt_continue: UIButton!
+    @IBOutlet var lb_or: UILabel!
     
     var email: String = ""
     var password: String = ""
@@ -32,6 +33,8 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
     }
@@ -39,6 +42,14 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_email.placeholder = "login_email".localized()
+        tf_password.placeholder = "login_password".localized()
+        tf_confirm.placeholder = "login_confirm_password".localized()
+        bt_continue.setTitle("login_continue".localized(), for: .normal)
+        lb_or.text = "login_or".localized()
     }
     
     // Stop the UIActivityIndicatorView animation that was started when the user

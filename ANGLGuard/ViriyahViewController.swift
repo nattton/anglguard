@@ -10,6 +10,8 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         if let token = defaults.string(forKey: "token") {
             let url = URL(string: VIRIYAH_URL.replacingOccurrences(of: "@", with: token))
             let request = URLRequest(url: url!)
@@ -21,6 +23,10 @@ class ViriyahViewController: UIViewController, UIWebViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    func setText() {
+        self.title = "sub_insurance".localized()
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

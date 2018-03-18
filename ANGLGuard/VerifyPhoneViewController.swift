@@ -7,7 +7,12 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
+    @IBOutlet var bt_later: UIButton!
+    @IBOutlet var lb_verify_code: UILabel!
+    @IBOutlet var bt_send_code: UIButton!
     @IBOutlet var tf_code: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -23,6 +28,8 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_country_code.text = Personal.sharedInstance.thai_mobile_cc
         tf_phone.text = Personal.sharedInstance.thai_mobile_num
     }
@@ -30,6 +37,16 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_phone.placeholder = "signup_current_phone_number".localized()
+        bt_later.setTitle("bnt_later".localized(), for: .normal)
+        lb_verify_code.text = "signup_clik_to".localized()
+        bt_send_code.setTitle("signup_send_code".localized(), for: .normal)
+        tf_code.placeholder = "signup_code".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

@@ -3,12 +3,15 @@ import ADCountryPicker
 
 class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet var lb_description: UILabel!
     @IBOutlet var tf_gender: UITextField!
     @IBOutlet var tf_date_of_birth: UITextField!
     @IBOutlet var tf_height: UITextField!
     @IBOutlet var tf_weight: UITextField!
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     var genders = ["Male", "Female"]
     var genderPicker: UIPickerView?
@@ -27,6 +30,8 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_gender.text = Personal.sharedInstance.gender
         tf_date_of_birth.text = Personal.sharedInstance.birthdate
         tf_height.text = Personal.sharedInstance.height
@@ -44,6 +49,17 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "signup_so_iam".localized()
+        tf_gender.placeholder = "signup_gender".localized()
+        tf_date_of_birth.placeholder = "signup_date_of_birth".localized()
+        tf_height.placeholder = "signup_height".localized()
+        tf_weight.placeholder = "signup_weight".localized()
+        tf_phone.placeholder = "signup_current_phone_number".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

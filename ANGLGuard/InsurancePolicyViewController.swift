@@ -5,12 +5,15 @@ import SVProgressHUD
 
 class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet var lb_description: UILabel!
     @IBOutlet var tf_policy_number: UITextField!
     @IBOutlet var tf_expire_date: UITextField!
     @IBOutlet var tf_insurance_company: UITextField!
     @IBOutlet var tf_contact_name: UITextField!
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     var datePicker: UIDatePicker?
     
@@ -28,6 +31,8 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_expire_date.inputView = createDatePicker()
         tf_expire_date.inputAccessoryView = createDateToolBar()
     }
@@ -35,6 +40,17 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "signup_please_fulfill".localized()
+        tf_policy_number.placeholder = "signup_policy_number".localized()
+        tf_expire_date.placeholder = "signup_expiration_date".localized()
+        tf_insurance_company.placeholder = "signup_insurance_company".localized()
+        tf_contact_name.placeholder = "signup_conntact_name".localized()
+        tf_phone.placeholder = "signup_contact_number".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

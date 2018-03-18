@@ -2,6 +2,7 @@ import UIKit
 
 class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, AllergyOfDrugDelegate, AllergyOfFoodDelegate, AllergyOfChemicalDelegate, UnderlyingDelegate, CurrentMedicationDelegate, SpacialCareDelegate {
 
+    @IBOutlet var lb_description: UILabel!
     @IBOutlet var tf_blood_type: UITextField!
     @IBOutlet var tf_drug: UITextField!
     @IBOutlet var tf_food: UITextField!
@@ -9,6 +10,8 @@ class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet var tf_underlying: UITextField!
     @IBOutlet var tf_medication: UITextField!
     @IBOutlet var tf_special_care: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     var bloods = ["O", "A", "B", "AB"]
     var bloodPicker: UIPickerView?
@@ -25,6 +28,8 @@ class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_blood_type.text = Medical.sharedInstance.blood_type
         
         tf_blood_type.inputView = createBloodPicker()
@@ -34,6 +39,19 @@ class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPicker
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "signup_just_start".localized()
+        tf_blood_type.placeholder = "signup_blood_type".localized()
+        tf_drug.placeholder = "signup_allergy_drug".localized()
+        tf_food.placeholder = "signup_allergy_food".localized()
+        tf_chemical.placeholder = "signup_allergy_chemical".localized()
+        tf_underlying.placeholder = "signup_Underlying_diseases".localized()
+        tf_medication.placeholder = "signup_current_medication".localized()
+        tf_special_care.placeholder = "signup_special_care".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func createBloodPicker() -> UIPickerView {

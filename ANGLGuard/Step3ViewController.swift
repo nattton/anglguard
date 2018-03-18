@@ -8,6 +8,8 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     @IBOutlet var tf_passport: UITextField!
     @IBOutlet var tf_country: UITextField!
     @IBOutlet var tf_expire_date: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     var datePicker: UIDatePicker?
     var isImage: Bool = false
@@ -25,6 +27,8 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         country_code = Personal.sharedInstance.country_code
         
         tf_passport.text = Personal.sharedInstance.passport_num
@@ -38,6 +42,14 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_passport.placeholder = "signup_passport_number".localized()
+        tf_country.placeholder = "signup_country".localized()
+        tf_expire_date.placeholder = "signup_expire_date".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

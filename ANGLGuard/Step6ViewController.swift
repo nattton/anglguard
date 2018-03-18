@@ -2,6 +2,7 @@ import UIKit
 
 class Step6ViewController: UITableViewController {
     
+    @IBOutlet var lb_description: UILabel!
     @IBOutlet var tf_purpose: UITextField!
     @IBOutlet var tf_start_date: UITextField!
     @IBOutlet var tf_lenght_of_day: UITextField!
@@ -9,6 +10,8 @@ class Step6ViewController: UITableViewController {
     @IBOutlet var tf_trip: UITextField!
     @IBOutlet var tf_domestic: UITextField!
     @IBOutlet var tf_destination: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     var datePicker: UIDatePicker?
     
@@ -23,6 +26,8 @@ class Step6ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setText()
         
         tf_purpose.text = Trip.sharedInstance.purpose
         tf_start_date.text = Trip.sharedInstance.start_date
@@ -39,6 +44,19 @@ class Step6ViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "signup_how_do".localized()
+        tf_purpose.placeholder = "signup_purpost_trip".localized()
+        tf_start_date.placeholder = "signup_start_date".localized()
+        tf_lenght_of_day.placeholder = "signup_lenglh_of_stay".localized()
+        tf_average.placeholder = "signup_average_expense".localized()
+        tf_trip.placeholder = "signup_trip_arrangement".localized()
+        tf_domestic.placeholder = "signup_domestic".localized()
+        tf_destination.placeholder = "signup_destinations".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func createDatePicker() -> UIDatePicker {

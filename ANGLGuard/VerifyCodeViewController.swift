@@ -6,6 +6,9 @@ class VerifyCodeViewController: UITableViewController {
     
     @IBOutlet var tf_email: UITextField!
     @IBOutlet var tf_verify_code: UITextField!
+    @IBOutlet var lb_verify_code: UILabel!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     var email: String = ""
     let defaults = UserDefaults.standard
@@ -22,12 +25,22 @@ class VerifyCodeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_email.text = email
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        tf_email.placeholder = "login_email".localized()
+        lb_verify_code.text = "signup_please_enter".localized()
+        tf_verify_code.placeholder = "signup_code".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     @IBAction func backAction(_ sender: Any) {

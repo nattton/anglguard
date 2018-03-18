@@ -3,9 +3,12 @@ import UIKit
 class Step1ViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var bt_avatar: UIButton!
+    @IBOutlet var lb_description: UILabel!
     @IBOutlet var tf_firstname: UITextField!
     @IBOutlet var tf_middlename: UITextField!
     @IBOutlet var tf_lastname: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     var isImage: Bool = false
     
@@ -21,6 +24,8 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_firstname.text = Personal.sharedInstance.firstname
         tf_middlename.text = Personal.sharedInstance.middlename
         tf_lastname.text = Personal.sharedInstance.lastname
@@ -29,6 +34,15 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "signup_nice_to_meet_you".localized()
+        tf_firstname.placeholder = "signup_first_name".localized()
+        tf_middlename.placeholder = "signup_mid_name".localized()
+        tf_lastname.placeholder = "signup_last_name".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

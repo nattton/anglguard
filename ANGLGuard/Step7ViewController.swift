@@ -5,12 +5,15 @@ import SVProgressHUD
 
 class Step7ViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet var lb_description: UILabel!
     @IBOutlet var tf_firstname: UITextField!
     @IBOutlet var tf_lastname: UITextField!
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
     @IBOutlet var tf_relationship: UITextField!
     @IBOutlet var tf_email: UITextField!
+    @IBOutlet var bt_back: UIButton!
+    @IBOutlet var bt_next: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -26,6 +29,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
         tf_firstname.text = Contact.sharedInstance.firstname
         tf_lastname.text = Contact.sharedInstance.lastname
         tf_country_code.text = Contact.sharedInstance.contact_number_cc
@@ -37,6 +42,17 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "signup_great".localized()
+        tf_firstname.placeholder = "signup_first_name".localized()
+        tf_lastname.placeholder = "signup_last_name".localized()
+        tf_phone.placeholder = "signup_contact_number".localized()
+        tf_relationship.placeholder = "signup_relationship".localized()
+        tf_email.placeholder = "login_email".localized()
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
+        bt_next.setTitle("bnt_next".localized(), for: .normal)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

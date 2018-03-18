@@ -4,6 +4,9 @@ import SVProgressHUD
 
 class ThankYouViewController: UITableViewController {
     
+    @IBOutlet var lb_description: UILabel!
+    @IBOutlet var bt_start: UIButton!
+    
     let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
@@ -18,11 +21,17 @@ class ThankYouViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        lb_description.text = "thank_you".localized()
     }
     
     @IBAction func startAction(_ sender: Any) {

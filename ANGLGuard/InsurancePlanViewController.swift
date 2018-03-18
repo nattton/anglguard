@@ -4,6 +4,8 @@ import SVProgressHUD
 
 class InsurancePlanViewController: UITableViewController {
     
+    @IBOutlet var bt_back: UIButton!
+    
     let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
@@ -18,11 +20,17 @@ class InsurancePlanViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func setText() {
+        bt_back.setTitle("bnt_back".localized(), for: .normal)
     }
     
     @IBAction func planAction(_ sender: Any) {
