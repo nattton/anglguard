@@ -21,7 +21,7 @@ class PrivilegeViewController: UIViewController, UITableViewDelegate, UITableVie
         if let token = defaults.string(forKey: "token") {
             let parameters: Parameters = [
                 "token": token,
-                "lang": "EN"
+                "lang": Language.getCurrentLanguage().language()
             ]
             
             SVProgressHUD.show(withStatus: LOADING_TEXT)

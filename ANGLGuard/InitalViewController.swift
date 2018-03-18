@@ -163,4 +163,8 @@ extension String {
         return decodedimage!
     }
     
+    func language() -> String {
+        return self.replacingOccurrences(of: "zh-Hans", with: "cn").uppercased()
+    }
+    
 }

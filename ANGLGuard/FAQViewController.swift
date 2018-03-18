@@ -15,7 +15,7 @@ class FAQViewController: UIViewController, UIWebViewDelegate {
         if let token = defaults.string(forKey: "token") {
             let parameters: Parameters = [
                 "token": token,
-                "lang": "EN"
+                "lang": Language.getCurrentLanguage().language()
             ]
             
             SVProgressHUD.show(withStatus: LOADING_TEXT)

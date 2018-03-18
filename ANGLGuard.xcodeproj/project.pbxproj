@@ -83,6 +83,7 @@
 		3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227F203C92690085984D /* ViriyahViewController.swift */; };
 		3BA12286203C998E0085984D /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12285203C998E0085984D /* ThankYouViewController.swift */; };
 		3BDAFCF7205EBA670056EC91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */; };
+		3BF25BD2205F1A1200309B09 /* FirstAidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */; };
 		3BFA06ED2049DCAD00C47C0E /* Authen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA06EC2049DCAD00C47C0E /* Authen.swift */; };
 		59334130CFD032867069BF69 /* Pods_ANGLGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */; };
 /* End PBXBuildFile section */
@@ -170,6 +171,7 @@
 		3BA12285203C998E0085984D /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ANGLGuard-Bridging-Header.h"; sourceTree = "<group>"; };
+		3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAidCell.swift; sourceTree = "<group>"; };
 		3BFA06EC2049DCAD00C47C0E /* Authen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authen.swift; sourceTree = "<group>"; };
 		998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.debug.xcconfig"; sourceTree = "<group>"; };
 		D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.release.xcconfig"; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				3B6462FA2036AA4000A39901 /* AttractionAnnotationView.swift */,
 				3B6462F42036AA4000A39901 /* AngllifeViewController.swift */,
 				3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */,
+				3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */,
 				3B6462F72036AA4000A39901 /* LearnFirstAidViewController.swift */,
 				3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */,
 				3B6463342036BE9500A39901 /* HelpViewController.swift */,
@@ -561,6 +564,7 @@
 				3B0C5CB12039D0EA0086C086 /* AllergyOfFoodViewController.swift in Sources */,
 				3B64631B2036AA4200A39901 /* WebViewController.swift in Sources */,
 				3B6463302036AA4200A39901 /* NotificationViewController.swift in Sources */,
+				3BF25BD2205F1A1200309B09 /* FirstAidCell.swift in Sources */,
 				3B4FD590204B931C00AB045D /* PassportProfileViewController.swift in Sources */,
 				3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */,
 				3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */,

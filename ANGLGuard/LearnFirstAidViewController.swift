@@ -26,7 +26,7 @@ class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func setText() {
-        tf_search.text = "aid_search".localized()
+        tf_search.placeholder = "aid_search".localized()
         self.title = "aid_header".localized()
     }
     
@@ -39,23 +39,27 @@ class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "LearnFirstAidCell")!
+        let fCell: FirstAidCell = tableView.dequeueReusableCell(withIdentifier: "FirstAidCell") as! FirstAidCell
         let first_aid = first_aids[indexPath.row] as! [String: Any]
-        let icon: String! = first_aid["icon"] as! String
-        let title: String! = first_aid["title"] as! String
-        let description: String! = first_aid["description"] as! String
         
-        let eIcon: String! = icon.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        if let url = URL(string: eIcon){
-            cell.imageView?.af_setImage(withURL: url)
-        } else {
-            cell.imageView?.image = UIImage(named: "im_avatar")
+        if let icon: String = first_aid["icon"] as? String {
+            let eIcon: String! = icon.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            if let url = URL(string: eIcon){
+                fCell.icon?.af_setImage(withURL: url)
+            } else {
+                fCell.icon?.image = UIImage(named: "im_avatar")
+            }
         }
         
-        cell.textLabel?.text = title
-        cell.detailTextLabel?.text = description
+        if let title: String = first_aid["title"] as? String {
+            fCell.title?.text = title
+        }
         
-        return cell
+        if let description: String = first_aid["description"] as? String {
+            fCell.detail?.text = description
+        }
+        
+        return fCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -70,7 +74,7 @@ class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITabl
         if let token = defaults.string(forKey: "token") {
             let parameters: Parameters = [
                 "token": token,
-                "lang": "EN"
+                "lang": Language.getCurrentLanguage().language()
             ]
             SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(FIRSTAID_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
@@ -79,6 +83,7 @@ class LearnFirstAidViewController: UIViewController, UITableViewDelegate, UITabl
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
                     let message: String = result["message"] as! String
+                    NSLog("result = \(result)")
                     if code == "200" {
                         if let data: [String: Any] = result["data"] as? [String: Any] {
                             if let first_aid: Array = data["first_aid"] as? [Any] {

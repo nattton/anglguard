@@ -217,7 +217,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         if let token = defaults.string(forKey: "token") {
             let parameters: Parameters = [
                 "token": token,
-                "lang": "EN"
+                "lang": Language.getCurrentLanguage().language()
             ]
             
             Alamofire.request(HOSPITAL_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in

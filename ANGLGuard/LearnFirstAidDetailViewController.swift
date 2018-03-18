@@ -48,7 +48,7 @@ class LearnFirstAidDetailViewController: UIViewController, UIWebViewDelegate {
         if let token = defaults.string(forKey: "token") {
             let parameters: Parameters = [
                 "token": token,
-                "lang": "EN",
+                "lang": Language.getCurrentLanguage().language(),
                 "id": first_aid_id
             ]
             

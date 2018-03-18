@@ -18,11 +18,19 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: link){
-            let request: URLRequest = URLRequest(url: url)
-            DispatchQueue.main.async {
-                SVProgressHUD.show(withStatus: LOADING_TEXT)
-                self.wv.loadRequest(request)
+        if let url = URL(string: link) {
+            if UIApplication.shared.canOpenURL(url) {
+                let request: URLRequest = URLRequest(url: url)
+                DispatchQueue.main.async {
+                    SVProgressHUD.show(withStatus: LOADING_TEXT)
+                    self.wv.loadRequest(request)
+                }
+            } else {
+                let message = "Can't open URL"
+                let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(defaultAction)
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
