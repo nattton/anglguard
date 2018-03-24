@@ -30,7 +30,7 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
         
         setText()
         
-        tf_country_code.text = Personal.sharedInstance.thai_mobile_cc
+        tf_country_code.text = countryCode(code: Personal.sharedInstance.thai_mobile_cc)
         tf_phone.text = Personal.sharedInstance.thai_mobile_num
     }
     
@@ -192,6 +192,23 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func countryCode(code: String) -> String {
+        let CallingCodes = { () -> [[String: String]] in
+            let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
+            guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }
+            return NSArray(contentsOfFile: path) as! [[String: String]]
+        }
+        
+        let countryData = CallingCodes().filter { $0["code"] == code }
+        
+        if countryData.count > 0 {
+            let countryCode: String = countryData[0]["dial_code"] ?? ""
+            return countryCode
+        } else {
+            return code
+        }
     }
     
     /*

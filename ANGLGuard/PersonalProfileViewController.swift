@@ -43,11 +43,11 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         tf_firstname.text = Personal.sharedInstance.firstname
         tf_middlename.text = Personal.sharedInstance.middlename
         tf_lastname.text = Personal.sharedInstance.lastname
-        tf_gender.text = Personal.sharedInstance.gender
+        tf_gender.text = (Personal.sharedInstance.gender == "M" || Personal.sharedInstance.gender == "Male") ? genders[0] : genders[1]
         tf_date_of_birth.text = Personal.sharedInstance.birthdate
         tf_height.text = Personal.sharedInstance.height
         tf_weight.text = Personal.sharedInstance.weight
-        tf_country_code.text = Personal.sharedInstance.mobile_cc
+        tf_country_code.text = countryCode(code: Personal.sharedInstance.mobile_cc)
         tf_phone.text = Personal.sharedInstance.mobile_num
         
         tf_gender.inputView = createGenderPicker()
@@ -365,6 +365,23 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func countryCode(code: String) -> String {
+        let CallingCodes = { () -> [[String: String]] in
+            let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
+            guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }
+            return NSArray(contentsOfFile: path) as! [[String: String]]
+        }
+        
+        let countryData = CallingCodes().filter { $0["code"] == code }
+        
+        if countryData.count > 0 {
+            let countryCode: String = countryData[0]["dial_code"] ?? ""
+            return countryCode
+        } else {
+            return code
+        }
     }
 
     /*

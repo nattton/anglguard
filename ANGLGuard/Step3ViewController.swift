@@ -32,7 +32,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         country_code = Personal.sharedInstance.country_code
         
         tf_passport.text = Personal.sharedInstance.passport_num
-        tf_country.text = countryName(countryCode: Personal.sharedInstance.country_code)
+        tf_country.text = countryName(code: Personal.sharedInstance.country_code)
         tf_expire_date.text = Personal.sharedInstance.passport_expire_date
         
         tf_expire_date.inputView = createDatePicker()
@@ -128,9 +128,23 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         }
     }
     
-    func countryName(countryCode: String) -> String? {
-        let current = Locale(identifier: "en_US")
-        return current.localizedString(forRegionCode: countryCode) ?? nil
+    func countryName(code: String) -> String {
+//        let current = Locale(identifier: "en_US")
+//        return current.localizedString(forRegionCode: countryCode) ?? nil
+        let CallingCodes = { () -> [[String: String]] in
+            let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
+            guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }
+            return NSArray(contentsOfFile: path) as! [[String: String]]
+        }
+        
+        let countryData = CallingCodes().filter { $0["code"] == code }
+        
+        if countryData.count > 0 {
+            let countryCode: String = countryData[0]["name"] ?? ""
+            return countryCode
+        } else {
+            return code
+        }
     }
     
     @IBAction func avatarAction(_ sender: Any) {
