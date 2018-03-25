@@ -50,7 +50,12 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var image : UIImage!
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+            image = editedImage
+        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            image = originalImage
+        }
         
         if photo == 1 {
             bt_photo1.setBackgroundImage(image, for: .normal)
@@ -82,8 +87,8 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .camera;
-                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .camera
+                imagePicker.allowsEditing = true
                 
                 DispatchQueue.main.async {
                     self.present(imagePicker, animated: true, completion: nil)
@@ -96,7 +101,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .photoLibrary;
+                imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = true
                 
                 DispatchQueue.main.async {

@@ -159,10 +159,10 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
             let parameters: Parameters = [
                 "token": token,
                 "message": message!,
-                "image1": photo1 as Any,
-                "image2": photo2 as Any,
-                "image3": photo3 as Any,
-                "image4": photo4 as Any,
+                "image1": photo1?.resizeImage(200, opaque: false).toBase64() ?? "",
+                "image2": photo2?.resizeImage(200, opaque: false).toBase64() ?? "",
+                "image3": photo3?.resizeImage(200, opaque: false).toBase64() ?? "",
+                "image4": photo4?.resizeImage(200, opaque: false).toBase64() ?? "",
                 "latitude": String(lat),
                 "longitude": String(long)
             ]

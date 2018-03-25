@@ -30,6 +30,23 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         
         setText()
         
+        if let image = defaults.string(forKey: "passport_img") {
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let fileURL = documentsURL.appendingPathComponent("passport_avatar.jpg")
+                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+            }
+            Alamofire.download(image, to: destination).response { response in
+                if response.error == nil, let imagePath = response.destinationURL?.path {
+                    if let image = UIImage(contentsOfFile: imagePath) {
+                        self.bt_avatar.setImage(image, for: .normal)
+                    } else {
+                        self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+                    }
+                }
+            }
+        }
+        
         tf_passport.text = Personal.sharedInstance.passport_num
         tf_country.text = Personal.sharedInstance.country_code
         tf_expire_date.text = Personal.sharedInstance.passport_expire_date
@@ -61,7 +78,12 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var image : UIImage!
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+            image = editedImage
+        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            image = originalImage
+        }
         bt_avatar.setImage(image, for: .normal)
         isImage = true
         picker.dismiss(animated: true, completion: nil)
@@ -132,7 +154,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .camera;
+                imagePicker.sourceType = .camera
                 imagePicker.allowsEditing = false
                 
                 DispatchQueue.main.async {
@@ -146,7 +168,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .photoLibrary;
+                imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = true
                 
                 DispatchQueue.main.async {
@@ -207,8 +229,8 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
                         "mobile_num": Personal.sharedInstance.mobile_num,
                         "mobile_cc": Personal.sharedInstance.mobile_cc,
                         "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
-                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc
-//                        "passport_img": "binary encode base 64"
+                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc,
+                        "passport_img": image?.resizeImage(200, opaque: false).toBase64()
                     ]
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)
@@ -220,6 +242,13 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
                         let code: String = result["code"] as! String
                         let message: String = result["message"] as! String
                         if code == "200" {
+                            if let data: [String: Any] = result["data"] as? [String: Any] {
+                                if let personal: [String: Any] = data["personal"] as? [String: Any] {
+                                    if let personal_img_bin: String = personal["passport_img"] as? String {
+                                        self.defaults.set(personal_img_bin, forKey: "passport_img")
+                                    }
+                                }
+                            }
                             //data
                             Personal.sharedInstance.passport_num = passport
                             Personal.sharedInstance.country_code = country

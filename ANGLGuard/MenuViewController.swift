@@ -15,6 +15,19 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setInit()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+
+    }
+    
+    func setInit() {
+        im_avatar.layer.masksToBounds = false
+        im_avatar.layer.cornerRadius = im_avatar.frame.size.height / 2
+        im_avatar.clipsToBounds = true
+        
         if let image = defaults.string(forKey: "personal_img_bin") {
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -31,11 +44,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         lb_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
         lb_email.text = Personal.sharedInstance.email
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

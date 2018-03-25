@@ -128,8 +128,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     "mobile_cc" : Personal.sharedInstance.mobile_cc,
                     "thai_mobile_num" : Personal.sharedInstance.thai_mobile_num,
                     "thai_mobile_cc" : Personal.sharedInstance.thai_mobile_cc,
-                    "personal_img_bin" : "01",
-                    "passport_img" : "01"
+                    "personal_img_bin" : Personal.sharedInstance.personal_img_bin?.resizeImage(200, opaque: false).toBase64(),
+                    "passport_img" : Personal.sharedInstance.passport_img?.resizeImage(200, opaque: false).toBase64()
                 ],
                 "contact_person" : [
                     "firstname" : Contact.sharedInstance.firstname,

@@ -10,6 +10,7 @@ class InitalViewController: SOContainerViewController {
 //            NSLog("You've \(action) the \(side) view controller.")
             if isSideViewControllerPresented {
                 let menuView = self.sideViewController as! MenuViewController
+                menuView.setInit()
                 menuView.tb_menu.reloadData()
             }
         }
@@ -114,7 +115,7 @@ extension UIImage {
     
     func toBase64() -> String {
         let imageData = UIImagePNGRepresentation(self)
-        let base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
+        let base64String = imageData?.base64EncodedString(options: .endLineWithLineFeed)
         return base64String!
     }
 }
@@ -157,7 +158,7 @@ extension String {
         
     }
     
-    func fromBase64To() -> UIImage {
+    func fromBase64() -> UIImage {
         let decodedData = Data(base64Encoded: self, options: .ignoreUnknownCharacters)
         let decodedimage = UIImage(data: decodedData!)
         return decodedimage!

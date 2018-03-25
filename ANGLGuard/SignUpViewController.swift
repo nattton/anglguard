@@ -37,6 +37,9 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.clearProfile()
     }
 
     override func didReceiveMemoryWarning() {

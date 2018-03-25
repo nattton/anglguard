@@ -32,7 +32,14 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
         
         setText()
         
-        tf_gender.text = (Personal.sharedInstance.gender == "M" || Personal.sharedInstance.gender == "Male") ? genders[0] : genders[1]
+        if (Personal.sharedInstance.gender == "M" || Personal.sharedInstance.gender == "Male") {
+            tf_gender.text = genders[0]
+        } else if (Personal.sharedInstance.gender == "F" || Personal.sharedInstance.gender == "Female") {
+            tf_gender.text = genders[1]
+        } else {
+            tf_gender.text = ""
+        }
+        
         tf_date_of_birth.text = Personal.sharedInstance.birthdate
         tf_height.text = Personal.sharedInstance.height
         tf_weight.text = Personal.sharedInstance.weight

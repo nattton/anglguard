@@ -62,7 +62,12 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var image : UIImage!
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+            image = editedImage
+        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            image = originalImage
+        }
         bt_avatar.setImage(image, for: .normal)
         isImage = true
         picker.dismiss(animated: true, completion: nil)
@@ -153,8 +158,8 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .camera;
-                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .camera
+                imagePicker.allowsEditing = true
                 
                 DispatchQueue.main.async {
                     self.present(imagePicker, animated: true, completion: nil)
@@ -167,7 +172,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .photoLibrary;
+                imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = true
                 
                 DispatchQueue.main.async {
