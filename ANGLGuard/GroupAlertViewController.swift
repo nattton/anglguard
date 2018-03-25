@@ -145,7 +145,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
                     }
@@ -175,7 +175,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                     let message: String = result["message"] as! String
                     if code == "200" {
                         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
                             self.dismiss(animated: true) {
                                 self.dismiss(animated: false) {
                                     if self.delegate != nil {
@@ -195,7 +195,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
                     }

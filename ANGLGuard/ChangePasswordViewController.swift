@@ -71,7 +71,7 @@ class ChangePasswordViewController: UITableViewController {
                         let message: String = result["message"] as! String
                         if code == "200" {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         } else if code == "104" {
@@ -84,7 +84,7 @@ class ChangePasswordViewController: UITableViewController {
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }
@@ -96,7 +96,7 @@ class ChangePasswordViewController: UITableViewController {
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

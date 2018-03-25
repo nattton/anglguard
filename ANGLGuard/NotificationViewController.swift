@@ -44,7 +44,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
                     }
@@ -93,7 +93,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             nACell.date.text = date
             
             let message: String! = notification["message"]
-            nACell.message.text = message + " ... admin"
+            nACell.message.text = message
             
             let image1: String! = notification["image1"]
             let eImg1: String! = image1.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -135,7 +135,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             nMCell.date.text = date
             
             let message: String! = notification["message"]
-            nMCell.message.text = message + " ... admin"
+            nMCell.message.text = message
             
             cell = nMCell
         }

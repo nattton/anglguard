@@ -43,6 +43,10 @@
 "login_signup" = "SIGN UP";
 "login_sigin" = "SIGN IN";
 
+"login_email_not_format" = "Email not format";
+"login_password_not_match" = "Password does not match the confirm password";
+"login_password_contain" = "Passwords must have at least 8 characters and contain at least two of the following: uppercase letters, lowercase letters, numbers.";
+
 "signup_email" = "Email";
 "signup_send_code" = "SEND CODE";
 "signup_please_enter" = "Please enter verify code";
@@ -61,9 +65,23 @@
 "signup_weight" = "Weight(kg.)";
 "signup_current_phone_number" = "Current Telephone Number";
 
+"signup_pick_your_profile_image" = "Please pick your profile image";
+"signup_insert_first_name" = "Please insert first name";
+"signup_insert_last_name" = "Please insert last name";
+"signup_fill_gender" = "Please fill gender.";
+"signup_fill_date_of_birth" = "Please fill date of birth.";
+"signup_fill_height" = "Please fill height.";
+"signup_fill_weight" = "Please fill weight.";
+"signup_fill_mobile_number" = "Please fill mobile number.";
+
 "signup_passport_number" = "Passport Number";
 "signup_country" = "Country";
 "signup_expire_date" = "Expire Date";
+
+"signup_pick_image_passport" = "Please pick image passport";
+"signup_insert_passport_number" = "Please insert passport number";
+"signup_select_your_country" = "Please select your country";
+"signup_insert_passport_expire" = "Please insert passport expire";
 
 "signup_just_start" = "Just start give your healthcare information.";
 "signup_blood_type" = "Blood Type";
@@ -74,6 +92,8 @@
 "signup_Underlying_diseases" = "Underlying diseases & Conditions";
 "signup_special_care" = "Special care requirements";
 
+"signup_choice_blood_type" = "Please choice blood type";
+
 "signup_please_fulfill" = "Please fulfill your details";
 "signup_policy_number" = "Policy Number";
 "signup_expiration_date" = "Expiration Date";
@@ -81,17 +101,23 @@
 "signup_conntact_name" = "Contact Name";
 
 "signup_how_do" = "How do you make your trip plan?\nHave a nice time.";
-"signup_purpost_trip" = "Purpost of the trip";
+"signup_purpost_trip" = "(vacation, education,business,medical)";
 "signup_start_date" = "Start Date";
 "signup_lenglh_of_stay" = "Length of Stay(day)";
 "signup_average_expense" = "Average expense(Baht)";
-"signup_trip_arrangement" = "Trip arrangement";
+"signup_trip_arrangement" = "(self, company,travel agent )";
 "signup_domestic" = "Domestic transportation arrangement (Yes/No)";
-"signup_destinations" = "Destinations";
+"signup_destinations" = "Your destination (Which province)";
+
+"signup_choice_your_purpose" = "Please choice your purpose of the trip";
+"signup_insert_start_date" = "Please insert start date";
+"signup_insert_length_of_stay" = "Please insert length of stay";
 
 "signup_great" = "Great!!\nIt's almost done\n\nPlease give your important person that I can contact when accident occured.";
 "signup_contact_number" = "Contact Number";
 "signup_relationship" = "Relation ship";
+
+"signup_fill_relation" = "Please fill relation.";
 
 "signup_caution" = "CAUTION\nPlease enter the mobile number used in Thailand to contact in times of the emergency.\nAnd the OTP code will sent to your mobile device.";
 "signup_current_thai_number" = "Current Thai Number";
@@ -100,6 +126,12 @@
 
 "signup_have_insurance" = "And do you have an existing accident insurance?";
 "thank_you" = "Thank you.\nI have enough info for now and can help you\nLET'S START";
+
+"signup_fill_policy_number" = "Please fill policy number.";
+"signup_fill_policy_expire_date" = "Please fill policy expire date.";
+"signup_fill_policy_company" = "Please fill policy company.";
+"signup_fill_policy_contact" = "Please fill policy contact.";
+"signup_fill_policy_mobile_number" = "Please fill mobile number";
 
 "aid_header" = "Learn first aid";
 "aid_search" = "Search";
@@ -124,17 +156,19 @@
 "nav_profile" = "Profile";
 "nav_device_setting" = "Group";
 "nav_notification" = "Notification";
+"nav_faq" = "FAQ";
+"nav_privilege" = "Privilege";
 "nav_language" = "Language";
 "nav_term" = "Term & Condition";
 "nav_sign_out" = "Sign out";
 
 "sub_personal" = "Personal";
-"sub_mobile" = "Mobile";
+"sub_mobile" = "Mobile (use in thailand)";
 "sub_passport" = "Passport";
-"sub_medical" = "Medical";
-"sub_contact" = "Contact";
+"sub_medical" = "Medical profile";
+"sub_contact" = "Contact (emergency)";
 "sub_trip_plan" = "Trip plan";
-"sub_insurance" = "Insurance";
+"sub_insurance" = "Insurance profile";
 "sub_change_password" = "Change password";
 
 "hello_blank_fragment" = "Hello blank fragment";

@@ -8,7 +8,7 @@
 
 "bnt_next" = "หน้าถัดไป";
 "bnt_back" = "กลับไปก่อนหน้านี้";
-"bnt_skip" = "ผ่าน";
+"bnt_skip" = "ข้าม";
 "bnt_close" = "ปิด";
 "bnt_done" = "สิ้นสุด";
 "bnt_confirm" = "ยืนยัน";
@@ -39,13 +39,17 @@
 "login_forgot_password" = "ลืมรหัสผ่าน";
 "login_login" = "เข้าสู่ระบบ";
 "login_or" = "หรือ";
-"login_continue" = "ต่อไป";
+"login_continue" = "ดำเนินการต่อ";
 "login_signup" = "ลงทะเบียน";
 "login_sigin" = "เข้าสู่ระบบ";
 
+"login_email_not_format" = "รูปแบบอีเมลไม่ตรง";
+"login_password_not_match" = "รหัสผ่านไม่ตรงกับรหัสยืนยัน";
+"login_password_contain" = "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร ประกอบด้วย ตัวอักษรภาษาอังกฤษพิมพ์ใหญ่, พิมพ์เล็ก ตัวเลข และสัญลักษณ์";
+
 "signup_email" = "อีเมล";
 "signup_send_code" = "ส่งรหัสยืนยันตัวตน";
-"signup_please_enter" = "Please enter verify code";
+"signup_please_enter" = "กรุณากรอกรหัสยืนยันอีเมล";
 
 "signup_code" = "รหัสยืนยันตัวตน";
 "signup_clik_to" = "กรุณา กด เพื่อส่งรหัสยืนยันตัวตนไปให้ยังเบอร์ที่คุณระบุไว้";
@@ -61,9 +65,22 @@
 "signup_weight" = "น้ำหนัก(กิโลกรัม)";
 "signup_current_phone_number" = "เบอร์ที่ใช้ปัจจุบัน";
 
+"signup_pick_your_profile_image" = "เลือกรูปโปรไฟล์";
+"signup_insert_first_name" = "กรุณากรอกขื่อจริง";
+"signup_insert_last_name" = "กรุณากรอกนามสกุล";
+"signup_fill_gender" = "กรุณาระบุเพศ";
+"signup_fill_date_of_birth" = "กรอกวัน เดือน ปี เกิด";
+"signup_fill_height" = "กรอกส่วนสูง";
+"signup_fill_weight" = "กรอกน้ำหนัก";
+
 "signup_passport_number" = "เลขหนังสือเดินทาง";
 "signup_country" = "ประเทศ";
 "signup_expire_date" = "วันที่หมดอายุ";
+
+"signup_pick_image_passport" = "กรุณาใส่รูปภาพหนังสือเดินทางหน้าแรก";
+"signup_insert_passport_number" = "กรอกเลขที่หนังสือเดินทาง";
+"signup_select_your_country" = "กรุณาเลือกประเทศที่ระบุไว้ในหนังสือเดินทาง";
+"signup_insert_passport_expire" = "วันที่หนังสือเดินทางหมดอายุ";
 
 "signup_just_start" = "ต่อไปคุณใส่่ข้อมูลทางด้านสุขภาพ";
 "signup_blood_type" = "กรุ๊ปเลือด";
@@ -74,6 +91,8 @@
 "signup_Underlying_diseases" = "โรคประจำตัว";
 "signup_special_care" = "ความต้องการการช่วยเหลือดูแลพิเศษ";
 
+"signup_choice_blood_type" = "ระบุกรุ๊ปเลือดของท่าน";
+
 "signup_please_fulfill" = "Please fulfill your details";
 "signup_policy_number" = "เลขที่กรมธรรม์";
 "signup_expiration_date" = "วันที่กรมธรรม์สิ้นสุดการคุ้มครอง";
@@ -81,25 +100,37 @@
 "signup_conntact_name" = "ชื่อของบุคคลที่ติดต่อได้ในยามฉุกเฉิน";
 
 "signup_how_do" = "คุณมีแผนการท่องเที่ยวอย่างไรบ้าง?\nขอให้เป็นทริปที่ดีของคุณ";
-"signup_purpost_trip" = "วัตถุประสงค์";
+"signup_purpost_trip" = "วัตถุประสงค์ในการเดินทาง (วันหยุดพักผ่อน,การศึกษา, ธุรกิจ)";
 "signup_start_date" = "วันเริ่ม";
 "signup_lenglh_of_stay" = "ระยะเวลาที่พักอยู่ในประเทศไทย(วัน)";
 "signup_average_expense" = "ค่าใช้จ่ายโดยประมาณการ(บาท)";
-"signup_trip_arrangement" = "รูปแบบการจัดการการเดินทาง(โดยตนเอง บริษัท ตัวแทนท่องเที่ยว)";
+"signup_trip_arrangement" = "รูปแบบการเดินทาง (ด้วยตนเอง,บริษัท, ตัวแทนท่องเที่ยว)";
 "signup_domestic" = "มีการใช้บริการการเดินทางในประเทศ(ใช้ ไม่ใช้)";
-"signup_destinations" = "จุดหมาย";
+"signup_destinations" = "จังหวัดเป้าหมายในการเดินทาง";
+
+"signup_choice_your_purpose" = "วัตถุประสงค์ในการเดินทาง (วันหยุดพักผ่อน,การศึกษา, ธุรกิจ)";
+"signup_insert_start_date" = "วันที่เริ่มเดินทาง";
+"signup_insert_length_of_stay" = "ระยะเวลาที่พักอาศัยอยู่ในประเทศไทยตั้งแต่วันที่เดินทางเข้ามา";
 
 "signup_great" = "เยี่ยมเลย!!\nข้อมูลจะครบถ้วนแล้ว\nรบกวนให้ข้อมูลของบุคคลที่เราสามารถติดต่อได้เมื่อเกิดเหตุฉุกเฉินขึ้นกับคุณ";
 "signup_contact_number" = "เบอร์โทรศัพท์ที่สามารถติตต่อได้";
 "signup_relationship" = "ความสัมพันธ์";
 
-"signup_caution" = "CAUTION\nPlease enter the mobile number used in Thailand to contact in times of the emergency.\nAnd the OTP code will sent to your mobile device.";
+"signup_fill_relation" = "ระบุความสัมพันธ์";
+
+"signup_caution" = "ข้อควรระวัง\nกรุณาระบุเบอร์โทรศัพท์ ที่ใช้ในประเทศไทยเพื่อใช้สามารถติดต่อได้ในกรณีฉุกเฉิน และ รหัสยืนยันจะถูกส่งไปยังเบอร์ที่ท่านได้ระบุไว้";
 "signup_current_thai_number" = "เบอร์ที่ใช้ใน่ประเทศไทย";
-"signup_verify_code" = "VERIFY CODE";
-"signup_please_enter_your_otp" = "Please enter your OTP code";
+"signup_verify_code" = "ตรวจสอบรหัส";
+"signup_please_enter_your_otp" = "กรุณากรอกรหัสยืนยัน";
 
 "signup_have_insurance" = "แล้วคุณมีประกันหรือยัง?";
 "thank_you" = "ขอบคุณค่ะ ครับ\nตอนนี้ข้อมูลเพียงพอแล้ว ที่เราจะสามารถช่วยเหลือคุณในยามฉุกเฉิน\nมาเริ่มใช้งานกัน";
+
+"signup_fill_policy_number" = "กรอกเลขที่กรมธรรม์";
+"signup_fill_policy_expire_date" = "กรอกวันที่กรมธรรม์หมดอายุ";
+"signup_fill_policy_company" = "กรุณาระบุชื่อบริษัทประกัน";
+"signup_fill_policy_contact" = "กรุณาระบุผู้ติดต่อของบริษัทประกัน";
+"signup_fill_policy_mobile_number" = "กรุณาระบุเบอร์ติดต่อของบริษัทประกัน";
 
 "aid_header" = "เรียนรู้วิธีปฐมพยาบาล";
 "aid_search" = "ค้นหา";
@@ -111,7 +142,7 @@
 "group_del_confirm" = "ยืนยันการลบ";
 "group_del_desc" = "ต้องการที่จะลบสมาชิกในกลุ่มนี้\nแน่ใจที่จะดำเนินการต่อ";
 
-"picture_title" = "เลือกรูป";
+"picture_title" = "กรุณาเลือกรูป";
 "picture_take_pic" = "ถ่ายรูป";
 "picture_pick_pic" = "อัพโหลดจากกอัลบั้ม";
 "picture_cancel" = "ยกเลิก";
@@ -124,18 +155,20 @@
 "nav_profile" = "บัญชีผู้ใช้";
 "nav_device_setting" = "กลุ่ม";
 "nav_notification" = "การแจ้งเตือน";
+"nav_faq" = "คำถามที่มักพบบ่อย";
+"nav_privilege" = "สิทธิพิเศษ";
 "nav_language" = "ภาษา";
 "nav_term" = "ข้อกำหนดและเงื่อนไข";
 "nav_sign_out" = "ออกจากระบบ";
 
-"sub_personal" = "ส่วนตัว";
-"sub_mobile" = "โทรศัพท์";
-"sub_passport" = "พาสสปอร์ต";
+"sub_personal" = "ข้อมูลส่วนตัว";
+"sub_mobile" = "เบอร์ที่ใช้ในประเทศไทย";
+"sub_passport" = "ข้อมูลหนังสือเดินทาง";
 "sub_medical" = "Medical";
-"sub_contact" = "คนติดต่อ";
-"sub_trip_plan" = "Trip plan";
-"sub_insurance" = "ประกันภัย";
-"sub_change_password" = "เปลี่ยน พาวเวิร์ด";
+"sub_contact" = "ข้อมูลผู้ติดต่อในกรณีฉุกเฉิน";
+"sub_trip_plan" = "ข้อมูลแผนการทองเที่ยว";
+"sub_insurance" = "ข้อมูลกันชีวิตและอุบัติเหตุ";
+"sub_change_password" = "เปลี่ยนรหัสผ่าน";
 
 "hello_blank_fragment" = "Hello blank fragment";
 "title_activity_chat" = "ChatActivity";

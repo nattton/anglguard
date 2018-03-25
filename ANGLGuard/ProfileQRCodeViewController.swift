@@ -17,6 +17,10 @@ class ProfileQRCodeViewController: UIViewController {
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(handleTapGesture(gesture:)))
         self.view.addGestureRecognizer(tapGesture)
         
+        avatar.layer.masksToBounds = false
+        avatar.layer.cornerRadius = avatar.frame.size.height / 2
+        avatar.clipsToBounds = true
+        
         v_profile.layer.masksToBounds = false
         v_profile.layer.cornerRadius = 8
         v_profile.clipsToBounds = true

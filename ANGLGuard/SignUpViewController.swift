@@ -74,7 +74,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
             alert.addAction(defaultAction)
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -90,11 +90,11 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
         confirm = tf_confirm.text!
         
         if email.isValidEmail() == false {
-            showAlert(message: "Invalid Email")
+            showAlert(message: "login_email_not_format".localized())
         } else if password.isValidPassword() == false {
-            showAlert(message: "Invalid Password")
+            showAlert(message: "login_password_contain".localized())
         } else if password != confirm {
-            showAlert(message: "Password not match")
+            showAlert(message: "login_password_not_match".localized())
         } else {
             Authen.sharedInstance.type = "normal"
             Personal.sharedInstance.password = self.password
@@ -185,7 +185,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
                     UIApplication.shared.keyWindow?.rootViewController = loginViewController
                 } else {
                     let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                     alert.addAction(defaultAction)
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -195,7 +195,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

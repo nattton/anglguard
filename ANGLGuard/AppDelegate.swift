@@ -143,7 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                 
                 if let latitude: String = remoteNotification["latitude"] as? String, let longitude: String = remoteNotification["longitude"] as? String {
                     let alert = UIAlertController(title: latitude + " " + longitude, message: "", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                     alert.addAction(defaultAction)
                     topController.present(alert, animated: true, completion: nil)
                 }
@@ -220,7 +220,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 //
 //            if let latitude: String = userInfo["latitude"] as? String, let longitude: String = userInfo["longitude"] as? String {
 //                let alert = UIAlertController(title: latitude + " " + longitude, message: "", preferredStyle: .alert)
-//                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
 //                alert.addAction(defaultAction)
 //                topController.present(alert, animated: true, completion: nil)
 //            }
@@ -296,7 +296,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                         if let link: String = result["link"] as? String {
                             if let url = URL(string : link) {
                                 let alert = UIAlertController(title: "force update", message: "", preferredStyle: .alert)
-                                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
                                     if #available(iOS 10.0, *) {
                                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                                     } else {

@@ -120,11 +120,11 @@ class Step6ViewController: UITableViewController {
         let destination: String = tf_destination.text!
         
         if purpose.count == 0 {
-            showAlert(message: PURPOSE_ALERT)
+            showAlert(message: "signup_choice_your_purpose".localized())
         } else if start_date.count == 0 {
-            showAlert(message: START_DATE_ALERT)
+            showAlert(message: "signup_insert_start_date".localized())
         } else if lenght_of_day.count == 0 {
-            showAlert(message: LENGTH_OF_STAY_ALERT)
+            showAlert(message: "signup_insert_length_of_stay".localized())
         } else {
             //data
             Trip.sharedInstance.purpose = purpose
@@ -141,7 +141,7 @@ class Step6ViewController: UITableViewController {
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

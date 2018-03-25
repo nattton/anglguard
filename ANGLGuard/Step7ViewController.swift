@@ -89,15 +89,15 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
         let email: String = tf_email.text!
         
         if firstname.count == 0 {
-            showAlert(message: FIRSTNAME_ALERT)
+            showAlert(message: "signup_insert_first_name".localized())
         } else if lastname.count == 0 {
-            showAlert(message: LASTNAME_ALERT)
+            showAlert(message: "signup_insert_last_name".localized())
         } else if country_code.count == 0 {
             showAlert(message: CC_ALERT)
         } else if phone.count == 0 {
-            showAlert(message: MOBILE_NUMBER_ALERT)
+            showAlert(message: "signup_fill_mobile_number".localized())
         } else if relationship.count == 0 {
-            showAlert(message: RELATION_SHIP_ALERT)
+            showAlert(message: "signup_fill_relation".localized())
         } else {
             //data
             Contact.sharedInstance.firstname = firstname
@@ -231,7 +231,7 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
                     }
@@ -242,7 +242,7 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

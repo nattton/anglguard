@@ -298,24 +298,24 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         let phone: String = tf_phone.text!
         let image = bt_avatar.image(for: .normal)
         
-        if firstname.count == 0 {
-            showAlert(message: FIRSTNAME_ALERT)
+        if firstname.count == 0 {            
+            showAlert(message: "signup_insert_first_name".localized())
         } else if lastname.count == 0 {
-            showAlert(message: LASTNAME_ALERT)
+            showAlert(message: "signup_insert_last_name".localized())
         } else if isImage == false {
-            showAlert(message: PROFILE_IMAGE_ALERT)
+            showAlert(message: "signup_pick_your_profile_image".localized())
         } else if gender.count == 0 {
-            showAlert(message: GENDER_ALERT)
+            showAlert(message: "signup_fill_gender".localized())
         } else if date_of_birth.count == 0 {
-            showAlert(message: DATE_OF_BITH_ALERT)
+            showAlert(message: "signup_fill_date_of_birth".localized())
         } else if height.count == 0 {
-            showAlert(message: HEIGHT_ALERT)
+            showAlert(message: "signup_fill_height".localized())
         } else if weight.count == 0 {
-            showAlert(message: WEIGHT_ALERT)
+            showAlert(message: "signup_fill_weight".localized())
         } else if cc.count == 0 {
             showAlert(message: CC_ALERT)
         } else if phone.count == 0 {
-            showAlert(message: MOBILE_NUMBER_ALERT)
+            showAlert(message: "signup_fill_mobile_number".localized())
         } else {
             if let token = defaults.string(forKey: "token") {
                 let parameters: Parameters = [
@@ -367,7 +367,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
                             Personal.sharedInstance.mobile_num = phone
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         } else if code == "104" {
@@ -380,7 +380,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }
@@ -398,7 +398,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

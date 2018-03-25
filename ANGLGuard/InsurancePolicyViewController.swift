@@ -135,17 +135,17 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
             let contact_number: String = tf_phone.text!
             
             if policy_number.count == 0  {
-                showAlert(message: POLICY_NUMBER_ALERT)
+                showAlert(message: "signup_fill_policy_number".localized())
             } else if expiration_date.count == 0  {
-                showAlert(message: EXPIRE_DATE_ALERT)
+                showAlert(message: "signup_fill_policy_expire_date".localized())
             } else if insurance_company.count == 0  {
-                showAlert(message: INSURANCE_COMPANY_ALERT)
+                showAlert(message: "signup_fill_policy_company".localized())
             } else if contact_name.count == 0  {
-                showAlert(message: CONTACT_NAME_ALERT)
+                showAlert(message: "signup_fill_policy_contact".localized())
             } else if contact_number_cc.count == 0  {
                 showAlert(message: CC_ALERT)
             } else if contact_number.count == 0  {
-                showAlert(message: MOBILE_NUMBER_ALERT)
+                showAlert(message: "signup_fill_policy_mobile_number".localized())
             } else {
                 let parameters: Parameters = [
                     "policy_number": policy_number,
@@ -176,7 +176,7 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }
@@ -188,7 +188,7 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

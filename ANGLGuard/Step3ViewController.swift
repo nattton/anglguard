@@ -210,13 +210,13 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         let expire_date: String = tf_expire_date.text!
         
         if passport.count == 0 {
-            showAlert(message: PASSPORT_NUMBER_ALERT)
+            showAlert(message: "signup_insert_passport_number".localized())
         } else if country_code.count == 0 {
-            showAlert(message: CC_ALERT)
+            showAlert(message: "signup_select_your_country".localized())
         } else if expire_date.count == 0 {
-            showAlert(message: PASSPORT_EXPIRE_ALERT)
+            showAlert(message: "signup_insert_passport_expire".localized())
         } else if isImage == false {
-            showAlert(message: PASSPORT_IMAGE_ALERT)
+            showAlert(message: "signup_pick_image_passport".localized())
         } else {
             //data
             Personal.sharedInstance.passport_num = passport
@@ -230,7 +230,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

@@ -51,7 +51,7 @@ class VerifyCodeViewController: UITableViewController {
         let code: String = tf_verify_code.text!
         if code.count != 6 {
             let alert = UIAlertController(title: CODE_NOT_VALID, message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
             alert.addAction(defaultAction)
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -88,7 +88,7 @@ class VerifyCodeViewController: UITableViewController {
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }

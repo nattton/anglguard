@@ -208,17 +208,17 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
         let phone: String = tf_phone.text!
         
         if gender.count == 0 {
-            showAlert(message: GENDER_ALERT)
+            showAlert(message: "signup_fill_gender".localized())
         } else if date_of_birth.count == 0 {
-            showAlert(message: DATE_OF_BITH_ALERT)
+            showAlert(message: "signup_fill_date_of_birth".localized())
         } else if height.count == 0 {
-            showAlert(message: HEIGHT_ALERT)
+            showAlert(message: "signup_fill_height".localized())
         } else if weight.count == 0 {
-            showAlert(message: WEIGHT_ALERT)
+            showAlert(message: "signup_fill_weight".localized())
         } else if cc.count == 0 {
             showAlert(message: CC_ALERT)
         } else if phone.count == 0 {
-            showAlert(message: MOBILE_NUMBER_ALERT)
+            showAlert(message: "signup_fill_mobile_number".localized())
         } else {
             //data
             Personal.sharedInstance.gender = gender
@@ -234,7 +234,7 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

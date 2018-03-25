@@ -114,7 +114,7 @@ class TripPlanViewController: UITableViewController {
         let destination: String = tf_destination.text!
         
         if purpose.count == 0 {
-            showAlert(message: PURPOSE_ALERT)
+            showAlert(message: "signup_choice_your_purpose".localized())
         } else {
             if let token = defaults.string(forKey: "token") {
                 let parameters: Parameters = [
@@ -144,7 +144,7 @@ class TripPlanViewController: UITableViewController {
                             Trip.sharedInstance.destination = destination
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         } else if code == "104" {
@@ -157,7 +157,7 @@ class TripPlanViewController: UITableViewController {
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }
@@ -169,7 +169,7 @@ class TripPlanViewController: UITableViewController {
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }

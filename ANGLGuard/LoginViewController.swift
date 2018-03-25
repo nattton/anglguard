@@ -86,7 +86,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
             alert.addAction(defaultAction)
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -196,7 +196,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                     }
                 } else {
                     let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                     alert.addAction(defaultAction)
                     self.present(alert, animated: true, completion: nil)
                 }

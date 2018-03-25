@@ -1339,30 +1339,30 @@
                                                     <rect key="frame" x="0.0" y="34" width="375" height="105"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-qF-o4p">
-                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-dF-5Te">
-                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="VoN-yW-nmY"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-Di-pqb">
-                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-dh-10w">
-                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="O2X-mL-6os"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-C3-NHM">
-                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8L-yf-LDc">
-                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="f2m-qf-Itw"/>
@@ -2353,13 +2353,13 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="58" height="53.5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="id9-gy-6Do">
-                                                            <rect key="frame" x="74" y="0.0" width="57.5" height="53.5"/>
+                                                            <rect key="frame" x="74" y="0.0" width="57" height="53.5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="spa-cM-wkw">
-                                                            <rect key="frame" x="147.5" y="0.0" width="58" height="53.5"/>
+                                                            <rect key="frame" x="147" y="0.0" width="58" height="53.5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OhI-Io-qGd">
-                                                            <rect key="frame" x="221.5" y="0.0" width="57" height="53.5"/>
+                                                            <rect key="frame" x="221" y="0.0" width="57.5" height="53.5"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2491,6 +2491,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tb_notification" destination="pz5-eJ-zGK" id="SN1-lt-aVV"/>
+                        <segue destination="It4-YQ-NGk" kind="presentation" identifier="preview" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="G2X-sg-mrl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhq-o9-Md5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -10567,6 +10568,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsP-Mk-dv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1913" y="6921"/>
+        </scene>
+        <!--Preview Image View Controller-->
+        <scene sceneID="ftc-k9-ufd">
+            <objects>
+                <viewController id="It4-YQ-NGk" customClass="PreviewImageViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MNy-xK-f28">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdV-cT-KG8">
+                                <rect key="frame" x="47.5" y="60" width="280" height="567"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdW-Cm-gFZ">
+                                        <rect key="frame" x="0.0" y="143.5" width="280" height="280"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="VSO-L4-FXt"/>
+                                            <constraint firstAttribute="height" constant="280" id="ceq-cE-WI3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZt-XZ-LQ0">
+                                        <rect key="frame" x="267" y="130.5" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="aNj-ea-fzu"/>
+                                            <constraint firstAttribute="height" constant="26" id="l5B-An-pce"/>
+                                        </constraints>
+                                        <state key="normal" image="bt_close"/>
+                                        <connections>
+                                            <action selector="closeAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="2DF-nq-1ow"/>
+                                            <action selector="closeAction:" destination="It4-YQ-NGk" eventType="touchUpInside" id="bpg-hX-69x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="9p3-hf-W3b"/>
+                                    <constraint firstItem="OdW-Cm-gFZ" firstAttribute="centerY" secondItem="FdV-cT-KG8" secondAttribute="centerY" id="DFg-St-u4l"/>
+                                    <constraint firstItem="PZt-XZ-LQ0" firstAttribute="top" secondItem="OdW-Cm-gFZ" secondAttribute="top" constant="-13" id="NTR-k2-AX8"/>
+                                    <constraint firstItem="PZt-XZ-LQ0" firstAttribute="trailing" secondItem="OdW-Cm-gFZ" secondAttribute="trailing" constant="13" id="e2E-bK-NYu"/>
+                                    <constraint firstItem="OdW-Cm-gFZ" firstAttribute="centerX" secondItem="FdV-cT-KG8" secondAttribute="centerX" id="h6Q-cp-p54"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FdV-cT-KG8" firstAttribute="centerX" secondItem="MNy-xK-f28" secondAttribute="centerX" id="9rK-gF-Ifd"/>
+                            <constraint firstItem="FTl-vS-Ydd" firstAttribute="bottom" secondItem="FdV-cT-KG8" secondAttribute="bottom" constant="40" id="ARm-gA-FDw"/>
+                            <constraint firstItem="FdV-cT-KG8" firstAttribute="top" secondItem="FTl-vS-Ydd" secondAttribute="top" constant="40" id="VFt-9l-Cft"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FTl-vS-Ydd"/>
+                    </view>
+                    <connections>
+                        <outlet property="im_preview" destination="OdW-Cm-gFZ" id="e9h-C6-Bfm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OI-3g-WFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3748" y="5355"/>
         </scene>
     </scenes>
     <resources>

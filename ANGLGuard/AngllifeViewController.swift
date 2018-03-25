@@ -369,7 +369,12 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             let lastname: String = pin["lastname"] as! String
             let title: String = firstname + " " + lastname
             let icon: String = pin["personal_image_path"] as! String
-            let status: String = pin["status"] as! String
+            var status: String = pin["status"] as! String
+            let pid = pin["id"] as! String
+            let mid = defaults.string(forKey: "id")
+            if pid == mid {
+                status = "A"
+            }
             let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon, status: status)
             map.addAnnotation(annotation)
             friendsAnn.append(annotation)

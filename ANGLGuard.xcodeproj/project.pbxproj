@@ -10,6 +10,7 @@
 		36CC6D9E20439999002B777C /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CC6D9D20439999002B777C /* AddFriendViewController.swift */; };
 		3B031673205ABB8500A35AC9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B031675205ABB8500A35AC9 /* Localizable.strings */; };
 		3B03167A205ABE5000A35AC9 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B031679205ABE5000A35AC9 /* Language.swift */; };
+		3B09D02020681C2A00CE8CAF /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B09D01F20681C2A00CE8CAF /* PreviewImageViewController.swift */; };
 		3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AD60F20374E5200422E27 /* Step4ViewController.swift */; };
 		3B0C5CA2203961910086C086 /* Step6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA1203961910086C086 /* Step6ViewController.swift */; };
 		3B0C5CA420396E240086C086 /* Step7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C5CA320396E240086C086 /* Step7ViewController.swift */; };
@@ -94,6 +95,7 @@
 		3B031676205ABB9B00A35AC9 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B031677205ABBA400A35AC9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3B031679205ABE5000A35AC9 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		3B09D01F20681C2A00CE8CAF /* PreviewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		3B0AD60F20374E5200422E27 /* Step4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4ViewController.swift; sourceTree = "<group>"; };
 		3B0C5CA1203961910086C086 /* Step6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step6ViewController.swift; sourceTree = "<group>"; };
 		3B0C5CA320396E240086C086 /* Step7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step7ViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				3B6463062036AA4100A39901 /* NAlertCell.swift */,
 				3B64630F2036AA4200A39901 /* NMessageCell.swift */,
 				3B6463102036AA4200A39901 /* NotificationViewController.swift */,
+				3B09D01F20681C2A00CE8CAF /* PreviewImageViewController.swift */,
 				3B284AE12054CAF3006225D2 /* PrivilegeCell.swift */,
 				3B284ADD2054C585006225D2 /* PrivilegeViewController.swift */,
 				3B284ADF2054C5A9006225D2 /* FAQViewController.swift */,
@@ -531,6 +534,7 @@
 				3B6463282036AA4200A39901 /* LoginViewController.swift in Sources */,
 				3B6463162036AA4200A39901 /* LanguageViewController.swift in Sources */,
 				3BFA06ED2049DCAD00C47C0E /* Authen.swift in Sources */,
+				3B09D02020681C2A00CE8CAF /* PreviewImageViewController.swift in Sources */,
 				3B64632F2036AA4200A39901 /* NMessageCell.swift in Sources */,
 				3B0C5CB92039D2780086C086 /* SpacialCareViewController.swift in Sources */,
 				3B0AD61020374E5300422E27 /* Step4ViewController.swift in Sources */,

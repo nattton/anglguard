@@ -143,8 +143,8 @@ class Step4ViewController: UITableViewController, UIPickerViewDelegate, UIPicker
         let blood_type: String = tf_blood_type.text!
         
         if blood_type.count == 0 {
-            let alert = UIAlertController(title: BLOOD_TYPE_ALERT, message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let alert = UIAlertController(title: "signup_choice_blood_type".localized(), message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
             alert.addAction(defaultAction)
             self.present(alert, animated: true, completion: nil)
         } else {

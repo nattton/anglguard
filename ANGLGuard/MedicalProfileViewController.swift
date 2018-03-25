@@ -115,8 +115,8 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
         let blood_type: String = tf_blood_type.text!
         
         if blood_type.count == 0 {
-            let alert = UIAlertController(title: BLOOD_TYPE_ALERT, message: "", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let alert = UIAlertController(title: "signup_choice_blood_type".localized(), message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
             alert.addAction(defaultAction)
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -194,7 +194,7 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
                         let message: String = result["message"] as! String
                         if code == "200" {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         } else if code == "104" {
@@ -207,7 +207,7 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }

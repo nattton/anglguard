@@ -76,7 +76,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
             if country_code.count == 0 {
                 showAlert(message: CC_ALERT)
             } else if phone.count == 0 {
-                showAlert(message: MOBILE_NUMBER_ALERT)
+                showAlert(message: "signup_fill_mobile_number".localized())
             } else {
                 let parameters: Parameters = [
                     "tel_code": country_code,
@@ -107,7 +107,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }
@@ -126,7 +126,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
             if country_code.count == 0 {
                 showAlert(message: CC_ALERT)
             } else if phone.count == 0 {
-                showAlert(message: MOBILE_NUMBER_ALERT)
+                showAlert(message: "signup_fill_mobile_number".localized())
             } else if code.count == 0 {
                 showAlert(message: CODE_NOT_VALID)
             } else {
@@ -152,7 +152,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                             self.saveThaiMobileNumber()
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         } else if code == "104" {
@@ -165,7 +165,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                             UIApplication.shared.keyWindow?.rootViewController = loginViewController
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
                             self.present(alert, animated: true, completion: nil)
                         }
@@ -216,7 +216,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                         UIApplication.shared.keyWindow?.rootViewController = loginViewController
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
                     }
@@ -227,7 +227,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }
