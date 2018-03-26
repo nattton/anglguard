@@ -9,7 +9,7 @@ class PreviewImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        im_preview.image = preview
     }
 
     override func didReceiveMemoryWarning() {

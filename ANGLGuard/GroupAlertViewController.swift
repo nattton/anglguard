@@ -173,6 +173,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                     let result = json as! Dictionary<String, Any>
                     let code: String = result["code"] as! String
                     let message: String = result["message"] as! String
+                    NSLog("result = \(result)")
                     if code == "200" {
                         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in

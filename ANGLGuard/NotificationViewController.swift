@@ -8,6 +8,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     var notifications: [Any] = []
     let defaults = UserDefaults.standard
     let dateFormatter = DateFormatter()
+    var selectedImage: UIImage?
     
     @IBOutlet var tb_notification: UITableView!
     
@@ -85,6 +86,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         var cell: UITableViewCell?
         let notification = notifications[indexPath.row] as! [String: String]
         let type: String! = notification["type"]
+        let defaultImage = UIImage(named: "emergency_img_defult")
         
         if type == "alert" {
             let nACell: NAlertCell = tableView.dequeueReusableCell(withIdentifier: "NAlertCell") as! NAlertCell
@@ -98,34 +100,39 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             let image1: String! = notification["image1"]
             let eImg1: String! = image1.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url1 = URL(string: eImg1){
-                nACell.photo1.af_setImage(withURL: url1)
+                nACell.photo1.af_setImage(for: .normal, url: url1)
             } else {
-                nACell.photo1.image = UIImage(named: "emergency_img_defult")
+                nACell.photo1.setImage(defaultImage, for: .normal)
             }
             
             let image2: String! = notification["image2"]
             let eImg2: String! = image2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url2 = URL(string: eImg2){
-                nACell.photo2.af_setImage(withURL: url2)
+                nACell.photo2.af_setImage(for: .normal, url: url2)
             } else {
-                nACell.photo2.image = UIImage(named: "emergency_img_defult")
+                nACell.photo2.setImage(defaultImage, for: .normal)
             }
             
             let image3: String! = notification["image3"]
             let eImg3: String! = image3.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url3 = URL(string: eImg3){
-                nACell.photo3.af_setImage(withURL: url3)
+                nACell.photo3.af_setImage(for: .normal, url: url3)
             } else {
-                nACell.photo3.image = UIImage(named: "emergency_img_defult")
+                nACell.photo3.setImage(defaultImage, for: .normal)
             }
             
             let image4: String! = notification["image4"]
             let eImg4: String! = image4.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url4 = URL(string: eImg4){
-                nACell.photo4.af_setImage(withURL: url4)
+                nACell.photo4.af_setImage(for: .normal, url: url4)
             } else {
-                nACell.photo4.image = UIImage(named: "emergency_img_defult")
+                nACell.photo4.setImage(defaultImage, for: .normal)
             }
+            
+            nACell.photo1.addTarget(self, action: #selector(showPreview(_:)), for: .touchUpInside)
+            nACell.photo2.addTarget(self, action: #selector(showPreview(_:)), for: .touchUpInside)
+            nACell.photo3.addTarget(self, action: #selector(showPreview(_:)), for: .touchUpInside)
+            nACell.photo4.addTarget(self, action: #selector(showPreview(_:)), for: .touchUpInside)
             
             cell = nACell
         } else {
@@ -180,15 +187,26 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    @IBAction func showPreview(_ sender: Any) {
+        let button: UIButton = sender as! UIButton
+        let image = button.image(for: .normal)
+        let defaultImage = UIImage(named: "emergency_img_defult")
+        
+        if image != defaultImage {
+            selectedImage = image
+            self.performSegue(withIdentifier: "showPreview", sender: nil)
+        }
+    }
+    
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showPreview" {
+            let previewImageView: PreviewImageViewController = segue.destination as! PreviewImageViewController
+            previewImageView.preview = selectedImage
+        }
     }
-    */
 
 }

@@ -7,7 +7,7 @@ class ProfileQRCodeViewController: UIViewController {
     
     @IBOutlet var avatar: UIImageView!
     @IBOutlet var name: UILabel!
-    @IBOutlet var qrcode: UIImageView!
+    @IBOutlet var bt_qrcode: UIButton!
     @IBOutlet var v_profile: UIView!
     @IBOutlet var lb_iHealt: UILabel!
     
@@ -53,16 +53,16 @@ class ProfileQRCodeViewController: UIViewController {
                 displayQRCodeImage()
             }
         } else {
-            qrcode.image = nil
+            bt_qrcode.setImage(nil, for: .normal)
             qrcodeImage = nil
         }
     }
 
     func displayQRCodeImage() {
-        let scaleX = qrcode.frame.size.width / qrcodeImage.extent.size.width
-        let scaleY = qrcode.frame.size.height / qrcodeImage.extent.size.height
+        let scaleX = bt_qrcode.frame.size.width / qrcodeImage.extent.size.width
+        let scaleY = bt_qrcode.frame.size.height / qrcodeImage.extent.size.height
         let transformedImage = qrcodeImage.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
-        qrcode.image = UIImage(ciImage: transformedImage)
+        bt_qrcode.setImage(UIImage(ciImage: transformedImage), for: .normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,15 +76,21 @@ class ProfileQRCodeViewController: UIViewController {
         }
     }
     
-
-    /*
+    @IBAction func qrcodeAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "showWebView", sender: nil)
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showWebView" {
+            let navigationController = segue.destination as! UINavigationController
+            let qrcodeDetail: WebViewController = navigationController.topViewController as! WebViewController
+            qrcodeDetail.link = Personal.sharedInstance.personal_link
+            qrcodeDetail.navigationItem.title = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+        }
     }
-    */
 
 }

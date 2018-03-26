@@ -44,7 +44,10 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         SVProgressHUD.dismiss()
     }
     
-
+    @IBAction func closeAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
