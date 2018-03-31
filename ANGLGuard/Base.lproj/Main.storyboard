@@ -479,11 +479,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHc-Mu-GMv">
-                                                    <rect key="frame" x="64" y="10" width="43" height="35"/>
+                                                    <rect key="frame" x="64" y="10" width="41" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="0nn-dz-poY"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -660,27 +660,19 @@
                                             <outlet property="delegate" destination="Qxb-ox-5ys" id="TP8-H9-EOV"/>
                                         </connections>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAs-nr-8vL">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MAs-nr-8vL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="tWa-7k-3cN"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="MAs-nr-8vL" firstAttribute="top" secondItem="deM-xy-puL" secondAttribute="top" id="0S9-KZ-hZ7"/>
-                                    <constraint firstAttribute="trailing" secondItem="MAs-nr-8vL" secondAttribute="trailing" id="57d-Yn-ZvY"/>
                                     <constraint firstAttribute="bottom" secondItem="yyV-sA-JAX" secondAttribute="bottom" id="7G3-3k-fdU"/>
-                                    <constraint firstItem="MAs-nr-8vL" firstAttribute="leading" secondItem="deM-xy-puL" secondAttribute="leading" id="E58-fj-gmJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="MAs-nr-8vL" secondAttribute="trailing" id="JmU-BB-fXv"/>
-                                    <constraint firstItem="MAs-nr-8vL" firstAttribute="leading" secondItem="deM-xy-puL" secondAttribute="leading" id="U08-96-QYW"/>
                                     <constraint firstAttribute="trailing" secondItem="yyV-sA-JAX" secondAttribute="trailing" id="Vrh-bN-tqx"/>
                                     <constraint firstAttribute="height" constant="150" id="ZUF-AF-3lE"/>
                                     <constraint firstItem="yyV-sA-JAX" firstAttribute="leading" secondItem="deM-xy-puL" secondAttribute="leading" id="oNW-n0-4eH"/>
                                     <constraint firstItem="yyV-sA-JAX" firstAttribute="top" secondItem="deM-xy-puL" secondAttribute="top" constant="20" id="tLm-mn-z0u"/>
-                                    <constraint firstItem="MAs-nr-8vL" firstAttribute="top" secondItem="deM-xy-puL" secondAttribute="top" id="zPs-FJ-9B4"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -782,7 +774,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3l6-9H-Lb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2838" y="143"/>
+            <point key="canvasLocation" x="2837.5999999999999" y="142.57871064467767"/>
         </scene>
         <!--ProfileQR Code View Controller-->
         <scene sceneID="Mxe-Rb-VZr">
@@ -1343,30 +1335,30 @@
                                                     <rect key="frame" x="0.0" y="34" width="375" height="105"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-qF-o4p">
-                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-dF-5Te">
-                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="VoN-yW-nmY"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-Di-pqb">
-                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-dh-10w">
-                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="O2X-mL-6os"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-C3-NHM">
-                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8L-yf-LDc">
-                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="f2m-qf-Itw"/>

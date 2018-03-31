@@ -8,7 +8,7 @@ import SVProgressHUD
 
 let time = TimeInterval(15)
 
-class AngllifeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
+class AngllifeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var locationManager:CLLocationManager!
     let defaults = UserDefaults.standard
@@ -24,6 +24,8 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     var friendsAnn: [MKAnnotation] = []
     var ambulanceAnn: MKAnnotation?
     
+    var list_height: CGFloat = 0
+    
     @IBOutlet var map: MKMapView!
     @IBOutlet var tf_can_i_help_you: UIButton!
     @IBOutlet var bt_help: UIButton!
@@ -37,13 +39,15 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         
         setText()
         
+        list_height = self.view.bounds.size.height - (self.navigationController?.navigationBar.bounds.size.height)! - 20
+        
         bt_current_location.layer.cornerRadius = 0.5 * bt_current_location.bounds.size.width
         bt_current_location.layer.shadowOpacity = 0.7
         bt_current_location.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         bt_current_location.layer.shadowColor = UIColor.lightGray.cgColor
         bt_current_location.layer.masksToBounds = false
         
-        tb_hospital.isScrollEnabled = false
+        v_list.frame = tb_hospital.frame
         
         let panGesture: UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(handlePanGesture(gesture:)))
         v_list.addGestureRecognizer(panGesture)
@@ -141,6 +145,21 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.performSegue(withIdentifier: "showWebView", sender: nil)
     }
+    
+    //scroll
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if scrollView.contentOffset.y < -80 {
+//            scrollView.contentOffset.y = 0
+//            v_list_height.constant = 150
+//            UIView.animate(withDuration: 0.3, animations: {
+//                self.view.layoutIfNeeded()
+//            }, completion: { (animate) in
+//                self.bt_help.isHidden = false
+//                self.bt_current_location.isHidden = false
+//                self.v_list.isHidden = false
+//            })
+//        }
+//    }
     
     //location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -390,16 +409,18 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                 }, completion: { (animate) in
                     self.bt_help.isHidden = false
                     self.bt_current_location.isHidden = false
-                    self.tb_hospital.isScrollEnabled = false
+                    self.v_list.frame = self.tb_hospital.frame
                 })
             } else {
-                v_list_height.constant = self.view.bounds.size.height - (self.navigationController?.navigationBar.bounds.size.height)! - 20
+                v_list_height.constant = list_height
                 bt_help.isHidden = true
                 bt_current_location.isHidden = true
-                tb_hospital.isScrollEnabled = true
                 UIView.animate(withDuration: 0.3, animations: {
                     self.view.layoutIfNeeded()
-                }, completion: nil)
+                }, completion: { (animate) in
+                    self.v_list.frame = self.tb_hospital.frame
+                    self.v_list.frame.size.height = 30
+                })
             }
         }
     }
@@ -475,5 +496,25 @@ extension String {
             return 0
         }
         return NumberFormatter().number(from: self)?.doubleValue
+    }
+}
+
+extension UIScrollView {
+    var isBouncing: Bool {
+        return isBouncingTop || isBouncingLeft || isBouncingBottom || isBouncingRight
+    }
+    var isBouncingTop: Bool {
+        return contentOffset.y < -contentInset.top
+    }
+    var isBouncingLeft: Bool {
+        return contentOffset.x < -contentInset.left
+    }
+    var isBouncingBottom: Bool {
+        let contentFillsScrollEdges = contentSize.height + contentInset.top + contentInset.bottom >= bounds.height
+        return contentFillsScrollEdges && contentOffset.y > contentSize.height - bounds.height + contentInset.bottom
+    }
+    var isBouncingRight: Bool {
+        let contentFillsScrollEdges = contentSize.width + contentInset.left + contentInset.right >= bounds.width
+        return contentFillsScrollEdges && contentOffset.x > contentSize.width - bounds.width + contentInset.right
     }
 }

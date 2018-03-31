@@ -30,7 +30,8 @@ class InitalViewController: SOContainerViewController {
     
     func setMenu() {
         self.menuSide = .left
-        self.widthForPanGestureRecognizer = 1
+        self.widthForPanGestureRecognizer = 0
+        self.sideMenuWidth = 300
         self.topViewController = self.storyboard?.instantiateViewController(withIdentifier: "angllife")
         self.sideViewController = self.storyboard?.instantiateViewController(withIdentifier: "menu")
     }

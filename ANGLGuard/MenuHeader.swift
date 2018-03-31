@@ -26,15 +26,16 @@ class MenuHeader: UITableViewHeaderFooterView {
         iconImage.contentMode = .scaleAspectFit
         contentView.addSubview(iconImage)
         iconImage.translatesAutoresizingMaskIntoConstraints = false
-        iconImage.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        iconImage.widthAnchor.constraint(equalToConstant: 36).isActive = true
+        iconImage.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        iconImage.widthAnchor.constraint(equalToConstant: 32).isActive = true
         iconImage.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
-        iconImage.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 15.0).isActive = true
+        iconImage.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 8.0).isActive = true
         iconImage.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         
         // Title label
         contentView.addSubview(titleLabel)
         titleLabel.textColor = UIColor.black
+        titleLabel.font = .systemFont(ofSize: 16)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
