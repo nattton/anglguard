@@ -4,7 +4,7 @@ import AlamofireImage
 
 class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GroupAlertDelegate, EmergencyDelegate {
     
-    var bt_help_center: CGFloat?
+    var bt_help_center: CGFloat!
     var type: String = ""
     var photo: Int = 0
     var lat: Double = 0
@@ -137,36 +137,36 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
         self.present(optionMenu, animated: true, completion: nil)
     }
     
-    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
+    @IBAction func handlePan(recognizer: UIPanGestureRecognizer) {
         if recognizer.state == .began {
             bt_help_center = view.center.x
         }
         
-        let translation = recognizer.translation(in: self.view)
-        if let view = recognizer.view {
-            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
+        let moveX: CGFloat! = recognizer.view?.frame.origin.x
+        let button: UIView! = recognizer.view
+        if moveX > 25 && moveX < 245 {
+            let translation = recognizer.translation(in: self.view)
+            button.center = CGPoint(x: button.center.x + translation.x, y: button.center.y)
+        }
+        
+        if recognizer.state == .ended {
+            if bt_help_center > moveX {
+                type = "emergency"
+            } else {
+                type = "alert"
+            }
             
-            if type == "" {
-                if translation.x > 20 {
-                    type = "emergency"
-                } else if translation.x < -20  {
-                    type = "alert"
+            UIView.animate(withDuration: 0.3, animations: {
+                button.center = CGPoint(x: self.bt_help_center!, y: button.center.y)
+            }, completion: { (succes) in
+                if self.type == "alert" {
+                    self.performSegue(withIdentifier: "showGroupAlert", sender: nil)
+                } else if self.type == "emergency" {
+                    self.performSegue(withIdentifier: "showEmergency", sender: nil)
                 }
-            }
-            
-            if recognizer.state == .ended {
-                UIView.animate(withDuration: 0.3, animations: {
-                    view.center = CGPoint(x: self.bt_help_center!, y: view.center.y)
-                }, completion: { (succes) in
-                    if self.type == "alert" {
-                        self.performSegue(withIdentifier: "showGroupAlert", sender: nil)
-                    } else if self.type == "emergency" {
-                        self.performSegue(withIdentifier: "showEmergency", sender: nil)
-                    }
-                    
-                    self.type = ""
-                })
-            }
+                
+                self.type = ""
+            })
         }
         
         recognizer.setTranslation(CGPoint.zero, in: self.view)

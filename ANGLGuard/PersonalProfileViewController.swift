@@ -40,6 +40,10 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         
         setText()
         
+        bt_avatar.layer.masksToBounds = false
+        bt_avatar.layer.cornerRadius = bt_avatar.frame.size.height / 2
+        bt_avatar.clipsToBounds = true
+        
         if let image = defaults.string(forKey: "personal_img_bin") {
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -49,9 +53,9 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
             Alamofire.download(image, to: destination).response { response in
                 if response.error == nil, let imagePath = response.destinationURL?.path {
                     if let image = UIImage(contentsOfFile: imagePath) {
-                        self.bt_avatar.setImage(image, for: .normal)
+                        self.bt_avatar.setBackgroundImage(image, for: .normal)
                     } else {
-                        self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+                        self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
                     }
                 }
             }
@@ -232,7 +236,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             image = originalImage
         }
-        bt_avatar.setImage(image, for: .normal)
+        bt_avatar.setBackgroundImage(image, for: .normal)
         isImage = true
         picker.dismiss(animated: true, completion: nil)
     }
@@ -269,7 +273,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
-            self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+            self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
         })
         
         let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
@@ -296,14 +300,12 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         let weight: String = tf_weight.text!
         let cc: String = tf_country_code.text!
         let phone: String = tf_phone.text!
-        let image = bt_avatar.image(for: .normal)
+        let image = bt_avatar.backgroundImage(for: .normal)
         
         if firstname.count == 0 {            
             showAlert(message: "signup_insert_first_name".localized())
         } else if lastname.count == 0 {
             showAlert(message: "signup_insert_last_name".localized())
-        } else if isImage == false {
-            showAlert(message: "signup_pick_your_profile_image".localized())
         } else if gender.count == 0 {
             showAlert(message: "signup_fill_gender".localized())
         } else if date_of_birth.count == 0 {
@@ -335,7 +337,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
                         "mobile_cc": cc,
                         "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
                         "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc,
-                        "personal_img_bin": image?.resizeImage(200, opaque: false).toBase64()
+                        "personal_img_bin": isImage == true ? image!.resizeImage(200, opaque: false).toBase64() : ""
                     ]
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)
