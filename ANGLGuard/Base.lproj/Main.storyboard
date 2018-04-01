@@ -1335,30 +1335,30 @@
                                                     <rect key="frame" x="0.0" y="34" width="375" height="105"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-qF-o4p">
-                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-dF-5Te">
-                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="VoN-yW-nmY"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-Di-pqb">
-                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-dh-10w">
-                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="O2X-mL-6os"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-C3-NHM">
-                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8L-yf-LDc">
-                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="f2m-qf-Itw"/>
@@ -2762,7 +2762,23 @@
                     <view key="view" contentMode="scaleToFill" id="bXy-gs-SZo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0u-N7-DOe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zP5-zl-qlN" id="O1N-Vk-RoG"/>
+                                </connections>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K0u-N7-DOe" firstAttribute="bottom" secondItem="EHg-kW-Vby" secondAttribute="bottom" id="CJS-fz-LiX"/>
+                            <constraint firstItem="K0u-N7-DOe" firstAttribute="top" secondItem="EHg-kW-Vby" secondAttribute="top" id="K06-V4-BRm"/>
+                            <constraint firstItem="K0u-N7-DOe" firstAttribute="leading" secondItem="EHg-kW-Vby" secondAttribute="leading" id="kkd-MG-fh4"/>
+                            <constraint firstItem="K0u-N7-DOe" firstAttribute="trailing" secondItem="EHg-kW-Vby" secondAttribute="trailing" id="tcT-jO-O1G"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EHg-kW-Vby"/>
                     </view>
                     <navigationItem key="navigationItem" title="Term &amp; Condition" id="HSx-Wb-0xx">
@@ -2777,6 +2793,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="K0u-N7-DOe" id="vaz-N1-9SE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9X-eY-45t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -8108,7 +8127,7 @@
                     <connections>
                         <outlet property="bt_start" destination="H2N-Xo-LnA" id="Km6-qh-wmI"/>
                         <outlet property="lb_description" destination="37A-hv-o0f" id="Zdl-Ja-0bO"/>
-                        <segue destination="n1j-2g-OJR" kind="presentation" identifier="showMain" modalTransitionStyle="crossDissolve" id="cYj-Mh-gso"/>
+                        <segue destination="KIB-W0-S07" kind="presentation" identifier="showAgree" modalTransitionStyle="crossDissolve" id="2qP-qq-fzb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgD-AX-hIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -10685,6 +10704,75 @@
             </objects>
             <point key="canvasLocation" x="5644" y="143"/>
         </scene>
+        <!--Term & Condition-->
+        <scene sceneID="rKb-J5-YEl">
+            <objects>
+                <viewController id="sMN-DN-gEl" customClass="TermAndConditionViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KBO-Lg-HfU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hno-WI-n3p">
+                                <rect key="frame" x="0.0" y="64" width="375" height="531"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sMN-DN-gEl" id="Dz4-91-w06"/>
+                                </connections>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-lC-U7e">
+                                <rect key="frame" x="137" y="615" width="100" height="32"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.5450980392" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="mJy-CY-now"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ojG-EA-SKR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="I Agree"/>
+                                <connections>
+                                    <action selector="agreeAction:" destination="sMN-DN-gEl" eventType="touchUpInside" id="NXu-nQ-NF7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iE3-lC-U7e" firstAttribute="top" secondItem="Hno-WI-n3p" secondAttribute="bottom" constant="20" id="GGc-ds-aAj"/>
+                            <constraint firstItem="Hno-WI-n3p" firstAttribute="trailing" secondItem="a2K-Xf-WS8" secondAttribute="trailing" id="LEi-Mw-3Gf"/>
+                            <constraint firstItem="Hno-WI-n3p" firstAttribute="top" secondItem="a2K-Xf-WS8" secondAttribute="top" id="a4a-fP-Y5u"/>
+                            <constraint firstItem="Hno-WI-n3p" firstAttribute="leading" secondItem="a2K-Xf-WS8" secondAttribute="leading" id="iCp-2f-Rt1"/>
+                            <constraint firstItem="a2K-Xf-WS8" firstAttribute="bottom" secondItem="iE3-lC-U7e" secondAttribute="bottom" constant="20" id="mFI-tB-53s"/>
+                            <constraint firstItem="iE3-lC-U7e" firstAttribute="centerX" secondItem="KBO-Lg-HfU" secondAttribute="centerX" id="zgt-iJ-4Cw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a2K-Xf-WS8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Term &amp; Condition" id="Zkn-Gt-QRF"/>
+                    <connections>
+                        <outlet property="webView" destination="Hno-WI-n3p" id="xXZ-pl-0uh"/>
+                        <segue destination="n1j-2g-OJR" kind="presentation" identifier="showMain" modalTransitionStyle="crossDissolve" id="rwc-5d-HpK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4j-Xg-Wla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3642.4000000000001" y="3924.2878560719641"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gbB-QY-r2k">
+            <objects>
+                <navigationController storyboardIdentifier="agree" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KIB-W0-S07" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MN0-na-HiB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sMN-DN-gEl" kind="relationship" relationship="rootViewController" id="cBV-7Y-YVo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1n-PE-nP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4548" y="3924"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg_button1" width="37" height="34"/>
@@ -10730,6 +10818,6 @@
         <segue reference="8JO-9D-Buk"/>
         <segue reference="Skb-T8-JuP"/>
         <segue reference="QYa-NC-TLg"/>
-        <segue reference="cYj-Mh-gso"/>
+        <segue reference="rwc-5d-HpK"/>
     </inferredMetricsTieBreakers>
 </document>

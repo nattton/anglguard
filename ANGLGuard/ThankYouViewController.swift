@@ -64,7 +64,7 @@ class ThankYouViewController: UITableViewController {
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.setProfile(data: data)
                         appDelegate.registerForPushNotifications()
-                        self.performSegue(withIdentifier: "showMain", sender: nil)
+                        self.performSegue(withIdentifier: "showAgree", sender: nil)
                     }
                 } else {
                     let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)

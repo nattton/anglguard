@@ -22,5 +22,6 @@ target 'ANGLGuard' do
   pod 'GoogleSignIn'
   pod 'p2.OAuth2'
   pod 'SwiftyJSON'
+  pod 'WechatOpenSDK'
 
 end

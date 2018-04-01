@@ -103,7 +103,7 @@ let INSURANCE_COMPANY_ALERT = "Please insert insurance company."
 let CONTACT_NAME_ALERT = "Please insert contact name."
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiDelegate {
     
     var window: UIWindow?
     let defaults = UserDefaults.standard
@@ -153,6 +153,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "405428121980-34ck2gf8b1cp4b3dlkttnnbdd1ck99rn.apps.googleusercontent.com"
         
+        // WeChat: use your AppID
+        WXApi.registerApp("wx235325325")
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -181,6 +184,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             let service = OutlookService.shared()
             service.handleOAuthCallback(url: url)
             return true
+        } else if url.scheme == "wxc5aac2e8f9f73a9837" {
+            WXApi.handleOpen(url, delegate: self)
         } else {
             if FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation) {
                 return true

@@ -1,12 +1,20 @@
 import UIKit
+import SVProgressHUD
 
-class TermAndConditionViewController: UIViewController {
-
+class TermAndConditionViewController: UIViewController, UIWebViewDelegate {
+    
+     @IBOutlet var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setText()
         
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
+        
+        if let url = Bundle.main.url(forResource: "condition_en", withExtension: "html") {
+            webView.loadRequest(URLRequest(url: url))
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -18,12 +26,19 @@ class TermAndConditionViewController: UIViewController {
         self.title = "nav_term".localized()
     }
     
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
     @IBAction func showMenu(_ sender: Any) {
         if let container = self.so_containerViewController {
             container.isSideViewControllerPresented = true
         }
     }
-
+    @IBAction func agreeAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "showMain", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

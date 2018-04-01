@@ -84,6 +84,7 @@
 		3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227F203C92690085984D /* ViriyahViewController.swift */; };
 		3BA12286203C998E0085984D /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12285203C998E0085984D /* ThankYouViewController.swift */; };
 		3BDAFCF7205EBA670056EC91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */; };
+		3BE994B72070E5A7005D6B07 /* condition_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 3BE994B62070E5A7005D6B07 /* condition_en.html */; };
 		3BF25BD2205F1A1200309B09 /* FirstAidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */; };
 		3BFA06ED2049DCAD00C47C0E /* Authen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA06EC2049DCAD00C47C0E /* Authen.swift */; };
 		59334130CFD032867069BF69 /* Pods_ANGLGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */; };
@@ -173,6 +174,7 @@
 		3BA12285203C998E0085984D /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ANGLGuard-Bridging-Header.h"; sourceTree = "<group>"; };
+		3BE994B62070E5A7005D6B07 /* condition_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = condition_en.html; sourceTree = "<group>"; };
 		3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAidCell.swift; sourceTree = "<group>"; };
 		3BFA06EC2049DCAD00C47C0E /* Authen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authen.swift; sourceTree = "<group>"; };
 		998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */,
 				3B031675205ABB8500A35AC9 /* Localizable.strings */,
 				3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */,
+				3BE994B62070E5A7005D6B07 /* condition_en.html */,
 			);
 			path = ANGLGuard;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				3BDAFCF7205EBA670056EC91 /* GoogleService-Info.plist in Resources */,
 				3B6462E22036A47400A39901 /* Assets.xcassets in Resources */,
 				3B6462E02036A47400A39901 /* Main.storyboard in Resources */,
+				3BE994B72070E5A7005D6B07 /* condition_en.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +761,10 @@
 				);
 				INFOPLIST_FILE = ANGLGuard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ANGLGuard/Library/WeChatSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4cea3720-911c-4111-a7a9-810c6b54c32d";
@@ -784,6 +792,10 @@
 				);
 				INFOPLIST_FILE = ANGLGuard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ANGLGuard/Library/WeChatSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4cea3720-911c-4111-a7a9-810c6b54c32d";
