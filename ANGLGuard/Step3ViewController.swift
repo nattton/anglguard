@@ -4,6 +4,7 @@ import ADCountryPicker
 
 class Step3ViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    @IBOutlet var lb_passport: UILabel!
     @IBOutlet var bt_avatar: UIButton!
     @IBOutlet var tf_passport: UITextField!
     @IBOutlet var tf_country: UITextField!
@@ -29,6 +30,18 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         
         setText()
         
+        tf_passport.layer.borderColor = UIColor.red.cgColor
+        tf_passport.layer.borderWidth = 1
+        tf_passport.layer.cornerRadius = 4
+        
+        tf_country.layer.borderColor = UIColor.red.cgColor
+        tf_country.layer.borderWidth = 1
+        tf_country.layer.cornerRadius = 4
+        
+        tf_expire_date.layer.borderColor = UIColor.red.cgColor
+        tf_expire_date.layer.borderWidth = 1
+        tf_expire_date.layer.cornerRadius = 4
+        
         country_code = Personal.sharedInstance.country_code
         
         tf_passport.text = Personal.sharedInstance.passport_num
@@ -45,6 +58,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
     }
     
     func setText() {
+        lb_passport.text = "sub_passport".localized()
         tf_passport.placeholder = "signup_passport_number".localized()
         tf_country.placeholder = "signup_country".localized()
         tf_expire_date.placeholder = "signup_expire_date".localized()
@@ -68,7 +82,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             image = originalImage
         }
-        bt_avatar.setImage(image, for: .normal)
+        bt_avatar.setBackgroundImage(image, for: .normal)
         isImage = true
         picker.dismiss(animated: true, completion: nil)
     }
@@ -184,7 +198,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
-            self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+            self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
         })
         
         let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
@@ -222,7 +236,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
             Personal.sharedInstance.passport_num = passport
             Personal.sharedInstance.country_code = country_code
             Personal.sharedInstance.passport_expire_date = expire_date
-            Personal.sharedInstance.passport_img = bt_avatar.image(for: .normal)
+            Personal.sharedInstance.passport_img = bt_avatar.backgroundImage(for: .normal)
             
             self.performSegue(withIdentifier: "showStep4", sender: nil)
         }

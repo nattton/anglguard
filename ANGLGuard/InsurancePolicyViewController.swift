@@ -33,6 +33,30 @@ class InsurancePolicyViewController: UITableViewController, UITextFieldDelegate 
         
         setText()
         
+        tf_policy_number.layer.borderColor = UIColor.red.cgColor
+        tf_policy_number.layer.borderWidth = 1
+        tf_policy_number.layer.cornerRadius = 4
+        
+        tf_expire_date.layer.borderColor = UIColor.red.cgColor
+        tf_expire_date.layer.borderWidth = 1
+        tf_expire_date.layer.cornerRadius = 4
+        
+        tf_insurance_company.layer.borderColor = UIColor.red.cgColor
+        tf_insurance_company.layer.borderWidth = 1
+        tf_insurance_company.layer.cornerRadius = 4
+        
+        tf_contact_name.layer.borderColor = UIColor.red.cgColor
+        tf_contact_name.layer.borderWidth = 1
+        tf_contact_name.layer.cornerRadius = 4
+        
+        tf_country_code.layer.borderColor = UIColor.red.cgColor
+        tf_country_code.layer.borderWidth = 1
+        tf_country_code.layer.cornerRadius = 4
+        
+        tf_phone.layer.borderColor = UIColor.red.cgColor
+        tf_phone.layer.borderWidth = 1
+        tf_phone.layer.cornerRadius = 4
+        
         tf_expire_date.inputView = createDatePicker()
         tf_expire_date.inputAccessoryView = createDateToolBar()
     }

@@ -26,6 +26,18 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
         
         setText()
         
+        bt_avatar.layer.masksToBounds = false
+        bt_avatar.layer.cornerRadius = bt_avatar.frame.size.height / 2
+        bt_avatar.clipsToBounds = true
+        
+        tf_firstname.layer.borderColor = UIColor.red.cgColor
+        tf_firstname.layer.borderWidth = 1
+        tf_firstname.layer.cornerRadius = 4
+        
+        tf_lastname.layer.borderColor = UIColor.red.cgColor
+        tf_lastname.layer.borderWidth = 1
+        tf_lastname.layer.cornerRadius = 4
+        
         tf_firstname.text = Personal.sharedInstance.firstname
         tf_middlename.text = Personal.sharedInstance.middlename
         tf_lastname.text = Personal.sharedInstance.lastname
@@ -52,7 +64,7 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
         } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             image = originalImage
         }
-        bt_avatar.setImage(image, for: .normal)
+        bt_avatar.setBackgroundImage(image, for: .normal)
         isImage = true
         picker.dismiss(animated: true, completion: nil)
     }
@@ -89,7 +101,7 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
         let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
-            self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+            self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
         })
         
         let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
@@ -126,7 +138,7 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
             Personal.sharedInstance.firstname = firstname
             Personal.sharedInstance.lastname = lastname
             Personal.sharedInstance.middlename = middlename
-            Personal.sharedInstance.personal_img_bin = bt_avatar.image(for: .normal)
+            Personal.sharedInstance.personal_img_bin = bt_avatar.backgroundImage(for: .normal)
             
             self.performSegue(withIdentifier: "showStep2", sender: nil)
         }

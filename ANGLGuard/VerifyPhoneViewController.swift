@@ -5,6 +5,7 @@ import SVProgressHUD
 
 class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet var lb_caution: UILabel!
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
     @IBOutlet var bt_later: UIButton!
@@ -12,7 +13,7 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var bt_send_code: UIButton!
     @IBOutlet var tf_code: UITextField!
     @IBOutlet var bt_back: UIButton!
-    @IBOutlet var bt_next: UIButton!
+    @IBOutlet var bt_verify: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -40,13 +41,14 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func setText() {
+        lb_caution.text = "signup_caution".localized()
         tf_phone.placeholder = "signup_current_phone_number".localized()
-        bt_later.setTitle("bnt_later".localized(), for: .normal)
-        lb_verify_code.text = "signup_clik_to".localized()
         bt_send_code.setTitle("signup_send_code".localized(), for: .normal)
+        lb_verify_code.text = "signup_please_enter_your_otp".localized()
         tf_code.placeholder = "signup_code".localized()
+        bt_verify.setTitle("signup_verify_code".localized(), for: .normal)
         bt_back.setTitle("bnt_back".localized(), for: .normal)
-        bt_next.setTitle("bnt_next".localized(), for: .normal)
+        bt_later.setTitle("bnt_later".localized(), for: .normal)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -109,7 +111,7 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
                             Personal.sharedInstance.thai_mobile_cc = country_code
                             Personal.sharedInstance.thai_mobile_num = phone
                             
-                            self.performSegue(withIdentifier: "showStep1", sender: nil)
+                            self.performSegue(withIdentifier: "showStep3", sender: nil)
                         } else if code == "104" {
                             self.defaults.set("N", forKey: "login")
                             self.defaults.set("N", forKey: "timer")
@@ -134,7 +136,7 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func nextAction(_ sender: Any) {
+    @IBAction func verifyAction(_ sender: Any) {
         if let token = defaults.string(forKey: "token") {
             let country_code: String = tf_country_code.text!
             let phone: String = tf_phone.text!

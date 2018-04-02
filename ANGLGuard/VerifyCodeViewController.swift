@@ -5,6 +5,7 @@ import SVProgressHUD
 class VerifyCodeViewController: UITableViewController {
     
     @IBOutlet var tf_email: UITextField!
+    @IBOutlet var bt_send: UIButton!
     @IBOutlet var tf_verify_code: UITextField!
     @IBOutlet var lb_verify_code: UILabel!
     @IBOutlet var bt_back: UIButton!
@@ -37,10 +38,41 @@ class VerifyCodeViewController: UITableViewController {
     
     func setText() {
         tf_email.placeholder = "login_email".localized()
+        bt_send.setTitle("signup_send_code".localized(), for: .normal)
         lb_verify_code.text = "signup_please_enter".localized()
         tf_verify_code.placeholder = "signup_code".localized()
         bt_back.setTitle("bnt_back".localized(), for: .normal)
         bt_next.setTitle("bnt_next".localized(), for: .normal)
+    }
+    
+    @IBAction func sendAction(_ sender: Any) {
+        let parameters: Parameters = ["email": email]
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
+        Alamofire.request(EMAIL_EXISTS, method: .get, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
+            if let json = response.result.value {
+                let result = json as! Dictionary<String, Any>
+                NSLog("result = \(result)")
+                let code: String = result["code"] as! String
+                let message: String = result["message"] as! String
+                if code == "200" {
+                    
+                } else if code == "104" {
+                    self.defaults.set("N", forKey: "login")
+                    self.defaults.set("N", forKey: "timer")
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.clearProfile()
+                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                    let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                    UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                } else {
+                    let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {

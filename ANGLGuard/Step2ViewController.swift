@@ -32,6 +32,30 @@ class Step2ViewController: UITableViewController, UITextFieldDelegate, UIPickerV
         
         setText()
         
+        tf_gender.layer.borderColor = UIColor.red.cgColor
+        tf_gender.layer.borderWidth = 1
+        tf_gender.layer.cornerRadius = 4
+        
+        tf_date_of_birth.layer.borderColor = UIColor.red.cgColor
+        tf_date_of_birth.layer.borderWidth = 1
+        tf_date_of_birth.layer.cornerRadius = 4
+        
+        tf_height.layer.borderColor = UIColor.red.cgColor
+        tf_height.layer.borderWidth = 1
+        tf_height.layer.cornerRadius = 4
+        
+        tf_weight.layer.borderColor = UIColor.red.cgColor
+        tf_weight.layer.borderWidth = 1
+        tf_weight.layer.cornerRadius = 4
+        
+        tf_country_code.layer.borderColor = UIColor.red.cgColor
+        tf_country_code.layer.borderWidth = 1
+        tf_phone.layer.cornerRadius = 4
+        
+        tf_phone.layer.borderColor = UIColor.red.cgColor
+        tf_phone.layer.borderWidth = 1
+        tf_phone.layer.cornerRadius = 4
+        
         if (Personal.sharedInstance.gender == "M" || Personal.sharedInstance.gender == "Male") {
             tf_gender.text = genders[0]
         } else if (Personal.sharedInstance.gender == "F" || Personal.sharedInstance.gender == "Female") {
