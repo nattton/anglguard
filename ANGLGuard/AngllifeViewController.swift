@@ -8,7 +8,7 @@ import SVProgressHUD
 
 let time = TimeInterval(15)
 
-class AngllifeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
+class AngllifeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var locationManager:CLLocationManager!
     let defaults = UserDefaults.standard
@@ -25,6 +25,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     var ambulanceAnn: MKAnnotation?
     
     var list_height: CGFloat = 0
+    var isMaxiMize: Bool = false
     
     @IBOutlet var map: MKMapView!
     @IBOutlet var tf_can_i_help_you: UIButton!
@@ -48,9 +49,6 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         bt_current_location.layer.masksToBounds = false
         
         v_list.frame = tb_hospital.frame
-        
-        let panGesture: UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(handlePanGesture(gesture:)))
-        v_list.addGestureRecognizer(panGesture)
         
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         getCurrentLocation()
@@ -145,21 +143,6 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.performSegue(withIdentifier: "showWebView", sender: nil)
     }
-    
-    //scroll
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < -80 {
-//            scrollView.contentOffset.y = 0
-//            v_list_height.constant = 150
-//            UIView.animate(withDuration: 0.3, animations: {
-//                self.view.layoutIfNeeded()
-//            }, completion: { (animate) in
-//                self.bt_help.isHidden = false
-//                self.bt_current_location.isHidden = false
-//                self.v_list.isHidden = false
-//            })
-//        }
-//    }
     
     //location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -400,30 +383,51 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
-        if gesture.state == .ended {
-            if case .Down = gesture.verticalDirection(target: self.view) {
-                v_list_height.constant = 150
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.view.layoutIfNeeded()
-                }, completion: { (animate) in
-                    self.bt_help.isHidden = false
-                    self.bt_current_location.isHidden = false
-                    self.v_list.frame = self.tb_hospital.frame
-                })
+    func maximizeHospitalList() {
+        v_list_height.constant = list_height
+        bt_help.isHidden = true
+        bt_current_location.isHidden = true
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: { (animate) in
+            self.v_list.frame = self.tb_hospital.frame
+            self.v_list.frame.size.height = 30
+        })
+        
+        isMaxiMize = true
+    }
+    
+    func minimizeHospitalList() {
+        v_list_height.constant = 150
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: { (animate) in
+            self.bt_help.isHidden = false
+            self.bt_current_location.isHidden = false
+            self.v_list.frame = self.tb_hospital.frame
+        })
+        
+        isMaxiMize = false
+    }
+    
+    @IBAction func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .ended {
+            if case .Down = sender.verticalDirection(target: self.view) {
+                minimizeHospitalList()
             } else {
-                v_list_height.constant = list_height
-                bt_help.isHidden = true
-                bt_current_location.isHidden = true
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.view.layoutIfNeeded()
-                }, completion: { (animate) in
-                    self.v_list.frame = self.tb_hospital.frame
-                    self.v_list.frame.size.height = 30
-                })
+                maximizeHospitalList()
             }
         }
     }
+    
+    @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
+        if isMaxiMize == true {
+            minimizeHospitalList()
+        } else {
+            maximizeHospitalList()
+        }
+    }
+    
     
     @IBAction func showMenu(_ sender: Any) {
         if let container = self.so_containerViewController {
