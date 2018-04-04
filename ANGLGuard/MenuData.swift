@@ -40,10 +40,10 @@ public var menuData: [Section] = [
          Item(name: "login_forgot_password", identifier: "forgotPassword")
         ], collapsed: true
     ),
-    Section(name: "nav_device_setting", icon: "ic_device", identifier: "group", items: [], collapsed: true),
+    Section(name: "nav_device_setting", icon: "ic_group", identifier: "group", items: [], collapsed: true),
+    Section(name: "nav_privilege", icon: "ic_privilege", identifier: "privilege", items: [], collapsed: true),
     Section(name: "nav_notification", icon: "ic_notification", identifier: "notification", items: [], collapsed: true),
     Section(name: "nav_faq", icon: "ic_faq", identifier: "faq", items: [], collapsed: true),
-    Section(name: "nav_privilege", icon: "ic_privilege", identifier: "privilege", items: [], collapsed: true),
     Section(name: "nav_language", icon: "ic_language", identifier: "language", items: [], collapsed: true),
     Section(name: "nav_term", icon: "ic_condition", identifier: "term", items: [], collapsed: true),
     Section(name: "nav_sign_out", icon: "ic_signout", identifier: "login", items: [], collapsed: true)
