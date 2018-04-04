@@ -44,6 +44,38 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         bt_avatar.layer.cornerRadius = bt_avatar.frame.size.height / 2
         bt_avatar.clipsToBounds = true
         
+        tf_firstname.layer.borderColor = UIColor.red.cgColor
+        tf_firstname.layer.borderWidth = 1
+        tf_firstname.layer.cornerRadius = 4
+        
+        tf_lastname.layer.borderColor = UIColor.red.cgColor
+        tf_lastname.layer.borderWidth = 1
+        tf_lastname.layer.cornerRadius = 4
+        
+        tf_gender.layer.borderColor = UIColor.red.cgColor
+        tf_gender.layer.borderWidth = 1
+        tf_gender.layer.cornerRadius = 4
+        
+        tf_date_of_birth.layer.borderColor = UIColor.red.cgColor
+        tf_date_of_birth.layer.borderWidth = 1
+        tf_date_of_birth.layer.cornerRadius = 4
+        
+        tf_height.layer.borderColor = UIColor.red.cgColor
+        tf_height.layer.borderWidth = 1
+        tf_height.layer.cornerRadius = 4
+        
+        tf_weight.layer.borderColor = UIColor.red.cgColor
+        tf_weight.layer.borderWidth = 1
+        tf_weight.layer.cornerRadius = 4
+        
+        tf_country_code.layer.borderColor = UIColor.red.cgColor
+        tf_country_code.layer.borderWidth = 1
+        tf_country_code.layer.cornerRadius = 4
+        
+        tf_phone.layer.borderColor = UIColor.red.cgColor
+        tf_phone.layer.borderWidth = 1
+        tf_phone.layer.cornerRadius = 4
+        
         if let image = defaults.string(forKey: "personal_img_bin") {
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -330,13 +362,13 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
                         "birthdate": date_of_birth,
                         "height": height,
                         "weight": weight,
-                        "country_code": Personal.sharedInstance.country_code,
+                        "country_code": Personal.sharedInstance.country_code.replacingOccurrences(of: "+", with: ""),
                         "passport_num": Personal.sharedInstance.passport_num,
                         "passport_expire_date": Personal.sharedInstance.passport_expire_date,
                         "mobile_num": phone,
-                        "mobile_cc": cc,
+                        "mobile_cc": cc.replacingOccurrences(of: "+", with: ""),
                         "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
-                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc,
+                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc.replacingOccurrences(of: "+", with: ""),
                         "personal_img_bin": isImage == true ? image!.resizeImage(200, opaque: false).toBase64() : ""
                     ]
                 ]

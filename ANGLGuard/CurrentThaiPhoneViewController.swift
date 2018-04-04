@@ -187,13 +187,13 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                     "birthdate": Personal.sharedInstance.birthdate,
                     "height": Personal.sharedInstance.height,
                     "weight": Personal.sharedInstance.weight,
-                    "country_code": Personal.sharedInstance.country_code,
+                    "country_code": Personal.sharedInstance.country_code.replacingOccurrences(of: "+", with: ""),
                     "passport_num": Personal.sharedInstance.passport_num,
                     "passport_expire_date": Personal.sharedInstance.passport_expire_date,
                     "mobile_num": Personal.sharedInstance.mobile_num,
-                    "mobile_cc": Personal.sharedInstance.mobile_cc,
+                    "mobile_cc": Personal.sharedInstance.mobile_cc.replacingOccurrences(of: "+", with: ""),
                     "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
-                    "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc
+                    "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc.replacingOccurrences(of: "+", with: "")
                 ]
             ]
             SVProgressHUD.show(withStatus: LOADING_TEXT)

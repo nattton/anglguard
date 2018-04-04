@@ -29,6 +29,26 @@ class EmergencyContactProfileViewController: UITableViewController, UITextFieldD
         
         setText()
         
+        tf_firstname.layer.borderColor = UIColor.red.cgColor
+        tf_firstname.layer.borderWidth = 1
+        tf_firstname.layer.cornerRadius = 4
+        
+        tf_lastname.layer.borderColor = UIColor.red.cgColor
+        tf_lastname.layer.borderWidth = 1
+        tf_lastname.layer.cornerRadius = 4
+        
+        tf_country_code.layer.borderColor = UIColor.red.cgColor
+        tf_country_code.layer.borderWidth = 1
+        tf_country_code.layer.cornerRadius = 4
+        
+        tf_phone.layer.borderColor = UIColor.red.cgColor
+        tf_phone.layer.borderWidth = 1
+        tf_phone.layer.cornerRadius = 4
+        
+        tf_relationship.layer.borderColor = UIColor.red.cgColor
+        tf_relationship.layer.borderWidth = 1
+        tf_relationship.layer.cornerRadius = 4
+        
         tf_firstname.text = Contact.sharedInstance.firstname
         tf_lastname.text = Contact.sharedInstance.lastname
         tf_country_code.text = Contact.sharedInstance.contact_number_cc

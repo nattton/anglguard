@@ -30,6 +30,22 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         
         setText()
         
+        bt_avatar.layer.masksToBounds = false
+        bt_avatar.layer.cornerRadius = bt_avatar.frame.size.height / 2
+        bt_avatar.clipsToBounds = true
+        
+        tf_passport.layer.borderColor = UIColor.red.cgColor
+        tf_passport.layer.borderWidth = 1
+        tf_passport.layer.cornerRadius = 4
+        
+        tf_country.layer.borderColor = UIColor.red.cgColor
+        tf_country.layer.borderWidth = 1
+        tf_country.layer.cornerRadius = 4
+        
+        tf_expire_date.layer.borderColor = UIColor.red.cgColor
+        tf_expire_date.layer.borderWidth = 1
+        tf_expire_date.layer.cornerRadius = 4
+        
         if let image = defaults.string(forKey: "passport_img") {
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -39,9 +55,9 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
             Alamofire.download(image, to: destination).response { response in
                 if response.error == nil, let imagePath = response.destinationURL?.path {
                     if let image = UIImage(contentsOfFile: imagePath) {
-                        self.bt_avatar.setImage(image, for: .normal)
+                        self.bt_avatar.setBackgroundImage(image, for: .normal)
                     } else {
-                        self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+                        self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
                     }
                 }
             }
@@ -84,7 +100,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             image = originalImage
         }
-        bt_avatar.setImage(image, for: .normal)
+        bt_avatar.setBackgroundImage(image, for: .normal)
         isImage = true
         picker.dismiss(animated: true, completion: nil)
     }
@@ -180,7 +196,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
-            self.bt_avatar.setImage(UIImage(named: "emergency_img_defult"), for: .normal)
+            self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
         })
         
         let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
@@ -201,7 +217,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         let passport: String = tf_passport.text!
         let country: String = tf_country.text!
         let expire_date: String = tf_expire_date.text!
-        let image = bt_avatar.image(for: .normal)
+        let image = bt_avatar.backgroundImage(for: .normal)
         
         if passport.count == 0 {
             showAlert(message: "signup_insert_passport_number".localized())
@@ -209,8 +225,6 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
             showAlert(message: "signup_select_your_country".localized())
         } else if expire_date.count == 0 {
             showAlert(message: "signup_insert_passport_expire".localized())
-        } else if isImage == false {
-            showAlert(message: "signup_pick_image_passport".localized())
         } else {
             if let token = defaults.string(forKey: "token") {
                 let parameters: Parameters = [
@@ -223,14 +237,14 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
                         "birthdate": Personal.sharedInstance.birthdate,
                         "height": Personal.sharedInstance.height,
                         "weight": Personal.sharedInstance.weight,
-                        "country_code": country,
+                        "country_code": country.replacingOccurrences(of: "+", with: ""),
                         "passport_num": passport,
                         "passport_expire_date": expire_date,
                         "mobile_num": Personal.sharedInstance.mobile_num,
-                        "mobile_cc": Personal.sharedInstance.mobile_cc,
+                        "mobile_cc": Personal.sharedInstance.mobile_cc.replacingOccurrences(of: "+", with: ""),
                         "thai_mobile_num": Personal.sharedInstance.thai_mobile_num,
-                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc,
-                        "passport_img": image?.resizeImage(200, opaque: false).toBase64()
+                        "thai_mobile_cc": Personal.sharedInstance.thai_mobile_cc.replacingOccurrences(of: "+", with: ""),
+                        "passport_img": isImage == true ? image!.resizeImage(200, opaque: false).toBase64() : ""
                     ]
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)

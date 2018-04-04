@@ -31,6 +31,10 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
         
         setText()
         
+        tf_blood_type.layer.borderColor = UIColor.red.cgColor
+        tf_blood_type.layer.borderWidth = 1
+        tf_blood_type.layer.cornerRadius = 4
+        
         tf_blood_type.text = Medical.sharedInstance.blood_type
         
         tf_blood_type.inputView = createBloodPicker()

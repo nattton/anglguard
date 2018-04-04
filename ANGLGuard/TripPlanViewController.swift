@@ -30,6 +30,18 @@ class TripPlanViewController: UITableViewController {
         
         setText()
         
+        tf_purpose.layer.borderColor = UIColor.red.cgColor
+        tf_purpose.layer.borderWidth = 1
+        tf_purpose.layer.cornerRadius = 4
+        
+        tf_start_date.layer.borderColor = UIColor.red.cgColor
+        tf_start_date.layer.borderWidth = 1
+        tf_start_date.layer.cornerRadius = 4
+        
+        tf_lenght_of_day.layer.borderColor = UIColor.red.cgColor
+        tf_lenght_of_day.layer.borderWidth = 1
+        tf_lenght_of_day.layer.cornerRadius = 4
+        
         tf_purpose.text = Trip.sharedInstance.purpose
         tf_start_date.text = Trip.sharedInstance.start_date
         tf_lenght_of_day.text = Trip.sharedInstance.duration

@@ -118,7 +118,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Cxx-DU-JRy">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="gP4-fj-UFy"/>
                                                         <constraint firstAttribute="width" constant="144" id="gQx-Lz-GKt"/>
@@ -145,7 +145,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Cxx-DU-JRy" firstAttribute="top" secondItem="OZc-ki-hSf" secondAttribute="topMargin" id="2wA-cX-T4Q"/>
+                                                <constraint firstItem="Cxx-DU-JRy" firstAttribute="top" secondItem="OZc-ki-hSf" secondAttribute="topMargin" constant="40" id="2wA-cX-T4Q"/>
                                                 <constraint firstItem="Cxx-DU-JRy" firstAttribute="trailing" secondItem="OZc-ki-hSf" secondAttribute="trailingMargin" id="9Pw-h6-J0W"/>
                                                 <constraint firstItem="kDh-HT-7wP" firstAttribute="leading" secondItem="OZc-ki-hSf" secondAttribute="leadingMargin" id="DCf-Dz-I63"/>
                                                 <constraint firstItem="kDh-HT-7wP" firstAttribute="top" secondItem="OZc-ki-hSf" secondAttribute="topMargin" id="EuP-bs-SC3"/>
@@ -301,7 +301,7 @@
                                                     <rect key="frame" x="40" y="126" width="295" height="52"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="707-WD-zt8">
-                                                            <rect key="frame" x="51" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="44" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_facebook"/>
                                                             <connections>
@@ -309,7 +309,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlz-09-W2P">
-                                                            <rect key="frame" x="103" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="101" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_gmail"/>
                                                             <connections>
@@ -317,7 +317,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YF-Qm-huQ">
-                                                            <rect key="frame" x="155" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="158" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_window"/>
                                                             <connections>
@@ -325,7 +325,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFn-OZ-fXo">
-                                                            <rect key="frame" x="207" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="215" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_wechat"/>
                                                         </button>
@@ -2853,7 +2853,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="vOr-Hm-1ql">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="COn-ry-5Nt"/>
                                                         <constraint firstAttribute="height" constant="100" id="daz-zU-pNz"/>
@@ -2866,7 +2866,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Always help someone. You might be the only one that does.&quot;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qd4-mZ-rDd">
-                                                    <rect key="frame" x="22" y="166" width="331" height="41"/>
+                                                    <rect key="frame" x="22" y="206" width="331" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="ok7-Cq-2aH"/>
                                                     </constraints>
@@ -2894,7 +2894,7 @@
                                                 <constraint firstItem="dwO-W7-zxq" firstAttribute="top" secondItem="fkx-CB-BJN" secondAttribute="topMargin" id="N0e-fa-rHj"/>
                                                 <constraint firstAttribute="trailing" secondItem="qd4-mZ-rDd" secondAttribute="trailing" constant="22" id="TRx-FM-HCh"/>
                                                 <constraint firstItem="qd4-mZ-rDd" firstAttribute="top" secondItem="vOr-Hm-1ql" secondAttribute="bottom" constant="55" id="byX-jS-HcX"/>
-                                                <constraint firstItem="vOr-Hm-1ql" firstAttribute="top" secondItem="fkx-CB-BJN" secondAttribute="topMargin" id="n7z-8t-dxL"/>
+                                                <constraint firstItem="vOr-Hm-1ql" firstAttribute="top" secondItem="fkx-CB-BJN" secondAttribute="topMargin" constant="40" id="n7z-8t-dxL"/>
                                                 <constraint firstAttribute="bottom" secondItem="D42-gd-JNe" secondAttribute="bottom" id="rmO-7q-Xj0"/>
                                                 <constraint firstItem="vOr-Hm-1ql" firstAttribute="trailing" secondItem="fkx-CB-BJN" secondAttribute="trailingMargin" id="wu5-PV-SKN"/>
                                             </constraints>
@@ -3079,7 +3079,7 @@
                                                     <rect key="frame" x="40" y="95" width="295" height="52"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY6-wL-64H">
-                                                            <rect key="frame" x="51" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="44" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_facebook"/>
                                                             <connections>
@@ -3087,7 +3087,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ym-4Q-28T">
-                                                            <rect key="frame" x="103" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="101" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_gmail"/>
                                                             <connections>
@@ -3095,7 +3095,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riF-LP-s5J">
-                                                            <rect key="frame" x="155" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="158" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_window"/>
                                                             <connections>
@@ -3103,7 +3103,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jt-p6-h1p">
-                                                            <rect key="frame" x="207" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="215" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_wechat"/>
                                                         </button>
@@ -3166,7 +3166,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="zbV-YZ-QV5">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="3vM-hS-qX0"/>
                                                         <constraint firstAttribute="height" constant="100" id="99W-SS-QxK"/>
@@ -3174,7 +3174,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zbV-YZ-QV5" firstAttribute="top" secondItem="u0c-gF-VUT" secondAttribute="topMargin" id="C9g-HE-z64"/>
+                                                <constraint firstItem="zbV-YZ-QV5" firstAttribute="top" secondItem="u0c-gF-VUT" secondAttribute="topMargin" constant="40" id="C9g-HE-z64"/>
                                                 <constraint firstItem="zbV-YZ-QV5" firstAttribute="trailing" secondItem="u0c-gF-VUT" secondAttribute="trailingMargin" id="YzE-Xm-otf"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -3377,7 +3377,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-Ui-F6T">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="5Lu-YQ-DEt"/>
                                                         <constraint firstAttribute="height" constant="100" id="tLt-h0-9q3"/>
@@ -3420,7 +3420,7 @@
                                                 <constraint firstItem="QaL-Ui-F6T" firstAttribute="trailing" secondItem="Xz2-Ao-Zl8" secondAttribute="trailingMargin" id="cUX-v2-BMe"/>
                                                 <constraint firstItem="WmP-IG-sqk" firstAttribute="leading" secondItem="Xz2-Ao-Zl8" secondAttribute="leading" constant="16" id="jBR-dV-Ois"/>
                                                 <constraint firstAttribute="trailing" secondItem="H6Y-wq-Khp" secondAttribute="trailing" constant="16" id="kHg-CX-3Tl"/>
-                                                <constraint firstItem="QaL-Ui-F6T" firstAttribute="top" secondItem="Xz2-Ao-Zl8" secondAttribute="topMargin" id="mfa-Ap-EUN"/>
+                                                <constraint firstItem="QaL-Ui-F6T" firstAttribute="top" secondItem="Xz2-Ao-Zl8" secondAttribute="topMargin" constant="40" id="mfa-Ap-EUN"/>
                                                 <constraint firstItem="2Nu-mi-MP0" firstAttribute="leading" secondItem="Xz2-Ao-Zl8" secondAttribute="leading" constant="16" id="pN9-id-qM8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -3578,7 +3578,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="OCw-tw-BYm">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Bcx-ab-uQS"/>
                                                         <constraint firstAttribute="width" constant="144" id="R2n-8P-6XJ"/>
@@ -3605,7 +3605,7 @@
                                                 <constraint firstItem="HN6-Xv-THB" firstAttribute="top" secondItem="KhK-3Q-9Kh" secondAttribute="bottom" constant="8" id="1w8-aX-yKI"/>
                                                 <constraint firstItem="KhK-3Q-9Kh" firstAttribute="leading" secondItem="Fbk-Yw-WJG" secondAttribute="leading" constant="16" id="3nH-ZY-MW3"/>
                                                 <constraint firstAttribute="bottom" secondItem="HN6-Xv-THB" secondAttribute="bottom" constant="8" id="5kk-iU-f4w"/>
-                                                <constraint firstItem="OCw-tw-BYm" firstAttribute="top" secondItem="Fbk-Yw-WJG" secondAttribute="topMargin" id="NGq-2R-Bmg"/>
+                                                <constraint firstItem="OCw-tw-BYm" firstAttribute="top" secondItem="Fbk-Yw-WJG" secondAttribute="topMargin" constant="40" id="NGq-2R-Bmg"/>
                                                 <constraint firstItem="HN6-Xv-THB" firstAttribute="leading" secondItem="Fbk-Yw-WJG" secondAttribute="leading" constant="16" id="O1S-rg-HM0"/>
                                                 <constraint firstItem="OCw-tw-BYm" firstAttribute="trailing" secondItem="Fbk-Yw-WJG" secondAttribute="trailingMargin" id="fVa-Ra-tKN"/>
                                                 <constraint firstAttribute="trailing" secondItem="KhK-3Q-9Kh" secondAttribute="trailing" constant="16" id="ggm-Po-F5d"/>
@@ -3811,7 +3811,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="u4I-9F-F0F">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="SIk-lp-qr6"/>
                                                         <constraint firstAttribute="height" constant="100" id="rDg-tg-fat"/>
@@ -3833,7 +3833,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Qtx-v5-5hh" secondAttribute="trailing" constant="16" id="Imn-bA-1il"/>
                                                 <constraint firstAttribute="bottom" secondItem="Qtx-v5-5hh" secondAttribute="bottom" constant="8" id="O81-WS-ZtW"/>
                                                 <constraint firstItem="u4I-9F-F0F" firstAttribute="trailing" secondItem="4h2-pf-dGb" secondAttribute="trailingMargin" id="YNc-c7-b9g"/>
-                                                <constraint firstItem="u4I-9F-F0F" firstAttribute="top" secondItem="4h2-pf-dGb" secondAttribute="topMargin" id="bBs-5i-aGe"/>
+                                                <constraint firstItem="u4I-9F-F0F" firstAttribute="top" secondItem="4h2-pf-dGb" secondAttribute="topMargin" constant="40" id="bBs-5i-aGe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4045,7 +4045,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-ma-r3s">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="d7F-Uo-79g"/>
                                                         <constraint firstAttribute="height" constant="100" id="rCm-qk-zRS"/>
@@ -4085,7 +4085,7 @@
                                                 <constraint firstItem="N63-cx-mi8" firstAttribute="trailing" secondItem="wjY-Gb-Zb7" secondAttribute="trailingMargin" id="Ke2-vW-b3f"/>
                                                 <constraint firstItem="idW-Wr-C47" firstAttribute="leading" secondItem="wjY-Gb-Zb7" secondAttribute="leading" constant="16" id="Q70-3j-PVO"/>
                                                 <constraint firstItem="L1J-ma-r3s" firstAttribute="trailing" secondItem="wjY-Gb-Zb7" secondAttribute="trailingMargin" id="Txd-So-H3d"/>
-                                                <constraint firstItem="L1J-ma-r3s" firstAttribute="top" secondItem="wjY-Gb-Zb7" secondAttribute="topMargin" id="Ugo-05-hlZ"/>
+                                                <constraint firstItem="L1J-ma-r3s" firstAttribute="top" secondItem="wjY-Gb-Zb7" secondAttribute="topMargin" constant="40" id="Ugo-05-hlZ"/>
                                                 <constraint firstItem="idW-Wr-C47" firstAttribute="top" secondItem="N63-cx-mi8" secondAttribute="bottom" constant="8" id="aQ5-Xe-jbc"/>
                                                 <constraint firstItem="N63-cx-mi8" firstAttribute="leading" secondItem="wjY-Gb-Zb7" secondAttribute="leadingMargin" id="d7I-xM-Ggs"/>
                                                 <constraint firstAttribute="bottom" secondItem="idW-Wr-C47" secondAttribute="bottom" constant="8" id="k1Z-16-ICd"/>
@@ -4249,7 +4249,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="BX2-92-bw7">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="9GU-eV-NaQ"/>
                                                         <constraint firstAttribute="height" constant="100" id="iF1-GZ-g8O"/>
@@ -4276,7 +4276,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="zWl-Gh-Mqj" secondAttribute="bottom" constant="8" id="ESA-zC-8Fx"/>
                                                 <constraint firstAttribute="trailing" secondItem="zWl-Gh-Mqj" secondAttribute="trailing" constant="16" id="FPg-ao-Ksn"/>
                                                 <constraint firstItem="Bc2-oH-kHo" firstAttribute="leading" secondItem="mTA-u0-jGV" secondAttribute="leading" constant="16" id="QDc-4j-x8y"/>
-                                                <constraint firstItem="BX2-92-bw7" firstAttribute="top" secondItem="mTA-u0-jGV" secondAttribute="topMargin" id="R8k-JL-42a"/>
+                                                <constraint firstItem="BX2-92-bw7" firstAttribute="top" secondItem="mTA-u0-jGV" secondAttribute="topMargin" constant="40" id="R8k-JL-42a"/>
                                                 <constraint firstAttribute="trailing" secondItem="Bc2-oH-kHo" secondAttribute="trailing" constant="16" id="atK-SC-let"/>
                                                 <constraint firstItem="zWl-Gh-Mqj" firstAttribute="top" secondItem="Bc2-oH-kHo" secondAttribute="bottom" constant="8" id="vWl-M7-hg0"/>
                                                 <constraint firstItem="zWl-Gh-Mqj" firstAttribute="leading" secondItem="mTA-u0-jGV" secondAttribute="leading" constant="16" id="wFe-JP-jwY"/>
@@ -4659,7 +4659,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="yRl-jg-hzV">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="7dX-XR-U6Q"/>
                                                         <constraint firstAttribute="width" constant="144" id="EPo-OZ-gxl"/>
@@ -4688,7 +4688,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="rQR-iw-JaG" secondAttribute="trailing" constant="16" id="8d7-sp-eVa"/>
                                                 <constraint firstItem="0cF-1u-qCn" firstAttribute="leading" secondItem="dgW-jm-X5Y" secondAttribute="leading" constant="16" id="LpD-Lr-Rop"/>
                                                 <constraint firstItem="0cF-1u-qCn" firstAttribute="top" secondItem="rQR-iw-JaG" secondAttribute="bottom" constant="8" id="Yo0-wy-8Sc"/>
-                                                <constraint firstItem="yRl-jg-hzV" firstAttribute="top" secondItem="dgW-jm-X5Y" secondAttribute="topMargin" id="ccX-Ms-qPR"/>
+                                                <constraint firstItem="yRl-jg-hzV" firstAttribute="top" secondItem="dgW-jm-X5Y" secondAttribute="topMargin" constant="40" id="ccX-Ms-qPR"/>
                                                 <constraint firstAttribute="trailing" secondItem="0cF-1u-qCn" secondAttribute="trailing" constant="16" id="htH-3b-GrY"/>
                                                 <constraint firstItem="yRl-jg-hzV" firstAttribute="trailing" secondItem="dgW-jm-X5Y" secondAttribute="trailingMargin" id="p4n-Kj-mml"/>
                                             </constraints>
@@ -4905,7 +4905,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="79l-jn-o6e">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="8qN-CV-UED"/>
                                                         <constraint firstAttribute="height" constant="100" id="9Lv-dJ-il7"/>
@@ -4929,7 +4929,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="79l-jn-o6e" firstAttribute="top" secondItem="ghB-s4-cnq" secondAttribute="topMargin" id="9GJ-hU-O5Z"/>
+                                                <constraint firstItem="79l-jn-o6e" firstAttribute="top" secondItem="ghB-s4-cnq" secondAttribute="topMargin" constant="40" id="9GJ-hU-O5Z"/>
                                                 <constraint firstItem="ntE-LC-gRd" firstAttribute="leading" secondItem="ghB-s4-cnq" secondAttribute="leading" constant="16" id="A8e-qp-V8L"/>
                                                 <constraint firstAttribute="bottom" secondItem="ntE-LC-gRd" secondAttribute="bottom" constant="8" id="DAt-64-BoF"/>
                                                 <constraint firstAttribute="trailing" secondItem="HHe-g4-1MT" secondAttribute="trailing" constant="16" id="J6R-NA-esN"/>
@@ -5184,7 +5184,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="HL8-rK-oJU">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="T8Q-Io-RR5"/>
                                                         <constraint firstAttribute="width" constant="144" id="ast-2q-a4V"/>
@@ -5212,7 +5212,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Qhg-DF-OfK" secondAttribute="bottom" constant="8" id="9ai-Ga-iOj"/>
                                                 <constraint firstItem="HL8-rK-oJU" firstAttribute="trailing" secondItem="1lJ-rw-WeE" secondAttribute="trailingMargin" id="HZa-xi-rRR"/>
                                                 <constraint firstAttribute="trailing" secondItem="GKq-91-7Lg" secondAttribute="trailing" constant="16" id="TfH-tX-hdn"/>
-                                                <constraint firstItem="HL8-rK-oJU" firstAttribute="top" secondItem="1lJ-rw-WeE" secondAttribute="topMargin" id="XcE-Bo-PnW"/>
+                                                <constraint firstItem="HL8-rK-oJU" firstAttribute="top" secondItem="1lJ-rw-WeE" secondAttribute="topMargin" constant="40" id="XcE-Bo-PnW"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qhg-DF-OfK" secondAttribute="trailing" constant="16" id="ecN-SU-XvG"/>
                                                 <constraint firstItem="Qhg-DF-OfK" firstAttribute="top" secondItem="GKq-91-7Lg" secondAttribute="bottom" constant="8" id="fOE-mX-sJ1"/>
                                                 <constraint firstItem="GKq-91-7Lg" firstAttribute="leading" secondItem="1lJ-rw-WeE" secondAttribute="leading" constant="16" id="zbZ-Ey-hsV"/>
@@ -7673,7 +7673,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="NmS-hv-M7X">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="doJ-VJ-8sP"/>
                                                         <constraint firstAttribute="width" constant="144" id="zsL-Lz-RGT"/>
@@ -7682,7 +7682,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NmS-hv-M7X" firstAttribute="trailing" secondItem="kcx-pc-cS7" secondAttribute="trailingMargin" id="ICP-cw-N2h"/>
-                                                <constraint firstItem="NmS-hv-M7X" firstAttribute="top" secondItem="kcx-pc-cS7" secondAttribute="topMargin" id="LGk-Ww-PeB"/>
+                                                <constraint firstItem="NmS-hv-M7X" firstAttribute="top" secondItem="kcx-pc-cS7" secondAttribute="topMargin" constant="40" id="LGk-Ww-PeB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -8027,7 +8027,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="GKL-ty-Zrx">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="ANn-ES-hyx"/>
                                                         <constraint firstAttribute="width" constant="144" id="t1G-WJ-tPI"/>
@@ -8035,7 +8035,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="GKL-ty-Zrx" firstAttribute="top" secondItem="nDj-eQ-aHk" secondAttribute="topMargin" id="mBx-fs-Jwb"/>
+                                                <constraint firstItem="GKL-ty-Zrx" firstAttribute="top" secondItem="nDj-eQ-aHk" secondAttribute="topMargin" constant="40" id="mBx-fs-Jwb"/>
                                                 <constraint firstItem="GKL-ty-Zrx" firstAttribute="trailing" secondItem="nDj-eQ-aHk" secondAttribute="trailingMargin" id="wVf-77-gnI"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -8691,19 +8691,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlr-sz-5Ia">
-                                                    <rect key="frame" x="16" y="130" width="343" height="2"/>
+                                                    <rect key="frame" x="16" y="102" width="343" height="2"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="kNw-12-mU5"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xar-OL-uRq">
-                                                    <rect key="frame" x="16" y="140" width="72" height="72"/>
+                                                    <rect key="frame" x="16" y="112" width="100" height="100"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="UzF-9u-s9Y"/>
-                                                        <constraint firstAttribute="width" constant="72" id="y8J-tH-bb4"/>
+                                                        <constraint firstAttribute="height" constant="100" id="UzF-9u-s9Y"/>
+                                                        <constraint firstAttribute="width" constant="100" id="y8J-tH-bb4"/>
                                                     </constraints>
-                                                    <state key="normal" image="emergency_img_defult"/>
+                                                    <state key="normal" backgroundImage="emergency_img_defult"/>
                                                     <connections>
                                                         <action selector="avatarAction:" destination="U48-wd-Kwf" eventType="touchUpInside" id="DJR-Je-lFD"/>
                                                     </connections>
@@ -10217,7 +10217,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_angllife_splash" translatesAutoresizingMaskIntoConstraints="NO" id="wOn-Xf-I5a">
-                                                    <rect key="frame" x="215" y="11" width="144" height="100"/>
+                                                    <rect key="frame" x="215" y="51" width="144" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="KI0-ls-bFQ"/>
                                                         <constraint firstAttribute="height" constant="100" id="vys-KO-Fyy"/>
@@ -10232,7 +10232,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wOn-Xf-I5a" firstAttribute="trailing" secondItem="Huc-uo-pZO" secondAttribute="trailingMargin" id="5WS-RZ-tOV"/>
-                                                <constraint firstItem="wOn-Xf-I5a" firstAttribute="top" secondItem="Huc-uo-pZO" secondAttribute="topMargin" id="8eJ-R6-ta6"/>
+                                                <constraint firstItem="wOn-Xf-I5a" firstAttribute="top" secondItem="Huc-uo-pZO" secondAttribute="topMargin" constant="40" id="8eJ-R6-ta6"/>
                                                 <constraint firstAttribute="bottom" secondItem="Tnt-iV-36V" secondAttribute="bottom" id="SUl-PN-cGn"/>
                                                 <constraint firstItem="Tnt-iV-36V" firstAttribute="centerX" secondItem="Huc-uo-pZO" secondAttribute="centerX" id="vpv-Wr-4bC"/>
                                             </constraints>
@@ -10814,6 +10814,6 @@
         <segue reference="8JO-9D-Buk"/>
         <segue reference="Skb-T8-JuP"/>
         <segue reference="QYa-NC-TLg"/>
-        <segue reference="rwc-5d-HpK"/>
+        <segue reference="Nfx-nM-YZc"/>
     </inferredMetricsTieBreakers>
 </document>
