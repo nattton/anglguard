@@ -794,7 +794,7 @@
         <!--ProfileQR Code View Controller-->
         <scene sceneID="Mxe-Rb-VZr">
             <objects>
-                <viewController id="ux2-9L-MVB" customClass="ProfileQRCodeViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCode" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ux2-9L-MVB" customClass="ProfileQRCodeViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="cuB-PL-CbJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1350,30 +1350,30 @@
                                                     <rect key="frame" x="0.0" y="34" width="375" height="105"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-qF-o4p">
-                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-dF-5Te">
-                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="VoN-yW-nmY"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-Di-pqb">
-                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-dh-10w">
-                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="O2X-mL-6os"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-C3-NHM">
-                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8L-yf-LDc">
-                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="f2m-qf-Itw"/>
@@ -2181,7 +2181,7 @@
             </objects>
             <point key="canvasLocation" x="1919" y="3842"/>
         </scene>
-        <!--Family-->
+        <!--Friends View Controller-->
         <scene sceneID="88m-dw-HNs">
             <objects>
                 <viewController id="8cT-rj-Rkj" customClass="FriendsViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -2271,7 +2271,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kNS-tF-2vZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Family" id="fs4-qB-wtt">
+                    <navigationItem key="navigationItem" id="fs4-qB-wtt">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title=" " id="9at-FS-Dm4"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="4p0-60-pLb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rEN-DP-Jof">
@@ -2280,6 +2281,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="8cT-rj-Rkj" eventType="touchUpInside" id="fax-Jv-vqt"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="Sk8-6m-4wX">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="6jq-x3-jJ4">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="Z8Y-gY-9y4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Csj-PS-ior">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="8cT-rj-Rkj" eventType="touchUpInside" id="b0G-Zn-zSG"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2311,7 +2333,7 @@
             </objects>
             <point key="canvasLocation" x="1919" y="4621"/>
         </scene>
-        <!--Notification-->
+        <!--Notification View Controller-->
         <scene sceneID="kmI-tS-tRO">
             <objects>
                 <viewController id="Yqa-md-Vyh" customClass="NotificationViewController" customModule="ANGLGuard" sceneMemberID="viewController">
@@ -2492,7 +2514,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7DG-vx-BEr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Notification" id="tvQ-9O-67Y">
+                    <navigationItem key="navigationItem" id="tvQ-9O-67Y">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="AOQ-OJ-UHu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kf5-Ew-6IT">
                                 <rect key="frame" x="16" y="11" width="76" height="22"/>
@@ -2500,6 +2523,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="Yqa-md-Vyh" eventType="touchUpInside" id="za3-35-pne"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="tGV-wA-Qma">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-e2-WCI">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="o2m-Cj-8bc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nkJ-Ui-FqX">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="Yqa-md-Vyh" eventType="touchUpInside" id="Jtk-BN-uIG"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2513,7 +2557,7 @@
             </objects>
             <point key="canvasLocation" x="2844" y="5354.5727136431788"/>
         </scene>
-        <!--Family-->
+        <!--Add Friend View Controller-->
         <scene sceneID="aez-0e-nNi">
             <objects>
                 <tableViewController id="pBP-K3-Ozw" customClass="AddFriendViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -2656,7 +2700,30 @@
                             <outlet property="delegate" destination="pBP-K3-Ozw" id="MJk-RC-N6h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Family" id="tc4-a6-cOg"/>
+                    <navigationItem key="navigationItem" id="tc4-a6-cOg">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="jcw-Bc-Q7A">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="x2E-gN-ZEf">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="Nh3-f2-c5D">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PWi-ji-UAZ">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="pBP-K3-Ozw" eventType="touchUpInside" id="3Ni-lW-9rE"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="avatar" destination="kXV-EQ-P0s" id="dBS-Rj-QuI"/>
                         <outlet property="bt_add" destination="vY6-jK-jhm" id="eFQ-qg-BMt"/>
@@ -2687,7 +2754,7 @@
             </objects>
             <point key="canvasLocation" x="1919" y="5355"/>
         </scene>
-        <!--Language-->
+        <!--Language View Controller-->
         <scene sceneID="X5b-v2-pqS">
             <objects>
                 <viewController id="TNM-5O-PVC" customClass="LanguageViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -2732,7 +2799,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yhu-72-j86"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Language" id="K1f-EK-oMv">
+                    <navigationItem key="navigationItem" id="K1f-EK-oMv">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="BKQ-JR-rB7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c5m-Mp-UI0">
                                 <rect key="frame" x="16" y="11" width="76" height="22"/>
@@ -2740,6 +2808,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="TNM-5O-PVC" eventType="touchUpInside" id="f1S-ha-eFf"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="9hR-rc-9lK">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="A72-n5-ItQ">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="k7c-XD-qGH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9hg-Z6-HL0">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="TNM-5O-PVC" eventType="touchUpInside" id="M3f-Nc-g0d"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2770,7 +2859,7 @@
             </objects>
             <point key="canvasLocation" x="1918" y="7701"/>
         </scene>
-        <!--Term & Condition-->
+        <!--Term And Condition View Controller-->
         <scene sceneID="y2F-tm-Yl4">
             <objects>
                 <viewController id="zP5-zl-qlN" customClass="TermAndConditionViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -2796,7 +2885,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EHg-kW-Vby"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Term &amp; Condition" id="HSx-Wb-0xx">
+                    <navigationItem key="navigationItem" id="HSx-Wb-0xx">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="YIV-Mv-Zki">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cOv-oj-s1H">
                                 <rect key="frame" x="16" y="11" width="76" height="22"/>
@@ -2804,6 +2894,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="zP5-zl-qlN" eventType="touchUpInside" id="Ivl-Nz-rif"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="RET-Uz-ZgC">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="XeC-Wx-oyU">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="Jju-DG-7jr">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dAd-Ag-wBl">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="zP5-zl-qlN" eventType="touchUpInside" id="HQC-6P-90U"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -4068,12 +4179,12 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idW-Wr-C47">
-                                                    <rect key="frame" x="16" y="346" width="100" height="100"/>
+                                                    <rect key="frame" x="16" y="346" width="128" height="100"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="gx8-PK-AQ5"/>
+                                                        <constraint firstAttribute="width" constant="128" id="gx8-PK-AQ5"/>
                                                         <constraint firstAttribute="height" constant="100" id="isF-fx-NeT"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="emergency_img_defult"/>
+                                                    <state key="normal" backgroundImage="im_passport"/>
                                                     <connections>
                                                         <action selector="avatarAction:" destination="drD-kp-gal" eventType="touchUpInside" id="jrV-Qq-uX3"/>
                                                     </connections>
@@ -8132,7 +8243,7 @@
             </objects>
             <point key="canvasLocation" x="-4548" y="3063"/>
         </scene>
-        <!--Personal Profile-->
+        <!--Personal Profile View Controller-->
         <scene sceneID="Z5H-3A-DSg">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="aPA-Wg-A2S" customClass="PersonalProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -8402,7 +8513,8 @@
                             <outlet property="delegate" destination="aPA-Wg-A2S" id="0yi-vh-h0t"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Personal Profile" id="7qU-7V-sPs">
+                    <navigationItem key="navigationItem" id="7qU-7V-sPs">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="qTl-y4-M0l">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bln-xI-oDr">
                                 <rect key="frame" x="16" y="11" width="76" height="22"/>
@@ -8410,6 +8522,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="aPA-Wg-A2S" eventType="touchUpInside" id="uIh-Kw-Apz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="P3G-1f-E3a">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-58-8gY">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="Sqg-eG-6kQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3GO-Ov-UpT">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="aPA-Wg-A2S" eventType="touchUpInside" id="Gzx-FB-51m"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -8450,7 +8583,7 @@
             </objects>
             <point key="canvasLocation" x="3748.8000000000002" y="3841.9790104947529"/>
         </scene>
-        <!--Current Thai Telephone Number-->
+        <!--Current Thai Phone View Controller-->
         <scene sceneID="Hcf-Y0-0Dq">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="raH-dL-yW5" customClass="CurrentThaiPhoneViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -8628,7 +8761,8 @@
                             <outlet property="delegate" destination="raH-dL-yW5" id="2xr-oZ-qDQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Current Thai Telephone Number" id="d0h-xS-9wI">
+                    <navigationItem key="navigationItem" id="d0h-xS-9wI">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="CzN-bQ-nwP">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ga8-eu-a0K">
                                 <rect key="frame" x="16" y="11" width="52" height="22"/>
@@ -8636,6 +8770,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="raH-dL-yW5" eventType="touchUpInside" id="qab-ca-czz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="tiV-tJ-ynB">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-YV-yQ8">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="3r4-nm-Q0M">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FbV-VB-LCa">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="raH-dL-yW5" eventType="touchUpInside" id="b42-h0-EdJ"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -8672,7 +8827,7 @@
             </objects>
             <point key="canvasLocation" x="5542" y="3842"/>
         </scene>
-        <!--Passport Profile-->
+        <!--Passport Profile View Controller-->
         <scene sceneID="30r-v3-h8X">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="U48-wd-Kwf" customClass="PassportProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -8698,23 +8853,35 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xar-OL-uRq">
-                                                    <rect key="frame" x="16" y="112" width="100" height="100"/>
+                                                    <rect key="frame" x="16" y="112" width="128" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="UzF-9u-s9Y"/>
-                                                        <constraint firstAttribute="width" constant="100" id="y8J-tH-bb4"/>
+                                                        <constraint firstAttribute="width" constant="128" id="y8J-tH-bb4"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="emergency_img_defult"/>
+                                                    <state key="normal" backgroundImage="im_passport"/>
                                                     <connections>
                                                         <action selector="avatarAction:" destination="U48-wd-Kwf" eventType="touchUpInside" id="DJR-Je-lFD"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passport" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F46-0b-oYQ">
+                                                    <rect key="frame" x="16" y="66" width="343" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="jSM-U4-mlm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xar-OL-uRq" firstAttribute="leading" secondItem="Io5-xQ-qRu" secondAttribute="leading" constant="16" id="5BN-0R-Our"/>
                                                 <constraint firstItem="Qlr-sz-5Ia" firstAttribute="trailing" secondItem="Io5-xQ-qRu" secondAttribute="trailingMargin" id="7fq-58-cVJ"/>
                                                 <constraint firstItem="Qlr-sz-5Ia" firstAttribute="leading" secondItem="Io5-xQ-qRu" secondAttribute="leadingMargin" id="Cp2-o8-HTc"/>
                                                 <constraint firstAttribute="bottom" secondItem="xar-OL-uRq" secondAttribute="bottom" constant="8" id="ega-hQ-QFO"/>
+                                                <constraint firstAttribute="trailing" secondItem="F46-0b-oYQ" secondAttribute="trailing" constant="16" id="hg8-Ad-HZy"/>
+                                                <constraint firstItem="F46-0b-oYQ" firstAttribute="leading" secondItem="Io5-xQ-qRu" secondAttribute="leading" constant="16" id="kuu-uB-Cgm"/>
                                                 <constraint firstItem="xar-OL-uRq" firstAttribute="top" secondItem="Qlr-sz-5Ia" secondAttribute="bottom" constant="8" id="y67-SJ-Bum"/>
+                                                <constraint firstItem="Qlr-sz-5Ia" firstAttribute="top" secondItem="F46-0b-oYQ" secondAttribute="bottom" constant="8" id="zIu-y7-8Gb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -8836,7 +9003,8 @@
                             <outlet property="delegate" destination="U48-wd-Kwf" id="mp9-8b-62h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Passport Profile" id="60e-gd-gaf">
+                    <navigationItem key="navigationItem" id="60e-gd-gaf">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="YIR-2I-SRn">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FqT-hC-zJS">
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
@@ -8847,10 +9015,32 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="7wN-LY-h7I">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="8VS-vc-jvk">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="gID-mt-eJr">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S8u-fq-BtB">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="U48-wd-Kwf" eventType="touchUpInside" id="eX4-S2-LbU"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bt_avatar" destination="xar-OL-uRq" id="kpk-3U-GwY"/>
                         <outlet property="bt_update" destination="DeO-bV-dDR" id="Ezz-Mm-89J"/>
+                        <outlet property="lb_passport" destination="F46-0b-oYQ" id="91Z-zy-7Hj"/>
                         <outlet property="tf_country" destination="3q4-Jl-i0Y" id="WhF-zm-gdb"/>
                         <outlet property="tf_expire_date" destination="e2L-HL-734" id="Vzb-Fc-N6G"/>
                         <outlet property="tf_passport" destination="NZu-Nl-TGu" id="knZ-Z2-KWL"/>
@@ -8878,7 +9068,7 @@
             </objects>
             <point key="canvasLocation" x="7388" y="3842"/>
         </scene>
-        <!--Medical Profile-->
+        <!--Medical Profile View Controller-->
         <scene sceneID="TLB-iP-jwq">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="F0v-Mx-o9I" customClass="MedicalProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -9207,7 +9397,8 @@
                             <outlet property="delegate" destination="F0v-Mx-o9I" id="jQF-jt-TTM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Medical Profile" id="gwZ-iQ-0gb">
+                    <navigationItem key="navigationItem" id="gwZ-iQ-0gb">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="wWL-6B-2ua">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="shC-c3-jnC">
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
@@ -9215,6 +9406,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="F0v-Mx-o9I" eventType="touchUpInside" id="s9Q-DT-TGo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="xgF-GY-f34">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="Stl-Zl-qQc">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="fO9-1Q-hcG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="u41-IE-FCp">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="F0v-Mx-o9I" eventType="touchUpInside" id="9Fh-M1-qdY"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -9252,7 +9464,7 @@
             </objects>
             <point key="canvasLocation" x="9250" y="3842"/>
         </scene>
-        <!--Emergency Contact Profile-->
+        <!--Emergency Contact Profile View Controller-->
         <scene sceneID="8ug-yY-O9d">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="22C-sc-s6m" customClass="EmergencyContactProfileViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -9456,7 +9668,8 @@
                             <outlet property="delegate" destination="22C-sc-s6m" id="OFZ-hF-arM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Emergency Contact Profile" id="Fmr-j5-PtH">
+                    <navigationItem key="navigationItem" id="Fmr-j5-PtH">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="piU-it-gp7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4SP-Zo-JGV">
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
@@ -9464,6 +9677,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="22C-sc-s6m" eventType="touchUpInside" id="Qyg-Nz-NqJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="dbP-O9-0X7">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="1TX-29-loe">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="L2X-Am-Nal">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dCq-HV-3R0">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="22C-sc-s6m" eventType="touchUpInside" id="tPE-KG-vk3"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -9500,7 +9734,7 @@
             </objects>
             <point key="canvasLocation" x="11073" y="3842"/>
         </scene>
-        <!--Trip Plan-->
+        <!--Trip Plan View Controller-->
         <scene sceneID="7ZQ-In-eEj">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="xcH-x2-Qdd" customClass="TripPlanViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -9736,7 +9970,8 @@
                             <outlet property="delegate" destination="xcH-x2-Qdd" id="GBg-uC-OPO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Trip Plan" id="kwM-gD-aMl">
+                    <navigationItem key="navigationItem" id="kwM-gD-aMl">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="3KU-hG-yER">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y0z-An-wph">
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
@@ -9744,6 +9979,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="xcH-x2-Qdd" eventType="touchUpInside" id="ZPo-hP-LC4"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="PZS-XJ-tEd">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="nWl-Uh-Xxx">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="kO6-kh-aOc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="meM-v7-rUi">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="xcH-x2-Qdd" eventType="touchUpInside" id="J50-xQ-WvG"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -9781,7 +10037,7 @@
             </objects>
             <point key="canvasLocation" x="12879" y="3842"/>
         </scene>
-        <!--Insurance-->
+        <!--Insurance View Controller-->
         <scene sceneID="Hcx-rq-8Ld">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHW-v6-IFc" customClass="InsuranceViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -9966,7 +10222,8 @@
                             <outlet property="delegate" destination="OHW-v6-IFc" id="sJl-tp-Obz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Insurance" id="dVA-PN-Sfw">
+                    <navigationItem key="navigationItem" id="dVA-PN-Sfw">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="1pU-Sc-TnV">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mwU-dh-Sgc">
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
@@ -9974,6 +10231,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="OHW-v6-IFc" eventType="touchUpInside" id="z51-Cu-0T7"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="bX5-RI-MdP">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="bme-De-6WX">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="eKV-Re-ZeD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q7Z-fD-QJh">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="OHW-v6-IFc" eventType="touchUpInside" id="Kb5-r1-Yce"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -10009,7 +10287,7 @@
             </objects>
             <point key="canvasLocation" x="14750" y="3842"/>
         </scene>
-        <!--Change Password-->
+        <!--Change Password View Controller-->
         <scene sceneID="2xf-Px-Uqz">
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="doU-9D-4bR" customClass="ChangePasswordViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -10157,7 +10435,8 @@
                             <outlet property="delegate" destination="doU-9D-4bR" id="GpW-u2-CDF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Change Password" id="aAT-7F-Tdq">
+                    <navigationItem key="navigationItem" id="aAT-7F-Tdq">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="fSe-YH-ckT">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pvd-GO-rGW">
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
@@ -10165,6 +10444,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="doU-9D-4bR" eventType="touchUpInside" id="zZm-ig-gL4"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="2EU-FV-lxX">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="zc2-0B-2zk">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="2kY-yo-9fM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kIK-gX-CVI">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="doU-9D-4bR" eventType="touchUpInside" id="5YQ-nb-WFq"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -10198,7 +10498,7 @@
             </objects>
             <point key="canvasLocation" x="16606" y="3842"/>
         </scene>
-        <!--Forgot Password-->
+        <!--Forget Password View Controller-->
         <scene sceneID="LxV-ub-Gr5">
             <objects>
                 <tableViewController id="vfy-YE-8KC" customClass="ForgetPasswordViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -10318,7 +10618,8 @@
                             <outlet property="delegate" destination="vfy-YE-8KC" id="p3m-hB-kWT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Forgot Password" id="KYa-2Q-QGb">
+                    <navigationItem key="navigationItem" id="KYa-2Q-QGb">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="OG1-us-AMh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HHX-nH-tNb">
                                 <rect key="frame" x="16" y="11" width="72" height="22"/>
@@ -10326,6 +10627,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="vfy-YE-8KC" eventType="touchUpInside" id="CNc-Wf-COm"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="POc-yE-7Av">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="VZT-uC-mu8">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="yqD-iW-DyP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uA4-gl-biM">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="vfy-YE-8KC" eventType="touchUpInside" id="hi2-0J-a0C"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -10394,7 +10716,7 @@
             </objects>
             <point key="canvasLocation" x="-3642" y="3063"/>
         </scene>
-        <!--Privilege-->
+        <!--Privilege View Controller-->
         <scene sceneID="FPd-An-TC1">
             <objects>
                 <viewController id="4Sn-qg-Pmh" customClass="PrivilegeViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -10480,7 +10802,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fi7-rL-XXD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Privilege" id="5nb-S4-pc4">
+                    <navigationItem key="navigationItem" id="5nb-S4-pc4">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title=" " id="Q2S-aO-Ngy"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="vMm-t8-DMo">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zAw-aP-IMd">
@@ -10489,6 +10812,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="4Sn-qg-Pmh" eventType="touchUpInside" id="Gs8-pG-yoR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="Z9K-op-GFe">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="XRi-wP-gBW">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="oUg-W0-p0Y">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FrZ-ug-mFh">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="4Sn-qg-Pmh" eventType="touchUpInside" id="AKI-Au-wC7"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -10520,7 +10864,7 @@
             </objects>
             <point key="canvasLocation" x="1913" y="6147"/>
         </scene>
-        <!--FAQ-->
+        <!--View Controller-->
         <scene sceneID="42s-iE-kiE">
             <objects>
                 <viewController id="bnt-o7-PBv" customClass="FAQViewController" customModule="ANGLGuard" customModuleProvider="target" sceneMemberID="viewController">
@@ -10546,7 +10890,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ETv-kM-Q16"/>
                     </view>
-                    <navigationItem key="navigationItem" title="FAQ" id="lZp-Th-3HG">
+                    <navigationItem key="navigationItem" id="lZp-Th-3HG">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="g4s-m0-wQU">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oVS-A7-tBs">
                                 <rect key="frame" x="16" y="11" width="76" height="22"/>
@@ -10554,6 +10899,27 @@
                                 <state key="normal" image="ic_menu"/>
                                 <connections>
                                     <action selector="showMenu:" destination="bnt-o7-PBv" eventType="touchUpInside" id="ToC-HF-DKQ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="tyq-Ks-uZl">
+                            <rect key="frame" x="132.5" y="6" width="110" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_angllife_title" translatesAutoresizingMaskIntoConstraints="NO" id="C7j-oz-0KJ">
+                                    <rect key="frame" x="0.0" y="-3" width="110" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" id="hhq-bz-6iK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kD3-Nc-U8m">
+                                <rect key="frame" x="279" y="9" width="80" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_qrcode"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="bnt-o7-PBv" eventType="touchUpInside" id="DCz-Ij-jid"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -10801,19 +11167,20 @@
         <image name="ic_wechat" width="36" height="36"/>
         <image name="ic_window" width="36" height="36"/>
         <image name="im_avatar" width="55" height="55"/>
+        <image name="im_passport" width="192" height="150"/>
         <image name="im_plan_1" width="407" height="215"/>
         <image name="im_plan_2" width="407" height="215"/>
         <image name="im_plan_3" width="407" height="215"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QVB-hu-sxA"/>
-        <segue reference="ok4-qI-3HV"/>
-        <segue reference="69B-6J-S6Y"/>
-        <segue reference="sN7-fo-QfR"/>
-        <segue reference="b1b-tV-Lyh"/>
-        <segue reference="8JO-9D-Buk"/>
-        <segue reference="Skb-T8-JuP"/>
-        <segue reference="QYa-NC-TLg"/>
+        <segue reference="H5X-I5-z3w"/>
+        <segue reference="WNK-aW-ALk"/>
+        <segue reference="Mt3-F6-5eG"/>
+        <segue reference="cub-pU-bAr"/>
+        <segue reference="WKk-6j-Np9"/>
+        <segue reference="h31-c6-UMY"/>
+        <segue reference="lWp-hO-vcf"/>
         <segue reference="Nfx-nM-YZc"/>
     </inferredMetricsTieBreakers>
 </document>

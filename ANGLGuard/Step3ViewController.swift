@@ -198,7 +198,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
         let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
-            self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
+            self.bt_avatar.setBackgroundImage(UIImage(named: "im_passport"), for: .normal)
         })
         
         let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {

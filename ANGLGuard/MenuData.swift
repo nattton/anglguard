@@ -37,7 +37,6 @@ public var menuData: [Section] = [
          Item(name: "sub_trip_plan", identifier: "tripPlan"),
          Item(name: "sub_insurance", identifier: "insurance"),
          Item(name: "sub_change_password", identifier: "changePassword"),
-         Item(name: "login_forgot_password", identifier: "forgotPassword")
         ], collapsed: true
     ),
     Section(name: "nav_device_setting", icon: "ic_group", identifier: "group", items: [], collapsed: true),

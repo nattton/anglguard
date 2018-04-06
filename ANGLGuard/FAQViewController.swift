@@ -66,6 +66,13 @@ class FAQViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
+    @IBAction func showQRCode(_ sender: Any) {
+        let profileQRCodeView = storyboard?.instantiateViewController(withIdentifier: "QRCode")
+        profileQRCodeView?.modalTransitionStyle = .crossDissolve
+        profileQRCodeView?.modalPresentationStyle = .overCurrentContext
+        self.present(profileQRCodeView!, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

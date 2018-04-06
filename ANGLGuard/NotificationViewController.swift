@@ -187,6 +187,13 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    @IBAction func showQRCode(_ sender: Any) {
+        let profileQRCodeView = storyboard?.instantiateViewController(withIdentifier: "QRCode")
+        profileQRCodeView?.modalTransitionStyle = .crossDissolve
+        profileQRCodeView?.modalPresentationStyle = .overCurrentContext
+        self.present(profileQRCodeView!, animated: true, completion: nil)
+    }
+    
     @IBAction func showPreview(_ sender: Any) {
         let button: UIButton = sender as! UIButton
         let image = button.image(for: .normal)

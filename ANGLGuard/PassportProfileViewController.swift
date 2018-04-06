@@ -5,6 +5,7 @@ import SVProgressHUD
 
 class PassportProfileViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    @IBOutlet var lb_passport: UILabel!
     @IBOutlet var bt_avatar: UIButton!
     @IBOutlet var tf_passport: UITextField!
     @IBOutlet var tf_country: UITextField!
@@ -13,6 +14,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
     
     var datePicker: UIDatePicker?
     var isImage: Bool = false
+    var country_code: String = ""
     
     let defaults = UserDefaults.standard
     
@@ -29,10 +31,6 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         super.viewDidLoad()
         
         setText()
-        
-        bt_avatar.layer.masksToBounds = false
-        bt_avatar.layer.cornerRadius = bt_avatar.frame.size.height / 2
-        bt_avatar.clipsToBounds = true
         
         tf_passport.layer.borderColor = UIColor.red.cgColor
         tf_passport.layer.borderWidth = 1
@@ -57,14 +55,16 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
                     if let image = UIImage(contentsOfFile: imagePath) {
                         self.bt_avatar.setBackgroundImage(image, for: .normal)
                     } else {
-                        self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
+                        self.bt_avatar.setBackgroundImage(UIImage(named: "im_passport"), for: .normal)
                     }
                 }
             }
         }
         
+        country_code = Personal.sharedInstance.country_code
+        
         tf_passport.text = Personal.sharedInstance.passport_num
-        tf_country.text = Personal.sharedInstance.country_code
+        tf_country.text = countryName(code: Personal.sharedInstance.country_code)
         tf_expire_date.text = Personal.sharedInstance.passport_expire_date
         
         tf_expire_date.inputView = createDatePicker()
@@ -77,6 +77,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
     }
     
     func setText() {
+        lb_passport.text = "sub_passport".localized()
         tf_passport.placeholder = "signup_passport_number".localized()
         tf_country.placeholder = "signup_country".localized()
         tf_expire_date.placeholder = "signup_expire_date".localized()
@@ -159,8 +160,28 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         
         picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
             picker.dismiss(animated: true, completion: {
-                self.tf_country.text = code
+                self.country_code = code
+                self.tf_country.text = name
             })
+        }
+    }
+    
+    func countryName(code: String) -> String {
+//        let current = Locale(identifier: "en_US")
+//        return current.localizedString(forRegionCode: countryCode) ?? nil
+        let CallingCodes = { () -> [[String: String]] in
+            let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
+            guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }
+            return NSArray(contentsOfFile: path) as! [[String: String]]
+        }
+        
+        let countryData = CallingCodes().filter { $0["code"] == code }
+        
+        if countryData.count > 0 {
+            let countryCode: String = countryData[0]["name"] ?? ""
+            return countryCode
+        } else {
+            return code
         }
     }
     
@@ -196,7 +217,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.isImage = false
-            self.bt_avatar.setBackgroundImage(UIImage(named: "emergency_img_defult"), for: .normal)
+            self.bt_avatar.setBackgroundImage(UIImage(named: "im_passport"), for: .normal)
         })
         
         let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: {
@@ -215,7 +236,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
     
     @IBAction func updateAction(_ sender: Any) {
         let passport: String = tf_passport.text!
-        let country: String = tf_country.text!
+        let country: String = country_code
         let expire_date: String = tf_expire_date.text!
         let image = bt_avatar.backgroundImage(for: .normal)
         
@@ -304,6 +325,12 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         if let container = self.so_containerViewController {
             container.isSideViewControllerPresented = true
         }
+    }
+    @IBAction func showQRCode(_ sender: Any) {
+        let profileQRCodeView = storyboard?.instantiateViewController(withIdentifier: "QRCode")
+        profileQRCodeView?.modalTransitionStyle = .crossDissolve
+        profileQRCodeView?.modalPresentationStyle = .overCurrentContext
+        self.present(profileQRCodeView!, animated: true, completion: nil)
     }
 
     /*

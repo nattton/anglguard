@@ -42,7 +42,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        lb_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+        lb_name.text = Personal.sharedInstance.firstname
         lb_email.text = Personal.sharedInstance.email
     }
     

@@ -141,31 +141,30 @@ extension NSMutableArray {
 extension String {
     
     func MD5() -> String {
-//        let length = Int(CC_MD5_DIGEST_LENGTH)
-//        var digest = [UInt8](repeating: 0, count: length)
-//        if let d = self.data(using: String.Encoding.utf8) {
-//            d.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
-//                CC_MD5(body, CC_LONG(d.count), &digest)
-//            }
-//        }
-//        return (0..<length).reduce("") {
-//            $0 + String(format: "%02x", digest[$1])
-//        }
-        
-        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
-        if let data = self.data(using: String.Encoding.utf8) {
-//            CC_MD5(data, CC_LONG(data.count), &digest)
-            _ = data.withUnsafeBytes {bytes in
-                CC_MD5(bytes, CC_LONG(data.count), &digest)
+        let length = Int(CC_MD5_DIGEST_LENGTH)
+        var digest = [UInt8](repeating: 0, count: length)
+        if let d = self.data(using: String.Encoding.utf8) {
+            d.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
+                CC_MD5(body, CC_LONG(d.count), &digest)
             }
         }
-        
-        var digestHex = ""
-        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
-            digestHex += String(format: "%02x", digest[index])
+        return (0..<length).reduce("") {
+            $0 + String(format: "%02x", digest[$1])
         }
         
-        return digestHex
+//        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+//        if let data = self.data(using: String.Encoding.utf8) {
+//            _ = data.withUnsafeBytes {bytes in
+//                CC_MD5(bytes, CC_LONG(data.count), &digest)
+//            }
+//        }
+//
+//        var digestHex = ""
+//        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
+//            digestHex += String(format: "%02x", digest[index])
+//        }
+//
+//        return digestHex
     }
     
     var md5: String {

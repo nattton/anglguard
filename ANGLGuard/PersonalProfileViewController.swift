@@ -430,6 +430,13 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
         }
     }
     
+    @IBAction func showQRCode(_ sender: Any) {
+        let profileQRCodeView = storyboard?.instantiateViewController(withIdentifier: "QRCode")
+        profileQRCodeView?.modalTransitionStyle = .crossDissolve
+        profileQRCodeView?.modalPresentationStyle = .overCurrentContext
+        self.present(profileQRCodeView!, animated: true, completion: nil)
+    }
+    
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)

@@ -11,6 +11,8 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         setText()
+        
+        tb_language.tableFooterView = UIView(frame: .zero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +56,13 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
         if let container = self.so_containerViewController {
             container.isSideViewControllerPresented = true
         }
+    }
+    
+    @IBAction func showQRCode(_ sender: Any) {
+        let profileQRCodeView = storyboard?.instantiateViewController(withIdentifier: "QRCode")
+        profileQRCodeView?.modalTransitionStyle = .crossDissolve
+        profileQRCodeView?.modalPresentationStyle = .overCurrentContext
+        self.present(profileQRCodeView!, animated: true, completion: nil)
     }
     
     /*
