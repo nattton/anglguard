@@ -78,7 +78,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
             alert.addAction(defaultAction)
             self.present(alert, animated: true, completion: nil)
         } else {
-            Authen.sharedInstance.key = user.authentication.idToken
+            Authen.sharedInstance.key = user.userID
             Authen.sharedInstance.type = "google"
             verify(email: user.profile.email)
         }
@@ -110,14 +110,14 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
                 print(error)
             case .cancelled:
                 print("User cancelled login.")
-            case .success( _, _, let accessToken):
-                Authen.sharedInstance.key = accessToken.authenticationToken
-                Authen.sharedInstance.type = "facebook"
+            case .success( _, _, _):
                 let parameters = ["fields": "id, name, email"]
                 FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, error) -> Void in
                     if (error == nil){
                         if let data = result as? [String : AnyObject] {
-                            if let email = data["email"] as? String {
+                            if let email = data["email"] as? String, let id = data["id"] as? String {
+                                Authen.sharedInstance.key = id
+                                Authen.sharedInstance.type = "facebook"
                                 self.verify(email: email)
                             }
                         }
@@ -133,18 +133,22 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     
     @IBAction func outlookAction(_ sender: Any) {
         if self.outlookService.isLoggedIn {
-            outlookService.getUserEmail() { result in
-                if let email = result {
-                    self.verify(email: email)
+            outlookService.getUserProfile() { email, id  in
+                if let userEmail = email, let userId = id {
+                    Authen.sharedInstance.key = userId
+                    Authen.sharedInstance.type = "outlook"
+                    self.verify(email: userEmail)
                 }
                 self.outlookService.logout()
             }
         } else {
             outlookService.login(from: self) { (result) in
                 if result != nil {
-                    self.outlookService.getUserEmail() { result in
-                        if let email = result {
-                            self.verify(email: email)
+                    self.outlookService.getUserProfile() { email, id in
+                        if let userEmail = email, let userId = id {
+                            Authen.sharedInstance.key = userId
+                            Authen.sharedInstance.type = "outlook"
+                            self.verify(email: userEmail)
                         }
                         self.outlookService.logout()
                     }

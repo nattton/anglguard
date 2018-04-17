@@ -31,11 +31,11 @@ class Step1ViewController: UITableViewController, UIImagePickerControllerDelegat
         bt_avatar.clipsToBounds = true
         
         tf_firstname.layer.borderColor = UIColor.red.cgColor
-        tf_firstname.layer.borderWidth = 1
+        tf_firstname.layer.borderWidth = 2
         tf_firstname.layer.cornerRadius = 4
         
         tf_lastname.layer.borderColor = UIColor.red.cgColor
-        tf_lastname.layer.borderWidth = 1
+        tf_lastname.layer.borderWidth = 2
         tf_lastname.layer.cornerRadius = 4
         
         tf_firstname.text = Personal.sharedInstance.firstname

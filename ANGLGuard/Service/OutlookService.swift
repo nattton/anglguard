@@ -95,13 +95,14 @@ class OutlookService {
         }
     }
     
-    func getUserEmail(callback: @escaping (String?) -> Void) -> Void {
+    func getUserProfile(callback: @escaping (String?, String?) -> Void) -> Void {
         makeApiCall(api: "/v1.0/me") { result in
             if let unwrappedResult = result {
                 let email = unwrappedResult["userPrincipalName"].stringValue
-                callback(email)
+                let id = unwrappedResult["id"].stringValue
+                callback(email, id)
             } else {
-                callback(nil)
+                callback(nil, nil)
             }
         }
     }

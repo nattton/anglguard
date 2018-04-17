@@ -111,11 +111,18 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DispatchQueue.main.async {
             self.so_containerViewController?.isSideViewControllerPresented = false
             if identifier == "login" {
-                self.so_containerViewController?.topViewController = nil
-                let defaults = UserDefaults.standard
-                defaults.set("N", forKey: "login")
-                defaults.set("N", forKey: "timer")
-                UIApplication.shared.keyWindow?.rootViewController = viewController
+                let alert = UIAlertController(title: "text_sign_out".localized(), message: "", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+                    self.so_containerViewController?.topViewController = nil
+                    let defaults = UserDefaults.standard
+                    defaults.set("N", forKey: "login")
+                    defaults.set("N", forKey: "timer")
+                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                })
+                let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: nil)
+                alert.addAction(okAction)
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)
             } else {
                 self.so_containerViewController?.topViewController = viewController
             }

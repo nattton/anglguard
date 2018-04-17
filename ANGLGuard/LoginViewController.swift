@@ -58,7 +58,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             if UIScreen.main.sizeType == .iPhone4 {
                 return 174
             } else {
-                return 262
+                return 322
             }
         } else if indexPath.row == 1 || indexPath.row == 2  {
             return 48
@@ -92,10 +92,16 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         } else {
             let parameters: Parameters = [
                 "email": user.profile.email,
-                "key": user.authentication.idToken.encrypt(),
+                "key": user.userID.encrypt(),
                 "type": "google"
             ]
-            login(parameters: parameters)
+//            let alert = UIAlertController(title: user.authentication.idToken, message: "", preferredStyle: .alert)
+//            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (actioc) in
+//                self.login(parameters: parameters)
+//            })
+//            alert.addAction(defaultAction)
+//            self.present(alert, animated: true, completion: nil)
+            self.login(parameters: parameters)
         }
     }
     
@@ -118,15 +124,15 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                 print(error)
             case .cancelled:
                 print("User cancelled login.")
-            case .success( _, _, let accessToken):
+            case .success( _, _, _):
                 let parameters = ["fields": "id, name, email"]
                 FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, error) -> Void in
                     if (error == nil){
                         if let data = result as? [String : AnyObject] {
-                            if let email = data["email"] as? String {
+                            if let email = data["email"] as? String, let id = data["id"] as? String {
                                 let parameters: Parameters = [
                                     "email": email,
-                                    "key": accessToken.authenticationToken.encrypt(),
+                                    "key": id.encrypt(),
                                     "type": "facebook"
                                 ]
                                 self.login(parameters: parameters)
@@ -144,12 +150,11 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
     
     @IBAction func outlookAction(_ sender: Any) {
         if self.outlookService.isLoggedIn {
-            outlookService.getUserEmail() { result in
-                if let email = result {
-                    let token = self.outlookService.token()
+            outlookService.getUserProfile() { email, id  in
+                if let userEmail = email, let userId = id {
                     let parameters: Parameters = [
-                        "email": email,
-                        "key": token!.encrypt(),
+                        "email": userEmail,
+                        "key": userId.encrypt(),
                         "type": "outlook"
                     ]
                     self.login(parameters: parameters)
@@ -158,20 +163,16 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             }
         } else {
             outlookService.login(from: self) { (result) in
-                if let token = result {
-                    self.outlookService.getUserEmail() { result in
-                        if let email = result {
-                            let parameters: Parameters = [
-                                "email": email,
-                                "key": token.encrypt(),
-                                "type": "outlook"
-                            ]
-                            self.login(parameters: parameters)
-                        }
-                        self.outlookService.logout()
+                self.outlookService.getUserProfile() { email, id  in
+                    if let userEmail = email, let userId = id {
+                        let parameters: Parameters = [
+                            "email": userEmail,
+                            "key": userId.encrypt(),
+                            "type": "outlook"
+                        ]
+                        self.login(parameters: parameters)
                     }
-                } else {
-                    NSLog("Error logging")
+                    self.outlookService.logout()
                 }
             }
         }

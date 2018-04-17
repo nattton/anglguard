@@ -151,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         }
         
         // Initialize sign-in
-        GIDSignIn.sharedInstance().clientID = "405428121980-34ck2gf8b1cp4b3dlkttnnbdd1ck99rn.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "789190969892-jmhfr2n5msgnige7j6ibj6ih01eaqv5l.apps.googleusercontent.com"
         
         // WeChat: use your AppID
         WXApi.registerApp("wx235325325")

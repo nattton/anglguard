@@ -33,15 +33,15 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
         setText()
         
         tf_passport.layer.borderColor = UIColor.red.cgColor
-        tf_passport.layer.borderWidth = 1
+        tf_passport.layer.borderWidth = 2
         tf_passport.layer.cornerRadius = 4
         
         tf_country.layer.borderColor = UIColor.red.cgColor
-        tf_country.layer.borderWidth = 1
+        tf_country.layer.borderWidth = 2
         tf_country.layer.cornerRadius = 4
         
         tf_expire_date.layer.borderColor = UIColor.red.cgColor
-        tf_expire_date.layer.borderWidth = 1
+        tf_expire_date.layer.borderWidth = 2
         tf_expire_date.layer.cornerRadius = 4
         
         if let image = defaults.string(forKey: "passport_img") {
