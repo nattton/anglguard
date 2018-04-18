@@ -1350,30 +1350,30 @@
                                                     <rect key="frame" x="0.0" y="34" width="375" height="105"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-qF-o4p">
-                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-dF-5Te">
-                                                            <rect key="frame" x="8" y="10" width="84" height="85"/>
+                                                            <rect key="frame" x="8" y="10" width="84.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="VoN-yW-nmY"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-Di-pqb">
-                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-dh-10w">
-                                                            <rect key="frame" x="99.5" y="10" width="83.5" height="85"/>
+                                                            <rect key="frame" x="100" y="10" width="83.5" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="O2X-mL-6os"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emergency_img_defult" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-C3-NHM">
-                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
                                                         </imageView>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8L-yf-LDc">
-                                                            <rect key="frame" x="191" y="10" width="84.5" height="85"/>
+                                                            <rect key="frame" x="191.5" y="10" width="84" height="85"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
                                                                 <action selector="imageAction:" destination="mKH-w1-weN" eventType="touchUpInside" id="f2m-qf-Itw"/>
@@ -3411,25 +3411,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxs-mh-IpV">
-                                                    <rect key="frame" x="16" y="7" width="100" height="34"/>
+                                                    <rect key="frame" x="16" y="7" width="102" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ZI2-Ss-zfM"/>
                                                         <constraint firstAttribute="height" constant="34" id="yRZ-Rn-DK5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                                                     <state key="normal" title="BACK" backgroundImage="bg_button2"/>
                                                     <connections>
                                                         <action selector="backAction:" destination="4qk-ka-fL4" eventType="touchUpInside" id="Y5A-bA-Nfq"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7j-tw-Wgx">
-                                                    <rect key="frame" x="259" y="7" width="100" height="34"/>
+                                                    <rect key="frame" x="258" y="7" width="101" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="8TD-7o-T20"/>
-                                                        <constraint firstAttribute="width" constant="100" id="M72-vy-5au"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                                                     <state key="normal" title="NEXT" backgroundImage="bg_button1">
                                                         <color key="titleColor" red="0.3411764706" green="0.68627450980000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -7931,7 +7930,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySm-In-jSh">
-                                                    <rect key="frame" x="36" y="5" width="303" height="161"/>
+                                                    <rect key="frame" x="36.5" y="5.5" width="303" height="161"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="303" id="lbj-fB-Uzy"/>
                                                         <constraint firstAttribute="height" constant="161" id="tZN-eb-lpc"/>
@@ -11138,7 +11137,7 @@
     </scenes>
     <resources>
         <image name="bg_button1" width="37" height="34"/>
-        <image name="bg_button2" width="53" height="34"/>
+        <image name="bg_button2" width="38" height="34"/>
         <image name="bg_call" width="230" height="55"/>
         <image name="bg_login" width="360" height="640"/>
         <image name="bg_search" width="46" height="41"/>
@@ -11168,9 +11167,9 @@
         <image name="ic_window" width="36" height="36"/>
         <image name="im_avatar" width="55" height="55"/>
         <image name="im_passport" width="192" height="150"/>
-        <image name="im_plan_1" width="407" height="215"/>
-        <image name="im_plan_2" width="407" height="215"/>
-        <image name="im_plan_3" width="407" height="215"/>
+        <image name="im_plan_1" width="308" height="166"/>
+        <image name="im_plan_2" width="387" height="209"/>
+        <image name="im_plan_3" width="403" height="217"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QVB-hu-sxA"/>
