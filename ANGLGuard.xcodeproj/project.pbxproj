@@ -752,6 +752,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ANGLGuard/ANGLGuard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kotchapan Charoenthaweewong (FT47D447X2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 53P33K5N53;
@@ -767,7 +768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4cea3720-911c-4111-a7a9-810c6b54c32d";
+				PROVISIONING_PROFILE = "ba2f2ed4-d58f-4a44-ba17-db86d5c80efb";
 				PROVISIONING_PROFILE_SPECIFIER = ANGLGuard_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "ANGLGuard/ANGLGuard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -783,6 +784,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ANGLGuard/ANGLGuard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kotchapan Charoenthaweewong (FT47D447X2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 53P33K5N53;
@@ -798,7 +800,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.angllife.anglguard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4cea3720-911c-4111-a7a9-810c6b54c32d";
+				PROVISIONING_PROFILE = "ba2f2ed4-d58f-4a44-ba17-db86d5c80efb";
 				PROVISIONING_PROFILE_SPECIFIER = ANGLGuard_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "ANGLGuard/ANGLGuard-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MenuHeaderDelegate {
-
+    
     @IBOutlet var tb_menu: UITableView!
     @IBOutlet var im_avatar: UIImageView!
     @IBOutlet var lb_name: UILabel!
@@ -17,10 +17,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         setInit()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
     
     func setInit() {
@@ -64,11 +64,33 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.title.text = getTitle(key: item.name)
         
+        if item.selected {
+            cell.title.textColor = UIColor.white
+            cell.backgroundColor = UIColor(hex: 0x7BCECC)
+        } else {
+            cell.title.textColor = UIColor.black
+            cell.backgroundColor = UIColor.white
+        }
+        
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        let menuCell = cell as! MenuCell
+//        let item: Item = sections[indexPath.section].items[indexPath.row]
+//        if item.selected {
+//            menuCell.title.textColor = UIColor.white
+//            menuCell.backgroundView?.backgroundColor = UIColor(hex: 0x7BCECC)
+//        } else {
+//            menuCell.title.textColor = UIColor.black
+//            menuCell.backgroundView?.backgroundColor = UIColor.white
+//        }
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item: Item = sections[indexPath.section].items[indexPath.row]
+        clearSelected()
+        sections[indexPath.section].items[indexPath.row].selected = !item.selected
         changeTopViewController(identifier: item.identifier)
     }
     
@@ -89,7 +111,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         header.setCollapsed(sections[section].collapsed)
         header.section = section
         header.delegate = self
-
+        
+        if sections[section].selected {
+            header.titleLabel.textColor = UIColor.white
+            header.contentView.backgroundColor = UIColor(hex: 0x7BCECC)
+        } else {
+            header.titleLabel.textColor = UIColor.black
+            header.contentView.backgroundColor = UIColor.white
+        }
+        
         return header
     }
     
@@ -102,6 +132,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             tb_menu.reloadSections(NSIndexSet(index: section) as IndexSet, with: .none)
         } else {
+            clearSelected()
+            sections[section].selected = !sections[section].selected
             changeTopViewController(identifier: sections[section].identifier)
         }
     }
@@ -132,15 +164,25 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func getTitle(key: String) -> String {
         return key.localized()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func clearSelected() {
+        for (i, _) in sections.enumerated() {
+            sections[i].selected = false
+            for (j, _) in sections[i].items.enumerated() {
+                sections[i].items[j].selected = false
+            }
+        }
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+

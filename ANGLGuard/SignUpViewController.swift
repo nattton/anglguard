@@ -96,6 +96,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
         } else if password != confirm {
             showAlert(message: "login_password_not_match".localized())
         } else {
+            Authen.sharedInstance.key = ""
             Authen.sharedInstance.type = "normal"
             Personal.sharedInstance.password = self.password
             verify(email: email)

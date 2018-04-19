@@ -95,19 +95,13 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                 "key": user.userID.encrypt(),
                 "type": "google"
             ]
-//            let alert = UIAlertController(title: user.authentication.idToken, message: "", preferredStyle: .alert)
-//            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (actioc) in
-//                self.login(parameters: parameters)
-//            })
-//            alert.addAction(defaultAction)
-//            self.present(alert, animated: true, completion: nil)
             self.login(parameters: parameters)
         }
     }
     
     @IBAction func signinAction(_ sender: Any) {
-        let username: String! = tf_username.text
-        let password: String! = tf_password.text
+        let username = tf_username.text!
+        let password = tf_password.text!
         let parameters: Parameters = [
             "username": username,
             "password": password.encrypt(),
@@ -163,16 +157,18 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             }
         } else {
             outlookService.login(from: self) { (result) in
-                self.outlookService.getUserProfile() { email, id  in
-                    if let userEmail = email, let userId = id {
-                        let parameters: Parameters = [
-                            "email": userEmail,
-                            "key": userId.encrypt(),
-                            "type": "outlook"
-                        ]
-                        self.login(parameters: parameters)
+                if result != nil {
+                    self.outlookService.getUserProfile() { email, id in
+                        if let userEmail = email, let userId = id {
+                            let parameters: Parameters = [
+                                "email": userEmail,
+                                "key": userId.encrypt(),
+                                "type": "outlook"
+                            ]
+                            self.login(parameters: parameters)
+                        }
+                        self.outlookService.logout()
                     }
-                    self.outlookService.logout()
                 }
             }
         }
