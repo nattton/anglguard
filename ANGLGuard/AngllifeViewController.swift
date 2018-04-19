@@ -421,11 +421,25 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
-        if isMaxiMize == true {
-            minimizeHospitalList()
-        } else {
-            maximizeHospitalList()
+//        if isMaxiMize == true {
+//            minimizeHospitalList()
+//        } else {
+//            maximizeHospitalList()
+//        }
+        
+        let hospital = hospitals[0] as! [String: Any]
+        
+        if let name: String = hospital["name"] as? String {
+            hName = name
         }
+        
+        if let link: String =  hospital["link"] as? String {
+            if let eLink = link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                hLink = eLink
+            }
+        }
+        
+        self.performSegue(withIdentifier: "showWebView", sender: nil)
     }
     
     
