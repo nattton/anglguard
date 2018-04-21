@@ -105,10 +105,11 @@ class VerifyCodeViewController: UITableViewController {
                             if let data: Dictionary<String, Any> = result["data"]  as? Dictionary<String, Any> {
                                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                                 appDelegate.setProfile(data: data)
-                                Authen.sharedInstance.token = token
-                                self.defaults.set(token, forKey: "token")
                             }
                             
+                            Authen.sharedInstance.token = token
+                            
+                            self.defaults.set(token, forKey: "token")
                             self.performSegue(withIdentifier: "showStep1", sender: nil)
                         } else if code == "104" {
                             self.defaults.set("N", forKey: "login")

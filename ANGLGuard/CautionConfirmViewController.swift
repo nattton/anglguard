@@ -9,7 +9,7 @@ protocol EmergencyDelegate {
 
 let phone_number = 1724
 
-class EmergencyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: EmergencyDelegate?
     
@@ -24,14 +24,14 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
     var friendId: String = ""
     var bt_call_center: CGFloat?
     var isCall: Bool = false
-    
+
     let defaults = UserDefaults.standard
     
-    @IBOutlet var v_group: UIView!
+    @IBOutlet var v_confirm: UIView!
+    @IBOutlet var v_send: UIView!
+    
     @IBOutlet var v_call: UIView!
     @IBOutlet var v_warning: UIView!
-    @IBOutlet var v_friend: UIView!
-    @IBOutlet var tb_friend: UITableView!
     @IBOutlet var bt_call: UIButton!
     @IBOutlet var bt_confirm: UIButton!
     
@@ -40,6 +40,14 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var lb_emergency_alert: UILabel!
     @IBOutlet var lb_emergency_term: UILabel!
     @IBOutlet var lb_emergency_term_description: UILabel!
+    
+    @IBOutlet var v_profile: UIView!
+    @IBOutlet var v_group: UIView!
+    @IBOutlet var im_profile_avatar: UIImageView!
+    @IBOutlet var lb_profile_name: UILabel!
+    @IBOutlet var lb_profile_email: UILabel!
+    @IBOutlet var tb_friend: UITableView!
+    @IBOutlet var bt_cancel: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,15 +58,48 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
         v_call.layer.cornerRadius = 8
         v_call.clipsToBounds = true
         
-        v_group.layer.masksToBounds = false
-        v_group.layer.cornerRadius = 8
-        v_group.clipsToBounds = true
+        v_warning.layer.masksToBounds = false
+        v_warning.layer.cornerRadius = 8
+        v_warning.clipsToBounds = true
         
         bt_confirm.layer.masksToBounds = false
         bt_confirm.layer.cornerRadius = bt_confirm.frame.size.height / 2
         bt_confirm.clipsToBounds = true
         
         bt_call_center = bt_call.center.x
+        
+        v_profile.layer.masksToBounds = false
+        v_profile.layer.cornerRadius = 8
+        v_profile.clipsToBounds = true
+        
+        v_group.layer.masksToBounds = false
+        v_group.layer.cornerRadius = 8
+        v_group.clipsToBounds = true
+        
+        im_profile_avatar.layer.masksToBounds = false
+        im_profile_avatar.layer.cornerRadius = im_profile_avatar.frame.size.height / 2
+        im_profile_avatar.clipsToBounds = true
+        
+        bt_cancel.layer.masksToBounds = false
+        bt_cancel.layer.cornerRadius = bt_cancel.frame.size.height / 2
+        bt_cancel.clipsToBounds = true
+        
+        if let image = defaults.string(forKey: "personal_img_bin") {
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let fileURL = documentsURL.appendingPathComponent("avatar.jpg")
+                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+            }
+            Alamofire.download(image, to: destination).response { response in
+                if response.error == nil, let imagePath = response.destinationURL?.path {
+                    let image = UIImage(contentsOfFile: imagePath)
+                    self.im_profile_avatar.image = image
+                }
+            }
+        }
+        
+        lb_profile_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+        lb_profile_email.text = Personal.sharedInstance.email
         
         getFriends()
     }
@@ -69,33 +110,36 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func setText() {
+        self.navigationItem.title = "emergency_send_emergency".localized()
         lb_call.text = "emergency_call_1724".localized()
         lb_call_description.text = "emergency_emergency".localized()
         lb_emergency_alert.text = "emergency_send_emergency".localized()
         lb_emergency_term.text = "emergency_term".localized()
         lb_emergency_term_description.text = "emergency_please_make".localized()
         bt_confirm.setTitle("bnt_confirm".localized(), for: .normal)
+        bt_cancel.setTitle("bnt_cancel".localized(), for: .normal)
     }
     
     //list friend
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 82
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let gCell: GroupAlertCell = tableView.dequeueReusableCell(withIdentifier: "GroupAlertCell") as! GroupAlertCell
         let friend = friends[indexPath.row] as! [String: Any]
         let img: String! = friend["personal_image_path"] as! String
         let firstname: String! = friend["firstname"] as! String
         let lastname: String! = friend["lastname"] as! String
+        let email: String! = friend["email"] as! String
         
         let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let url = URL(string: eImg){
@@ -103,16 +147,17 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
             gCell.avatar.image = UIImage(named: "ic_avatar")
         }
-        
+
         gCell.avatar.layer.masksToBounds = false
         gCell.avatar.layer.cornerRadius = gCell.avatar.frame.height / 2
         gCell.avatar.clipsToBounds = true
-        
+
         gCell.name.text = firstname + " " + lastname
+        gCell.email.text = email
         
         return gCell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let friend = friends[indexPath.row] as! [String: Any]
         if let id: String = friend["id"] as? String {
@@ -126,6 +171,7 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
             let parameters: Parameters = [
                 "token": token
             ]
+            
             Alamofire.request(FAMILY_LIST_URL, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
                 if let json = response.result.value {
                     let result = json as! Dictionary<String, Any>
@@ -246,12 +292,13 @@ class EmergencyViewController: UIViewController, UITableViewDelegate, UITableVie
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func confirmAction(_ sender: Any) {
-        v_warning.isHidden = true
-        v_friend.isHidden = false
+    @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func callBESAlertAction(_ sender: Any) {
-        callBESAlert()
+    
+    @IBAction func confirmAction(_ sender: Any) {
+        v_send.isHidden = false
+        v_confirm.isHidden = true
     }
     
     /*

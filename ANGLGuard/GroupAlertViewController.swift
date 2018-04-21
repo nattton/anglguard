@@ -28,6 +28,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var bt_confirm: UIButton!
     @IBOutlet var im_profile_avatar: UIImageView!
     @IBOutlet var lb_profile_name: UILabel!
+    @IBOutlet var lb_emergency_alert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +65,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
         
-        lb_profile_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+        lb_profile_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname + "\n" + Personal.sharedInstance.email
         
         getFriends()
     }
@@ -75,6 +76,8 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func setText() {
+        self.navigationItem.title = "emergency_send_emergency".localized()
+        lb_emergency_alert.text = "emergency_send_emergency".localized()
         bt_confirm.setTitle("bnt_confirm".localized(), for: .normal)
     }
     
@@ -97,6 +100,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
         let img: String! = friend["personal_image_path"] as! String
         let firstname: String! = friend["firstname"] as! String
         let lastname: String! = friend["lastname"] as! String
+        let email: String! = friend["email"] as! String
         
         let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let url = URL(string: eImg){
@@ -110,6 +114,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
         gCell.avatar.clipsToBounds = true
         
         gCell.name.text = firstname + " " + lastname
+        gCell.email.text = email
         
         return gCell
     }

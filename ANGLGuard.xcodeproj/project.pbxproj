@@ -56,7 +56,7 @@
 		3B64631C2036AA4200A39901 /* AttractionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FC2036AA4000A39901 /* AttractionAnnotation.swift */; };
 		3B64631D2036AA4200A39901 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FD2036AA4000A39901 /* VerifyPhoneViewController.swift */; };
 		3B64631E2036AA4200A39901 /* InitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FE2036AA4000A39901 /* InitalViewController.swift */; };
-		3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */; };
+		3B64631F2036AA4200A39901 /* CautionConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6462FF2036AA4000A39901 /* CautionConfirmViewController.swift */; };
 		3B6463202036AA4200A39901 /* TermAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */; };
 		3B6463232036AA4200A39901 /* LearnFirstAidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */; };
 		3B6463242036AA4200A39901 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */; };
@@ -145,7 +145,7 @@
 		3B6462FC2036AA4000A39901 /* AttractionAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionAnnotation.swift; sourceTree = "<group>"; };
 		3B6462FD2036AA4000A39901 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		3B6462FE2036AA4000A39901 /* InitalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitalViewController.swift; sourceTree = "<group>"; };
-		3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
+		3B6462FF2036AA4000A39901 /* CautionConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CautionConfirmViewController.swift; sourceTree = "<group>"; };
 		3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermAndConditionViewController.swift; sourceTree = "<group>"; };
 		3B6463032036AA4100A39901 /* LearnFirstAidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnFirstAidDetailViewController.swift; sourceTree = "<group>"; };
 		3B6463042036AA4100A39901 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 				3B6463342036BE9500A39901 /* HelpViewController.swift */,
 				3B6463072036AA4100A39901 /* GroupAlertCell.swift */,
 				3B64630A2036AA4100A39901 /* GroupAlertViewController.swift */,
-				3B6462FF2036AA4000A39901 /* EmergencyViewController.swift */,
+				3B6462FF2036AA4000A39901 /* CautionConfirmViewController.swift */,
 				3B64630D2036AA4200A39901 /* ProfileViewController.swift */,
 				3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */,
 				3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */,
@@ -575,7 +575,7 @@
 				3BF25BD2205F1A1200309B09 /* FirstAidCell.swift in Sources */,
 				3B4FD590204B931C00AB045D /* PassportProfileViewController.swift in Sources */,
 				3B6463152036AA4200A39901 /* Step2ViewController.swift in Sources */,
-				3B64631F2036AA4200A39901 /* EmergencyViewController.swift in Sources */,
+				3B64631F2036AA4200A39901 /* CautionConfirmViewController.swift in Sources */,
 				3B64632D2036AA4200A39901 /* ProfileViewController.swift in Sources */,
 				3B6463332036AA4200A39901 /* Step1ViewController.swift in Sources */,
 				3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */,

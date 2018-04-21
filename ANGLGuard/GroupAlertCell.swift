@@ -5,6 +5,7 @@ class GroupAlertCell: UITableViewCell {
     
     @IBOutlet var avatar: UIImageView!
     @IBOutlet var name: UILabel!
+    @IBOutlet var email: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

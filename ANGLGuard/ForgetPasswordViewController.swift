@@ -1,4 +1,6 @@
 import UIKit
+import Alamofire
+import SVProgressHUD
 
 class ForgetPasswordViewController: UITableViewController {
     
@@ -34,10 +36,6 @@ class ForgetPasswordViewController: UITableViewController {
         self.title = "login_forgot_password".localized()
     }
     
-    @IBAction func sendAction(_ sender: Any) {
-        
-    }
-    
     func showAlert(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
@@ -45,17 +43,29 @@ class ForgetPasswordViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func showMenu(_ sender: Any) {
-        if let container = self.so_containerViewController {
-            container.isSideViewControllerPresented = true
-        }
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-
-    @IBAction func showQRCode(_ sender: Any) {
-        let profileQRCodeView = storyboard?.instantiateViewController(withIdentifier: "QRCode")
-        profileQRCodeView?.modalTransitionStyle = .crossDissolve
-        profileQRCodeView?.modalPresentationStyle = .overCurrentContext
-        self.present(profileQRCodeView!, animated: true, completion: nil)
+    
+    @IBAction func sendAction(_ sender: Any) {
+        if let email = tf_email.text {
+            let parameters: Parameters = [
+                "email": email
+            ]
+            SVProgressHUD.show(withStatus: LOADING_TEXT)
+            Alamofire.request(FORGOT_PASSWORD_URL, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
+                SVProgressHUD.dismiss()
+                if let json = response.result.value {
+                    let result = json as! Dictionary<String, Any>
+                    let message: String = result["message"] as! String
+                    NSLog("result = \(result)")
+                    let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
 
     /*

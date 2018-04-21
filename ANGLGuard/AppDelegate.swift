@@ -43,6 +43,7 @@ let MD5_KEY = "76065111"
 let SECRET_KEY = "aWuxjr5RQhDRItGII616"
 
 let LOGIN_URL = HOST + "/authen"
+let FORGOT_PASSWORD_URL = HOST + "/forgot-password"
 let SAVE_NOTI_URL = HOST + "/save-noti-key"
 let HOSPITAL_LIST_URL = HOST + "/list-hospital"
 let UPDATE_LOCATION_URL = HOST + "/update-current-location"

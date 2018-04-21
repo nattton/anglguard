@@ -178,7 +178,6 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                         "penicillin" : Medical.sharedInstance.penicillin,
                         "sulfa" : Medical.sharedInstance.sulfa,
                         "others" : Medical.sharedInstance.allergy_drug_others
-                        
                     ],
                     "allergy_food" : [
                         "milk" : Medical.sharedInstance.milk,

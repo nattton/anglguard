@@ -151,9 +151,9 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
         
         if recognizer.state == .ended {
             if bt_help_center > moveX {
-                type = "emergency"
-            } else {
                 type = "alert"
+            } else {
+                type = "emergency"
             }
             
             UIView.animate(withDuration: 0.3, animations: {
@@ -162,7 +162,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
                 if self.type == "alert" {
                     self.performSegue(withIdentifier: "showGroupAlert", sender: nil)
                 } else if self.type == "emergency" {
-                    self.performSegue(withIdentifier: "showEmergency", sender: nil)
+                    self.performSegue(withIdentifier: "showCautionConfirm", sender: nil)
                 }
                 
                 self.type = ""
@@ -186,21 +186,21 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
             groupAlert.photo2 = bt_photo2.backgroundImage(for: .normal)
             groupAlert.photo3 = bt_photo3.backgroundImage(for: .normal)
             groupAlert.photo4 = bt_photo4.backgroundImage(for: .normal)
-            groupAlert.message = tv_message.text
+            groupAlert.message = (tv_message.text == "emergency_message".localized()) ? "" : tv_message.text
             groupAlert.delegate = self
         }
         
-        if segue.identifier == "showEmergency" {
+        if segue.identifier == "showCautionConfirm" {
             let navigationController = segue.destination as! UINavigationController
-            let emergency: EmergencyViewController = navigationController.topViewController as! EmergencyViewController
-            emergency.lat = lat
-            emergency.long = long
-            emergency.photo1 = bt_photo1.backgroundImage(for: .normal)
-            emergency.photo2 = bt_photo2.backgroundImage(for: .normal)
-            emergency.photo3 = bt_photo3.backgroundImage(for: .normal)
-            emergency.photo4 = bt_photo4.backgroundImage(for: .normal)
-            emergency.message = tv_message.text
-            emergency.delegate = self
+            let caution: CautionConfirmViewController = navigationController.topViewController as! CautionConfirmViewController
+            caution.lat = lat
+            caution.long = long
+            caution.photo1 = bt_photo1.backgroundImage(for: .normal)
+            caution.photo2 = bt_photo2.backgroundImage(for: .normal)
+            caution.photo3 = bt_photo3.backgroundImage(for: .normal)
+            caution.photo4 = bt_photo4.backgroundImage(for: .normal)
+            caution.message = (tv_message.text == "emergency_message".localized()) ? "" : tv_message.text
+            caution.delegate = self
         }
     }
 
