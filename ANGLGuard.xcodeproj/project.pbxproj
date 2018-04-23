@@ -77,13 +77,13 @@
 		3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463342036BE9500A39901 /* HelpViewController.swift */; };
 		3B6BD1DA204C230000E2FD54 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BD1D9204C230000E2FD54 /* MenuData.swift */; };
 		3B6BD1DC204C255600E2FD54 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BD1DB204C255600E2FD54 /* MenuHeader.swift */; };
+		3B84E9BB208E258B00D6D7EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B84E9BA208E258B00D6D7EC /* GoogleService-Info.plist */; };
 		3BA12278203C7E270085984D /* AccidentInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */; };
 		3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */; };
 		3BA1227C203C861A0085984D /* InsurancePolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227B203C861A0085984D /* InsurancePolicyViewController.swift */; };
 		3BA1227E203C90A10085984D /* AsiaPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227D203C90A10085984D /* AsiaPayViewController.swift */; };
 		3BA12280203C92690085984D /* ViriyahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1227F203C92690085984D /* ViriyahViewController.swift */; };
 		3BA12286203C998E0085984D /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12285203C998E0085984D /* ThankYouViewController.swift */; };
-		3BDAFCF7205EBA670056EC91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */; };
 		3BE994B72070E5A7005D6B07 /* condition_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 3BE994B62070E5A7005D6B07 /* condition_en.html */; };
 		3BF25BD2205F1A1200309B09 /* FirstAidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */; };
 		3BFA06ED2049DCAD00C47C0E /* Authen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA06EC2049DCAD00C47C0E /* Authen.swift */; };
@@ -166,13 +166,13 @@
 		3B6463342036BE9500A39901 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		3B6BD1D9204C230000E2FD54 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		3B6BD1DB204C255600E2FD54 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		3B84E9BA208E258B00D6D7EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentInsuranceViewController.swift; sourceTree = "<group>"; };
 		3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsurancePlanViewController.swift; sourceTree = "<group>"; };
 		3BA1227B203C861A0085984D /* InsurancePolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsurancePolicyViewController.swift; sourceTree = "<group>"; };
 		3BA1227D203C90A10085984D /* AsiaPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiaPayViewController.swift; sourceTree = "<group>"; };
 		3BA1227F203C92690085984D /* ViriyahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViriyahViewController.swift; sourceTree = "<group>"; };
 		3BA12285203C998E0085984D /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
-		3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ANGLGuard-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BE994B62070E5A7005D6B07 /* condition_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = condition_en.html; sourceTree = "<group>"; };
 		3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAidCell.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 				3B6462E12036A47400A39901 /* Assets.xcassets */,
 				3B6462E32036A47400A39901 /* LaunchScreen.storyboard */,
 				3B6462E62036A47400A39901 /* Info.plist */,
-				3BDAFCF6205EBA670056EC91 /* GoogleService-Info.plist */,
+				3B84E9BA208E258B00D6D7EC /* GoogleService-Info.plist */,
 				3B031675205ABB8500A35AC9 /* Localizable.strings */,
 				3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */,
 				3BE994B62070E5A7005D6B07 /* condition_en.html */,
@@ -419,10 +419,10 @@
 			files = (
 				3B031673205ABB8500A35AC9 /* Localizable.strings in Resources */,
 				3B6462E52036A47400A39901 /* LaunchScreen.storyboard in Resources */,
-				3BDAFCF7205EBA670056EC91 /* GoogleService-Info.plist in Resources */,
 				3B6462E22036A47400A39901 /* Assets.xcassets in Resources */,
 				3B6462E02036A47400A39901 /* Main.storyboard in Resources */,
 				3BE994B72070E5A7005D6B07 /* condition_en.html in Resources */,
+				3B84E9BB208E258B00D6D7EC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

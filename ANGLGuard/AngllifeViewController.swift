@@ -187,7 +187,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     
     func sendLocation(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         if let token = defaults.string(forKey: "token") {
-            let userId: String! = defaults.string(forKey: "id")
+            let userId = defaults.string(forKey: "id")!
             let parameters: Parameters = [
                 "token": token,
                 "userId": userId,
