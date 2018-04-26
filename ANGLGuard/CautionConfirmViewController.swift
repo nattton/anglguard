@@ -3,15 +3,15 @@ import Alamofire
 import AlamofireImage
 import SVProgressHUD
 
-protocol EmergencyDelegate {
-    func onEmergencyDismiss()
+protocol CautionConfirmDelegate {
+    func onCautionConfirmDismiss()
 }
 
 let phone_number = 1724
 
 class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var delegate: EmergencyDelegate?
+    var delegate: CautionConfirmDelegate?
     
     var photo1: UIImage?
     var photo2: UIImage?
@@ -228,7 +228,7 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
                         alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
                             self.dismiss(animated: false) {
                                 if self.delegate != nil {
-                                    self.delegate?.onEmergencyDismiss()
+                                    self.delegate?.onCautionConfirmDismiss()
                                 }
                             }
                         }))

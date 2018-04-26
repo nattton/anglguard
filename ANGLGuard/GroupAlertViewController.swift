@@ -182,11 +182,9 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                     if code == "200" {
                         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
-                            self.dismiss(animated: true) {
-                                self.dismiss(animated: false) {
-                                    if self.delegate != nil {
-                                        self.delegate?.onGroupAlertDismiss()
-                                    }
+                            self.dismiss(animated: false) {
+                                if self.delegate != nil {
+                                    self.delegate?.onGroupAlertDismiss()
                                 }
                             }
                         }))

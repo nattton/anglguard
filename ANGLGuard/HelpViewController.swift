@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GroupAlertDelegate, EmergencyDelegate {
+class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GroupAlertDelegate, CautionConfirmDelegate {
     
     var bt_help_center: CGFloat!
     var type: String = ""
@@ -36,7 +36,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Message" {
+        if textView.text == "emergency_message".localized() {
             textView.text = ""
             textView.textColor = UIColor.black
         }
@@ -44,7 +44,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
-            textView.text = "Message"
+            textView.text = "emergency_message".localized()
             textView.textColor = UIColor.lightGray
         }
     }
@@ -74,7 +74,7 @@ class HelpViewController: UITableViewController, UITextViewDelegate, UIImagePick
         self.dismiss(animated: true, completion: nil)
     }
     
-    func onEmergencyDismiss() {
+    func onCautionConfirmDismiss() {
         self.dismiss(animated: true, completion: nil)
     }
     

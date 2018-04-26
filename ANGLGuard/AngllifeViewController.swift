@@ -31,6 +31,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var tf_can_i_help_you: UIButton!
     @IBOutlet var bt_help: UIButton!
     @IBOutlet var tb_hospital: UITableView!
+    @IBOutlet var v_pull_up: ISHPullUpRoundedVisualEffectView!
     @IBOutlet var v_list: UIView!
     @IBOutlet var v_list_height: NSLayoutConstraint!
     @IBOutlet var bt_current_location: UIButton!
@@ -387,26 +388,32 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         v_list_height.constant = list_height
         bt_help.isHidden = true
         bt_current_location.isHidden = true
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }, completion: { (animate) in
-            self.v_list.frame = self.tb_hospital.frame
-            self.v_list.frame.size.height = 30
+            
         })
         
+        self.v_list.frame = self.tb_hospital.frame
+        self.v_list.frame.origin.y = 0
+        self.v_list.frame.size.height = 30
         isMaxiMize = true
     }
     
     func minimizeHospitalList() {
         v_list_height.constant = 150
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }, completion: { (animate) in
             self.bt_help.isHidden = false
             self.bt_current_location.isHidden = false
-            self.v_list.frame = self.tb_hospital.frame
         })
         
+        self.v_list.frame = self.tb_hospital.frame
+        self.v_list.frame.origin.y = 0
+        self.v_list.frame.size.height = self.v_list.frame.size.height + 30
         isMaxiMize = false
     }
     
