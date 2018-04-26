@@ -170,9 +170,27 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     
     //map
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            
+        }
+        
         let annotationView = AttractionAnnotationView(annotation: annotation, reuseIdentifier: "Attraction")
         annotationView.canShowCallout = true
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        for mkAnnotationView in views {
+            if let annotationView = mkAnnotationView as? AttractionAnnotationView {
+                if let annotation = annotationView.annotation as? AttractionAnnotation {
+                    if annotation.type == AttractionType.current {
+                        annotationView.bringSubview(toFront: annotationView)
+                    } else {
+                        annotationView.sendSubview(toBack: annotationView)
+                    }
+                }
+            }
+        }
     }
     
     func getCurrentLocation() {
