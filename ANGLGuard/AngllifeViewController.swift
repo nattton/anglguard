@@ -162,6 +162,12 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         sendLocation(latitude: latitude, longitude: longitude)
+        
+        let title: String = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+        let icon: String = defaults.string(forKey: "personal_img_bin")!
+        let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon, status: "A")
+        friendsAnn.append(annotation)
+        addAnnotationToMap(annotations: friendsAnn)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -170,10 +176,6 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     
     //map
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation {
-            
-        }
-        
         let annotationView = AttractionAnnotationView(annotation: annotation, reuseIdentifier: "Attraction")
         annotationView.canShowCallout = true
         return annotationView
@@ -184,9 +186,9 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             if let annotationView = mkAnnotationView as? AttractionAnnotationView {
                 if let annotation = annotationView.annotation as? AttractionAnnotation {
                     if annotation.type == AttractionType.current {
-                        annotationView.bringSubview(toFront: annotationView)
+                        annotationView.superview!.bringSubview(toFront: annotationView)
                     } else {
-                        annotationView.sendSubview(toBack: annotationView)
+                        annotationView.superview!.sendSubview(toBack: annotationView)
                     }
                 }
             }
@@ -391,14 +393,25 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             let title: String = firstname + " " + lastname
             let icon: String = pin["personal_image_path"] as! String
             var status: String = pin["status"] as! String
+            var type: AttractionType = .friend
             let pid = pin["id"] as! String
             let mid = defaults.string(forKey: "id")
+            
             if pid == mid {
                 status = "A"
+                type = .current
             }
-            let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon, status: status)
-            map.addAnnotation(annotation)
+            
+            let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: type, icon: icon, status: status)
             friendsAnn.append(annotation)
+            
+            addAnnotationToMap(annotations: friendsAnn)
+        }
+    }
+    
+    func addAnnotationToMap(annotations: [MKAnnotation]) {
+        for annotation in annotations {
+            map.addAnnotation(annotation)
         }
     }
     

@@ -3,12 +3,15 @@ import MapKit
 
 enum AttractionType: Int {
     case current = 0
+    case friend
     case hospital
     case ambulance
     
     func image() -> UIImage {
         switch self {
         case .current:
+            return #imageLiteral(resourceName: "im_avatar")
+        case .friend:
             return #imageLiteral(resourceName: "im_avatar")
         case .hospital:
             return #imageLiteral(resourceName: "ic_hospital")
