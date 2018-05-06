@@ -22,6 +22,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     var timer: Timer?
     
     var friendsAnn: [MKAnnotation] = []
+    var currentAnn: MKAnnotation?
     var ambulanceAnn: MKAnnotation?
     
     var list_height: CGFloat = 0
@@ -161,13 +162,8 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             showLocationWith(latitude: latitude, longitude: longitude)
         }
         
+        addCurrentAnnotation(latitude: lat, longitude: long)
         sendLocation(latitude: latitude, longitude: longitude)
-        
-        let title: String = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
-        let icon: String = defaults.string(forKey: "personal_img_bin")!
-        let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: .current, icon: icon, status: "A")
-        friendsAnn.append(annotation)
-        addAnnotationToMap(annotations: friendsAnn)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -351,6 +347,20 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         ambulanceAnn = annotation
     }
     
+    func addCurrentAnnotation(latitude: Double, longitude: Double) {
+        for annotation in map.annotations {
+            if annotation === currentAnn {
+                map.removeAnnotation(annotation)
+            }
+        }
+        let title: String = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+        let icon: String = defaults.string(forKey: "personal_img_bin")!
+        let type: AttractionType = .current
+        let annotation = AttractionAnnotation(latitude: latitude, longitude: longitude, title: title, type: type, icon: icon, status: "A")
+        map.addAnnotation(annotation)
+        currentAnn = annotation
+    }
+    
     func showLocationWith(latitude: CLLocationDegrees, longitude: CLLocationDegrees)  {
         let latDelta: CLLocationDegrees = 0.005
         let lonDelta: CLLocationDegrees = 0.005
@@ -392,20 +402,17 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
             let lastname: String = pin["lastname"] as! String
             let title: String = firstname + " " + lastname
             let icon: String = pin["personal_image_path"] as! String
-            var status: String = pin["status"] as! String
-            var type: AttractionType = .friend
+            let status: String = pin["status"] as! String
+            let type: AttractionType = .friend
             let pid = pin["id"] as! String
             let mid = defaults.string(forKey: "id")
             
-            if pid == mid {
-                status = "A"
-                type = .current
+            if pid != mid {
+                let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: type, icon: icon, status: status)
+                friendsAnn.append(annotation)
+                
+                addAnnotationToMap(annotations: friendsAnn)
             }
-            
-            let annotation = AttractionAnnotation(latitude: lat, longitude: long, title: title, type: type, icon: icon, status: status)
-            friendsAnn.append(annotation)
-            
-            addAnnotationToMap(annotations: friendsAnn)
         }
     }
     

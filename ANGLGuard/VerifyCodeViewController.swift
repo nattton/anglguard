@@ -56,7 +56,8 @@ class VerifyCodeViewController: UITableViewController {
                 let code: String = result["code"] as! String
                 let message: String = result["message"] as! String
                 if code == "200" {
-                    
+                    let token: String = result["token"] as! String
+                    self.defaults.set(token, forKey: "token")
                 } else if code == "104" {
                     self.defaults.set("N", forKey: "login")
                     self.defaults.set("N", forKey: "timer")

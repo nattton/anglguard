@@ -136,20 +136,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
 //        Messaging.messaging().delegate = self
         
         //check push notification
-        if let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as! [AnyHashable : Any]? {
-            if var topController = window?.rootViewController {
-                while let presentedViewController = topController.presentedViewController {
-                    topController = presentedViewController
-                }
-                
-                if let latitude: String = remoteNotification["latitude"] as? String, let longitude: String = remoteNotification["longitude"] as? String {
-                    let alert = UIAlertController(title: latitude + " " + longitude, message: "", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
-                    alert.addAction(defaultAction)
-                    topController.present(alert, animated: true, completion: nil)
-                }
-            }
-        }
+//        if let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as! [AnyHashable : Any]? {
+//            if var topController = window?.rootViewController {
+//                while let presentedViewController = topController.presentedViewController {
+//                    topController = presentedViewController
+//                }
+//                
+//                if let latitude: String = remoteNotification["latitude"] as? String, let longitude: String = remoteNotification["longitude"] as? String {
+//                    let alert = UIAlertController(title: latitude + " " + longitude, message: "", preferredStyle: .alert)
+//                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+//                    alert.addAction(defaultAction)
+//                    topController.present(alert, animated: true, completion: nil)
+//                }
+//            }
+//        }
         
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "789190969892-jmhfr2n5msgnige7j6ibj6ih01eaqv5l.apps.googleusercontent.com"
