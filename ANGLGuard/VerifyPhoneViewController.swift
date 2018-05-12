@@ -8,7 +8,7 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var lb_caution: UILabel!
     @IBOutlet var tf_country_code: UITextField!
     @IBOutlet var tf_phone: UITextField!
-    @IBOutlet var bt_later: UIButton!
+    @IBOutlet var bt_skip: UIButton!
     @IBOutlet var lb_verify_code: UILabel!
     @IBOutlet var bt_send_code: UIButton!
     @IBOutlet var tf_code: UITextField!
@@ -48,7 +48,7 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
         tf_code.placeholder = "signup_code".localized()
         bt_verify.setTitle("signup_verify_code".localized(), for: .normal)
         bt_back.setTitle("bnt_back".localized(), for: .normal)
-        bt_later.setTitle("bnt_later".localized(), for: .normal)
+        bt_skip.setTitle("bnt_skip".localized(), for: .normal)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -72,7 +72,7 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func laterAction(_ sender: Any) {
+    @IBAction func skipAction(_ sender: Any) {
         let country_code: String = tf_country_code.text!
         let phone: String = tf_phone.text!
         

@@ -77,6 +77,7 @@
 		3B6463352036BE9500A39901 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6463342036BE9500A39901 /* HelpViewController.swift */; };
 		3B6BD1DA204C230000E2FD54 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BD1D9204C230000E2FD54 /* MenuData.swift */; };
 		3B6BD1DC204C255600E2FD54 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BD1DB204C255600E2FD54 /* MenuHeader.swift */; };
+		3B6EFB9C20A6903100F9A344 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EFB9B20A6903100F9A344 /* LanguageCell.swift */; };
 		3B84E9BB208E258B00D6D7EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B84E9BA208E258B00D6D7EC /* GoogleService-Info.plist */; };
 		3BA12278203C7E270085984D /* AccidentInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */; };
 		3BA1227A203C7EA50085984D /* InsurancePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */; };
@@ -166,6 +167,7 @@
 		3B6463342036BE9500A39901 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		3B6BD1D9204C230000E2FD54 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		3B6BD1DB204C255600E2FD54 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		3B6EFB9B20A6903100F9A344 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		3B84E9BA208E258B00D6D7EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BA12277203C7E270085984D /* AccidentInsuranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentInsuranceViewController.swift; sourceTree = "<group>"; };
 		3BA12279203C7EA50085984D /* InsurancePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsurancePlanViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				3B284AE12054CAF3006225D2 /* PrivilegeCell.swift */,
 				3B284ADD2054C585006225D2 /* PrivilegeViewController.swift */,
 				3B284ADF2054C5A9006225D2 /* FAQViewController.swift */,
+				3B6EFB9B20A6903100F9A344 /* LanguageCell.swift */,
 				3B6462F62036AA4000A39901 /* LanguageViewController.swift */,
 				3B6463002036AA4100A39901 /* TermAndConditionViewController.swift */,
 				3B6462DE2036A47400A39901 /* Main.storyboard */,
@@ -591,6 +594,7 @@
 				3B0FE454205E96C300CE9F54 /* SplashViewController.swift in Sources */,
 				3B4FD58E204B894100AB045D /* CurrentThaiPhoneViewController.swift in Sources */,
 				3B64631A2036AA4200A39901 /* AttractionAnnotationView.swift in Sources */,
+				3B6EFB9C20A6903100F9A344 /* LanguageCell.swift in Sources */,
 				3B6462DB2036A47400A39901 /* AppDelegate.swift in Sources */,
 				3B4FD596204BA41400AB045D /* TripPlanViewController.swift in Sources */,
 				3B6BD1DA204C230000E2FD54 /* MenuData.swift in Sources */,

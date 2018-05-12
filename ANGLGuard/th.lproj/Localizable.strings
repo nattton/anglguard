@@ -6,8 +6,8 @@
   Copyright © 2018 Komkrit Kawichai. All rights reserved.
 */
 
-"bnt_next" = "หน้าถัดไป";
-"bnt_back" = "กลับไปก่อนหน้านี้";
+"bnt_next" = "ถัดไป";
+"bnt_back" = "ย้อนกลับ";
 "bnt_skip" = "ข้าม";
 "bnt_close" = "ปิด";
 "bnt_done" = "สิ้นสุด";
@@ -16,7 +16,7 @@
 "bnt_send" = "ส่ง";
 "bnt_ok" = "ตกลง";
 "bnt_update" = "แก้ไข";
-"bnt_later" = "ถัดไป";
+"bnt_later" = "ข้าม";
 "bnt_yes" = "มี";
 "bnt_no" = "ไม่มี";
 "bnt_delete" = "ลบ";
@@ -54,7 +54,7 @@
 "signup_code" = "รหัสยืนยันตัวตน";
 "signup_clik_to" = "กรุณา กด เพื่อส่งรหัสยืนยันตัวตนไปให้ยังเบอร์ที่คุณระบุไว้";
 
-"signup_nice_to_meet_you" = "ยินดีที่ได้รู้จัก\nต้องการให้คุณสร้างบัญชีผู้ใช้ส่วนตัว (ข้อมูลส่วนตัว) เราจะเก็บข้อมูลของคุณอย่างปลอดภัย";
+"signup_nice_to_meet_you" = "ยินดีที่ได้รู้จัก\nสร้างข้อมูลส่วนบุคคลกรุณากรอกชื่อภาษาอังกฤษของท่านที่ระบุไว้ตามหนังสือเดินทาง";
 "signup_first_name" = "ชื่อจริง";
 "signup_mid_name" = "ชื่อกลาง";
 "signup_last_name" = "นามสกุล";
@@ -82,7 +82,7 @@
 "signup_select_your_country" = "กรุณาเลือกประเทศที่ระบุไว้ในหนังสือเดินทาง";
 "signup_insert_passport_expire" = "วันที่หนังสือเดินทางหมดอายุ";
 
-"signup_just_start" = "ต่อไปคุณใส่่ข้อมูลทางด้านสุขภาพ";
+"signup_just_start" = "ต่อไปคุณใส่ข้อมูลทางด้านสุขภาพ";
 "signup_blood_type" = "กรุ๊ปเลือด";
 "signup_allergy_drug" = "แพ้ยา";
 "signup_allergy_food" = "แพ้อาหาร";
@@ -167,7 +167,7 @@
 "sub_medical" = "ประวัติทางการแพทย์";
 "sub_contact" = "ข้อมูลผู้ติดต่อในกรณีฉุกเฉิน";
 "sub_trip_plan" = "ข้อมูลแผนการทองเที่ยว";
-"sub_insurance" = "ข้อมูลกันชีวิตและอุบัติเหตุ";
+"sub_insurance" = "ข้อมูลประกันชีวิตและอุบัติเหตุ";
 "sub_change_password" = "เปลี่ยนรหัสผ่าน";
 
 "hello_blank_fragment" = "Hello blank fragment";
@@ -176,7 +176,7 @@
 "term" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
 "title_activity_forgot_password" = "ForgotPasswordActivity";
 
-"text_back" = "กลับ";
+"text_back" = "ย้อนกลับ";
 "text_next" = "ต่อไป";
-"text_update" = "ปรับปรุง";
+"text_update" = "แก้ไข";
 "text_sign_out" = "คุณต้องการที่จะออกจากระบบ?";

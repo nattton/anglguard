@@ -40,7 +40,7 @@
 "login_login" = "LOGIN";
 "login_or" = "或者";
 "login_continue" = "继续";
-"login_signup" = "SIGN UP";
+"login_signup" = "注册";
 "login_sigin" = "登录";
 
 "login_email_not_format" = "电子邮件不符";
@@ -48,7 +48,7 @@
 "login_password_contain" = "密码至少要有8个字， 包括大写的英文字、小写的、数字和象征";
 
 "signup_email" = "电子邮件";
-"signup_send_code" = "SEND CODE";
+"signup_send_code" = "发送验证码";
 "signup_please_enter" = "请输入电子邮件的密码";
 
 "signup_code" = "Code";
@@ -164,10 +164,10 @@
 "sub_personal" = "个人信息";
 "sub_mobile" = "在泰国使用的电话号码";
 "sub_passport" = "护照信息";
-"sub_medical" = "Medical";
+"sub_medical" = "医疗史";
 "sub_contact" = "在紧急情况下能联系人的信息";
 "sub_trip_plan" = "旅行计划的信息";
-"sub_insurance" = "Insurance";
+"sub_insurance" = "人寿保险和事故的信息";
 "sub_change_password" = "人寿保险和事故的信息-换密码";
 
 "hello_blank_fragment" = "Hello blank fragment";

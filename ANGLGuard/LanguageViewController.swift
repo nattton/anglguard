@@ -29,14 +29,14 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell: LanguageCell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell") as! LanguageCell
         let language = languages[indexPath.row]
-        cell.textLabel?.text = Language.displayNameForLanguage(language)
+        cell.language.text = Language.displayNameForLanguage(language)
         
         if language == Language.getCurrentLanguage() {
-            cell.accessoryType = .checkmark
+            cell.current.isSelected = true
         } else {
-            cell.accessoryType = .none
+            cell.current.isSelected = false
         }
         
         return cell

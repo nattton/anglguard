@@ -7,7 +7,8 @@ import FBSDKLoginKit
 import GoogleSignIn
 
 class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate {
-
+    
+    @IBOutlet var lb_sign_up: UILabel!
     @IBOutlet var tf_email: UITextField!
     @IBOutlet var tf_password: UITextField!
     @IBOutlet var tf_confirm: UITextField!
@@ -48,6 +49,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     }
     
     func setText() {
+        lb_sign_up.text = "login_signup".localized()
         tf_email.placeholder = "login_email".localized()
         tf_password.placeholder = "login_password".localized()
         tf_confirm.placeholder = "login_confirm_password".localized()

@@ -30,7 +30,7 @@
 "emergency_send_emergency" = "Send Emergency Alert";
 "emergency_term" = "Term and condition";
 "emergency_please_make" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
-"emergency_member_colon" = "Member:";
+"emergency_member_colon" = "Send as your friend:";
 
 "login_username" = "Username";
 "login_email" = "Email";
@@ -131,7 +131,7 @@
 "signup_fill_policy_expire_date" = "Please fill policy expire date.";
 "signup_fill_policy_company" = "Please fill policy company.";
 "signup_fill_policy_contact" = "Please fill policy contact.";
-"signup_fill_policy_mobile_number" = "Please fill mobile number";
+"signup_fill_policy_mobile_number" = "Please fill policy mobile number";
 
 "aid_header" = "Learn first aid";
 "aid_search" = "Search";

@@ -91,7 +91,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             self.present(alert, animated: true, completion: nil)
         } else {
             let parameters: Parameters = [
-                "email": user.profile.email,
+                "email": user.profile.email!,
                 "key": user.userID.encrypt(),
                 "type": "google"
             ]
