@@ -6,6 +6,8 @@ class AccidentInsuranceViewController: UITableViewController {
     @IBOutlet var bt_yes: UIButton!
     @IBOutlet var bt_no: UIButton!
     
+    let defaults = UserDefaults.standard
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -30,6 +32,18 @@ class AccidentInsuranceViewController: UITableViewController {
         lb_description.text = "signup_have_insurance".localized()
         bt_yes.setTitle("bnt_yes".localized(), for: .normal)
         bt_no.setTitle("bnt_no".localized(), for: .normal)
+    }
+    
+    @IBAction func yesAction(_ sender: Any) {
+        if let flag = defaults.string(forKey: "flag"), flag == "1" {
+            self.performSegue(withIdentifier: "showInsurancePlan", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "showInsurancePolicy", sender: nil)
+        }
+    }
+    
+    @IBAction func noAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "showInsurancePlan", sender: nil)
     }
 
     /*

@@ -239,6 +239,9 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     let message: String = result["message"] as! String
                     NSLog("result = \(result)")
                     if code == "200" {
+                        if let flag: String = result["flag"] as? String {
+                            self.defaults.set(flag, forKey: "flag")
+                        }
                         self.performSegue(withIdentifier: "showAccidentInsurance", sender: nil)
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
