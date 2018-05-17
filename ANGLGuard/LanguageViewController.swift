@@ -4,13 +4,12 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var tb_language: UITableView!
     
-    let languages = Language.getAllLanguages()
+    let languages = ["ภาษาไทย", "English", "中国"]
+    let keys = ["th", "en", "zh-Hans"]
     var selecteds: NSMutableArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setText()
         
         tb_language.tableFooterView = UIView(frame: .zero)
     }
@@ -20,10 +19,6 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
 
     }
     
-    func setText() {
-        self.title = "nav_language".localized()
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return languages.count
     }
@@ -31,9 +26,10 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LanguageCell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell") as! LanguageCell
         let language = languages[indexPath.row]
-        cell.language.text = Language.displayNameForLanguage(language)
+        cell.language.text = language
         
-        if language == Language.getCurrentLanguage() {
+        let key = keys[indexPath.row]
+        if key == Language.getCurrentLanguage() {
             cell.current.isSelected = true
         } else {
             cell.current.isSelected = false
@@ -43,8 +39,7 @@ class LanguageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Language.setCurrentLanguage(languages[indexPath.row])
-        setText()
+        Language.setCurrentLanguage(keys[indexPath.row])
         tableView.reloadData()
     }
     
