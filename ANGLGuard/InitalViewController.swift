@@ -1,5 +1,6 @@
 import UIKit
 import SidebarOverlay
+import Foundation
 
 class InitalViewController: SOContainerViewController {
 
@@ -119,6 +120,13 @@ extension UIImage {
         let base64String = imageData?.base64EncodedString(options: .endLineWithLineFeed)
         return base64String!
     }
+    
+    func toData() -> Data? {
+        if let data = UIImagePNGRepresentation(self) {
+            return data
+        }
+        return nil
+    }
 }
 
 extension NSMutableArray {
@@ -194,4 +202,14 @@ extension String {
         return self.replacingOccurrences(of: "zh-Hans", with: "cn").uppercased()
     }
     
+}
+
+extension Date {
+    var millisecondsSince1970:Int {
+        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    init(milliseconds:Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
+    }
 }

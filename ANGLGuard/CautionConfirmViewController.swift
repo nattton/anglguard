@@ -208,45 +208,80 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
                 "token": token,
                 "request_user_id": friendId,
                 "message": message!,
-                "image1": photo1?.resizeImage(200, opaque: false).toBase64() ?? "",
-                "image2": photo2?.resizeImage(200, opaque: false).toBase64() ?? "",
-                "image3": photo3?.resizeImage(200, opaque: false).toBase64() ?? "",
-                "image4": photo4?.resizeImage(200, opaque: false).toBase64() ?? "",
                 "latitude": String(lat),
                 "longitude": String(long)
             ]
+            
+            let headers: HTTPHeaders = [
+                "Content-type": "multipart/form-data"
+            ]
+
             SVProgressHUD.show(withStatus: LOADING_TEXT)
-            Alamofire.request(BES_ALERT_URL, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            Alamofire.upload(multipartFormData: { (multipartFormData) in
+                for (key, value) in parameters {
+                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+                }
+
+                let time = Date().millisecondsSince1970
+
+                if let data1 = self.photo1?.resizeImage(200, opaque: false).toData() {
+                    multipartFormData.append(data1, withName: "image1", fileName: "1\(time).png", mimeType: "image/png")
+                }
+
+                if let data2 = self.photo2?.resizeImage(200, opaque: false).toData() {
+                    multipartFormData.append(data2, withName: "image2", fileName: "2\(time).png", mimeType: "image/png")
+                }
+
+                if let data3 = self.photo3?.resizeImage(200, opaque: false).toData() {
+                    multipartFormData.append(data3, withName: "image3", fileName: "3\(time).png", mimeType: "image/png")
+                }
+
+                if let data4 = self.photo4?.resizeImage(200, opaque: false).toData() {
+                    multipartFormData.append(data4, withName: "image4", fileName: "4\(time).png", mimeType: "image/png")
+                }
+
+            }, usingThreshold: UInt64.init(), to: BES_ALERT_URL, method: .post, headers: headers) { (result) in
                 SVProgressHUD.dismiss()
-                if let json = response.result.value {
-                    let result = json as! Dictionary<String, Any>
-                    let code: String = result["code"] as! String
-                    let message: String = result["message"] as! String
-                    NSLog("result = \(result)")
-                    if code == "200" {
-                        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
-                            self.dismiss(animated: false) {
-                                if self.delegate != nil {
-                                    self.delegate?.onCautionConfirmDismiss()
-                                }
+                switch result {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        if let json = response.result.value {
+                            let result = json as! Dictionary<String, Any>
+                            let code: String = result["code"] as! String
+                            let message: String = result["message"] as! String
+                            NSLog("result = \(result)")
+                            if code == "200" {
+                                let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+                                    self.dismiss(animated: false) {
+                                        if self.delegate != nil {
+                                            self.delegate?.onCautionConfirmDismiss()
+                                        }
+                                    }
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                            } else if code == "104" {
+                                self.defaults.set("N", forKey: "login")
+                                self.defaults.set("N", forKey: "timer")
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.clearProfile()
+                                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                                let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                                UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                            } else {
+                                let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                                let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                                alert.addAction(defaultAction)
+                                self.present(alert, animated: true, completion: nil)
                             }
-                        }))
-                        self.present(alert, animated: true, completion: nil)
-                    } else if code == "104" {
-                        self.defaults.set("N", forKey: "login")
-                        self.defaults.set("N", forKey: "timer")
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDelegate.clearProfile()
-                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
-                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
-                    } else {
-                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
-                        alert.addAction(defaultAction)
-                        self.present(alert, animated: true, completion: nil)
+                        }
+
                     }
+                case .failure(let error):
+                    let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
