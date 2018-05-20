@@ -73,12 +73,15 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let notification = notifications[indexPath.row] as! [String: String]
-        let type: String! = notification["type"]
+        let image1: String! = notification["image1"]
+        let image2: String! = notification["image2"]
+        let image3: String! = notification["image3"]
+        let image4: String! = notification["image4"]
         
-        if type == "alert" {
-            return 145
+        if image1 == "" && image2 == "" && image3 == "" && image4 == "" {
+            return 86
         } else {
-            return 84
+            return 160
         }
     }
     
@@ -101,32 +104,40 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             let eImg1: String! = image1.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url1 = URL(string: eImg1){
                 nACell.photo1.af_setImage(for: .normal, url: url1)
+                nACell.photo1.isHidden = false
             } else {
                 nACell.photo1.setImage(defaultImage, for: .normal)
+                nACell.photo1.isHidden = true
             }
             
             let image2: String! = notification["image2"]
             let eImg2: String! = image2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url2 = URL(string: eImg2){
                 nACell.photo2.af_setImage(for: .normal, url: url2)
+                nACell.photo2.isHidden = false
             } else {
                 nACell.photo2.setImage(defaultImage, for: .normal)
+                nACell.photo2.isHidden = true
             }
             
             let image3: String! = notification["image3"]
             let eImg3: String! = image3.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url3 = URL(string: eImg3){
                 nACell.photo3.af_setImage(for: .normal, url: url3)
+                nACell.photo3.isHidden = false
             } else {
                 nACell.photo3.setImage(defaultImage, for: .normal)
+                nACell.photo3.isHidden = true
             }
             
             let image4: String! = notification["image4"]
             let eImg4: String! = image4.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let url4 = URL(string: eImg4){
                 nACell.photo4.af_setImage(for: .normal, url: url4)
+                nACell.photo4.isHidden = false
             } else {
                 nACell.photo4.setImage(defaultImage, for: .normal)
+                nACell.photo4.isHidden = true
             }
             
             nACell.photo1.addTarget(self, action: #selector(showPreview(_:)), for: .touchUpInside)
