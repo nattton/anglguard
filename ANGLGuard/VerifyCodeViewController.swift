@@ -106,6 +106,7 @@ class VerifyCodeViewController: UITableViewController {
                             if let data: Dictionary<String, Any> = result["data"]  as? Dictionary<String, Any> {
                                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                                 appDelegate.setProfile(data: data)
+                                appDelegate.mapProfile()
                             }
                             
                             Authen.sharedInstance.token = token

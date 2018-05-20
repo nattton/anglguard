@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'ANGLGuard' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,7 +7,7 @@ target 'ANGLGuard' do
 
   # Pods for ANGLGuard
   pod 'SidebarOverlay', '4.1'
-  pod 'Alamofire', '4.5.1'
+  pod 'Alamofire', '4.7.2'
   pod 'AlamofireImage', '3.3.0'
 #  pod 'sqlite3', '3.20.1'
 #  pod 'Charts', '3.0.4'
@@ -23,5 +23,6 @@ target 'ANGLGuard' do
   pod 'p2.OAuth2'
   pod 'SwiftyJSON'
   pod 'WechatOpenSDK'
+  pod 'NotificationBannerSwift'
 
 end

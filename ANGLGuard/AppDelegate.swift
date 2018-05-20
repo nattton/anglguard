@@ -7,6 +7,8 @@ import SVProgressHUD
 import FBSDKLoginKit
 import GoogleSignIn
 
+import NotificationBannerSwift
+
 //Production
 //let HOST = "https://anglguard-service.angl.life/public"
 //let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
@@ -115,9 +117,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         
+        //check push notification
+        if let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as! [AnyHashable : Any]? {
+            if let data: [AnyHashable : Any] = remoteNotification["data"] as? [AnyHashable : Any] {
+                print("data = \(data)")
+                UserDefaults.standard.set(true, forKey: "push")
+            }
+        }
+        
         if let login = defaults.string(forKey: "login") {
             if login == "Y" {
+                //check profile
                 mapProfile()
+                
+                //check push notification
+                if let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as! [AnyHashable : Any]? {
+                    if let data: [AnyHashable : Any] = remoteNotification["data"] as? [AnyHashable : Any] {
+                        print("data = \(data)")
+                        UserDefaults.standard.set(true, forKey: "push")
+                    }
+                }
+
+                //goto main page
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
                 self.window?.rootViewController = viewController
@@ -219,18 +240,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-//        if var topController = window?.rootViewController {
-//            while let presentedViewController = topController.presentedViewController {
-//                topController = presentedViewController
-//            }
-//
-//            if let latitude: String = userInfo["latitude"] as? String, let longitude: String = userInfo["longitude"] as? String {
-//                let alert = UIAlertController(title: latitude + " " + longitude, message: "", preferredStyle: .alert)
-//                let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
-//                alert.addAction(defaultAction)
-//                topController.present(alert, animated: true, completion: nil)
-//            }
-//        }
+        let aps = userInfo["aps"] as! [String: AnyObject]
+        let alert = aps["alert"] as! String
+        if application.applicationState == .inactive {
+            //set push
+            UserDefaults.standard.set(true, forKey: "push")
+            
+            //goto main page
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
+            self.window?.rootViewController = viewController
+        } else if application.applicationState == .active {
+            // Notification View
+            let image = UIImage(named: "ic_push_noti")
+            let leftView = UIImageView(image: image)
+            let title = "ANGLGuard"
+            let banner = NotificationBanner(title: title, subtitle: alert, leftView: leftView, style: .success, colors: CustomBannerColors())
+            banner.onTap = {
+                //set push
+                UserDefaults.standard.set(true, forKey: "push")
+                
+                //goto main page
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
+                self.window?.rootViewController = viewController
+            }
+            banner.show()
+        }
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
@@ -437,8 +473,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
             defaults.set(insurance["contact_number_cc"] as? String, forKey: "insurance_contact_number_cc")
             defaults.set(insurance["contact_number"] as? String, forKey: "insurance_contact_number")
         }
-        
-        mapProfile()
     }
     
     func mapProfile() {
@@ -622,5 +656,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         Insurance.sharedInstance.contact_number = ""
     }
 
+}
+
+class CustomBannerColors: BannerColorsProtocol {
+    
+    internal func color(for style: BannerStyle) -> UIColor {
+        switch style {
+        case .danger:
+            return UIColor.red
+        case .info:
+            return UIColor.blue
+        case .none:
+            return UIColor.clear
+        case .success:
+            return UIColor(hex: 0x7BCECC)
+        case .warning:
+            return UIColor.yellow
+        }
+    }
+    
 }
 

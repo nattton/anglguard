@@ -236,7 +236,7 @@ class Step3ViewController: UITableViewController, UIImagePickerControllerDelegat
             Personal.sharedInstance.passport_num = passport
             Personal.sharedInstance.country_code = country_code
             Personal.sharedInstance.passport_expire_date = expire_date
-            Personal.sharedInstance.passport_img = bt_avatar.backgroundImage(for: .normal)
+            Personal.sharedInstance.passport_img = bt_avatar.backgroundImage(for: .normal)!
             
             self.performSegue(withIdentifier: "showStep4", sender: nil)
         }

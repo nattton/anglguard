@@ -63,6 +63,7 @@ class ThankYouViewController: UITableViewController {
                         self.defaults.set("Y", forKey: "login")
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.setProfile(data: data)
+                        appDelegate.mapProfile()
                         appDelegate.registerForPushNotifications()
                         self.performSegue(withIdentifier: "showAgree", sender: nil)
                     }

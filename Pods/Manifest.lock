@@ -1,6 +1,6 @@
 PODS:
   - ADCountryPicker (2.0.0)
-  - Alamofire (4.5.1)
+  - Alamofire (4.7.2)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - Bolts (1.9.0):
@@ -74,21 +74,26 @@ PODS:
   - GTMSessionFetcher/Full (1.1.14):
     - GTMSessionFetcher/Core (= 1.1.14)
   - ISHPullUp (1.0.6)
+  - MarqueeLabel/Swift (3.1.4)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NotificationBannerSwift (1.6.3):
+    - MarqueeLabel/Swift
+    - SnapKit (~> 4.0)
   - p2.OAuth2 (4.0.1)
   - Protobuf (3.5.0)
   - SidebarOverlay (4.1)
+  - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.0.0)
   - WechatOpenSDK (1.8.1)
 
 DEPENDENCIES:
   - ADCountryPicker (= 2.0.0)
-  - Alamofire (= 4.5.1)
+  - Alamofire (= 4.7.2)
   - AlamofireImage (= 3.3.0)
   - FacebookCore
   - FacebookLogin
@@ -97,6 +102,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - GoogleSignIn
   - ISHPullUp (= 1.0.6)
+  - NotificationBannerSwift
   - p2.OAuth2
   - SidebarOverlay (= 4.1)
   - SVProgressHUD (= 2.2.5)
@@ -105,7 +111,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   ADCountryPicker: afe39f43a1606e82d66fad809374602a6cc74088
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
@@ -124,14 +130,17 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
   ISHPullUp: 0ce08aeef21a034ab883b22c5810015853dda6f8
+  MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NotificationBannerSwift: b231e4c3244848ef300e1c53ce027b9756b9b06f
   p2.OAuth2: fdc2effef37793a8f775dd4760bc4c1ea906c956
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SidebarOverlay: b65f0a1d9331ce4bf81f82eea202b21cc8655c5a
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
 
-PODFILE CHECKSUM: b66ad9162b67ca0e5f2483c560fec7bf352f7515
+PODFILE CHECKSUM: 77b42e956bde6c775b3a1a6569a30f55a85b473d
 
 COCOAPODS: 1.3.1

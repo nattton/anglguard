@@ -33,8 +33,14 @@ class InitalViewController: SOContainerViewController {
         self.menuSide = .left
         self.widthForPanGestureRecognizer = 0
         self.sideMenuWidth = 300
-        self.topViewController = self.storyboard?.instantiateViewController(withIdentifier: "angllife")
         self.sideViewController = self.storyboard?.instantiateViewController(withIdentifier: "menu")
+        
+        if UserDefaults.standard.bool(forKey: "push") == true {
+            UserDefaults.standard.set(false, forKey: "push")
+            self.topViewController = self.storyboard?.instantiateViewController(withIdentifier: "notification")
+        } else {
+            self.topViewController = self.storyboard?.instantiateViewController(withIdentifier: "angllife")
+        }
     }
     
     func setNavigation() {

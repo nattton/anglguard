@@ -188,6 +188,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                         self.defaults.set("Y", forKey: "login")
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.setProfile(data: data)
+                        appDelegate.mapProfile()
                         appDelegate.registerForPushNotifications()
                         self.performSegue(withIdentifier: "showMain", sender: nil)
                     }

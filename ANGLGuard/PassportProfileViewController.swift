@@ -288,7 +288,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
                             Personal.sharedInstance.passport_num = passport
                             Personal.sharedInstance.country_code = country
                             Personal.sharedInstance.passport_expire_date = expire_date
-                            Personal.sharedInstance.passport_img = image
+                            Personal.sharedInstance.passport_img = image!
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)

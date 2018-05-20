@@ -127,6 +127,9 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
             Contact.sharedInstance.relation = relationship
             Contact.sharedInstance.email = email
             
+            let personal_img_bin = Personal.sharedInstance.personal_img_bin!.resizeImage(200, opaque: false).toBase64()
+            let passport_img = Personal.sharedInstance.passport_img.resizeImage(200, opaque: false).toBase64()
+            
             let parameters: Parameters = [
                 "token" : Authen.sharedInstance.token,
                 "type" : Authen.sharedInstance.type,
@@ -148,8 +151,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     "mobile_cc" : Personal.sharedInstance.mobile_cc.replacingOccurrences(of: "+", with: ""),
                     "thai_mobile_num" : Personal.sharedInstance.thai_mobile_num,
                     "thai_mobile_cc" : Personal.sharedInstance.thai_mobile_cc.replacingOccurrences(of: "+", with: ""),
-                    "personal_img_bin" : Personal.sharedInstance.personal_img_bin?.resizeImage(200, opaque: false).toBase64(),
-                    "passport_img" : Personal.sharedInstance.passport_img?.resizeImage(200, opaque: false).toBase64()
+                    "personal_img_bin" : personal_img_bin,
+                    "passport_img" : passport_img
                 ],
                 "contact_person" : [
                     "firstname" : Contact.sharedInstance.firstname,
