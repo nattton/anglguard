@@ -207,15 +207,21 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
                             let message: String = result["message"] as! String
                             NSLog("result = \(result)")
                             if code == "200" {
-                                let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
-                                    self.dismiss(animated: false) {
-                                        if self.delegate != nil {
-                                            self.delegate?.onGroupAlertDismiss()
-                                        }
+//                                let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+//                                alert.addAction(UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+//                                    self.dismiss(animated: false) {
+//                                        if self.delegate != nil {
+//                                            self.delegate?.onGroupAlertDismiss()
+//                                        }
+//                                    }
+//                                }))
+//                                self.present(alert, animated: true, completion: nil)
+                                
+                                self.dismiss(animated: false) {
+                                    if self.delegate != nil {
+                                        self.delegate?.onGroupAlertDismiss()
                                     }
-                                }))
-                                self.present(alert, animated: true, completion: nil)
+                                }
                             } else if code == "104" {
                                 self.defaults.set("N", forKey: "login")
                                 self.defaults.set("N", forKey: "timer")

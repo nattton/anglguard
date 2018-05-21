@@ -240,32 +240,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        let aps = userInfo["aps"] as! [String: AnyObject]
-        let alert = aps["alert"] as! String
-        if application.applicationState == .inactive {
-            //set push
-            UserDefaults.standard.set(true, forKey: "push")
-            
-            //goto main page
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
-            self.window?.rootViewController = viewController
-        } else if application.applicationState == .active {
-            // Notification View
-            let image = UIImage(named: "ic_push_noti")
-            let leftView = UIImageView(image: image)
-            let title = "ANGLGuard"
-            let banner = NotificationBanner(title: title, subtitle: alert, leftView: leftView, style: .success, colors: CustomBannerColors())
-            banner.onTap = {
-                //set push
-                UserDefaults.standard.set(true, forKey: "push")
-                
-                //goto main page
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
-                self.window?.rootViewController = viewController
+        if let aps = userInfo["aps"] as? [String: AnyObject] {
+            if let alert = aps["alert"] as? [String: AnyObject] {
+                if let body = alert["body"] as? String {
+                    if application.applicationState == .inactive {
+                        //set push
+                        UserDefaults.standard.set(true, forKey: "push")
+                        
+                        //goto main page
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
+                        self.window?.rootViewController = viewController
+                    } else if application.applicationState == .active {
+                        // Notification View
+                        let image = UIImage(named: "ic_push_noti")
+                        let leftView = UIImageView(image: image)
+                        let title = "ANGLGuard"
+                        let banner = NotificationBanner(title: title, subtitle: body, leftView: leftView, style: .success, colors: CustomBannerColors())
+                        banner.onTap = {
+                            //set push
+                            UserDefaults.standard.set(true, forKey: "push")
+                            
+                            //goto main page
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
+                            self.window?.rootViewController = viewController
+                        }
+                        banner.show()
+                    }
+                }
             }
-            banner.show()
         }
     }
     
