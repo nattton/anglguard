@@ -202,11 +202,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if url.scheme == "anglguard" {
+        if url.scheme! == "anglguard" {
             let service = OutlookService.shared()
             service.handleOAuthCallback(url: url)
             return true
-        } else if url.scheme == "wxc5aac2e8f9f73a9837" {
+        } else if url.scheme! == "wxc5aac2e8f9f73a9837" {
             WXApi.handleOpen(url, delegate: self)
         } else {
             if FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation) {
