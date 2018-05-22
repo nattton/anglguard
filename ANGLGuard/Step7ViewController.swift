@@ -127,8 +127,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
             Contact.sharedInstance.relation = relationship
             Contact.sharedInstance.email = email
             
-            let personal_img_bin = Personal.sharedInstance.personal_img_bin!.resizeImage(200, opaque: false).toBase64()
-            let passport_img = Personal.sharedInstance.passport_img.resizeImage(200, opaque: false).toBase64()
+            let personal_img_bin = Personal.sharedInstance.personal_img_bin!.resizeImage(150, opaque: false).toBase64()
+            let passport_img = Personal.sharedInstance.passport_img!.resizeImage(150, opaque: false).toBase64()
             
             let parameters: Parameters = [
                 "token" : Authen.sharedInstance.token,
@@ -233,6 +233,7 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     ]
                 ]
             ]
+//            print("parameters = \(parameters)")
             SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(SIGN_UP_REGISTER, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
                 SVProgressHUD.dismiss()
