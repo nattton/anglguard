@@ -233,7 +233,6 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     ]
                 ]
             ]
-//            print("parameters = \(parameters)")
             SVProgressHUD.show(withStatus: LOADING_TEXT)
             Alamofire.request(SIGN_UP_REGISTER, method: .post, parameters: parameters, encoding: JSONEncoding.prettyPrinted).responseJSON { response in
                 SVProgressHUD.dismiss()

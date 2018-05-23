@@ -132,7 +132,7 @@ extension UIImage {
     }
     
     func toBase64() -> String {
-        let imageData = UIImagePNGRepresentation(self)
+        let imageData = UIImageJPEGRepresentation(self, 0.8)
         let base64String = imageData?.base64EncodedString(options: .endLineWithLineFeed)
         return base64String!
     }
