@@ -127,8 +127,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
             Contact.sharedInstance.relation = relationship
             Contact.sharedInstance.email = email
             
-            let personal_img_bin = Personal.sharedInstance.personal_img_bin!.resizeImage(150, opaque: false).toBase64()
-            let passport_img = Personal.sharedInstance.passport_img!.resizeImage(150, opaque: false).toBase64()
+            let personal_img_bin = Personal.sharedInstance.personal_img_bin!.resizeImage(150).toBase64()
+            let passport_img = Personal.sharedInstance.passport_img!.resizeImage(150).toBase64()
             
             let parameters: Parameters = [
                 "token" : Authen.sharedInstance.token,
