@@ -10,33 +10,33 @@ import GoogleSignIn
 import NotificationBannerSwift
 
 //Production
-//let HOST = "https://anglguard-service.angl.life/public"
-//let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
-//
-//let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
-//let VIRIYAH_SUCCESS_URL = "https://affiliate.viriyah.co.th/ANGL/successpage.php"
-//
-//let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
-//let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
-//let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
-//let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl.life/public/siampay-fail"
-//
-//let MERCHANT_CODE = "76101221"
+let HOST = "https://anglguard-service.angl.life/public"
+let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
+
+let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
+let VIRIYAH_SUCCESS_URL = "https://affiliate.viriyah.co.th/ANGL/successpage.php"
+
+let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
+let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
+let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
+let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl.life/public/siampay-fail"
+
+let MERCHANT_CODE = "76101221"
 //Production
 
 // dev
-let HOST = "https://anglguard-service-test.angl.life/public"
-let HOST_TOURIST = "http://203.107.236.229/api-tourist"
-
-let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
-let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
-
-let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
-let ASIA_PAY_CANCEL_URL = "https://anglguard-service-test.angl.life/public/siampay-cancel"
-let ASIA_PAY_SUCCESS_URL = "https://anglguard-service-test.angl.life/public/siampay-success"
-let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay-fail"
-
-let MERCHANT_CODE = "76065111"
+//let HOST = "https://anglguard-service-test.angl.life/public"
+//let HOST_TOURIST = "http://203.107.236.229/api-tourist"
+//
+//let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
+//let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
+//
+//let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
+//let ASIA_PAY_CANCEL_URL = "https://anglguard-service-test.angl.life/public/siampay-cancel"
+//let ASIA_PAY_SUCCESS_URL = "https://anglguard-service-test.angl.life/public/siampay-success"
+//let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay-fail"
+//
+//let MERCHANT_CODE = "76065111"
 // dev
 
 let CHECK_VERSION_URL = HOST + "/check-version"
@@ -155,22 +155,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
 //        Messaging.messaging().delegate = self
-        
-        //check push notification
-//        if let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as! [AnyHashable : Any]? {
-//            if var topController = window?.rootViewController {
-//                while let presentedViewController = topController.presentedViewController {
-//                    topController = presentedViewController
-//                }
-//                
-//                if let latitude: String = remoteNotification["latitude"] as? String, let longitude: String = remoteNotification["longitude"] as? String {
-//                    let alert = UIAlertController(title: latitude + " " + longitude, message: "", preferredStyle: .alert)
-//                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
-//                    alert.addAction(defaultAction)
-//                    topController.present(alert, animated: true, completion: nil)
-//                }
-//            }
-//        }
         
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "789190969892-jmhfr2n5msgnige7j6ibj6ih01eaqv5l.apps.googleusercontent.com"
@@ -369,27 +353,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
     }
     
     func setProfile(data: Dictionary<String, Any>) {
-        let personal = data["personal"]  as! Dictionary<String, Any>
-        defaults.set(personal["id"] as? String, forKey: "id")
-        defaults.set(personal["token"] as? String, forKey: "token")
-        defaults.set(personal["first_name"] as? String, forKey: "first_name")
-        defaults.set(personal["middle_name"] as? String, forKey: "middle_name")
-        defaults.set(personal["last_name"] as? String, forKey: "last_name")
-        defaults.set(personal["gender"] as? String, forKey: "gender")
-        defaults.set(personal["date_of_birth"] as? String, forKey: "birthdate")
-        defaults.set(personal["height"] as? String, forKey: "height")
-        defaults.set(personal["weight"] as? String, forKey: "weight")
-        defaults.set(personal["country_code"] as? String, forKey: "country_code")
-        defaults.set(personal["passport_num"] as? String, forKey: "passport_num")
-        defaults.set(personal["passport_expire_date"] as? String, forKey: "passport_expire_date")
-        defaults.set(personal["passport_img"] as? String, forKey: "passport_img")
-        defaults.set(personal["personal_img_bin"] as? String, forKey: "personal_img_bin")
-        defaults.set(personal["email"] as? String, forKey: "email")
-        defaults.set(personal["mobile_num"] as? String, forKey: "mobile_num")
-        defaults.set(personal["mobile_cc"] as? String, forKey: "mobile_cc")
-        defaults.set(personal["thai_mobile_num"] as? String, forKey: "thai_mobile_num")
-        defaults.set(personal["thai_mobile_cc"] as? String, forKey: "thai_mobile_cc")
-        defaults.set(personal["personal_link"] as? String, forKey: "personal_link")
+        let personal = data["personal"]  as! Dictionary<String, String>
+        defaults.set(personal["id"], forKey: "id")
+        defaults.set(personal["token"], forKey: "token")
+        defaults.set(personal["first_name"], forKey: "first_name")
+        defaults.set(personal["middle_name"], forKey: "middle_name")
+        defaults.set(personal["last_name"], forKey: "last_name")
+        defaults.set(personal["gender"], forKey: "gender")
+        defaults.set(personal["date_of_birth"], forKey: "birthdate")
+        defaults.set(personal["height"], forKey: "height")
+        defaults.set(personal["weight"], forKey: "weight")
+        defaults.set(personal["country_code"], forKey: "country_code")
+        defaults.set(personal["passport_num"], forKey: "passport_num")
+        defaults.set(personal["passport_expire_date"], forKey: "passport_expire_date")
+        defaults.set(personal["passport_img"], forKey: "passport_img")
+        defaults.set(personal["personal_img_bin"], forKey: "personal_img_bin")
+        defaults.set(personal["email"], forKey: "email")
+        defaults.set(personal["mobile_num"], forKey: "mobile_num")
+        defaults.set(personal["mobile_cc"], forKey: "mobile_cc")
+        defaults.set(personal["thai_mobile_num"], forKey: "thai_mobile_num")
+        defaults.set(personal["thai_mobile_cc"], forKey: "thai_mobile_cc")
+        defaults.set(personal["personal_link"], forKey: "personal_link")
         
         let contact = data["contact_person"]  as! Dictionary<String, Any>
         defaults.set(contact["first_name"] as? String, forKey: "contact_first_name")

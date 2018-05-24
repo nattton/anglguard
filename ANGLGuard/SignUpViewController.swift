@@ -100,7 +100,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
         } else {
             Authen.sharedInstance.key = ""
             Authen.sharedInstance.type = "normal"
-            Personal.sharedInstance.password = self.password
+            Personal.sharedInstance.password = password
             verify(email: email)
         }
     }
@@ -136,7 +136,7 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     
     @IBAction func outlookAction(_ sender: Any) {
         if self.outlookService.isLoggedIn {
-            outlookService.getUserProfile() { email, id  in
+            outlookService.getUserProfile { (email, id) in
                 if let userEmail = email, let userId = id {
                     Authen.sharedInstance.key = userId
                     Authen.sharedInstance.type = "outlook"
@@ -147,14 +147,14 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
         } else {
             outlookService.login(from: self) { (result) in
                 if result != nil {
-                    self.outlookService.getUserProfile() { email, id in
+                    self.outlookService.getUserProfile(callback: { (email, id) in
                         if let userEmail = email, let userId = id {
                             Authen.sharedInstance.key = userId
                             Authen.sharedInstance.type = "outlook"
                             self.verify(email: userEmail)
                         }
                         self.outlookService.logout()
-                    }
+                    })
                 }
             }
         }

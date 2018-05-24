@@ -20,7 +20,7 @@ target 'ANGLGuard' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'GoogleSignIn'
-  pod 'p2.OAuth2'
+  pod 'p2.OAuth2', '4.0.1'
   pod 'SwiftyJSON'
   pod 'WechatOpenSDK'
   pod 'NotificationBannerSwift'
