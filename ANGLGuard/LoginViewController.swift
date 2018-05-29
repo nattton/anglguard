@@ -190,7 +190,20 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                         appDelegate.setProfile(data: data)
                         appDelegate.mapProfile()
                         appDelegate.registerForPushNotifications()
-                        self.performSegue(withIdentifier: "showMain", sender: nil)
+                        if let personal = data["personal"] as? [String: Any] {
+                            if let term = personal["show_term_flag"] as? String {
+                                if term == "Y" {
+                                    self.performSegue(withIdentifier: "showAgree", sender: nil)
+                                } else {
+                                    self.performSegue(withIdentifier: "showMain", sender: nil)
+                                }
+                            } else {
+                                self.performSegue(withIdentifier: "showMain", sender: nil)
+                            }
+                        } else {
+                            self.performSegue(withIdentifier: "showMain", sender: nil)
+                        }
+                        
                     }
                 } else {
                     let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
