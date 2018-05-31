@@ -134,6 +134,8 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                 "token" : Authen.sharedInstance.token,
                 "type" : Authen.sharedInstance.type,
                 "key" : Authen.sharedInstance.key.encrypt(),
+                "platform": "iOS",
+                "version": UIApplication.shared.applicationVersion(),
                 "personal": [
                     "email" : Personal.sharedInstance.email,
                     "password" : Personal.sharedInstance.password.encrypt(),
@@ -245,7 +247,16 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                         if let flag: String = result["flag"] as? String {
                             self.defaults.set(flag, forKey: "flag")
                         }
-                        self.performSegue(withIdentifier: "showAccidentInsurance", sender: nil)
+                        
+                        if let state_flag = result["state_flag"] as? String {
+                            if state_flag == "Y" {
+                                self.performSegue(withIdentifier: "showThankYou", sender: nil)
+                            } else {
+                                self.performSegue(withIdentifier: "showAccidentInsurance", sender: nil)
+                            }
+                        } else {
+                            self.performSegue(withIdentifier: "showAccidentInsurance", sender: nil)
+                        }
                     } else if code == "104" {
                         self.defaults.set("N", forKey: "login")
                         self.defaults.set("N", forKey: "timer")

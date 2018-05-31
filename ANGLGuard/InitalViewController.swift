@@ -229,3 +229,20 @@ extension Date {
         self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
     }
 }
+
+extension UIApplication {
+    
+    func applicationVersion() -> String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+    }
+    
+    func applicationBuild() -> String {
+        return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
+    }
+    
+    func versionBuild() -> String {
+        let version = self.applicationVersion()
+        let build = self.applicationBuild()
+        return "v\(version)(\(build))"
+    }
+}

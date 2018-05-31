@@ -5513,6 +5513,7 @@
                         <outlet property="tf_phone" destination="lYe-y1-Nhb" id="TnU-FA-5aI"/>
                         <outlet property="tf_relationship" destination="x7t-vt-UA9" id="x0u-5N-uUh"/>
                         <segue destination="Zfz-0m-D3y" kind="presentation" identifier="showAccidentInsurance" modalTransitionStyle="crossDissolve" id="tyQ-2d-an2"/>
+                        <segue destination="7Gy-HD-BgX" kind="presentation" identifier="showThankYou" modalTransitionStyle="crossDissolve" id="S8u-no-htz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7H-yV-1uE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -11268,7 +11269,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2qP-qq-fzb"/>
-        <segue reference="QVB-hu-sxA"/>
+        <segue reference="S8u-no-htz"/>
         <segue reference="H5X-I5-z3w"/>
         <segue reference="WNK-aW-ALk"/>
         <segue reference="Mt3-F6-5eG"/>
