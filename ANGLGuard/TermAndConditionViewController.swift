@@ -3,12 +3,17 @@ import SVProgressHUD
 
 class TermAndConditionViewController: UIViewController, UIWebViewDelegate {
     
-     @IBOutlet var webView: UIWebView!
+    @IBOutlet var webView: UIWebView!
+    @IBOutlet var bt_agree: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setText()
+        
+        bt_agree.layer.masksToBounds = false
+        bt_agree.layer.cornerRadius = bt_agree.frame.size.height / 2
+        bt_agree.clipsToBounds = true
         
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         
@@ -24,6 +29,7 @@ class TermAndConditionViewController: UIViewController, UIWebViewDelegate {
     
     func setText() {
         self.title = "nav_term".localized()
+        bt_agree.setTitle("text_agree".localized(), for: .normal)
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

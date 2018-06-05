@@ -29,6 +29,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var im_profile_avatar: UIImageView!
     @IBOutlet var lb_profile_name: UILabel!
     @IBOutlet var lb_emergency_alert: UILabel!
+    @IBOutlet var lb_emergency_member: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,7 @@ class GroupAlertViewController: UIViewController, UITableViewDelegate, UITableVi
     func setText() {
         self.navigationItem.title = "emergency_send_emergency".localized()
         lb_emergency_alert.text = "emergency_send_emergency".localized()
+        lb_emergency_member.text = "emergency_member_colon".localized()
         bt_confirm.setTitle("bnt_confirm".localized(), for: .normal)
     }
     

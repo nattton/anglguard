@@ -69,6 +69,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
     }
     
     @IBAction func sendAction(_ sender: Any) {
+        self.view.endEditing(true)
         if let token = defaults.string(forKey: "token") {
             let country_code: String = tf_country_code.text!
             let phone: String = tf_phone.text!

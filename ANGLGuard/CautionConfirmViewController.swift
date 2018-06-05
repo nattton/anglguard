@@ -41,6 +41,7 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var lb_emergency_term: UILabel!
     @IBOutlet var lb_emergency_term_description: UILabel!
     
+    @IBOutlet var lb_who_is: UILabel!
     @IBOutlet var v_profile: UIView!
     @IBOutlet var v_group: UIView!
     @IBOutlet var im_profile_avatar: UIImageView!

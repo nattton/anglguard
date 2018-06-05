@@ -50,6 +50,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let img: String! = friend["personal_image_path"] as! String
         let firstname: String! = friend["firstname"] as! String
         let lastname: String! = friend["lastname"] as! String
+        let email: String! = friend["email"] as! String
         
         let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let url = URL(string: eImg){
@@ -61,6 +62,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         fCell.avatar.rounded()
         
         fCell.name.text = firstname + " " + lastname
+        fCell.email.text = email
         
         if indexPath.row % 2 == 0 {
             fCell.backgroundColor = UIColor.white

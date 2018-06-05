@@ -16,7 +16,7 @@
 "bnt_send" = "ส่ง";
 "bnt_ok" = "ตกลง";
 "bnt_update" = "แก้ไข";
-"bnt_later" = "ข้าม";
+"bnt_later" = "ถัดไป";
 "bnt_yes" = "มี";
 "bnt_no" = "ไม่มี";
 "bnt_delete" = "ลบ";
@@ -82,7 +82,7 @@
 "signup_select_your_country" = "กรุณาเลือกประเทศที่ระบุไว้ในหนังสือเดินทาง";
 "signup_insert_passport_expire" = "วันที่หนังสือเดินทางหมดอายุ";
 
-"signup_just_start" = "ต่อไปคุณใส่ข้อมูลทางด้านสุขภาพ";
+"signup_just_start" = "ต่อไปคุณใส่่ข้อมูลทางด้านสุขภาพ";
 "signup_blood_type" = "กรุ๊ปเลือด";
 "signup_allergy_drug" = "แพ้ยา";
 "signup_allergy_food" = "แพ้อาหาร";
@@ -93,7 +93,7 @@
 
 "signup_choice_blood_type" = "ระบุกรุ๊ปเลือดของท่าน";
 
-"signup_please_fulfill" = "Please fulfill your details";
+"signup_please_fulfill" = "กรุณากรอกข้อมูลประกัน";
 "signup_policy_number" = "เลขที่กรมธรรม์";
 "signup_expiration_date" = "วันที่กรมธรรม์สิ้นสุดการคุ้มครอง";
 "signup_insurance_company" = "ชื่อบริษัทประกัน";
@@ -144,7 +144,7 @@
 
 "picture_title" = "กรุณาเลือกรูป";
 "picture_take_pic" = "ถ่ายรูป";
-"picture_pick_pic" = "อัพโหลดจากกอัลบั้ม";
+"picture_pick_pic" = "อัพโหลดจากอัลบั้ม";
 "picture_cancel" = "ยกเลิก";
 
 "pass_current" = "รหัสผ่านปัจจุบัน";
@@ -180,3 +180,5 @@
 "text_next" = "ต่อไป";
 "text_update" = "แก้ไข";
 "text_sign_out" = "คุณต้องการที่จะออกจากระบบ?";
+
+"text_agree" = "เห็นด้วย";

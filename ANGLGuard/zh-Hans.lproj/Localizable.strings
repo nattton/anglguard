@@ -9,35 +9,35 @@
 "bnt_next" = "下一页";
 "bnt_back" = "回到上一页";
 "bnt_skip" = "跳过";
-"bnt_close" = "CLOSE";
-"bnt_done" = "DONE";
+"bnt_close" = "關";
+"bnt_done" = "完成";
 "bnt_confirm" = "确认";
 "bnt_cancel" = "取消";
-"bnt_send" = "SEND";
-"bnt_ok" = "OK";
-"bnt_update" = "UPDATE";
-"bnt_later" = "LATER";
-"bnt_yes" = "YES";
-"bnt_no" = "NO";
-"bnt_delete" = "Delete";
+"bnt_send" = "发送验证码。";
+"bnt_ok" = "同意";
+"bnt_update" = "更新";
+"bnt_later" = "再后";
+"bnt_yes" = "有";
+"bnt_no" = "没有";
+"bnt_delete" = "删除";
 
-"can_i_help" = "Can I help you";
+"can_i_help" = "有什么我可以帮助您吗";
 
 "emergency_photo" = "图片";
 "emergency_message" = "信息";
-"emergency_call_1724" = "Call 1724";
-"emergency_emergency" = "An emergency call contact to the emergency medical center (BDMS Alarm Center)";
-"emergency_send_emergency" = "Send Emergency Alert";
+"emergency_call_1724" = "拨打 1724";
+"emergency_emergency" = "紧急医疗服务。紧急电话号码";
+"emergency_send_emergency" = "发送紧急情况";
 "emergency_term" = "规定和条件";
-"emergency_please_make" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
-"emergency_member_colon" = "Member:";
+"emergency_please_make" = "请确保您发生紧急情况，如意外骨折。";
+"emergency_member_colon" = "谁是病人 ？";
 
 "login_username" = "用户帐户";
 "login_email" = "电子邮件";
 "login_password" = "密码";
 "login_confirm_password" = "确认密码";
 "login_forgot_password" = "忘记密码";
-"login_login" = "LOGIN";
+"login_login" = "登录";
 "login_or" = "或者";
 "login_continue" = "继续";
 "login_signup" = "注册";
@@ -101,7 +101,7 @@
 
 "signup_how_do" = "您如何计划旅行？希望 这是您的一个很好的旅行";
 "signup_purpost_trip" = "旅行的目的（假期，教育，商业）";
-"signup_start_date" = "Start Date";
+"signup_start_date" = "出发日期";
 "signup_lenglh_of_stay" = "在泰国停留的时间)";
 "signup_average_expense" = "预计成本";
 "signup_trip_arrangement" = "旅行格式（自己，公司，旅行社）";
@@ -133,13 +133,13 @@
 "signup_fill_policy_mobile_number" = "请填写保险公司的电话号码";
 
 "aid_header" = "学习如何急救";
-"aid_search" = "Search";
+"aid_search" = "搜索";
 "aid_content" = "内容";
 "aid_vdo" = "视频";
 
 "group_title" = "家庭";
 "group_search" = "搜索朋友h";
-"group_del_confirm" = "Deleteion confirmation";
+"group_del_confirm" = "确认删除";
 "group_del_desc" = "确认删除, 想删除群组的成员,确定要继续。";
 
 "picture_title" = "请选择照片";
@@ -147,9 +147,9 @@
 "picture_pick_pic" = "从相册上传";
 "picture_cancel" = "取消";
 
-"pass_current" = "Current Password";
-"pass_new" = "New Password";
-"pass_re" = "Re - New Password";
+"pass_current" = "现在使用的密码";
+"pass_new" = "新密码";
+"pass_re" = "再次确认新密码";
 
 "nav_home" = "主页";
 "nav_profile" = "健康信息";
@@ -173,10 +173,12 @@
 "hello_blank_fragment" = "Hello blank fragment";
 "title_activity_chat" = "ChatActivity";
 
-"term" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
+"term" = "请确保您发生紧急情况，如意外骨折";
 "title_activity_forgot_password" = "忘记密码";
 
 "text_back" = "回到上一页";
 "text_next" = "下一页";
-"text_update" = "Update";
-"text_sign_out" = "Log out now?";
+"text_update" = "更新";
+"text_sign_out" = "退出应用程序?";
+
+"text_agree" = "同意";
