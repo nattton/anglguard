@@ -30,7 +30,8 @@
 "emergency_send_emergency" = "ส่งแจ้งเหตุฉุกเฉิน";
 "emergency_term" = "ข้อกำหนดแและเงื่อนไข";
 "emergency_please_make" = "โปรดตรวจสอบให้แน่ใจว่าเกิดเหตุฉุกเฉินขึ้นกับคุณ";
-"emergency_member_colon" = "เพื่อน:";
+"emergency_member_colon" = "ส่งข้อมูลของเพื่อน :";
+"emergency_head_member" = "ใครเป็นผู้ประสพเหตุ ？";
 
 "login_username" = "ผู้ใช้";
 "login_email" = "อีเมล";

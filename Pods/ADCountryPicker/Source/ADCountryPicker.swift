@@ -27,11 +27,11 @@ struct Section {
 
 open class ADCountryPicker: UITableViewController {
     
-    private var customCountriesCode: [String]?
+    private var customCountriesCode: [String]? =  ["TH","BN","KH","ID","LA","MY","MM","PH","SG","VN","CN","HK","JP","KP","TW","AT","BE","DK","FI","FR","DE","IT","NL","NO","RU","ES","SE","CH","GB","AR","BR","CA","US","BD","IN","NP","PK","LK","AU","NZ","EG","IL","KW","SA","AE","ZA","IE","GR","PT","SI","TR","BY","BG","CZ","EE","HU","KZ","LV","LT","PL","RO","SK","UA","UZ","BH","JO","LB","OM","QA"]
     
     fileprivate lazy var CallingCodes = { () -> [[String: String]] in
-        let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
-        guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }
+        let resourceBundle = Bundle.main
+        guard let path = resourceBundle.path(forResource: "CountryCodes", ofType: "plist") else { return [] }
         return NSArray(contentsOfFile: path) as! [[String: String]]
     }()
     fileprivate var searchController: UISearchController!

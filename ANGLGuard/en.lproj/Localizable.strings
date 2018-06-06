@@ -30,7 +30,8 @@
 "emergency_send_emergency" = "Send Emergency Alert";
 "emergency_term" = "Term and condition";
 "emergency_please_make" = "Please make sure you have emergency such as accident, injury bleeding broken bone etc.";
-"emergency_member_colon" = "Send as your friend:";
+"emergency_member_colon" = "Send as your friend :";
+"emergency_head_member" = "Who is the patient ?";
 
 "login_username" = "Username";
 "login_email" = "Email";

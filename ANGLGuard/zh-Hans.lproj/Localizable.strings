@@ -30,7 +30,8 @@
 "emergency_send_emergency" = "发送紧急情况";
 "emergency_term" = "规定和条件";
 "emergency_please_make" = "请确保您发生紧急情况，如意外骨折。";
-"emergency_member_colon" = "谁是病人 ？";
+"emergency_member_colon" = "发朋友的信息 :";
+"emergency_head_member" = "谁是病人 ？";
 
 "login_username" = "用户帐户";
 "login_email" = "电子邮件";

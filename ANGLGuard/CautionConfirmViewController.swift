@@ -117,6 +117,7 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
         lb_emergency_alert.text = "emergency_send_emergency".localized()
         lb_emergency_term.text = "emergency_term".localized()
         lb_emergency_term_description.text = "emergency_please_make".localized()
+        lb_who_is.text = "emergency_head_member".localized()
         bt_confirm.setTitle("bnt_confirm".localized(), for: .normal)
         bt_cancel.setTitle("bnt_cancel".localized(), for: .normal)
     }
@@ -156,6 +157,10 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
         gCell.name.text = firstname + " " + lastname
         gCell.email.text = email
         
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(hex: 0x7BCECC)
+        gCell.selectedBackgroundView = backgroundView
+        
         return gCell
     }
 
@@ -181,7 +186,15 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
                     if code == "200" {
                         if let data: [String: Any] = result["data"] as? [String: Any] {
                             let member: Array = data["member"] as! [Any]
-                            self.friends = member
+                            let userId = self.defaults.string(forKey: "id")!
+                            self.friends = member.filter({ (obj) -> Bool in
+                                if let object = obj as? [String: Any] {
+                                    if let id = object["id"] as? String {
+                                        return id != userId
+                                    }
+                                }
+                                return false
+                            })
                             self.tb_friend.reloadData()
                         }
                     } else if code == "104" {

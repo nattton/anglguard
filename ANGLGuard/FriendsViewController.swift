@@ -113,7 +113,15 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     if code == "200" {
                         if let data: [String: Any] = result["data"] as? [String: Any] {
                             let member: Array = data["member"] as! [Any]
-                            self.friends = member
+                            let userId = self.defaults.string(forKey: "id")!
+                            self.friends = member.filter({ (obj) -> Bool in
+                                if let object = obj as? [String: Any] {
+                                    if let id = object["id"] as? String {
+                                        return id != userId
+                                    }
+                                }
+                                return false
+                            })
                             self.tb_friend.reloadData()
                         }
                     } else if code == "104" {
