@@ -101,6 +101,7 @@
 "signup_conntact_name" = "ชื่อของบุคคลที่ติดต่อได้ในยามฉุกเฉิน";
 
 "signup_how_do" = "คุณมีแผนการท่องเที่ยวอย่างไรบ้าง?\nขอให้เป็นทริปที่ดีของคุณ";
+"signup_departure_country" = "Departure Country";
 "signup_purpost_trip" = "วัตถุประสงค์ในการเดินทาง (วันหยุดพักผ่อน,การศึกษา, ธุรกิจ)";
 "signup_start_date" = "วันเริ่ม";
 "signup_lenglh_of_stay" = "ระยะเวลาที่พักอยู่ในประเทศไทย(วัน)";

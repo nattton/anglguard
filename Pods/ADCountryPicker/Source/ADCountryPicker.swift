@@ -27,11 +27,12 @@ struct Section {
 
 open class ADCountryPicker: UITableViewController {
     
-    private var customCountriesCode: [String]? =  ["TH","BN","KH","ID","LA","MY","MM","PH","SG","VN","CN","HK","JP","KP","TW","AT","BE","DK","FI","FR","DE","IT","NL","NO","RU","ES","SE","CH","GB","AR","BR","CA","US","BD","IN","NP","PK","LK","AU","NZ","EG","IL","KW","SA","AE","ZA","IE","GR","PT","SI","TR","BY","BG","CZ","EE","HU","KZ","LV","LT","PL","RO","SK","UA","UZ","BH","JO","LB","OM","QA"]
+    open var customCountriesCode: [String]?
+    open var showCurrentCountry: Bool = true
     
     fileprivate lazy var CallingCodes = { () -> [[String: String]] in
-        let resourceBundle = Bundle.main
-        guard let path = resourceBundle.path(forResource: "CountryCodes", ofType: "plist") else { return [] }
+        let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
+        guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }
         return NSArray(contentsOfFile: path) as! [[String: String]]
     }()
     fileprivate var searchController: UISearchController!
@@ -89,21 +90,22 @@ open class ADCountryPicker: UITableViewController {
         }
         
         // Adds current location
-        let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String ?? self.defaultCountryCode
-        sections.insert(Section(), at: 0)
-        let locale = Locale.current
-        let displayName = (locale as NSLocale).displayName(forKey: NSLocale.Key.countryCode, value: countryCode)
-        let countryData = CallingCodes.filter { $0["code"] == countryCode }
-        let country: ADCountry
-        
-        if countryData.count > 0, let dialCode = countryData[0]["dial_code"] {
-            country = ADCountry(name: displayName!, code: countryCode, dialCode: dialCode)
-        } else {
-            country = ADCountry(name: displayName!, code: countryCode)
+        if showCurrentCountry == true {
+            let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String ?? self.defaultCountryCode
+            sections.insert(Section(), at: 0)
+            let locale = Locale.current
+            let displayName = (locale as NSLocale).displayName(forKey: NSLocale.Key.countryCode, value: countryCode)
+            let countryData = CallingCodes.filter { $0["code"] == countryCode }
+            let country: ADCountry
+            
+            if countryData.count > 0, let dialCode = countryData[0]["dial_code"] {
+                country = ADCountry(name: displayName!, code: countryCode, dialCode: dialCode)
+            } else {
+                country = ADCountry(name: displayName!, code: countryCode)
+            }
+            country.section = 0
+            sections[0].addCountry(country)
         }
-        country.section = 0
-        sections[0].addCountry(country)
-        
         
         _sections = sections
         
@@ -307,11 +309,15 @@ extension ADCountryPicker {
                 return ""
             }
             
-            if section == 0 {
-                return "Current Location"
-            }
             
-            return self.collation.sectionTitles[section-1] as String
+            if showCurrentCountry == true {
+                if section == 0 {
+                    return "Current Location"
+                }
+                return self.collation.sectionTitles[section-1] as String
+            } else {
+                return self.collation.sectionTitles[section] as String
+            }
             
             
         }

@@ -1,8 +1,10 @@
 import UIKit
+import ADCountryPicker
 
-class Step6ViewController: UITableViewController {
+class Step6ViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var lb_description: UILabel!
+    @IBOutlet var tf_departure_country: UITextField!
     @IBOutlet var tf_purpose: UITextField!
     @IBOutlet var tf_start_date: UITextField!
     @IBOutlet var tf_lenght_of_day: UITextField!
@@ -14,6 +16,7 @@ class Step6ViewController: UITableViewController {
     @IBOutlet var bt_next: UIButton!
     
     var datePicker: UIDatePicker?
+    var departure_country_code: String = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,6 +32,10 @@ class Step6ViewController: UITableViewController {
         
         setText()
         
+        tf_departure_country.layer.borderColor = UIColor.red.cgColor
+        tf_departure_country.layer.borderWidth = 2
+        tf_departure_country.layer.cornerRadius = 4
+        
         tf_purpose.layer.borderColor = UIColor.red.cgColor
         tf_purpose.layer.borderWidth = 2
         tf_purpose.layer.cornerRadius = 4
@@ -41,6 +48,7 @@ class Step6ViewController: UITableViewController {
         tf_lenght_of_day.layer.borderWidth = 2
         tf_lenght_of_day.layer.cornerRadius = 4
         
+        tf_departure_country.text = countryName(code: Trip.sharedInstance.departure_country)
         tf_purpose.text = Trip.sharedInstance.purpose
         tf_start_date.text = Trip.sharedInstance.start_date
         tf_lenght_of_day.text = Trip.sharedInstance.duration
@@ -60,6 +68,7 @@ class Step6ViewController: UITableViewController {
     
     func setText() {
         lb_description.text = "signup_how_do".localized()
+        tf_departure_country.placeholder = "signup_departure_country".localized()
         tf_purpose.placeholder = "signup_purpost_trip".localized()
         tf_start_date.placeholder = "signup_start_date".localized()
         tf_lenght_of_day.placeholder = "signup_lenglh_of_stay".localized()
@@ -69,6 +78,53 @@ class Step6ViewController: UITableViewController {
         tf_destination.placeholder = "signup_destinations".localized()
         bt_back.setTitle("bnt_back".localized(), for: .normal)
         bt_next.setTitle("bnt_next".localized(), for: .normal)
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == tf_departure_country {
+            showCountryPicker()
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func showCountryPicker() {
+        let picker = ADCountryPicker()
+        picker.customCountriesCode = ["BN","KH","ID","LA","MY","MM","PH","SG","VN","CN","HK","JP","KP",
+                                      "TW","AT", "BE","DK","FI","FR","DE","IT","NL","NO","RU","ES","SE","CH",
+                                      "GB","AR","BR","CA", "US","BD","IN","NP","PK","LK","AU","NZ","EG","IL",
+                                      "KW","SA","AE","ZA","IE","GR", "PT","SI","TR","BY","BG","CZ","EE","HU",
+                                      "KZ","LV","LT","PL","RO","SK","UA","UZ","BH","JO","LB","OM","QA"]
+        picker.showCurrentCountry = false
+        let pickerNavigationController = UINavigationController(rootViewController: picker)
+        self.present(pickerNavigationController, animated: true, completion: nil)
+        
+        picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
+            picker.dismiss(animated: true, completion: {
+                self.departure_country_code = code
+                self.tf_departure_country.text = name
+            })
+        }
+    }
+    
+    func countryName(code: String) -> String {
+//        let current = Locale(identifier: "en_US")
+//        return current.localizedString(forRegionCode: countryCode) ?? nil
+        let CallingCodes = { () -> [[String: String]] in
+            let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
+            guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }
+            return NSArray(contentsOfFile: path) as! [[String: String]]
+        }
+        
+        let countryData = CallingCodes().filter { $0["code"] == code }
+        
+        if countryData.count > 0 {
+            let countryCode: String = countryData[0]["name"] ?? ""
+            return countryCode
+        } else {
+            return code
+        }
     }
     
     func createDatePicker() -> UIDatePicker {
@@ -131,7 +187,9 @@ class Step6ViewController: UITableViewController {
         let domestic_tran_arrang: String = tf_domestic.text!
         let destination: String = tf_destination.text!
         
-        if purpose.count == 0 {
+        if departure_country_code.count == 0 {
+            showAlert(message: "signup_departure_country".localized())
+        } else if purpose.count == 0 {
             showAlert(message: "signup_choice_your_purpose".localized())
         } else if start_date.count == 0 {
             showAlert(message: "signup_insert_start_date".localized())
@@ -139,6 +197,7 @@ class Step6ViewController: UITableViewController {
             showAlert(message: "signup_insert_length_of_stay".localized())
         } else {
             //data
+            Trip.sharedInstance.departure_country = departure_country_code
             Trip.sharedInstance.purpose = purpose
             Trip.sharedInstance.start_date = start_date
             Trip.sharedInstance.duration = lenght_of_day

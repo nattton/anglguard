@@ -1,6 +1,7 @@
 import UIKit
 
 class Trip: NSObject {
+    var departure_country: String = ""
     var purpose: String = ""
     var start_date: String = ""
     var duration: String = ""

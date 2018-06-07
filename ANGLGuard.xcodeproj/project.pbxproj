@@ -88,7 +88,6 @@
 		3BE994B72070E5A7005D6B07 /* condition_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 3BE994B62070E5A7005D6B07 /* condition_en.html */; };
 		3BF25BD2205F1A1200309B09 /* FirstAidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */; };
 		3BFA06ED2049DCAD00C47C0E /* Authen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA06EC2049DCAD00C47C0E /* Authen.swift */; };
-		3BFC89D320C6DCC4003DCA64 /* CountryCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BFC89D220C6DCC3003DCA64 /* CountryCodes.plist */; };
 		59334130CFD032867069BF69 /* Pods_ANGLGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */; };
 /* End PBXBuildFile section */
 
@@ -180,7 +179,6 @@
 		3BE994B62070E5A7005D6B07 /* condition_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = condition_en.html; sourceTree = "<group>"; };
 		3BF25BD1205F1A1200309B09 /* FirstAidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAidCell.swift; sourceTree = "<group>"; };
 		3BFA06EC2049DCAD00C47C0E /* Authen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authen.swift; sourceTree = "<group>"; };
-		3BFC89D220C6DCC3003DCA64 /* CountryCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CountryCodes.plist; sourceTree = "<group>"; };
 		998C7598C4985CD58997FB00 /* Pods-ANGLGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.debug.xcconfig"; sourceTree = "<group>"; };
 		D32BC763DD552A691A017146 /* Pods-ANGLGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANGLGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANGLGuard/Pods-ANGLGuard.release.xcconfig"; sourceTree = "<group>"; };
 		E006B54960CCDE98B899B8CF /* Pods_ANGLGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ANGLGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,7 +325,6 @@
 				3B031675205ABB8500A35AC9 /* Localizable.strings */,
 				3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */,
 				3BE994B62070E5A7005D6B07 /* condition_en.html */,
-				3BFC89D220C6DCC3003DCA64 /* CountryCodes.plist */,
 			);
 			path = ANGLGuard;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				3B6462E22036A47400A39901 /* Assets.xcassets in Resources */,
 				3B6462E02036A47400A39901 /* Main.storyboard in Resources */,
 				3BE994B72070E5A7005D6B07 /* condition_en.html in Resources */,
-				3BFC89D320C6DCC4003DCA64 /* CountryCodes.plist in Resources */,
 				3B84E9BB208E258B00D6D7EC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

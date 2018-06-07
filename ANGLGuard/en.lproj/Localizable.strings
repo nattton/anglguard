@@ -102,6 +102,7 @@
 "signup_conntact_name" = "Contact Name";
 
 "signup_how_do" = "How do you make your trip plan?\nHave a nice time.";
+"signup_departure_country" = "Departure Country";
 "signup_purpost_trip" = "(vacation, education,business,medical)";
 "signup_start_date" = "Start Date";
 "signup_lenglh_of_stay" = "Length of Stay(day)";

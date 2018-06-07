@@ -166,6 +166,7 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     "email" : Contact.sharedInstance.email
                 ],
                 "trip_plan" : [
+                    "departure_country_code" : Trip.sharedInstance.departure_country,
                     "purpose" : Trip.sharedInstance.purpose,
                     "start_date" : Trip.sharedInstance.start_date,
                     "duration" : Trip.sharedInstance.duration,

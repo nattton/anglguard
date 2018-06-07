@@ -101,6 +101,7 @@
 "signup_conntact_name" = "保险公司能联系人的姓名。";
 
 "signup_how_do" = "您如何计划旅行？希望 这是您的一个很好的旅行";
+"signup_departure_country" = "Departure Country";
 "signup_purpost_trip" = "旅行的目的（假期，教育，商业）";
 "signup_start_date" = "出发日期";
 "signup_lenglh_of_stay" = "在泰国停留的时间)";

@@ -10,33 +10,33 @@ import GoogleSignIn
 import NotificationBannerSwift
 
 //Production
-//let HOST = "https://anglguard-service.angl.life/public"
-//let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
-//
-//let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
-//let VIRIYAH_SUCCESS_URL = "https://affiliate.viriyah.co.th/ANGL/successpage.php"
-//
-//let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
-//let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
-//let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
-//let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl.life/public/siampay-fail"
-//
-//let MERCHANT_CODE = "76101221"
+let HOST = "https://anglguard-service.angl.life/public"
+let HOST_TOURIST = "http://203.107.236.229/api-tourist-live"
+
+let VIRIYAH_URL = "https://affiliate.viriyah.co.th/ANGL/index.php?token=@"
+let VIRIYAH_SUCCESS_URL = "https://affiliate.viriyah.co.th/ANGL/successpage.php"
+
+let ASIA_PAY_URL = "https://www.paydollar.com/b2c2/eng/payment/payForm.jsp"
+let ASIA_PAY_CANCEL_URL = "https://anglguard-service.angl.life/public/siampay-cancel"
+let ASIA_PAY_SUCCESS_URL = "https://anglguard-service.angl.life/public/siampay-success"
+let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl.life/public/siampay-fail"
+
+let MERCHANT_CODE = "76101221"
 //Production
 
 // dev
-let HOST = "https://anglguard-service-test.angl.life/public"
-let HOST_TOURIST = "http://203.107.236.229/api-tourist"
-
-let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
-let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
-
-let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
-let ASIA_PAY_CANCEL_URL = "https://anglguard-service-test.angl.life/public/siampay-cancel"
-let ASIA_PAY_SUCCESS_URL = "https://anglguard-service-test.angl.life/public/siampay-success"
-let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay-fail"
-
-let MERCHANT_CODE = "76065111"
+//let HOST = "https://anglguard-service-test.angl.life/public"
+//let HOST_TOURIST = "http://203.107.236.229/api-tourist"
+//
+//let VIRIYAH_URL = "https://affiliatedev.viriyah.co.th/ANGL/index.php?token=@"
+//let VIRIYAH_SUCCESS_URL = "https://affiliatedev.viriyah.co.th/ANGL/successpage.php"
+//
+//let ASIA_PAY_URL = "https://test.siampay.com/b2cDemo/eng/payment/payForm.jsp"
+//let ASIA_PAY_CANCEL_URL = "https://anglguard-service-test.angl.life/public/siampay-cancel"
+//let ASIA_PAY_SUCCESS_URL = "https://anglguard-service-test.angl.life/public/siampay-success"
+//let ASIA_PAY_FAIL_URL = "https://anglguard-service.angl-test.life/public/siampay-fail"
+//
+//let MERCHANT_CODE = "76065111"
 // dev
 
 let CHECK_VERSION_URL = HOST + "/check-version"
@@ -385,6 +385,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         defaults.set(contact["email"] as? String, forKey: "contact_email")
         
         let trip = data["trip_plan"]  as! Dictionary<String, Any>
+        defaults.set(trip["departure_country_code"] as? String, forKey: "trip_departure_country")
         defaults.set(trip["purpose"] as? String, forKey: "trip_purpose")
         defaults.set(trip["destination"] as? String, forKey: "trip_destination")
         defaults.set(trip["duration"] as? String, forKey: "trip_duration")
@@ -489,6 +490,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         Contact.sharedInstance.relation = defaults.string(forKey: "contact_relation")!
         Contact.sharedInstance.email = defaults.string(forKey: "contact_email")!
         
+        Trip.sharedInstance.departure_country = defaults.string(forKey: "trip_departure_country")!
         Trip.sharedInstance.purpose = defaults.string(forKey: "trip_purpose")!
         Trip.sharedInstance.start_date = defaults.string(forKey: "trip_start_date")!
         Trip.sharedInstance.duration = defaults.string(forKey: "trip_duration")!
