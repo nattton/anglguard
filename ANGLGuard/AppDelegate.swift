@@ -74,6 +74,8 @@ let SAVE_TRIP_PLAN = HOST + "/save-profile-trip-plan"
 let SAVE_PROFILE_CONTACT = HOST + "/save-profile-contact"
 let SAVE_PROFILE_MEDICAL = HOST + "/save-profile-medical"
 let SAVE_PROFILE_PERSONAL = HOST + "/save-profile-personal"
+let USER_SEND_SMS_CODE = HOST + "/user-send-sms-code"
+let USER_VERIFY_SMS_CODE = HOST + "/user-verify-sms-code"
 
 let TOURIST_AUTHENTICATION = HOST_TOURIST + "/vendor/authentication/secret_key"
 let TOURIST_EVENT_TRACKING = HOST_TOURIST + "/vendor/event/event_tracking/@"
@@ -150,7 +152,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         }
         
         //register push notification
-        registerForPushNotifications()
+//        registerForPushNotifications()
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()

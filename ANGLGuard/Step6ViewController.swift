@@ -102,7 +102,7 @@ class Step6ViewController: UITableViewController, UITextFieldDelegate {
         
         picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
             picker.dismiss(animated: true, completion: {
-                self.departure_country_code = code
+                self.departure_country_code = dialCode.replacingOccurrences(of: "+", with: "")
                 self.tf_departure_country.text = name
             })
         }
@@ -117,7 +117,7 @@ class Step6ViewController: UITableViewController, UITextFieldDelegate {
             return NSArray(contentsOfFile: path) as! [[String: String]]
         }
         
-        let countryData = CallingCodes().filter { $0["code"] == code }
+        let countryData = CallingCodes().filter { $0["dial_code"] == "+" + code }
         
         if countryData.count > 0 {
             let countryCode: String = countryData[0]["name"] ?? ""

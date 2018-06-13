@@ -85,7 +85,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                     "token": token
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)
-                Alamofire.request(SMS_SEND_CODE, method: .get, parameters: parameters).responseJSON { response in
+                Alamofire.request(USER_SEND_SMS_CODE, method: .get, parameters: parameters).responseJSON { response in
                     SVProgressHUD.dismiss()
                     if let json = response.result.value {
                         let result = json as! Dictionary<String, Any>
@@ -97,7 +97,10 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                             Personal.sharedInstance.thai_mobile_cc = country_code
                             Personal.sharedInstance.thai_mobile_num = phone
                             
-                            self.performSegue(withIdentifier: "showStep1", sender: nil)
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
                         } else if code == "104" {
                             self.defaults.set("N", forKey: "login")
                             self.defaults.set("N", forKey: "timer")
@@ -138,7 +141,7 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                     "token": token
                 ]
                 SVProgressHUD.show(withStatus: LOADING_TEXT)
-                Alamofire.request(SMS_VERIFY_CODE, method: .get, parameters: parameters).responseJSON { response in
+                Alamofire.request(USER_VERIFY_SMS_CODE, method: .get, parameters: parameters).responseJSON { response in
                     SVProgressHUD.dismiss()
                     if let json = response.result.value {
                         let result = json as! Dictionary<String, Any>

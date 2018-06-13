@@ -40,6 +40,13 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 
     }
     
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if request.url?.scheme == "itms-appss" {
+            SVProgressHUD.dismiss()
+        }
+        return true
+    }
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
         SVProgressHUD.dismiss()
     }

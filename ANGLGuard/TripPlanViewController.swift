@@ -49,6 +49,7 @@ class TripPlanViewController: UITableViewController, UITextFieldDelegate {
         tf_lenght_of_day.layer.borderWidth = 2
         tf_lenght_of_day.layer.cornerRadius = 4
         
+        departure_country_code = Trip.sharedInstance.departure_country
         tf_departure_country.text = countryName(code: Trip.sharedInstance.departure_country)
         tf_purpose.text = Trip.sharedInstance.purpose
         tf_start_date.text = Trip.sharedInstance.start_date
@@ -102,7 +103,7 @@ class TripPlanViewController: UITableViewController, UITextFieldDelegate {
         
         picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
             picker.dismiss(animated: true, completion: {
-                self.departure_country_code = code
+                self.departure_country_code = dialCode.replacingOccurrences(of: "+", with: "")
                 self.tf_departure_country.text = name
             })
         }
@@ -117,7 +118,7 @@ class TripPlanViewController: UITableViewController, UITextFieldDelegate {
             return NSArray(contentsOfFile: path) as! [[String: String]]
         }
         
-        let countryData = CallingCodes().filter { $0["code"] == code }
+        let countryData = CallingCodes().filter { $0["dial_code"] == "+" + code }
         
         if countryData.count > 0 {
             let countryCode: String = countryData[0]["name"] ?? ""
