@@ -59,13 +59,18 @@ class VerifyCodeViewController: UITableViewController {
                     let token: String = result["token"] as! String
                     self.defaults.set(token, forKey: "token")
                 } else if code == "104" {
-                    self.defaults.set("N", forKey: "login")
-                    self.defaults.set("N", forKey: "timer")
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.clearProfile()
-                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                    let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
-                    UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                    let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+                        self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.clearProfile()
+                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                    })
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
                 } else {
                     let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
@@ -114,13 +119,18 @@ class VerifyCodeViewController: UITableViewController {
                             self.defaults.set(token, forKey: "token")
                             self.performSegue(withIdentifier: "showStep1", sender: nil)
                         } else if code == "104" {
-                            self.defaults.set("N", forKey: "login")
-                            self.defaults.set("N", forKey: "timer")
-                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                            appDelegate.clearProfile()
-                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
-                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+                                self.defaults.set("N", forKey: "login")
+                                self.defaults.set("N", forKey: "timer")
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.clearProfile()
+                                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                                let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                                UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                            })
+                            alert.addAction(defaultAction)
+                            self.present(alert, animated: true, completion: nil)
                         } else {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)

@@ -47,6 +47,7 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var im_profile_avatar: UIImageView!
     @IBOutlet var lb_profile_name: UILabel!
     @IBOutlet var lb_profile_email: UILabel!
+    @IBOutlet var tb_me: UITableView!
     @IBOutlet var tb_friend: UITableView!
     @IBOutlet var bt_cancel: UIButton!
     
@@ -77,30 +78,30 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
         v_group.layer.cornerRadius = 8
         v_group.clipsToBounds = true
         
-        im_profile_avatar.layer.masksToBounds = false
-        im_profile_avatar.layer.cornerRadius = im_profile_avatar.frame.size.height / 2
-        im_profile_avatar.clipsToBounds = true
+//        im_profile_avatar.layer.masksToBounds = false
+//        im_profile_avatar.layer.cornerRadius = im_profile_avatar.frame.size.height / 2
+//        im_profile_avatar.clipsToBounds = true
         
         bt_cancel.layer.masksToBounds = false
         bt_cancel.layer.cornerRadius = bt_cancel.frame.size.height / 2
         bt_cancel.clipsToBounds = true
         
-        if let image = defaults.string(forKey: "personal_img_bin") {
-            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                let fileURL = documentsURL.appendingPathComponent("avatar.jpg")
-                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-            }
-            Alamofire.download(image, to: destination).response { response in
-                if response.error == nil, let imagePath = response.destinationURL?.path {
-                    let image = UIImage(contentsOfFile: imagePath)
-                    self.im_profile_avatar.image = image
-                }
-            }
-        }
+//        if let image = defaults.string(forKey: "personal_img_bin") {
+//            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+//                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//                let fileURL = documentsURL.appendingPathComponent("avatar.jpg")
+//                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+//            }
+//            Alamofire.download(image, to: destination).response { response in
+//                if response.error == nil, let imagePath = response.destinationURL?.path {
+//                    let image = UIImage(contentsOfFile: imagePath)
+//                    self.im_profile_avatar.image = image
+//                }
+//            }
+//        }
         
-        lb_profile_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
-        lb_profile_email.text = Personal.sharedInstance.email
+//        lb_profile_name.text = Personal.sharedInstance.firstname + " " + Personal.sharedInstance.lastname
+//        lb_profile_email.text = Personal.sharedInstance.email
         
         getFriends()
     }
@@ -128,7 +129,11 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        if tableView == tb_me {
+            return 1
+        } else {
+            return friends.count
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -136,39 +141,74 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let gCell: GroupAlertCell = tableView.dequeueReusableCell(withIdentifier: "GroupAlertCell") as! GroupAlertCell
-        let friend = friends[indexPath.row] as! [String: Any]
-        let img: String! = friend["personal_image_path"] as! String
-        let firstname: String! = friend["firstname"] as! String
-        let lastname: String! = friend["lastname"] as! String
-        let email: String! = friend["email"] as! String
-        
-        let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        if let url = URL(string: eImg){
-            gCell.avatar.af_setImage(withURL: url)
+        if tableView == tb_me {
+            let gCell: GroupAlertCell = tableView.dequeueReusableCell(withIdentifier: "GroupAlertCell1") as! GroupAlertCell
+            let img = defaults.string(forKey: "personal_img_bin")!
+            let firstname = Personal.sharedInstance.firstname
+            let lastname = Personal.sharedInstance.lastname
+            let email = Personal.sharedInstance.email
+            
+            let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            if let url = URL(string: eImg){
+                gCell.avatar.af_setImage(withURL: url)
+            } else {
+                gCell.avatar.image = UIImage(named: "ic_avatar")
+            }
+            
+            gCell.avatar.layer.masksToBounds = false
+            gCell.avatar.layer.cornerRadius = gCell.avatar.frame.height / 2
+            gCell.avatar.clipsToBounds = true
+            
+            gCell.name.text = firstname + " " + lastname
+            gCell.email.text = email
+            
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor(hex: 0x7BCECC)
+            gCell.selectedBackgroundView = backgroundView
+            
+            return gCell
         } else {
-            gCell.avatar.image = UIImage(named: "ic_avatar")
+            let gCell: GroupAlertCell = tableView.dequeueReusableCell(withIdentifier: "GroupAlertCell2") as! GroupAlertCell
+            let friend = friends[indexPath.row] as! [String: Any]
+            let img: String! = friend["personal_image_path"] as! String
+            let firstname: String! = friend["firstname"] as! String
+            let lastname: String! = friend["lastname"] as! String
+            let email: String! = friend["email"] as! String
+            
+            let eImg: String! = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            if let url = URL(string: eImg){
+                gCell.avatar.af_setImage(withURL: url)
+            } else {
+                gCell.avatar.image = UIImage(named: "ic_avatar")
+            }
+            
+            gCell.avatar.layer.masksToBounds = false
+            gCell.avatar.layer.cornerRadius = gCell.avatar.frame.height / 2
+            gCell.avatar.clipsToBounds = true
+            
+            gCell.name.text = firstname + " " + lastname
+            gCell.email.text = email
+            
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor(hex: 0x7BCECC)
+            gCell.selectedBackgroundView = backgroundView
+            
+            return gCell
         }
-
-        gCell.avatar.layer.masksToBounds = false
-        gCell.avatar.layer.cornerRadius = gCell.avatar.frame.height / 2
-        gCell.avatar.clipsToBounds = true
-
-        gCell.name.text = firstname + " " + lastname
-        gCell.email.text = email
-        
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(hex: 0x7BCECC)
-        gCell.selectedBackgroundView = backgroundView
-        
-        return gCell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let friend = friends[indexPath.row] as! [String: Any]
-        if let id: String = friend["id"] as? String {
-            friendId = id
-            callBESAlert()
+        if tableView == tb_me {
+            if let id: String = defaults.string(forKey: "id") {
+                friendId = id
+                callBESAlert()
+            }
+        } else {
+            let friend = friends[indexPath.row] as! [String: Any]
+            if let id: String = friend["id"] as? String {
+                friendId = id
+                callBESAlert()
+            }
         }
     }
     
@@ -198,13 +238,18 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
                             self.tb_friend.reloadData()
                         }
                     } else if code == "104" {
-                        self.defaults.set("N", forKey: "login")
-                        self.defaults.set("N", forKey: "timer")
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDelegate.clearProfile()
-                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
-                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+                            self.defaults.set("N", forKey: "login")
+                            self.defaults.set("N", forKey: "timer")
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.clearProfile()
+                            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                            let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                        })
+                        alert.addAction(defaultAction)
+                        self.present(alert, animated: true, completion: nil)
                     } else {
                         let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
@@ -275,13 +320,18 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
                                 }))
                                 self.present(alert, animated: true, completion: nil)
                             } else if code == "104" {
-                                self.defaults.set("N", forKey: "login")
-                                self.defaults.set("N", forKey: "timer")
-                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                appDelegate.clearProfile()
-                                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                                let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
-                                UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                                let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                                let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+                                    self.defaults.set("N", forKey: "login")
+                                    self.defaults.set("N", forKey: "timer")
+                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                    appDelegate.clearProfile()
+                                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                                    let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                                    UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                                })
+                                alert.addAction(defaultAction)
+                                self.present(alert, animated: true, completion: nil)
                             } else {
                                 let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                                 let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
