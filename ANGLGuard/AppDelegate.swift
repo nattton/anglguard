@@ -188,7 +188,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if url.scheme! == "anglguard" {
+        if url.scheme! == "msale7cbb636-5c35-44b7-8dd6-bab51918f89f" {
             let service = OutlookService.shared()
             service.handleOAuthCallback(url: url)
             return true

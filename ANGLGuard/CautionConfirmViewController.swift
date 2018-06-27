@@ -198,6 +198,7 @@ class CautionConfirmViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         if tableView == tb_me {
             if let id: String = defaults.string(forKey: "id") {
                 friendId = id

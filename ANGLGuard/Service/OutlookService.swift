@@ -5,11 +5,11 @@ import SwiftyJSON
 class OutlookService {
     
     private static let oauth2Settings = [
-        "client_id" : "a0822944-7875-4b3a-b7d7-4829d92a942f",
+        "client_id" : "e7cbb636-5c35-44b7-8dd6-bab51918f89f",
         "authorize_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
         "token_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
         "scope": "openid profile offline_access User.Read Mail.Read",
-        "redirect_uris": ["anglguard://oauth2/callback"],
+        "redirect_uris": ["msale7cbb636-5c35-44b7-8dd6-bab51918f89f://auth"],
         "verbose": true,
         ] as OAuth2JSON
     

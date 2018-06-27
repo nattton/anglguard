@@ -304,7 +304,7 @@
                                                     <rect key="frame" x="40" y="126" width="295" height="52"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="707-WD-zt8">
-                                                            <rect key="frame" x="101" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="71" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_facebook"/>
                                                             <connections>
@@ -312,11 +312,19 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlz-09-W2P">
-                                                            <rect key="frame" x="158" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="130" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_gmail"/>
                                                             <connections>
                                                                 <action selector="googleAction:" destination="W4D-Fp-Luv" eventType="touchUpInside" id="kQm-1P-eCo"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48Q-QP-TMZ">
+                                                            <rect key="frame" x="189" y="8" width="36" height="36"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="ic_window"/>
+                                                            <connections>
+                                                                <action selector="outlookAction:" destination="W4D-Fp-Luv" eventType="touchUpInside" id="GGG-gI-SuY"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -3223,7 +3231,7 @@
                                                     <rect key="frame" x="40" y="95" width="295" height="52"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY6-wL-64H">
-                                                            <rect key="frame" x="101" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="71" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_facebook"/>
                                                             <connections>
@@ -3231,11 +3239,19 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ym-4Q-28T">
-                                                            <rect key="frame" x="158" y="8" width="36" height="36"/>
+                                                            <rect key="frame" x="130" y="8" width="36" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_gmail"/>
                                                             <connections>
                                                                 <action selector="googleAction:" destination="rGE-Lh-ynH" eventType="touchUpInside" id="ymS-P0-eZC"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeA-MR-tgR">
+                                                            <rect key="frame" x="189" y="8" width="36" height="36"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="ic_window"/>
+                                                            <connections>
+                                                                <action selector="googleAction:" destination="rGE-Lh-ynH" eventType="touchUpInside" id="P1e-5f-MAb"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -11363,6 +11379,7 @@
         <image name="ic_plus" width="40" height="40"/>
         <image name="ic_qrcode" width="26" height="26"/>
         <image name="ic_search" width="22" height="24"/>
+        <image name="ic_window" width="36" height="36"/>
         <image name="im_avatar" width="55" height="55"/>
         <image name="im_caution" width="496" height="426"/>
         <image name="im_passport" width="192" height="150"/>
@@ -11371,7 +11388,7 @@
         <image name="im_plan_3" width="403" height="217"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2qP-qq-fzb"/>
+        <segue reference="ZNd-0t-pmf"/>
         <segue reference="S8u-no-htz"/>
         <segue reference="H5X-I5-z3w"/>
         <segue reference="WNK-aW-ALk"/>
@@ -11381,6 +11398,6 @@
         <segue reference="h31-c6-UMY"/>
         <segue reference="UD8-gm-Azr"/>
         <segue reference="QYa-NC-TLg"/>
-        <segue reference="rwc-5d-HpK"/>
+        <segue reference="Nfx-nM-YZc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -39,7 +39,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>anglguard</string>
+				<string>msale7cbb636-5c35-44b7-8dd6-bab51918f89f</string>
 			</array>
 		</dict>
 		<dict>
@@ -54,7 +54,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>59</string>
+	<string>61</string>
 	<key>FacebookAppID</key>
 	<string>144058786420251</string>
 	<key>FacebookDisplayName</key>
