@@ -3251,7 +3251,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="ic_window"/>
                                                             <connections>
-                                                                <action selector="googleAction:" destination="rGE-Lh-ynH" eventType="touchUpInside" id="P1e-5f-MAb"/>
+                                                                <action selector="outlookAction:" destination="rGE-Lh-ynH" eventType="touchUpInside" id="mbW-2W-ABK"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -8012,9 +8012,23 @@
                                                         <constraint firstAttribute="width" constant="144" id="zsL-Lz-RGT"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lks-Hg-CSd">
+                                                    <rect key="frame" x="16" y="11" width="42" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="bFa-3s-bqY"/>
+                                                        <constraint firstAttribute="width" constant="42" id="kQo-7S-eZh"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="ic_back"/>
+                                                    <connections>
+                                                        <action selector="backAction:" destination="Zfz-0m-D3y" eventType="touchUpInside" id="Ysu-2f-oGo"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Lks-Hg-CSd" firstAttribute="top" secondItem="kcx-pc-cS7" secondAttribute="topMargin" id="Guc-P5-vMy"/>
                                                 <constraint firstItem="NmS-hv-M7X" firstAttribute="trailing" secondItem="kcx-pc-cS7" secondAttribute="trailingMargin" id="ICP-cw-N2h"/>
+                                                <constraint firstItem="Lks-Hg-CSd" firstAttribute="leading" secondItem="kcx-pc-cS7" secondAttribute="leadingMargin" id="Iy3-cg-kOv"/>
                                                 <constraint firstItem="NmS-hv-M7X" firstAttribute="top" secondItem="kcx-pc-cS7" secondAttribute="topMargin" constant="40" id="LGk-Ww-PeB"/>
                                             </constraints>
                                         </tableViewCellContentView>

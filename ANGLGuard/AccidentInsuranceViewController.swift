@@ -34,6 +34,10 @@ class AccidentInsuranceViewController: UITableViewController {
         bt_no.setTitle("bnt_no".localized(), for: .normal)
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func yesAction(_ sender: Any) {
         if let flag = defaults.string(forKey: "flag"), flag == "1" {
             self.performSegue(withIdentifier: "showInsurancePlan", sender: nil)
