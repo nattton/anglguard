@@ -54,7 +54,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>63</string>
+	<string>64</string>
 	<key>FacebookAppID</key>
 	<string>144058786420251</string>
 	<key>FacebookDisplayName</key>
@@ -73,7 +73,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>We want to get your photo for this app.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your current location will be displayed on the map.</string>
+	<string>Your current location will be displayed on tha map and used for share your location with friends or family for helping when emergency happened.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We want to get your photo for this app.</string>
 	<key>UILaunchStoryboardName</key>
