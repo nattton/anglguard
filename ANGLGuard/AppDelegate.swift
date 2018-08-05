@@ -107,12 +107,18 @@ let EXPIRE_DATE_ALERT = "Please insert expire date."
 let INSURANCE_COMPANY_ALERT = "Please insert insurance company."
 let CONTACT_NAME_ALERT = "Please insert contact name."
 
+let WECHAT_APP_ID = "wx148b66febca79b79"
+let WECHAT_APP_SECRET = "b0033bd24ba2054325d7c945986c450d"
+let WECHAT_GET_ACCESSTOKEN_URL = "https://api.weixin.qq.com/sns/oauth2/access_token?"
+let WECHAT_GET_USER_INFO_URL = "https://api.weixin.qq.com/sns/userinfo?"
+let WECHAT_RESPONSE_NOTIFICATION_NAME = Notification.Name("WeChatAuthCodeResp")
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiDelegate {
     
     var window: UIWindow?
     let defaults = UserDefaults.standard
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         checkVersion()
@@ -139,7 +145,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
                         UserDefaults.standard.set(true, forKey: "push")
                     }
                 }
-
+                
                 //goto main page
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "inital")
@@ -152,31 +158,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         }
         
         //register push notification
-//        registerForPushNotifications()
+        //        registerForPushNotifications()
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
-//        Messaging.messaging().delegate = self
+        //        Messaging.messaging().delegate = self
         
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "789190969892-jmhfr2n5msgnige7j6ibj6ih01eaqv5l.apps.googleusercontent.com"
         
         // WeChat: use your AppID
-        WXApi.registerApp("wx235325325")
+        WXApi.registerApp(WECHAT_APP_ID)
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
-
+        
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-
+        
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-
+        
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -192,8 +198,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
             let service = OutlookService.shared()
             service.handleOAuthCallback(url: url)
             return true
-        } else if url.scheme! == "wxc5aac2e8f9f73a9837" {
-            WXApi.handleOpen(url, delegate: self)
+        } else if url.scheme! == WECHAT_APP_ID {
+            return WXApi.handleOpen(url, delegate: self)
         } else {
             if FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation) {
                 return true
@@ -221,7 +227,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         
         let fcmToken = Messaging.messaging().fcmToken
         print("fcmToken: \(fcmToken!)")
-
+        
         registerToMobilePush(deviceToken: fcmToken!)
     }
     
@@ -256,6 +262,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
                     }
                 }
             }
+        }
+    }
+    
+    //WeChat Delegate
+    func onReq(_ req: BaseReq!) {
+        
+    }
+    
+    func onResp(_ resp: BaseResp!) {
+        if let authResp = resp as? SendAuthResp {
+            if authResp.code != nil {
+                let dict = ["response": authResp.code] as [AnyHashable: Any]
+                NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
+            } else {
+                let dict = ["response": "Fail"] as [AnyHashable: Any]
+                NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
+            }
+        } else {
+            let dict = ["response": "Fail"] as [AnyHashable: Any]
+            NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
         }
     }
     
@@ -547,7 +573,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         Medical.sharedInstance.wheelchair = defaults.string(forKey: "device_wheelchair")!
         Medical.sharedInstance.care_giver_one = defaults.string(forKey: "care_giver_one")!
         Medical.sharedInstance.care_giver_two = defaults.string(forKey: "care_giver_two")!
-
+        
         if defaults.string(forKey: "insurance_policy_number") != nil {
             Insurance.sharedInstance.policy_number = defaults.string(forKey: "insurance_policy_number")!
             Insurance.sharedInstance.start_date = defaults.string(forKey: "insurance_start_date")!
@@ -647,7 +673,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         Insurance.sharedInstance.contact_number_cc = ""
         Insurance.sharedInstance.contact_number = ""
     }
-
+    
 }
 
 class CustomBannerColors: BannerColorsProtocol {

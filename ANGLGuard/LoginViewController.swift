@@ -6,7 +6,7 @@ import FacebookLogin
 import FBSDKLoginKit
 import GoogleSignIn
 
-class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate, WXApiDelegate {
     
     @IBOutlet var lb_sigm_in: UILabel!
     @IBOutlet var tf_username: UITextField!
@@ -35,8 +35,10 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(weChatResponse(notification:)), name: Notification.Name("WeChatAuthCodeResp"), object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -174,6 +176,93 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         }
     }
     
+    @IBAction func wechatAction(_ sender: Any) {
+        let req = SendAuthReq()
+        req.scope = "snsapi_userinfo"
+        req.state = "com.angllife.anglguard"
+        WXApi.sendAuthReq(req, viewController: self, delegate: self)
+    }
+    
+    //WeChat Delegate
+    func onReq(_ req: BaseReq!) {
+        
+    }
+    
+    func onResp(_ resp: BaseResp!) {
+        if let authResp = resp as? SendAuthResp {
+            if authResp.code != nil {
+                let dict = ["response": authResp.code] as [AnyHashable: Any]
+                NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
+            } else {
+                let dict = ["response": "Fail"] as [AnyHashable: Any]
+                NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
+            }
+        } else {
+            let dict = ["response": "Fail"] as [AnyHashable: Any]
+            NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
+        }
+    }
+    
+    @objc func weChatResponse(notification: Notification) {
+        if let userInfo = notification.userInfo {
+            if let code = userInfo["response"] as? String {
+                weChatAccessToken(code: code)
+            }
+        }
+    }
+    
+    func weChatAccessToken(code: String) {
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
+        let parameters: Parameters = [
+            "appid": WECHAT_APP_ID,
+            "secret": WECHAT_APP_SECRET,
+            "code": code,
+            "grant_type": "authorization_code"
+        ]
+        Alamofire.request(WECHAT_GET_ACCESSTOKEN_URL, method: .get, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
+            if let json = response.result.value {
+                let result = json as! Dictionary<String, Any>
+                NSLog("result = \(result)")
+                if let errmsg = result["errmsg"] as? String {
+                    let alert = UIAlertController(title: errmsg, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let access_token: String = result["access_token"] as! String
+                    let openid: String = result["openid"] as! String
+//                    let unionid: String = result["unionid"] as! String
+                    self.weChatUserInfo(access_token: access_token, openid: openid)
+                }
+            }
+        }
+    }
+    
+    func weChatUserInfo(access_token: String, openid: String) {
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
+        let parameters: Parameters = [
+            "access_token": access_token,
+            "openid": openid,
+            "lang": "en_US"
+        ]
+        Alamofire.request(WECHAT_GET_USER_INFO_URL, method: .get, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
+            if let json = response.result.value {
+                let result = json as! Dictionary<String, Any>
+                NSLog("result = \(result)")
+                if let errmsg = result["errmsg"] as? String {
+                    let alert = UIAlertController(title: errmsg, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    
+                }
+            }
+        }
+    }
+    
     func login(parameters: Parameters) {
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         Alamofire.request(LOGIN_URL, method: .get, parameters: parameters).responseJSON { response in
@@ -203,7 +292,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                         } else {
                             self.performSegue(withIdentifier: "showMain", sender: nil)
                         }
-                        
+                        NotificationCenter.default.removeObserver(self, name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil)
                     }
                 } else {
                     let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
@@ -220,15 +309,15 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension UIScreen {
