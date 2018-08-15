@@ -41,6 +41,8 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.clearProfile()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(weChatResponse(notification:)), name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -155,6 +157,49 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
                         }
                         self.outlookService.logout()
                     })
+                }
+            }
+        }
+    }
+    
+    @IBAction func wechatAction(_ sender: Any) {
+        let req = SendAuthReq()
+        req.scope = "snsapi_userinfo"
+        req.state = "com.angllife.anglguard"
+        WXApi.send(req)
+    }
+    
+    @objc func weChatResponse(notification: Notification) {
+        if let userInfo = notification.userInfo {
+            if let code = userInfo["response"] as? String {
+                weChatAccessToken(code: code)
+            }
+        }
+    }
+    
+    func weChatAccessToken(code: String) {
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
+        let parameters: Parameters = [
+            "appid": WECHAT_APP_ID,
+            "secret": WECHAT_APP_SECRET,
+            "code": code,
+            "grant_type": "authorization_code"
+        ]
+        Alamofire.request(WECHAT_GET_ACCESSTOKEN_URL, method: .get, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
+            if let json = response.result.value {
+                let result = json as! Dictionary<String, Any>
+                NSLog("result = \(result)")
+                if let errmsg = result["errmsg"] as? String {
+                    let alert = UIAlertController(title: errmsg, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let openid: String = result["openid"] as! String
+                    Personal.sharedInstance.username = openid
+                    Authen.sharedInstance.type = "wechat"
+                    self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
                 }
             }
         }

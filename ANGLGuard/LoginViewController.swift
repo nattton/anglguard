@@ -6,7 +6,7 @@ import FacebookLogin
 import FBSDKLoginKit
 import GoogleSignIn
 
-class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate, WXApiDelegate {
+class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBOutlet var lb_sigm_in: UILabel!
     @IBOutlet var tf_username: UITextField!
@@ -36,7 +36,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(weChatResponse(notification:)), name: Notification.Name("WeChatAuthCodeResp"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(weChatResponse(notification:)), name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -180,27 +180,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         let req = SendAuthReq()
         req.scope = "snsapi_userinfo"
         req.state = "com.angllife.anglguard"
-        WXApi.sendAuthReq(req, viewController: self, delegate: self)
-    }
-    
-    //WeChat Delegate
-    func onReq(_ req: BaseReq!) {
-        
-    }
-    
-    func onResp(_ resp: BaseResp!) {
-        if let authResp = resp as? SendAuthResp {
-            if authResp.code != nil {
-                let dict = ["response": authResp.code] as [AnyHashable: Any]
-                NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
-            } else {
-                let dict = ["response": "Fail"] as [AnyHashable: Any]
-                NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
-            }
-        } else {
-            let dict = ["response": "Fail"] as [AnyHashable: Any]
-            NotificationCenter.default.post(name: WECHAT_RESPONSE_NOTIFICATION_NAME, object: nil, userInfo: dict)
-        }
+        WXApi.send(req)
     }
     
     @objc func weChatResponse(notification: Notification) {
@@ -230,34 +210,13 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                     alert.addAction(defaultAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    let access_token: String = result["access_token"] as! String
                     let openid: String = result["openid"] as! String
-//                    let unionid: String = result["unionid"] as! String
-                    self.weChatUserInfo(access_token: access_token, openid: openid)
-                }
-            }
-        }
-    }
-    
-    func weChatUserInfo(access_token: String, openid: String) {
-        SVProgressHUD.show(withStatus: LOADING_TEXT)
-        let parameters: Parameters = [
-            "access_token": access_token,
-            "openid": openid,
-            "lang": "en_US"
-        ]
-        Alamofire.request(WECHAT_GET_USER_INFO_URL, method: .get, parameters: parameters).responseJSON { response in
-            SVProgressHUD.dismiss()
-            if let json = response.result.value {
-                let result = json as! Dictionary<String, Any>
-                NSLog("result = \(result)")
-                if let errmsg = result["errmsg"] as? String {
-                    let alert = UIAlertController(title: errmsg, message: "", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
-                    alert.addAction(defaultAction)
-                    self.present(alert, animated: true, completion: nil)
-                } else {
-                    
+                    let parameters: Parameters = [
+                        "username": openid,
+                        "key": "",
+                        "type": "wechat"
+                    ]
+                    self.login(parameters: parameters)
                 }
             }
         }

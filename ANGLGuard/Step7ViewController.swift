@@ -130,13 +130,32 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
             let personal_img_bin = Personal.sharedInstance.personal_img_bin!.resizeImage(150).toBase64()
             let passport_img = Personal.sharedInstance.passport_img!.resizeImage(150).toBase64()
             
-            let parameters: Parameters = [
-                "token" : Authen.sharedInstance.token,
-                "type" : Authen.sharedInstance.type,
-                "key" : Authen.sharedInstance.key.encrypt(),
-                "platform": "iOS",
-                "version": UIApplication.shared.applicationVersion(),
-                "personal": [
+            var personal: Parameters = [:]
+            
+            if Authen.sharedInstance.type == "wechat" {
+                personal = [
+                    "email" : Personal.sharedInstance.email,
+                    "username" : Personal.sharedInstance.username,
+                    "password" : Personal.sharedInstance.password.encrypt(),
+                    "firstname" : Personal.sharedInstance.firstname,
+                    "middlename" : Personal.sharedInstance.middlename,
+                    "lastname" : Personal.sharedInstance.lastname,
+                    "gender" : Personal.sharedInstance.gender,
+                    "birthdate" : Personal.sharedInstance.birthdate,
+                    "height" : Personal.sharedInstance.height,
+                    "weight" : Personal.sharedInstance.weight,
+                    "country_code" : Personal.sharedInstance.country_code.replacingOccurrences(of: "+", with: ""),
+                    "passport_num" : Personal.sharedInstance.passport_num,
+                    "passport_expire_date" : Personal.sharedInstance.passport_expire_date,
+                    "mobile_num" : Personal.sharedInstance.mobile_num,
+                    "mobile_cc" : Personal.sharedInstance.mobile_cc.replacingOccurrences(of: "+", with: ""),
+                    "thai_mobile_num" : Personal.sharedInstance.thai_mobile_num,
+                    "thai_mobile_cc" : Personal.sharedInstance.thai_mobile_cc.replacingOccurrences(of: "+", with: ""),
+                    "personal_img_bin" : personal_img_bin,
+                    "passport_img" : passport_img
+                ]
+            } else {
+                personal = [
                     "email" : Personal.sharedInstance.email,
                     "password" : Personal.sharedInstance.password.encrypt(),
                     "firstname" : Personal.sharedInstance.firstname,
@@ -155,7 +174,16 @@ class Step7ViewController: UITableViewController, UITextFieldDelegate {
                     "thai_mobile_cc" : Personal.sharedInstance.thai_mobile_cc.replacingOccurrences(of: "+", with: ""),
                     "personal_img_bin" : personal_img_bin,
                     "passport_img" : passport_img
-                ],
+                ]
+            }
+            
+            let parameters: Parameters = [
+                "token" : Authen.sharedInstance.token,
+                "type" : Authen.sharedInstance.type,
+                "key" : Authen.sharedInstance.key.encrypt(),
+                "platform": "iOS",
+                "version": UIApplication.shared.applicationVersion(),
+                "personal": personal,
                 "contact_person" : [
                     "firstname" : Contact.sharedInstance.firstname,
                     "middlename" : Contact.sharedInstance.middlename,

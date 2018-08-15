@@ -2,6 +2,7 @@ import UIKit
 
 class Personal: NSObject {
     var email: String = ""
+    var username: String = ""
     var password: String = ""
     var firstname: String = ""
     var middlename: String = ""
