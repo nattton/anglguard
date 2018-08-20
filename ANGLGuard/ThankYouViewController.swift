@@ -40,6 +40,12 @@ class ThankYouViewController: UITableViewController {
             let password = Personal.sharedInstance.password.encrypt()
             let parameters: Parameters = ["username": username, "password": password, "type": "normal"]
             login(parameters: parameters)
+        } else if Authen.sharedInstance.type == "wechat" {
+            let username = Personal.sharedInstance.username
+            let key = Authen.sharedInstance.key.encrypt()
+            let type = Authen.sharedInstance.type
+            let parameters: Parameters = ["username": username, "key": key, "type": type]
+            login(parameters: parameters)
         } else {
             let email = Personal.sharedInstance.email
             let key = Authen.sharedInstance.key.encrypt()

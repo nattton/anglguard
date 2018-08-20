@@ -198,8 +198,9 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
                 } else {
                     let openid: String = result["openid"] as! String
                     Personal.sharedInstance.username = openid
+                    Authen.sharedInstance.key = openid
                     Authen.sharedInstance.type = "wechat"
-                    self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
+                    self.verify(username: Personal.sharedInstance.username)
                 }
             }
         }
@@ -226,6 +227,41 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
                     //data
                     Personal.sharedInstance.email = email
                     
+                    self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
+                } else if code == "104" {
+                    let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in
+                        self.defaults.set("N", forKey: "login")
+                        self.defaults.set("N", forKey: "timer")
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.clearProfile()
+                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "login")
+                        UIApplication.shared.keyWindow?.rootViewController = loginViewController
+                    })
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    func verify(username: String) {
+        let parameters: Parameters = ["username": username, "type": Authen.sharedInstance.type]
+        SVProgressHUD.show(withStatus: LOADING_TEXT)
+        Alamofire.request(EMAIL_EXISTS, method: .get, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
+            if let json = response.result.value {
+                let result = json as! Dictionary<String, Any>
+                NSLog("result = \(result)")
+                let code: String = result["code"] as! String
+                let message: String = result["message"] as! String
+                if code == "200" {                    
                     self.performSegue(withIdentifier: "showVerifyCode", sender: nil)
                 } else if code == "104" {
                     let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)

@@ -213,7 +213,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                     let openid: String = result["openid"] as! String
                     let parameters: Parameters = [
                         "username": openid,
-                        "key": "",
+                        "key": openid.encrypt(),
                         "type": "wechat"
                     ]
                     self.login(parameters: parameters)
