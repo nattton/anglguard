@@ -163,10 +163,18 @@ class SignUpViewController: UITableViewController, GIDSignInUIDelegate, GIDSignI
     }
     
     @IBAction func wechatAction(_ sender: Any) {
-        let req = SendAuthReq()
-        req.scope = "snsapi_userinfo"
-        req.state = "com.angllife.anglguard"
-        WXApi.send(req)
+        if WXApi.isWXAppInstalled() == true {
+            let req = SendAuthReq()
+            req.scope = "snsapi_userinfo"
+            req.state = "com.angllife.anglguard"
+            WXApi.send(req)
+        } else {
+            let message = "text_wechat_not_install".localized()
+            let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
+            alert.addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func weChatResponse(notification: Notification) {

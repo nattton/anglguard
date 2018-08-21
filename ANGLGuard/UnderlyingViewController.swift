@@ -11,6 +11,7 @@ class UnderlyingViewController: UITableViewController {
     let underlyings = ["Diabetes mellitus", "Hypertension", "Chronic kidney disease", "Heart disease", "Old stroke"]
     var selecteds: NSMutableArray = NSMutableArray()
     
+    @IBOutlet var lb_underlying: UILabel!
     @IBOutlet var bt_diabetes: UIButton!
     @IBOutlet var bt_hypertension: UIButton!
     @IBOutlet var bt_chronic: UIButton!
@@ -29,6 +30,8 @@ class UnderlyingViewController: UITableViewController {
         bt_old_stroke.isSelected = Medical.sharedInstance.old_stroke == "1" ? true : false
         
         tv_other.text = Medical.sharedInstance.underlying_others
+        
+        lb_underlying.text = "signup_Underlying_diseases".localized()
     }
 
     override func didReceiveMemoryWarning() {

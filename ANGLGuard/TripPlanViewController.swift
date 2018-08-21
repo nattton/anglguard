@@ -50,7 +50,7 @@ class TripPlanViewController: UITableViewController, UITextFieldDelegate {
         tf_lenght_of_day.layer.cornerRadius = 4
         
         departure_country_code = Trip.sharedInstance.departure_country
-        tf_departure_country.text = countryName(code: Trip.sharedInstance.departure_country)
+        tf_departure_country.text = Trip.sharedInstance.departure_country
         tf_purpose.text = Trip.sharedInstance.purpose
         tf_start_date.text = Trip.sharedInstance.start_date
         tf_lenght_of_day.text = Trip.sharedInstance.duration
@@ -110,8 +110,6 @@ class TripPlanViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func countryName(code: String) -> String {
-//        let current = Locale(identifier: "en_US")
-//        return current.localizedString(forRegionCode: countryCode) ?? nil
         let CallingCodes = { () -> [[String: String]] in
             let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
             guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }

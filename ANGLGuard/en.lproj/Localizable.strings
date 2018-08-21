@@ -185,3 +185,5 @@
 "text_sign_out" = "Log out now?";
 
 "text_agree" = "Agree";
+
+"text_wechat_not_install" = "WeChat is not installed.";

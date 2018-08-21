@@ -11,6 +11,7 @@ class AllergyOfDrugViewController: UITableViewController {
     let drugs = ["Anti-Seizures", "Insulin", "Iodine", "Penicilin", "Sulfa"]
     var selecteds: NSMutableArray = NSMutableArray()
     
+    @IBOutlet var lb_allergy_of_drug: UILabel!
     @IBOutlet var bt_seizures: UIButton!
     @IBOutlet var bt_insuline: UIButton!
     @IBOutlet var bt_iodine: UIButton!
@@ -29,6 +30,8 @@ class AllergyOfDrugViewController: UITableViewController {
         bt_sulfa.isSelected = Medical.sharedInstance.sulfa == "1" ? true : false
         
         tv_other.text = Medical.sharedInstance.allergy_drug_others
+        
+        lb_allergy_of_drug.text = "signup_allergy_drug".localized()
     }
 
     override func didReceiveMemoryWarning() {

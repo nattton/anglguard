@@ -109,8 +109,6 @@ class Step6ViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func countryName(code: String) -> String {
-//        let current = Locale(identifier: "en_US")
-//        return current.localizedString(forRegionCode: countryCode) ?? nil
         let CallingCodes = { () -> [[String: String]] in
             let resourceBundle = Bundle(for: ADCountryPicker.classForCoder())
             guard let path = resourceBundle.path(forResource: "CallingCodes", ofType: "plist") else { return [] }

@@ -11,6 +11,7 @@ class AllergyOfChemicalViewController: UITableViewController {
     let chemicals = ["Shampoos", "Fragrances", "Cleaners", "Detergents", "Cosmetic"]
     var selecteds: NSMutableArray = NSMutableArray()
     
+    @IBOutlet var lb_allergy_of_chemical: UILabel!
     @IBOutlet var bt_shampoos: UIButton!
     @IBOutlet var bt_fragrances: UIButton!
     @IBOutlet var bt_cleaners: UIButton!
@@ -41,6 +42,8 @@ class AllergyOfChemicalViewController: UITableViewController {
         tf_cosmetic.text = Medical.sharedInstance.shampoos_brand
         
         tv_other.text = Medical.sharedInstance.allergy_chemical_others
+        
+        lb_allergy_of_chemical.text = "signup_allergy_chemical".localized()
     }
 
     override func didReceiveMemoryWarning() {

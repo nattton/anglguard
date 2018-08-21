@@ -184,3 +184,5 @@
 "text_sign_out" = "退出应用程序?";
 
 "text_agree" = "同意";
+
+"text_wechat_not_install" = "WeChat is not installed.";

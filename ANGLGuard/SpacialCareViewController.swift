@@ -7,6 +7,7 @@ class SpacialCareViewController: UITableViewController {
     
     var delegate: SpacialCareDelegate?
     
+    @IBOutlet var lb_spacial_care: UILabel!
     @IBOutlet var bt_no_need: UIButton!
     @IBOutlet var bt_need: UIButton!
     @IBOutlet var bt_device: UIButton!
@@ -34,6 +35,8 @@ class SpacialCareViewController: UITableViewController {
         
         bt_two.isSelected = Medical.sharedInstance.care_giver_two == "1" ? true : false
         bt_two.isEnabled = Medical.sharedInstance.care_giver_two == "1" ? true : false
+        
+        lb_spacial_care.text = "signup_special_care".localized()
     }
 
     override func didReceiveMemoryWarning() {

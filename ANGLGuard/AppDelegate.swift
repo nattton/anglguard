@@ -610,6 +610,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
         Contact.sharedInstance.relation = ""
         Contact.sharedInstance.email = ""
         
+        Trip.sharedInstance.departure_country = ""
         Trip.sharedInstance.purpose = ""
         Trip.sharedInstance.start_date = ""
         Trip.sharedInstance.duration = ""

@@ -11,6 +11,7 @@ class AllergyOfFoodViewController: UITableViewController {
     let foods = ["Milk", "Eggs", "Fish", "Crustacean Shellfish", "Tree Nuts", "Peanuts", "Wheat", "Soybeans"]
     var selecteds: NSMutableArray = NSMutableArray()
     
+    @IBOutlet var lb_allergy_of_foods: UILabel!
     @IBOutlet var bt_milk: UIButton!
     @IBOutlet var bt_eggs: UIButton!
     @IBOutlet var bt_fish: UIButton!
@@ -35,6 +36,8 @@ class AllergyOfFoodViewController: UITableViewController {
         bt_soybeans.isSelected = Medical.sharedInstance.soybeans == "1" ? true : false
         
         tv_other.text = Medical.sharedInstance.allergy_food_others
+        
+        lb_allergy_of_foods.text = "signup_allergy_food".localized()
     }
 
     override func didReceiveMemoryWarning() {

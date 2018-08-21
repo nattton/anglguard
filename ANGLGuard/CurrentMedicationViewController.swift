@@ -7,12 +7,15 @@ class CurrentMedicationViewController: UITableViewController {
     
     var delegate: CurrentMedicationDelegate?
     
+    @IBOutlet var lb_current_medication: UILabel!
     @IBOutlet var tv_other: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tv_other.text = Medical.sharedInstance.current_medication_description
+        
+        lb_current_medication.text = "signup_current_medication".localized()
     }
 
     override func didReceiveMemoryWarning() {
