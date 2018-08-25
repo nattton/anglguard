@@ -48,6 +48,7 @@ class Step6ViewController: UITableViewController, UITextFieldDelegate {
         tf_lenght_of_day.layer.borderWidth = 2
         tf_lenght_of_day.layer.cornerRadius = 4
         
+        departure_country_code = Trip.sharedInstance.departure_country
         tf_departure_country.text = countryName(code: Trip.sharedInstance.departure_country)
         tf_purpose.text = Trip.sharedInstance.purpose
         tf_start_date.text = Trip.sharedInstance.start_date

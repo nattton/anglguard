@@ -36,10 +36,10 @@ class AllergyOfChemicalViewController: UITableViewController {
         bt_cosmetic.isSelected = Medical.sharedInstance.cosmetics == "1" ? true : false
         
         tf_shampoos.text = Medical.sharedInstance.shampoos_brand
-        tf_fragrances.text = Medical.sharedInstance.shampoos_brand
-        tf_cleaners.text = Medical.sharedInstance.shampoos_brand
-        tf_detergents.text = Medical.sharedInstance.shampoos_brand
-        tf_cosmetic.text = Medical.sharedInstance.shampoos_brand
+        tf_fragrances.text = Medical.sharedInstance.fragrances_brand
+        tf_cleaners.text = Medical.sharedInstance.cleaners_brand
+        tf_detergents.text = Medical.sharedInstance.detergents_brand
+        tf_cosmetic.text = Medical.sharedInstance.cosmetics_brand
         
         tv_other.text = Medical.sharedInstance.allergy_chemical_others
         
@@ -91,11 +91,26 @@ class AllergyOfChemicalViewController: UITableViewController {
         let cosmetic: String = tf_cosmetic.text!
         let other: String = tv_other.text!
         
-        Medical.sharedInstance.shampoos_brand = shampoos
-        Medical.sharedInstance.fragrances_brand = fragrances
-        Medical.sharedInstance.cleaners_brand = cleaners
-        Medical.sharedInstance.detergents_brand = detergents
-        Medical.sharedInstance.cosmetics_brand = cosmetic
+        if bt_shampoos.isSelected == true {
+            Medical.sharedInstance.shampoos_brand = shampoos
+        }
+        
+        if bt_fragrances.isSelected == true {
+            Medical.sharedInstance.fragrances_brand = fragrances
+        }
+        
+        if bt_cleaners.isSelected == true {
+            Medical.sharedInstance.cleaners_brand = cleaners
+        }
+        
+        if bt_detergents.isSelected == true {
+            Medical.sharedInstance.detergents_brand = detergents
+        }
+        
+        if bt_cosmetic.isSelected == true {
+            Medical.sharedInstance.cosmetics_brand = cosmetic
+        }
+        
         Medical.sharedInstance.allergy_chemical_others = other
         
         let result: String = selecteds.getStringResultSelect()

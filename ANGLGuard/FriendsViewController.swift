@@ -63,6 +63,8 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         fCell.name.text = firstname + " " + lastname
         fCell.email.text = email
+        fCell.more.tag = indexPath.row
+        fCell.more.addTarget(self, action: #selector(showMore(_:)), for: .touchUpInside)
         
         if indexPath.row % 2 == 0 {
             fCell.backgroundColor = UIColor.white
@@ -83,17 +85,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            let alert = UIAlertController(title: "group_del_desc".localized(), message: nil, preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-                let friend = self.friends[indexPath.row] as! [String: Any]
-                let id: String! = friend["id"] as! String
-                self.delete(friend_id: id, index: indexPath.row)
-            }))
-            
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
+            confirm(index: indexPath.row)
         }
     }
     
@@ -113,15 +105,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     if code == "200" {
                         if let data: [String: Any] = result["data"] as? [String: Any] {
                             let member: Array = data["member"] as! [Any]
-                            let userId = self.defaults.string(forKey: "id")!
-                            self.friends = member.filter({ (obj) -> Bool in
-                                if let object = obj as? [String: Any] {
-                                    if let id = object["id"] as? String {
-                                        return id != userId
-                                    }
-                                }
-                                return false
-                            })
+                            self.friends = member
                             self.tb_friend.reloadData()
                         }
                     } else if code == "104" {
@@ -146,6 +130,20 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         }
+    }
+    
+    func confirm(index: Int) {
+        let alert = UIAlertController(title: "group_del_desc".localized(), message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "bnt_confirm".localized(), style: .default, handler: { (action) in
+            let friend = self.friends[index] as! [String: Any]
+            let id: String! = friend["id"] as! String
+            self.delete(friend_id: id, index: index)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
     }
     
     func delete(friend_id: String, index: Int) {
@@ -187,6 +185,23 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         }
+    }
+    
+    @IBAction func showMore(_ sender: Any) {
+        let button = sender as! UIButton
+        let index = button.tag
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "bnt_delete".localized(), style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.confirm(index: index)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     @IBAction func showMenu(_ sender: Any) {

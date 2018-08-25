@@ -50,6 +50,7 @@
 
 "signup_email" = "Email";
 "signup_send_code" = "SEND CODE";
+"signup_send_code_complete" = "SUCCESS";
 "signup_please_enter" = "Please enter verify code";
 
 "signup_code" = "Code";
@@ -117,7 +118,7 @@
 
 "signup_great" = "Great!!\nIt's almost done\n\nPlease give your important person that I can contact when accident occured.";
 "signup_contact_number" = "Contact Number";
-"signup_relationship" = "Relation ship";
+"signup_relationship" = "Relationship";
 
 "signup_fill_relation" = "Please fill relation.";
 

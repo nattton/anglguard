@@ -50,6 +50,7 @@
 
 "signup_email" = "อีเมล";
 "signup_send_code" = "ส่งรหัสยืนยันตัวตน";
+"signup_send_code_complete" = "SUCCESS";
 "signup_please_enter" = "กรุณากรอกรหัสยืนยันอีเมล";
 
 "signup_code" = "รหัสยืนยันตัวตน";

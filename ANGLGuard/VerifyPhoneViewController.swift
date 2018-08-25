@@ -110,8 +110,6 @@ class VerifyPhoneViewController: UITableViewController, UITextFieldDelegate {
                             //data
                             Personal.sharedInstance.thai_mobile_cc = country_code
                             Personal.sharedInstance.thai_mobile_num = phone
-                            
-                            self.performSegue(withIdentifier: "showStep3", sender: nil)
                         } else if code == "104" {
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: { (action) in

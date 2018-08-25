@@ -50,6 +50,7 @@
 
 "signup_email" = "电子邮件";
 "signup_send_code" = "发送验证码";
+"signup_send_code_complete" = "SUCCESS";
 "signup_please_enter" = "请输入电子邮件的密码";
 
 "signup_code" = "Code";
