@@ -70,7 +70,7 @@ class VerifyCodeViewController: UITableViewController {
                         let token: String = result["token"] as! String
                         self.defaults.set(token, forKey: "token")
                         
-                        let alert = UIAlertController(title: "signup_send_code_complete".localized(), message: "", preferredStyle: .alert)
+                        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
