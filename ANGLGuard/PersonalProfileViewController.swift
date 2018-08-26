@@ -399,6 +399,18 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
                             Personal.sharedInstance.weight = weight
                             Personal.sharedInstance.mobile_cc = cc
                             Personal.sharedInstance.mobile_num = phone
+                            //save
+                            self.defaults.set(Personal.sharedInstance.firstname, forKey: "first_name")
+                            self.defaults.set(Personal.sharedInstance.middlename, forKey: "middle_name")
+                            self.defaults.set(Personal.sharedInstance.lastname, forKey: "last_name")
+                            self.defaults.set(Personal.sharedInstance.gender, forKey: "gender")
+                            self.defaults.set(Personal.sharedInstance.birthdate, forKey: "birthdate")
+                            self.defaults.set(Personal.sharedInstance.height, forKey: "height")
+                            self.defaults.set(Personal.sharedInstance.weight, forKey: "weight")
+                            self.defaults.set(Personal.sharedInstance.mobile_cc, forKey: "country_code")
+                            self.defaults.set(Personal.sharedInstance.personal_img_bin, forKey: "personal_img_bin")
+                            self.defaults.set(Personal.sharedInstance.mobile_num, forKey: "mobile_num")
+                            self.defaults.set(Personal.sharedInstance.mobile_cc, forKey: "mobile_cc")
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)

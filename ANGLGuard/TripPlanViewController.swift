@@ -212,7 +212,14 @@ class TripPlanViewController: UITableViewController, UITextFieldDelegate {
                             Trip.sharedInstance.average_expen = average_expen
                             Trip.sharedInstance.trip_arrang = trip_arrang
                             Trip.sharedInstance.domestic_tran_arrang = domestic_tran_arrang
-                            Trip.sharedInstance.destination = destination
+                            Trip.sharedInstance.destination = destination                            
+                            //save
+                            self.defaults.set(Trip.sharedInstance.departure_country, forKey: "trip_departure_country")
+                            self.defaults.set(Trip.sharedInstance.purpose, forKey: "trip_purpose")
+                            self.defaults.set(Trip.sharedInstance.average_expen, forKey: "trip_average_expen")
+                            self.defaults.set(Trip.sharedInstance.trip_arrang, forKey: "trip_arrange")
+                            self.defaults.set(Trip.sharedInstance.domestic_tran_arrang, forKey: "trip_domestic_trans_arrange")
+                            self.defaults.set(Trip.sharedInstance.destination, forKey: "trip_destination")
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)

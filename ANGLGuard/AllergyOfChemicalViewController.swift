@@ -35,6 +35,12 @@ class AllergyOfChemicalViewController: UITableViewController {
         bt_detergents.isSelected = Medical.sharedInstance.detergents == "1" ? true : false
         bt_cosmetic.isSelected = Medical.sharedInstance.cosmetics == "1" ? true : false
         
+        tf_shampoos.isEnabled = bt_shampoos.isSelected
+        tf_fragrances.isEnabled = bt_fragrances.isSelected
+        tf_cleaners.isEnabled = bt_cleaners.isSelected
+        tf_detergents.isEnabled = bt_detergents.isSelected
+        tf_cosmetic.isEnabled = bt_cosmetic.isSelected
+        
         tf_shampoos.text = Medical.sharedInstance.shampoos_brand
         tf_fragrances.text = Medical.sharedInstance.fragrances_brand
         tf_cleaners.text = Medical.sharedInstance.cleaners_brand
@@ -58,23 +64,49 @@ class AllergyOfChemicalViewController: UITableViewController {
         
         if button.tag == 1 {
             Medical.sharedInstance.shampoos = button.isSelected ? "1" : "0"
+            tf_shampoos.isEnabled = button.isSelected
+            if button.isSelected == false {
+                tf_shampoos.text = ""
+                Medical.sharedInstance.shampoos_brand = ""
+            }
         }
         
         if button.tag == 2 {
             Medical.sharedInstance.fragrances = button.isSelected ? "1" : "0"
+            tf_fragrances.isEnabled = button.isSelected
+            if button.isSelected == false {
+                tf_fragrances.text = ""
+                Medical.sharedInstance.fragrances_brand = ""
+            }
         }
         
         if button.tag == 3 {
             Medical.sharedInstance.cleaners = button.isSelected ? "1" : "0"
+            tf_cleaners.isEnabled = button.isSelected
+            if button.isSelected == false {
+                tf_cleaners.text = ""
+                Medical.sharedInstance.cleaners_brand = ""
+            }
         }
         
         if button.tag == 4 {
             Medical.sharedInstance.detergents = button.isSelected ? "1" : "0"
+            tf_detergents.isEnabled = button.isSelected
+            if button.isSelected == false {
+                tf_detergents.text = ""
+                Medical.sharedInstance.detergents_brand = ""
+            }
         }
         
         if button.tag == 5 {
             Medical.sharedInstance.cosmetics = button.isSelected ? "1" : "0"
+            tf_cosmetic.isEnabled = button.isSelected
+            if button.isSelected == false {
+                tf_cosmetic.text = ""
+                Medical.sharedInstance.cosmetics_brand = ""
+            }
         }
+        
         
         if button.isSelected {
             selecteds.add(chemicals[index])

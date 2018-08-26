@@ -142,6 +142,13 @@ class EmergencyContactProfileViewController: UITableViewController, UITextFieldD
                             Contact.sharedInstance.contact_number = phone
                             Contact.sharedInstance.relation = relationship
                             Contact.sharedInstance.email = email
+                            //save
+                            self.defaults.set(Contact.sharedInstance.firstname, forKey: "contact_first_name")
+                            self.defaults.set(Contact.sharedInstance.lastname, forKey: "contact_last_name")
+                            self.defaults.set(Contact.sharedInstance.contact_number, forKey: "contact_number")
+                            self.defaults.set(Contact.sharedInstance.contact_number_cc, forKey: "contact_number_cc")
+                            self.defaults.set(Contact.sharedInstance.relation, forKey: "contact_relation")
+                            self.defaults.set(Contact.sharedInstance.email, forKey: "contact_email")
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)

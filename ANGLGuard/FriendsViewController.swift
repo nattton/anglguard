@@ -196,7 +196,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
             (alert: UIAlertAction!) -> Void in
             self.confirm(index: index)
         })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "bnt_cancel".localized(), style: .cancel, handler: nil)
         
         optionMenu.addAction(deleteAction)
         optionMenu.addAction(cancelAction)

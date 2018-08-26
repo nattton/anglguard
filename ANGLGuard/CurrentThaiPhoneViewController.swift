@@ -157,6 +157,9 @@ class CurrentThaiPhoneViewController: UITableViewController, UITextFieldDelegate
                             //data
                             Personal.sharedInstance.thai_mobile_cc = country_code
                             Personal.sharedInstance.thai_mobile_num = phone
+                            //save
+                            self.defaults.set(Personal.sharedInstance.thai_mobile_cc, forKey: "thai_mobile_cc")
+                            self.defaults.set(Personal.sharedInstance.thai_mobile_num, forKey: "thai_mobile_num")
                             
                             self.saveThaiMobileNumber()
                         } else if code == "104" {

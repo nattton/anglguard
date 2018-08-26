@@ -197,6 +197,56 @@ class MedicalProfileViewController: UITableViewController, UIPickerViewDelegate,
                         let code: String = result["code"] as! String
                         let message: String = result["message"] as! String
                         if code == "200" {
+                            //save
+                            self.defaults.set(blood_type, forKey: "medical_blood_type")
+                            
+                            self.defaults.set(Medical.sharedInstance.seizures, forKey: "drug_seizures")
+                            self.defaults.set(Medical.sharedInstance.insuline, forKey: "drug_insuline")
+                            self.defaults.set(Medical.sharedInstance.iodine, forKey: "drug_iodine")
+                            self.defaults.set(Medical.sharedInstance.penicillin, forKey: "drug_penicillin")
+                            self.defaults.set(Medical.sharedInstance.sulfa, forKey: "drug_sulfa")
+                            self.defaults.set(Medical.sharedInstance.allergy_drug_others, forKey: "drug_others")
+                            
+                            self.defaults.set(Medical.sharedInstance.milk, forKey: "food_milk")
+                            self.defaults.set(Medical.sharedInstance.eggs, forKey: "food_eggs")
+                            self.defaults.set(Medical.sharedInstance.fish, forKey: "food_fish")
+                            self.defaults.set(Medical.sharedInstance.crustacean_shellfish, forKey: "food_crustacean_shellfish")
+                            self.defaults.set(Medical.sharedInstance.tree_nuts, forKey: "food_tree_nuts")
+                            self.defaults.set(Medical.sharedInstance.peanuts, forKey: "food_peanuts")
+                            self.defaults.set(Medical.sharedInstance.wheat, forKey: "food_wheat")
+                            self.defaults.set(Medical.sharedInstance.soybeans, forKey: "food_soybeans")
+                            self.defaults.set(Medical.sharedInstance.allergy_food_others, forKey: "food_others")
+                            
+                            self.defaults.set(Medical.sharedInstance.shampoos, forKey: "chemical_shampoos")
+                            self.defaults.set(Medical.sharedInstance.shampoos_brand, forKey: "chemical_shampoos_brand")
+                            self.defaults.set(Medical.sharedInstance.fragrances, forKey: "chemical_fragrances")
+                            self.defaults.set(Medical.sharedInstance.fragrances_brand, forKey: "chemical_fragrances_brand")
+                            self.defaults.set(Medical.sharedInstance.cleaners, forKey: "chemical_cleaners")
+                            self.defaults.set(Medical.sharedInstance.cleaners_brand, forKey: "chemical_cleaners_brand")
+                            self.defaults.set(Medical.sharedInstance.detergents, forKey: "chemical_detergents")
+                            self.defaults.set(Medical.sharedInstance.detergents_brand, forKey: "chemical_detergents_brand")
+                            self.defaults.set(Medical.sharedInstance.cosmetics, forKey: "chemical_cosmetics")
+                            self.defaults.set(Medical.sharedInstance.cosmetics_brand, forKey: "chemical_cosmetics_brand")
+                            self.defaults.set(Medical.sharedInstance.allergy_chemical_others, forKey: "chemical_others")
+                            
+                            self.defaults.set(Medical.sharedInstance.diabetes_mellitus, forKey: "underlying_diabetes_mellitus")
+                            self.defaults.set(Medical.sharedInstance.hypertension, forKey: "underlying_hypertension")
+                            self.defaults.set(Medical.sharedInstance.chronic_kidney_disease, forKey: "underlying_chronic_kidney_disease")
+                            self.defaults.set(Medical.sharedInstance.heart_disease, forKey: "underlying_heart_disease")
+                            self.defaults.set(Medical.sharedInstance.old_stroke, forKey: "underlying_old_stroke")
+                            self.defaults.set(Medical.sharedInstance.underlying_others, forKey: "underlying_others")
+                            
+                            self.defaults.set(Medical.sharedInstance.current_medication_description, forKey: "current_medication_description")
+                            
+                            self.defaults.set(Medical.sharedInstance.no_need, forKey: "special_care_no_need")
+
+                            self.defaults.set(Medical.sharedInstance.assistive_environmental_devices, forKey: "device_assistive_environmental_devices")
+                            self.defaults.set(Medical.sharedInstance.gait_aid, forKey: "device_gait_aid")
+                            self.defaults.set(Medical.sharedInstance.wheelchair, forKey: "device_wheelchair")
+                            
+                            self.defaults.set(Medical.sharedInstance.care_giver_one, forKey: "care_giver_one")
+                            self.defaults.set(Medical.sharedInstance.care_giver_two, forKey: "care_giver_two")
+                            
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
                             alert.addAction(defaultAction)
