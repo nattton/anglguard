@@ -384,6 +384,7 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
                             if let data: [String: Any] = result["data"] as? [String: Any] {
                                 if let personal: [String: Any] = data["personal"] as? [String: Any] {
                                     if let personal_img_bin: String = personal["personal_img_bin"] as? String {
+                                        //save images
                                         self.defaults.set(personal_img_bin, forKey: "personal_img_bin")
                                     }
                                 }
@@ -408,7 +409,6 @@ class PersonalProfileViewController: UITableViewController, UITextFieldDelegate,
                             self.defaults.set(Personal.sharedInstance.height, forKey: "height")
                             self.defaults.set(Personal.sharedInstance.weight, forKey: "weight")
                             self.defaults.set(Personal.sharedInstance.mobile_cc, forKey: "country_code")
-                            self.defaults.set(Personal.sharedInstance.personal_img_bin, forKey: "personal_img_bin")
                             self.defaults.set(Personal.sharedInstance.mobile_num, forKey: "mobile_num")
                             self.defaults.set(Personal.sharedInstance.mobile_cc, forKey: "mobile_cc")
                             

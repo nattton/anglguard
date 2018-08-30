@@ -280,6 +280,7 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
                             if let data: [String: Any] = result["data"] as? [String: Any] {
                                 if let personal: [String: Any] = data["personal"] as? [String: Any] {
                                     if let personal_img_bin: String = personal["passport_img"] as? String {
+                                        //save image
                                         self.defaults.set(personal_img_bin, forKey: "passport_img")
                                     }
                                 }
@@ -293,7 +294,6 @@ class PassportProfileViewController: UITableViewController, UIImagePickerControl
                             self.defaults.set(Personal.sharedInstance.passport_num, forKey: "passport_num")
                             self.defaults.set(Personal.sharedInstance.country_code, forKey: "country_code")
                             self.defaults.set(Personal.sharedInstance.passport_expire_date, forKey: "passport_expire_date")
-                            self.defaults.set(Personal.sharedInstance.passport_img, forKey: "passport_img")
                             
                             let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "bnt_ok".localized(), style: .default, handler: nil)
