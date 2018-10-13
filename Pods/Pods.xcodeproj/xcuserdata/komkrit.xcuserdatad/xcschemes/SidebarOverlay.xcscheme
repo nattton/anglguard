@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '204631BD891CA448A490F024F3577B5A'
-               BlueprintName = 'SidebarOverlay'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SidebarOverlay.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "132C2E0A496ADDA9EEB5E9E02808D5A5"
+               BlueprintName = "SidebarOverlay"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SidebarOverlay.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,7 +1,7 @@
 /*
  
  The MIT License (MIT)
- Copyright (c) 2017 Dalton Hinterscher
+ Copyright (c) 2017-2018 Dalton Hinterscher
  
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
  to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -43,7 +43,7 @@ public class BaseNotificationBanner: UIView {
             if let customBannerHeight = customBannerHeight {
                 return customBannerHeight
             } else {
-                return shouldAdjustForIphoneX() ? 88.0 : 64.0
+                return shouldAdjustForNotchFeaturedIphone() ? 88.0 : 64.0
             }
         } set {
             customBannerHeight = newValue
@@ -161,7 +161,7 @@ public class BaseNotificationBanner: UIView {
     
     deinit {
         NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name.UIDeviceOrientationDidChange,
+                                                  name: .UIDeviceOrientationDidChange,
                                                   object: nil)
     }
     
@@ -202,7 +202,7 @@ public class BaseNotificationBanner: UIView {
      */
     
     private func updateSpacerViewHeight(make: ConstraintMaker? = nil) {
-        let finalHeight = NotificationBannerUtilities.isiPhoneX()
+        let finalHeight = NotificationBannerUtilities.isNotchFeaturedIPhone()
             && UIApplication.shared.statusBarOrientation.isPortrait
             && (parentViewController?.navigationController?.isNavigationBarHidden ?? true) ? 40.0 : 10.0
         if let make = make {
@@ -245,6 +245,18 @@ public class BaseNotificationBanner: UIView {
                 }
             })
         }
+    }
+    
+    /**
+        Removes the NotificationBanner from the queue if not displaying
+     */
+    public func remove() {
+        
+        guard !isDisplaying else {
+            return
+        }
+        
+        bannerQueue.removeBanner(self)
     }
     
     /**
@@ -291,11 +303,11 @@ public class BaseNotificationBanner: UIView {
         }
         
         NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name.UIDeviceOrientationDidChange,
+                                                  name: .UIDeviceOrientationDidChange,
                                                   object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onOrientationChanged),
-                                               name: NSNotification.Name.UIDeviceOrientationDidChange,
+                                               name: .UIDeviceOrientationDidChange,
                                                object: nil)
         
         if placeOnQueue {
@@ -352,9 +364,11 @@ public class BaseNotificationBanner: UIView {
         Suspends a notification banner so it will not be dismissed. This happens because a new notification banner was placed in front of it on the queue.
     */
     func suspend() {
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(dismiss), object: nil)
-        isSuspended = true
-        isDisplaying = false
+        if autoDismiss {
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(dismiss), object: nil)
+            isSuspended = true
+            isDisplaying = false
+        }
     }
     
     /**
@@ -437,11 +451,11 @@ public class BaseNotificationBanner: UIView {
     }
 
     /**
-         Determines wether or not we should adjust the banner for the iPhoneX
+         Determines wether or not we should adjust the banner for notch featured iPhone
      */
     
-    internal func shouldAdjustForIphoneX() -> Bool {
-        return NotificationBannerUtilities.isiPhoneX()
+    internal func shouldAdjustForNotchFeaturedIphone() -> Bool {
+        return NotificationBannerUtilities.isNotchFeaturedIPhone()
             && UIApplication.shared.statusBarOrientation.isPortrait
             && (self.parentViewController?.navigationController?.isNavigationBarHidden ?? true)
     }

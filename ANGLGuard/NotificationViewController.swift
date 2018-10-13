@@ -185,7 +185,15 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let notification = notifications[indexPath.row] as! [String: String]
+        let type: String! = notification["type"]
+        if type == "alert" {
+            let latitude: String! = notification["latitude"]
+            let longitude: String! = notification["longitude"]
+            UserDefaults.standard.setValue(["latitude": latitude, "longitude": longitude], forKey: "alert")
+            let menuView = self.so_containerViewController?.sideViewController as! MenuViewController
+            menuView.changeTopViewController(identifier: "angllife")
+        }
     }
     
     func convertDate(date: String) -> String {

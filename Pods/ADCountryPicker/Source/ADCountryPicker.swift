@@ -17,12 +17,12 @@ struct Section {
 
 @objc public protocol ADCountryPickerDelegate: class {
     @objc optional func countryPicker(_ picker: ADCountryPicker,
-                       didSelectCountryWithName name: String,
-                       code: String)
-    func countryPicker(_ picker: ADCountryPicker,
                                       didSelectCountryWithName name: String,
-                                      code: String,
-                                      dialCode: String)
+                                      code: String)
+    func countryPicker(_ picker: ADCountryPicker,
+                       didSelectCountryWithName name: String,
+                       code: String,
+                       dialCode: String)
 }
 
 open class ADCountryPicker: UITableViewController {
@@ -216,9 +216,9 @@ open class ADCountryPicker: UITableViewController {
         
         sections.forEach { (section) -> () in
             section.countries.forEach({ (country) -> () in
-                if country.name.characters.count >= searchText.characters.count {
+                if country.name.count >= searchText.count {
                     let result = country.name.compare(searchText, options: [.caseInsensitive, .diacriticInsensitive],
-                                                      range: searchText.characters.startIndex ..< searchText.characters.endIndex)
+                                                      range: searchText.startIndex ..< searchText.endIndex)
                     if result == .orderedSame {
                         filteredList.append(country)
                     }
@@ -235,7 +235,7 @@ open class ADCountryPicker: UITableViewController {
 extension ADCountryPicker {
     
     override open func numberOfSections(in tableView: UITableView) -> Int {
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             return 1
         }
         return sections.count
@@ -250,7 +250,7 @@ extension ADCountryPicker {
     }
     
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             return filteredList.count
         }
         return sections[section].countries.count
@@ -267,7 +267,7 @@ extension ADCountryPicker {
         let cell: UITableViewCell! = tempCell
         
         let country: ADCountry!
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             country = filteredList[(indexPath as NSIndexPath).row]
         } else {
             country = sections[(indexPath as NSIndexPath).section].countries[(indexPath as NSIndexPath).row]
@@ -300,7 +300,7 @@ extension ADCountryPicker {
     
     override open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if !sections[section].countries.isEmpty {
-            if searchController.searchBar.text!.characters.count > 0 {
+            if searchController.searchBar.text!.count > 0 {
                 if let name = filteredList.first?.name {
                     let index = name.index(name.startIndex, offsetBy: 0)
                     return String(describing: name[index])
@@ -353,7 +353,7 @@ extension ADCountryPicker {
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let country: ADCountry!
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             country = filteredList[(indexPath as NSIndexPath).row]
         } else {
             country = sections[(indexPath as NSIndexPath).section].countries[(indexPath as NSIndexPath).row]

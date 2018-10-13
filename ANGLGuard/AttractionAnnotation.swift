@@ -6,6 +6,7 @@ enum AttractionType: Int {
     case friend
     case hospital
     case ambulance
+    case notification
     
     func image() -> UIImage {
         switch self {
@@ -17,6 +18,8 @@ enum AttractionType: Int {
             return #imageLiteral(resourceName: "ic_hospital")
         case .ambulance:
             return #imageLiteral(resourceName: "ic_ambulance")
+        case .notification:
+            return #imageLiteral(resourceName: "pin")
         }
     }
 }

@@ -24,6 +24,7 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
     var friendsAnn: [MKAnnotation] = []
     var currentAnn: MKAnnotation?
     var ambulanceAnn: MKAnnotation?
+    var notificationAnn: MKAnnotation?
     
     var list_height: CGFloat = 0
     var isMaxiMize: Bool = false
@@ -53,7 +54,18 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         v_list.frame = tb_hospital.frame
         
         SVProgressHUD.show(withStatus: LOADING_TEXT)
-        getCurrentLocation()
+        
+        if let location = UserDefaults.standard.dictionary(forKey: "alert") {
+            if let latitude = location["latitude"] as? String, let longitude = location["longitude"] as? String {
+                if let lat = Double(latitude), let long = Double(longitude) {
+                    addNotificationAnnotation(latitude: lat, longitude: long)
+                    UserDefaults.standard.setValue(nil, forKey: "alert")
+                }
+            }
+        } else {
+            getCurrentLocation()
+        }
+        
         getHospitals()
         getFriends()
         startTimer()
@@ -377,6 +389,19 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
         let annotation = AttractionAnnotation(latitude: latitude, longitude: longitude, title: title, type: type, icon: icon, status: "A")
         map.addAnnotation(annotation)
         currentAnn = annotation
+    }
+    
+    func addNotificationAnnotation(latitude: Double, longitude: Double) {
+        for annotation in map.annotations {
+            if annotation === notificationAnn {
+                map.removeAnnotation(annotation)
+            }
+        }
+        
+        let annotation = AttractionAnnotation(latitude: latitude, longitude: longitude, title: "", type: .notification, icon: "", status: "")
+        map.addAnnotation(annotation)
+        notificationAnn = annotation
+        showLocationWith(latitude: latitude, longitude: longitude)
     }
     
     func showLocationWith(latitude: CLLocationDegrees, longitude: CLLocationDegrees)  {

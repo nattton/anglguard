@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2645653E1A1511A46FCC1DDFD1B9CE69"
+               BlueprintIdentifier = "ABEEBD885ED8141F1CE4EAE69DEA0040"
                BuildableName = "Pods_ANGLGuard.framework"
                BlueprintName = "Pods-ANGLGuard"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2645653E1A1511A46FCC1DDFD1B9CE69"
+            BlueprintIdentifier = "ABEEBD885ED8141F1CE4EAE69DEA0040"
             BuildableName = "Pods_ANGLGuard.framework"
             BlueprintName = "Pods-ANGLGuard"
             ReferencedContainer = "container:Pods.xcodeproj">

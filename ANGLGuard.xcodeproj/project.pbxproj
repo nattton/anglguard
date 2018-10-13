@@ -29,6 +29,8 @@
 		3B284AE02054C5A9006225D2 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B284ADF2054C5A9006225D2 /* FAQViewController.swift */; };
 		3B284AE22054CAF3006225D2 /* PrivilegeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B284AE12054CAF3006225D2 /* PrivilegeCell.swift */; };
 		3B284AE62054F607006225D2 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B284AE52054F607006225D2 /* OutlookService.swift */; };
+		3B479A632171865000B9E12E /* NotificationBannerSwift.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3B479A612171863D00B9E12E /* NotificationBannerSwift.zip */; };
+		3B479A642171865000B9E12E /* ADCountryPicker.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3B479A622171864F00B9E12E /* ADCountryPicker.zip */; };
 		3B4FD58A204B7B3500AB045D /* ProfileQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */; };
 		3B4FD58C204B7BE800AB045D /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */; };
 		3B4FD58E204B894100AB045D /* CurrentThaiPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */; };
@@ -116,6 +118,8 @@
 		3B284ADF2054C5A9006225D2 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		3B284AE12054CAF3006225D2 /* PrivilegeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegeCell.swift; sourceTree = "<group>"; };
 		3B284AE52054F607006225D2 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
+		3B479A612171863D00B9E12E /* NotificationBannerSwift.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = NotificationBannerSwift.zip; sourceTree = "<group>"; };
+		3B479A622171864F00B9E12E /* ADCountryPicker.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ADCountryPicker.zip; sourceTree = "<group>"; };
 		3B4FD589204B7B3500AB045D /* ProfileQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileQRCodeViewController.swift; sourceTree = "<group>"; };
 		3B4FD58B204B7BE800AB045D /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
 		3B4FD58D204B894100AB045D /* CurrentThaiPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThaiPhoneViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 				3B031675205ABB8500A35AC9 /* Localizable.strings */,
 				3BE5D9AB2056DC7E00874D5A /* ANGLGuard-Bridging-Header.h */,
 				3BE994B62070E5A7005D6B07 /* condition_en.html */,
+				3B479A622171864F00B9E12E /* ADCountryPicker.zip */,
+				3B479A612171863D00B9E12E /* NotificationBannerSwift.zip */,
 			);
 			path = ANGLGuard;
 			sourceTree = "<group>";
@@ -423,9 +429,11 @@
 				3B031673205ABB8500A35AC9 /* Localizable.strings in Resources */,
 				3B6462E52036A47400A39901 /* LaunchScreen.storyboard in Resources */,
 				3B6462E22036A47400A39901 /* Assets.xcassets in Resources */,
+				3B479A642171865000B9E12E /* ADCountryPicker.zip in Resources */,
 				3B6462E02036A47400A39901 /* Main.storyboard in Resources */,
 				3BE994B72070E5A7005D6B07 /* condition_en.html in Resources */,
 				3B84E9BB208E258B00D6D7EC /* GoogleService-Info.plist in Resources */,
+				3B479A632171865000B9E12E /* NotificationBannerSwift.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +469,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -488,6 +496,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ISHPullUp/ISHPullUp.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
@@ -514,6 +523,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISHPullUp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
