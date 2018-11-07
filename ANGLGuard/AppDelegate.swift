@@ -77,6 +77,9 @@ let SAVE_PROFILE_PERSONAL = HOST + "/save-profile-personal"
 let USER_SEND_SMS_CODE = HOST + "/user-send-sms-code"
 let USER_VERIFY_SMS_CODE = HOST + "/user-verify-sms-code"
 
+let COUNT_NOTIFICATION = HOST + "/count-notification"
+let CLEAR_NOTIFICATION = HOST + "/clear-notification"
+
 let TOURIST_AUTHENTICATION = HOST_TOURIST + "/vendor/authentication/secret_key"
 let TOURIST_EVENT_TRACKING = HOST_TOURIST + "/vendor/event/event_tracking/@"
 
@@ -261,6 +264,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, WXApiD
                         banner.show()
                     }
                 }
+            }
+            
+            if let badge = aps["badge"] as? Int {
+                UIApplication.shared.applicationIconBadgeNumber  = badge
+                UserDefaults.standard.set(badge, forKey: "badge")
             }
         }
     }

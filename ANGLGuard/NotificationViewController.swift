@@ -15,6 +15,8 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        clearNotification()
+        
         setText()
         
         if let token = defaults.string(forKey: "token") {
@@ -54,6 +56,36 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
                     }
+                }
+            }
+        }
+    }
+    
+    func clearNotification() {
+        if let token = defaults.string(forKey: "token") {
+            let parameters: Parameters = [
+                "token": token
+            ]
+            
+            Alamofire.request(CLEAR_NOTIFICATION, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                guard let json = response.result.value as? [String: Any] else {
+                    print("didn't get object as JSON from API")
+                    if let error = response.result.error {
+                        print("Error: \(error)")
+                    }
+                    return
+                }
+                
+                guard let code = json["code"] as? String else {
+                    print("Could not code id number from JSON")
+                    return
+                }
+                
+                if code == "200" {
+                    self.defaults.set(0, forKey: "badge")
+                    UIApplication.shared.applicationIconBadgeNumber  = 0
+                } else {
+                    print("Could not Clear notification")
                 }
             }
         }

@@ -1,4 +1,5 @@
 import UIKit
+import QuartzCore
 
 protocol MenuHeaderDelegate {
     func toggleSection(_ header: MenuHeader, section: Int)
@@ -12,6 +13,7 @@ class MenuHeader: UITableViewHeaderFooterView {
     let iconImage = UIImageView()
     let titleLabel = UILabel()
     let arrowLabel = UILabel()
+    let badgeLabel = UILabel()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -50,6 +52,16 @@ class MenuHeader: UITableViewHeaderFooterView {
         arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         arrowLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        
+        // Badge Number
+        contentView.addSubview(badgeLabel)
+        badgeLabel.textColor = UIColor.white
+        badgeLabel.translatesAutoresizingMaskIntoConstraints = false
+        badgeLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
+        badgeLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
+        badgeLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        badgeLabel.layer.backgroundColor  = UIColor.red.cgColor
+        badgeLabel.layer.cornerRadius = 12
         
         //
         // Call tapHeader when tapping on this header

@@ -93,6 +93,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             self.present(alert, animated: true, completion: nil)
         } else {
             let parameters: Parameters = [
+                "device":"ios",
                 "email": user.profile.email!,
                 "key": user.userID.encrypt(),
                 "type": "google"
@@ -105,6 +106,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
         let username = tf_username.text!
         let password = tf_password.text!
         let parameters: Parameters = [
+            "device":"ios",
             "username": username,
             "password": password.encrypt(),
             "type": "normal"
@@ -127,6 +129,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                         if let data = result as? [String : AnyObject] {
                             if let email = data["email"] as? String, let id = data["id"] as? String {
                                 let parameters: Parameters = [
+                                    "device":"ios",
                                     "email": email,
                                     "key": id.encrypt(),
                                     "type": "facebook"
@@ -149,6 +152,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
             outlookService.getUserProfile() { email, id  in
                 if let userEmail = email, let userId = id {
                     let parameters: Parameters = [
+                        "device":"ios",
                         "email": userEmail,
                         "key": userId.encrypt(),
                         "type": "outlook"
@@ -163,6 +167,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                     self.outlookService.getUserProfile() { email, id in
                         if let userEmail = email, let userId = id {
                             let parameters: Parameters = [
+                                "device":"ios",
                                 "email": userEmail,
                                 "key": userId.encrypt(),
                                 "type": "outlook"
@@ -202,6 +207,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
     func weChatAccessToken(code: String) {
         SVProgressHUD.show(withStatus: LOADING_TEXT)
         let parameters: Parameters = [
+            "device":"ios",
             "appid": WECHAT_APP_ID,
             "secret": WECHAT_APP_SECRET,
             "code": code,
@@ -220,6 +226,7 @@ class LoginViewController: UITableViewController, GIDSignInUIDelegate, GIDSignIn
                 } else {
                     let openid: String = result["openid"] as! String
                     let parameters: Parameters = [
+                        "device":"ios",
                         "username": openid,
                         "key": openid.encrypt(),
                         "type": "wechat"

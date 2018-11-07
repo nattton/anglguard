@@ -231,6 +231,10 @@ class AngllifeViewController: UIViewController, UITableViewDelegate, UITableView
                     if code == "200" {
                         print("send location succes")
                     } else if code == "104" {
+                        // Clear Badge Number
+                        self.defaults.set(0, forKey: "badge")
+                        UIApplication.shared.applicationIconBadgeNumber  = 0
+                        
                         self.defaults.set("N", forKey: "login")
                         self.defaults.set("N", forKey: "timer")
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate

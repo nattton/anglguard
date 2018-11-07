@@ -46,6 +46,42 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         lb_email.text = Personal.sharedInstance.email
     }
     
+    func getCountUnread() {
+        if let token = defaults.string(forKey: "token") {
+            let parameters: Parameters = [
+                "token": token
+            ]
+            
+            Alamofire.request(COUNT_NOTIFICATION, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+                guard let json = response.result.value as? [String: Any] else {
+                    print("didn't get todo object as JSON from API")
+                    if let error = response.result.error {
+                        print("Error: \(error)")
+                    }
+                    return
+                }
+                
+                guard let code = json["code"] as? String else {
+                    print("Could not get id number from JSON")
+                    return
+                }
+                
+                if code == "200" {
+                    guard let jData = json["data"] as? [String: Any] else {
+                        print("Could not get id number from JSON")
+                        return
+                    }
+                    guard let badgeNumber = jData["count_unread"] as? Int else {
+                        print("Could not get id number from JSON")
+                        return
+                    }
+                    self.defaults.set(badgeNumber, forKey: "badge")
+                    self.tb_menu.reloadData()
+                }
+            }
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -111,6 +147,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         header.setCollapsed(sections[section].collapsed)
         header.section = section
         header.delegate = self
+        
+        if header.titleLabel.text == "Notification" {
+            let countUnread = defaults.integer(forKey: "badge")
+            if countUnread > 0 {
+                header.badgeLabel.text = "  \(countUnread)  "
+                header.badgeLabel.sizeToFit()
+            }
+            
+        }
         
         if sections[section].selected {
             header.titleLabel.textColor = UIColor.white
